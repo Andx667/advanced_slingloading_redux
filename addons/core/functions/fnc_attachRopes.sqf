@@ -45,7 +45,7 @@ if(!isNull _vehicle) then {
                 _vehicle setVariable [QGVAR(cargo), _allCargo, true];
 
                 if(missionNamespace getVariable [QGVAR(HEAVY_LIFTING_ENABLED),false]) then {
-                    [_cargo, _vehicle, _ropes] spawn FUNC(ropeAdjustMass);
+                    [_cargo, _vehicle, _ropes] spawn FUNC(ropeAdjustMass); //TODO Unschedule
                 };
             };
         };

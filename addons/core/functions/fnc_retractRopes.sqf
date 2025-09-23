@@ -25,13 +25,13 @@ if(local _vehicle) then {
     if(isNull _existingCargo) then {
         call FUNC(dropRopes);
         {
-            [_x,_vehicle] spawn {
+            [_x,_vehicle] spawn { //TODO Unschedule
                 params ["_rope","_vehicle"];
                 private ["_count"];
                 _count = 0;
                 ropeUnwind [_rope, 3, 0];
                 while {(!ropeUnwound _rope) && _count < 20} do {
-                    sleep 1;
+                    sleep 1; //TODO Unschedule
                     _count = _count + 1;
                 };
                 ropeDestroy _rope;
