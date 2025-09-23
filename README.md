@@ -25,7 +25,7 @@
 
 **Advanced Slingloading Redux** (aslr) aims to improve slingloading in Arma 3.
 
-This project is based on prevoius [work](https://github.com/sethduda/AdvancedSlingLoading) by sethduda.
+This project is based on previous [work](https://github.com/sethduda/AdvancedSlingLoading) by sethduda.
 
 The project is entirely **open-source** and any contributions are welcome.
 
