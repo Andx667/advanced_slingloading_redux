@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project name="aslr">
-    <Package name="Common">
-        <Key ID="STR_aslr_common_displayName">
-            <English>Common</English>
-        </Key>
-    </Package>
-</Project>

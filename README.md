@@ -23,7 +23,9 @@
     <b>Requires the latest version of <a href="https://github.com/CBATeam/CBA_A3/releases/latest">CBA A3</a></b>
 </p>
 
-**Advanced Slingloading Redux** (aslr) aims to...
+**Advanced Slingloading Redux** (aslr) aims to improve slingloading in Arma 3.
+
+This project is based on prevoius [work](https://github.com/sethduda/AdvancedSlingLoading) by sethduda.
 
 The project is entirely **open-source** and any contributions are welcome.
 

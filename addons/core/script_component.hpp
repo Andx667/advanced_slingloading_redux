@@ -1,5 +1,5 @@
-#define COMPONENT common
-#define COMPONENT_BEAUTIFIED Common
+#define COMPONENT addonName
+#define COMPONENT_BEAUTIFIED Addon Name
 #include "\z\aslr\addons\main\script_mod.hpp"
 
 // #define DEBUG_MODE_FULL

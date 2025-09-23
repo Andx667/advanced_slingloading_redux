@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="aslr">
+    <Package name="Addon Name">
+        <Key ID="STR_aslr_addonName_displayName">
+            <English>Advanced Slingload Redux</English>
+        </Key>
+    </Package>
+</Project>

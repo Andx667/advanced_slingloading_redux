@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /*
- * Author: You!
+ * Author: Andx
  * An empty function that does nothing.
  *
  * Arguments:
