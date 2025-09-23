@@ -70,51 +70,6 @@ if(!isDedicated) then {
 };
 
 if(isServer) then {
-
-    // Adds support for exile network calls (Only used when running exile) //
-
-    GVAR(Supported_RemoteExecServer_Functions) = [
-        QFUNC(customHideObjectGlobal)
-    ];
-
-    ExileServer_AdvancedSlingLoading_network_AdvancedSlingLoadingRemoteExecServer = {
-        params ["_sessionId", "_messageParameters",["_isCall",false]];
-        _messageParameters params ["_params","_functionName"];
-        if(_functionName in ASL_Supported_RemoteExecServer_Functions) then {
-            if(_isCall) then {
-                _params call (missionNamespace getVariable [_functionName,{}]);
-            } else {
-                _params spawn (missionNamespace getVariable [_functionName,{}]);
-            };
-        };
-    };
-
-   GVAR(Supported_RemoteExecClient_Functions) = [
-        QFUNC(pickupropes),
-        QFUNC(deployRopesIndex),
-        QFUNC(ropeSetMass),
-        QFUNC(extendRopes),
-        QFUNC(shortenRopes),
-        QFUNC(releaseCargo),
-        QFUNC(retractRopes),
-        QFUNC(deployRopes),
-        QFUNC(customHint),
-        QFUNC(attachRopes),
-        QFUNC(dropRopes)
-    ];
-
-    ExileServer_AdvancedSlingLoading_network_AdvancedSlingLoadingRemoteExecClient = {
-        params ["_sessionId", "_messageParameters"];
-        _messageParameters params ["_params","_functionName","_target",["_isCall",false]];
-        if(_functionName in GVAR(Supported_RemoteExecClient_Functions)) then {
-            if(_isCall) then {
-                _params remoteExecCall [_functionName, _target];
-            } else {
-                _params remoteExec [_functionName, _target];
-            };
-        };
-    };
-
     // Install Advanced Sling Loading on all clients (plus JIP) //
 
     publicVariable "ASL_Advanced_Sling_Loading_Install";

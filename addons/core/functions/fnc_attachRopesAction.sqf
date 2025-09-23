@@ -23,7 +23,7 @@ if([_vehicle,_cargo] call FUNC(canAttachRopes)) then {
     _canBeAttached = true;
 
     if!(missionNamespace getVariable [QGVAR(LOCKED_VEHICLES_ENABLED),false]) then {
-        if( locked _cargo > 1 ) then {
+        if(locked _cargo > 1 ) then {
             [LLSTRING(locked_vehicle), false] call FUNC(customHint);
             _canBeAttached = false;
         };
