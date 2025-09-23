@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project name="MOD_ACRONYM">
+<Project name="aslr">
     <Package name="Main">
-        <Key ID="STR_MOD_PREFIX_main_displayName">
+        <Key ID="STR_aslr_main_displayName">
             <English>Main</English>
         </Key>
-        <Key ID="STR_MOD_PREFIX_main_url">
-            <English>https://github.com/DartsArmaMods/MOD_REPO</English>
-            <Czech>https://github.com/DartsArmaMods/MOD_REPO</Czech>
-            <French>https://github.com/DartsArmaMods/MOD_REPO</French>
-            <Spanish>https://github.com/DartsArmaMods/MOD_REPO</Spanish>
-            <Italian>https://github.com/DartsArmaMods/MOD_REPO</Italian>
-            <Polish>https://github.com/DartsArmaMods/MOD_REPO</Polish>
-            <Portuguese>https://github.com/DartsArmaMods/MOD_REPO</Portuguese>
-            <Russian>https://github.com/DartsArmaMods/MOD_REPO</Russian>
-            <German>https://github.com/DartsArmaMods/MOD_REPO</German>
-            <Korean>https://github.com/DartsArmaMods/MOD_REPO</Korean>
-            <Japanese>https://github.com/DartsArmaMods/MOD_REPO</Japanese>
-            <Chinese>https://github.com/DartsArmaMods/MOD_REPO</Chinese>
-            <Chinesesimp>https://github.com/DartsArmaMods/MOD_REPO</Chinesesimp>
-            <Turkish>https://github.com/DartsArmaMods/MOD_REPO</Turkish>
+        <Key ID="STR_aslr_main_url">
+            <English>https://github.com/Andx667/advanced_slingloading_redux</English>
+            <Czech>https://github.com/Andx667/advanced_slingloading_redux</Czech>
+            <French>https://github.com/Andx667/advanced_slingloading_redux</French>
+            <Spanish>https://github.com/Andx667/advanced_slingloading_redux</Spanish>
+            <Italian>https://github.com/Andx667/advanced_slingloading_redux</Italian>
+            <Polish>https://github.com/Andx667/advanced_slingloading_redux</Polish>
+            <Portuguese>https://github.com/Andx667/advanced_slingloading_redux</Portuguese>
+            <Russian>https://github.com/Andx667/advanced_slingloading_redux</Russian>
+            <German>https://github.com/Andx667/advanced_slingloading_redux</German>
+            <Korean>https://github.com/Andx667/advanced_slingloading_redux</Korean>
+            <Japanese>https://github.com/Andx667/advanced_slingloading_redux</Japanese>
+            <Chinese>https://github.com/Andx667/advanced_slingloading_redux</Chinese>
+            <Chinesesimp>https://github.com/Andx667/advanced_slingloading_redux</Chinesesimp>
+            <Turkish>https://github.com/Andx667/advanced_slingloading_redux</Turkish>
         </Key>
     </Package>
 </Project>

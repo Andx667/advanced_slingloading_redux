@@ -3,12 +3,12 @@
 class CfgPatches {
     class ADDON {
         author = AUTHOR;
-        authors[] = {"DartRuffian"};
+        authors[] = {"Andx"};
         url = ECSTRING(main,url);
         name = COMPONENT_NAME;
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "MOD_PREFIX_main"
+            "aslr_main"
         };
         units[] = {};
         weapons[] = {};

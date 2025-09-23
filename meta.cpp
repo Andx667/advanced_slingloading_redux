@@ -1,4 +1,4 @@
 protocol = 1;
 publishedid = MOD_ID;
-name = "MOD_TITLE";
+name = "Advanced Slingloading Redux";
 timestamp = 5250140732737923549;

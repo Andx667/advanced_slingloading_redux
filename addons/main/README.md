@@ -1,4 +1,4 @@
-MOD_PREFIX_main
+aslr_main
 ===================
 
-Main Addon for MOD_TITLE
+Main Addon for Advanced Slingloading Redux
