@@ -31,7 +31,8 @@ The project is entirely **open-source** and any contributions are welcome.
 
 ## Core Features
 
-- Feature
+- Manual attaching of cargo
+- Allows for up to 3 slingload points per helicopter
 
 ## Contributing
 
