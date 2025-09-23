@@ -10,7 +10,7 @@
  * Return description <NONE>
  *
  * Example:
- * [params] call ttt_advancedslingloading_fnc_getRopesCount
+ * [params] call aslr_core_fnc_getRopesCount
  *
  * Public: No
  */

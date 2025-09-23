@@ -10,7 +10,7 @@
  * Return description <NONE>
  *
  * Example:
- * [params] call ttt_advancedslingloading_fnc_pickupRopesAction
+ * [params] call aslr_core_fnc_pickupRopesAction
  *
  * Public: No
  */

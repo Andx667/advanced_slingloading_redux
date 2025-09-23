@@ -10,7 +10,7 @@
  * Return description <NONE>
  *
  * Example:
- * [params] call ttt_advancedslingloading_fnc_getActiveRopesWithCargo
+ * [params] call aslr_core_fnc_getActiveRopesWithCargo
  *
  * Public: No
  */
