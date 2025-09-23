@@ -1,16 +1,16 @@
 #include "..\script_component.hpp"
 /*
  * Authors: Andx, sethduda
- * Description.
+ *  Constructs an array of all active rope indexes and position labels (e.g. [[rope index,"Front"],[rope index,"Rear"]]) for a specified vehicle
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * 0: Vehicle <OBJECT>
  *
  * Return Value:
- * Return description <NONE>
+ * Array of Rope index and labels <ARRAY>
  *
  * Example:
- * [params] call aslr_core_fnc_getActiveRopes
+ * [vehicle] call aslr_core_fnc_getActiveRopes
  *
  * Public: No
  */
@@ -31,4 +31,5 @@ _totalExistingRopes = count _existingRopes;
     };
     _ropeIndex = _ropeIndex + 1;
 } forEach _existingRopes;
+
 _activeRopes;

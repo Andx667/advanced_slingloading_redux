@@ -1,16 +1,16 @@
 #include "..\script_component.hpp"
 /*
  * Authors: Andx, sethduda
- * Description.
+ *  Constructs an array of all inactive rope indexes and position labels (e.g. [[rope index,"Front"],[rope index,"Rear"]]) for a specified vehicle
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * 0: Vehicle <OBJECT>
  *
  * Return Value:
- * Return description <NONE>
+ * Array of Rope index and labels <ARRAY>
  *
  * Example:
- * [params] call aslr_core_fnc_getInactiveRopes
+ * [vehicle] call aslr_core_fnc_getInactiveRopes
  *
  * Public: No
  */
