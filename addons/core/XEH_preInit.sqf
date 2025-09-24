@@ -8,3 +8,7 @@ private _category = [QUOTE(MOD_NAME), LLSTRING(displayName)];
 
 #include "initSettings.inc.sqf"
 #include "initKeybinds.inc.sqf"
+
+
+// CBA EVENTS
+[QGVAR(EH_ropeSetMass), FUNC(ropeSetMass)] call CBA_fnc_addEventHandler;

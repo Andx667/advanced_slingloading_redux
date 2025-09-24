@@ -19,30 +19,57 @@
 
 params ["_obj", "_heli", ["_ropes", []]];
 
-private ["_mass", "_lift", "_originalMass", "_heavyLiftMinLift"];
+private _liftCapacity = [_heli] call FUNC(getRopeLiftCapabiliy);
+private _originalMass = getMass _obj;
+private _heavyLiftMinLift = missionNamespace getVariable [QGVAR(SET_MASS), 4000];
 
-_lift = [_heli] call FUNC(getRopeLiftCapabiliy);
-_originalMass = getMass _obj;
-_heavyLiftMinLift = missionNamespace getVariable [QGVAR(SET_MASS), 4000];
-    if( _originalMass >= ((_lift) * 0.8) && _lift >= _heavyLiftMinLift ) then {
 
-        private ["_originalMassSet", "_ends", "_endDistance", "_ropeLength"];
+// When Cargo Mass is bigger then Lift Capacity while Lift Capacity is considered Heavy Lifter => make heavy lifters be able to lift everything
+if( _originalMass >= ((_liftCapacity) * 0.8) && _liftCapacity >= _heavyLiftMinLift ) then {
 
-        _originalMassSet = (getMass _obj) == _originalMass;
-        while { _obj in (ropeAttachedObjects _heli) && _originalMassSet } do {
+    private ["_originalMassSet", "_ends", "_endDistance", "_ropeLength"];
+
+    private _originalMassSet = (getMass _obj) isEqualTo _originalMass;
+
+
+    _cond1 = ; // only a one time check
+    _cond2 = _obj in (ropeAttachedObjects _heli); // needs to be checked constantly
+    _cond3 = (_ropeLength - 2) <= _endDistance && ((position _heli) select 2) > 0;
+
+    // If cargo mass is same as original Mass   // This whole check doesnt make much sense cause it had no chance to change since _originalMass got established ?!
+    if ((getMass _obj) isEqualTo _originalMass) then {
+
+        while { _obj in (ropeAttachedObjects _heli)  } do {
             {
                 _ends = ropeEndPosition _x;
                 _endDistance = (_ends select 0) distance (_ends select 1);
                 _ropeLength = ropeLength _x;
-                if((_ropeLength - 2) <= _endDistance && ((position _heli) select 2) > 0 ) then {
-                    [[_obj, ((_lift) * 0.8)], QFUNC(ropeSetMass), _obj, true] call FUNC(customRemoteExec);
+                if(_cond3) then {
+
+                    [QGVAR(EH_ropeSetMass), [_obj, ((_liftCapacity) * 0.8)], _obj] call CBA_fnc_targetEvent;     //_target can be single object or group or an array of those - will be executed only once per mashine
+
                     _originalMassSet = false;
                 };
             } forEach _ropes;
             sleep 0.1;
         };
-        while { _obj in (ropeAttachedObjects _heli) } do {
-            sleep 0.5;
-        };
-        [[_obj, _originalMass], QFUNC(ropeSetMass), _obj, true] call FUNC(customRemoteExec);
+
     };
+
+
+
+
+    // Reset Cargo Mass to Original once Detatched
+    [
+        {
+            !( (_this#0#0) in ropeAttachedObjects (_this#0#1) )
+        },
+        {
+            _this#1 call CBA_fnc_targetEvent;
+        },
+        [
+            [_obj, _heli],
+            [QGVAR(EH_ropeSetMass), [_obj, _originalMass], _obj]
+        ]
+    ] call CBA_fnc_waitUntilAndExecute;
+};
