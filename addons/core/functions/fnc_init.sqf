@@ -21,7 +21,7 @@ if(!isNil QGVAR(ROPE_INIT)) exitWith {};
 GVAR(ROPE_INIT) = true;
 INFO("Advanced Sling Loading Loading...");
 
-GVAR(Sling_Load_Point_Class_Height_Offset) = [
+GVAR(Sling_Load_Point_Class_Height_Offset) = [ //move these to config? compat mods?
     ["All", [-0.05, -0.05, -0.05]],
     ["CUP_CH47F_base", [-0.05, -2, -0.05]],
     ["CUP_AW159_Unarmed_Base", [-0.05, -0.06, -0.05]],
