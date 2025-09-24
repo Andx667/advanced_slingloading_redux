@@ -20,8 +20,6 @@ params ["_cargo","_player"];
 _vehicleWithIndex = _player getVariable [QGVAR(ropes_vehicle), [objNull, 0]];
 _vehicle = _vehicleWithIndex select 0;
 
-
-
 if(!isNull _vehicle) then {
     if(local _vehicle) then {
         private ["_ropes", "_attachmentPoints", "_objDistance", "_ropeLength", "_allCargo"];
@@ -32,7 +30,7 @@ if(!isNull _vehicle) then {
             _ropeLength = (ropeLength (_ropes select 0));
             _objDistance = (_cargo distance _vehicle) + 2;
             if( _objDistance > _ropeLength ) then {
-                [[LLSTRING(too_short), false], QFUNC(custom_hint), _player] call FUNC(customRemoteExec);
+                [[LLSTRING(too_short), false], QFUNC(customHint), _player] call FUNC(customRemoteExec);
             } else {
                 [_vehicle, _player] call FUNC(dropRopes);
 
