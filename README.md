@@ -8,15 +8,15 @@
     <a href="https://github.com/Andx667/advanced_slingloading_redux/issues">
         <img src="https://img.shields.io/github/issues-raw/Andx667/advanced_slingloading_redux.svg?style=flat-square&label=Issues" alt="Advanced Slingloading Redux Issues">
     </a>
-    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=MOD_ID">
-        <img src="https://img.shields.io/steam/downloads/MOD_ID.svg?style=flat-square&label=Downloads" alt="Advanced Slingloading Redux Downloads">
+    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3573851584">
+        <img src="https://img.shields.io/steam/downloads/3573851584.svg?style=flat-square&label=Downloads" alt="Advanced Slingloading Redux Downloads">
     </a>
-    <a href="https://github.com/Andx667/advanced_slingloading_redux/blob/master/LICENSE">
+    <a href="https://github.com/Andx667/advanced_slingloading_redux/blob/main/LICENSE.md">
         <img src="https://img.shields.io/badge/License-MIT-red?style=flat-square" alt="Advanced Slingloading Redux License">
     </a>
     <br>
     <img src="https://img.shields.io/github/actions/workflow/status/Andx667/advanced_slingloading_redux/hemtt.yml?style=flat-square&label=HEMTT" alt="HEMTT">
-    <img src="https://img.shields.io/github/actions/workflow/status/Andx667/advanced_slingloading_redux/arma.yml?style=flat-square&label=Validate" alt="Validate">
+    <img src="https://img.shields.io/github/actions/workflow/status/Andx667/advanced_slingloading_redux/validate.yml?style=flat-square&label=Validate" alt="Validate">
 </p>
 
 <p align="center">

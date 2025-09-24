@@ -1,16 +1,16 @@
 #include "..\script_component.hpp"
 /*
- * Authors: You
- * Description.
+ * Authors: Andx, sethduda
+ * Creates the addActions for the player to interact with the ropes and cargo.
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * None
  *
  * Return Value:
- * Return description <NONE>
+ * None
  *
  * Example:
- * [params] call aslr_core_fnc_addPlayerActions
+ * call aslr_core_fnc_addPlayerActions
  *
  * Public: No
  */

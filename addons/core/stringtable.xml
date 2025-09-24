@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="aslr">
-    <Package name="Addon Name">
+    <Package name="core">
         <Key ID="STR_aslr_core_displayName">
             <English>Core</English>
         </Key>
@@ -71,6 +71,10 @@
         <Key ID="STR_aslr_core_cannot_pickup_locked_vehicle">
             <English>Cannot pick up cargo ropes from locked vehicle</English>
             <German>Von einem abgeschlossenem Fahrzeug können die Seile nicht entfernt werden.</German>
+        </Key>
+        <Key ID="STR_aslr_core_cannot_deploy_locked_vehicle">
+            <English>Cannot deploy cargo ropes from locked vehicle</English>
+            <German>Aus einem abgeschlossenem Fahrzeug können keine Frachtseile abgeworfenw werden.</German>
         </Key>
     </Package>
 </Project>

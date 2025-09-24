@@ -1,22 +1,21 @@
 #include "..\script_component.hpp"
 /*
- * Authors: You
- * Description.
+ * Authors: Andx, sethduda
+ * Sets the mass on a rope.
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * 0: Cargo <OBJECT>
+ * 1: Mass <INTEGER>
  *
  * Return Value:
- * Return description <NONE>
+ * None
  *
  * Example:
- * [params] call aslr_core_fnc_ropeSetMass
+ * [cargo, 20] call aslr_core_fnc_ropeSetMass
  *
  * Public: No
  */
 
-private ["_obj","_mass"];
+params ["_obj", "_mass"];
 
-_obj = [_this,0] call BIS_fnc_param;
-_mass = [_this,1] call BIS_fnc_param;
 _obj setMass _mass;

@@ -1,24 +1,28 @@
 #include "..\script_component.hpp"
 /*
- * Authors: You
- * Description.
+ * Authors: Andx, sethduda
+ * Extends the cargo ropes.
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * 0: Vehicle <OBJECT>
+ * 1: Player <OBJECT>
+ * 2: Rope Index (optional, default: 0) <INTEGER>
  *
  * Return Value:
- * Return description <NONE>
+ * None
  *
  * Example:
- * [params] call aslr_core_fnc_extendRopes
+ * [vehicle, player] call aslr_core_fnc_extendRopes
  *
  * Public: No
  */
 
-params ["_vehicle","_player",["_ropeIndex",0]];
+params ["_vehicle", "_player", ["_ropeIndex", 0]];
 
 if(local _vehicle) then {
+
     private ["_existingRopes"];
+
     _existingRopes = [_vehicle,_ropeIndex] call FUNC(getRopes);
     if(count _existingRopes > 0) then {
         _ropeLength = ropeLength (_existingRopes select 0);
@@ -29,5 +33,5 @@ if(local _vehicle) then {
         };
     };
 } else {
-    [_this,QFUNC(extendRopes),_vehicle,true] call FUNC(customRemoteExec);
+    [_this, QFUNC(extendRopes), _vehicle, true] call FUNC(customRemoteExec);
 };

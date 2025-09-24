@@ -1,13 +1,22 @@
+[base]
+workshop = []
+parameters = [
+    "-window",
+    "-noPause",
+    "-noPauseAudio",
+]
+
+presets = []
+dlc = []
+optionals = []
+
 [default]
+extends = "base"
 workshop = [
     "450814997",  # CBA_A3
     "3499977893", # Advanced Dev Tools
     "623475643",  # 3DEN Enhanced
 ]
-presets = []
-dlc = []
-optionals = []
-parameters = []
 
 [ace]
 extends = "default"

@@ -1,16 +1,16 @@
 #include "..\script_component.hpp"
 /*
- * Authors: You
- * Description.
+ * Authors: Andx, sethduda
+ * ToDo
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * None
  *
  * Return Value:
- * Return description <NONE>
+ * None
  *
  * Example:
- * [params] call aslr_core_fnc_releaseCargoAction
+ * call aslr_core_fnc_releaseCargoAction
  *
  * Public: No
  */
@@ -23,10 +23,10 @@ if([_vehicle] call FUNC(canReleaseCargo)) then {
     _activeRopes = [_vehicle] call FUNC(getActiveRopesWithCargo);
     if(count _activeRopes > 1) then {
         ACE_player setVariable [QGVAR(Release_Cargo_Index_Vehicle), _vehicle];
-        [LLSTRING(release_cargo_ropes),QFUNC(releaseCargoIndexAction),_activeRopes,"Cargo"] call FUNC(showSelectRopesMenu);
+        [LLSTRING(release_cargo_ropes), QFUNC(releaseCargoIndexAction), _activeRopes, "Cargo"] call FUNC(showSelectRopesMenu);
     } else {
         if(count _activeRopes == 1) then {
-            [_vehicle,ACE_player,(_activeRopes select 0) select 0] call FUNC(releaseCargo);
+            [_vehicle, ACE_player, (_activeRopes select 0) select 0] call FUNC(releaseCargo);
         };
     };
 };

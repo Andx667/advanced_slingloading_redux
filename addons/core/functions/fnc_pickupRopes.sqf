@@ -1,24 +1,26 @@
 #include "..\script_component.hpp"
 /*
- * Authors: You
- * Description.
+ * Authors: Andx, sethduda
+ * Pick up rope at the given index.
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * 0: Vehicle <OBJECT>
+ * 1: Player <OBJECT>
+ * 2: Rope Index (optional, default: 0) <INTEGER>
  *
  * Return Value:
- * Return description <NONE>
+ * None
  *
  * Example:
- * [params] call aslr_core_fnc_pickupRopes
+ * [vehicle, player] call aslr_core_fnc_pickupRopes
  *
  * Public: No
  */
 
-params ["_vehicle","_player",["_ropesIndex",0]];
+params ["_vehicle", "_player", ["_ropesIndex", 0]];
 
 if(local _vehicle) then {
-    private ["_existingRopesAndCargo","_existingRopes","_existingCargo","_helper","_allCargo"];
+    private ["_existingRopesAndCargo", "_existingRopes", "_existingCargo", "_helper", "_allCargo"];
 
     _existingRopesAndCargo = [_vehicle,_ropesIndex] call FUNC(getRopesAndCargo);
     _existingRopes = _existingRopesAndCargo select 0;
@@ -27,9 +29,9 @@ if(local _vehicle) then {
         {
             _existingCargo ropeDetach _x;
         } forEach _existingRopes;
-        _allCargo = _vehicle getVariable [QGVAR(Cargo),[]];
+        _allCargo = _vehicle getVariable [QGVAR(Cargo), []];
         _allCargo set [_ropesIndex,objNull];
-        _vehicle setVariable [QGVAR(Cargo),_allCargo, true];
+        _vehicle setVariable [QGVAR(Cargo), _allCargo, true];
     };
     _helper = "Land_Can_V2_F" createVehicle position _player;
     {
@@ -37,9 +39,9 @@ if(local _vehicle) then {
         _helper attachTo [_player, [-0.1, 0.1, 0.15], "Pelvis"];
     } forEach _existingRopes;
     hideObject _helper;
-    [[_helper],QFUNC(customHideObjectGlobal)] call FUNC(customRemoteExecServer);
-    _player setVariable [QGVAR(Ropes_Vehicle), [_vehicle,_ropesIndex],true];
-    _player setVariable [QGVAR(Ropes_Pick_Up_Helper), _helper,true];
+    [[_helper], QFUNC(customHideObjectGlobal)] call FUNC(customRemoteExecServer);
+    _player setVariable [QGVAR(Ropes_Vehicle), [_vehicle, _ropesIndex], true];
+    _player setVariable [QGVAR(Ropes_Pick_Up_Helper), _helper, true];
 } else {
     [_this, QFUNC(pickupRopes), _vehicle, true] call FUNC(customRemoteExec);
 };

@@ -1,27 +1,27 @@
 #include "..\script_component.hpp"
 /*
- * Authors: You
- * Description.
+ * Authors: Andx, sethduda
+ * Constructs an array of all active rope indexes and position labels (e.g. [[rope index,"Front"],[rope index,"Rear"]]) for a specified vehicle
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * 0: Vehicle <OBJECT>
  *
  * Return Value:
- * Return description <NONE>
+ * Array of Rope index and labels <ARRAY>
  *
  * Example:
- * [params] call aslr_core_fnc_getActiveRopes
+ * [vehicle] call aslr_core_fnc_getActiveRopes
  *
  * Public: No
  */
 
 params ["_vehicle"];
 
-private ["_activeRopes","_existingRopes","_ropeLabelSets","_ropeIndex","_totalExistingRopes","_ropeLabels"];
+private ["_activeRopes", "_existingRopes", "_ropeLabelSets", "_ropeIndex", "_totalExistingRopes", "_ropeLabels"];
 
 _activeRopes = [];
-_existingRopes = _vehicle getVariable [QGVAR(custom_ropes),[]];
-_ropeLabelSets = [["Center"],["Front","Rear"],["Front","Center","Rear"]];
+_existingRopes = _vehicle getVariable [QGVAR(custom_ropes), []];
+_ropeLabelSets = [["Center"], ["Front", "Rear"], ["Front", "Center", "Rear"]];
 _ropeIndex = 0;
 _totalExistingRopes = count _existingRopes;
 {
@@ -31,4 +31,5 @@ _totalExistingRopes = count _existingRopes;
     };
     _ropeIndex = _ropeIndex + 1;
 } forEach _existingRopes;
+
 _activeRopes;

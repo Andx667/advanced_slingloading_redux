@@ -1,22 +1,33 @@
-name = "Advanced Slingloading Redux"
-author = "Andx"
-prefix = "aslr"
 mainprefix = "z"
+prefix = "aslr"
 
-[version]
-path = "addons/main/script_version.hpp"
-git_hash = 0
+name = "Advanced Slingloading Redux"
+
+[properties]
+author = "Andx"
+url = "https://github.com/Andx667/advanced_slingloading_redux"
+
+[binarize]
+# enabled = true # Default: true
 
 [files]
 include = [
     "mod.cpp",
     "meta.cpp",
-    "logo_aslr.png",
-    "logo_aslr_ca.paa",
+    "/img/*.png",
+    "/img/*.paa",
     "LICENSE.md",
     "README.md",
 ]
-exclude = []
 
-[properties]
-author = "Andx"
+exclude = [
+    "*.psd",        # By default this list is empty
+    "/.vscode/",
+]
+
+[version]
+# path = "addons/main/script_version.hpp" # Default
+# major = 0 # Overrides path when set
+# minor = 1
+# patch = 1
+git_hash = 0 # Default: 8

@@ -1,32 +1,35 @@
 #include "..\script_component.hpp"
 /*
- * Authors: You
- * Description.
+ * Authors: Andx, sethduda
+ * Retracts cargo ropes.
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * 0: Vehicle <OBJECT>
+ * 1: Player <OBJECT>
+ * 2: Rope Index (optional, default: 0) <INTEGER>
  *
  * Return Value:
- * Return description <NONE>
+ * None
  *
  * Example:
- * [params] call aslr_core_fnc_retractRopes
+ * [vehicle, player] call aslr_core_fnc_retractRopes
  *
  * Public: No
  */
 
-params ["_vehicle","_player",["_ropeIndex",0]];
+params ["_vehicle", "_player", ["_ropeIndex", 0]];
 
 if(local _vehicle) then {
-    private ["_existingRopesAndCargo","_existingRopes","_existingCargo","_allRopes","_activeRopes"];
+    private ["_existingRopesAndCargo", "_existingRopes", "_existingCargo", "_allRopes", "_activeRopes"];
+
     _existingRopesAndCargo = [_vehicle,_ropeIndex] call FUNC(getRopesAndCargo);
     _existingRopes = _existingRopesAndCargo select 0;
     _existingCargo = _existingRopesAndCargo select 1;
     if(isNull _existingCargo) then {
         call FUNC(dropRopes);
         {
-            [_x,_vehicle] spawn { //TODO Unschedule
-                params ["_rope","_vehicle"];
+            [_x, _vehicle] spawn {
+                params ["_rope", "_vehicle"];
                 private ["_count"];
                 _count = 0;
                 ropeUnwind [_rope, 3, 0];
@@ -37,14 +40,14 @@ if(local _vehicle) then {
                 ropeDestroy _rope;
             };
         } forEach _existingRopes;
-        _allRopes = _vehicle getVariable [QGVAR(custom_ropes),[]];
-        _allRopes set [_ropeIndex,[]];
-        _vehicle setVariable [QGVAR(custom_ropes),_allRopes,true];
+        _allRopes = _vehicle getVariable [QGVAR(custom_ropes), []];
+        _allRopes set [_ropeIndex, []];
+        _vehicle setVariable [QGVAR(custom_ropes), _allRopes, true];
     };
     _activeRopes = [_vehicle] call FUNC(getActiveRopes);
     if(count _activeRopes == 0) then {
-        _vehicle setVariable [QGVAR(custom_ropes),nil,true];
+        _vehicle setVariable [QGVAR(custom_ropes), nil, true];
     };
 } else {
-    [_this, QFUNC(retractRopes), _vehicle,true] call FUNC(customRemoteExec);
+    [_this, QFUNC(retractRopes), _vehicle, true] call FUNC(customRemoteExec);
 };

@@ -1,16 +1,16 @@
 #include "..\script_component.hpp"
 /*
- * Authors: You
- * Description.
+ * Authors: Andx, sethduda
+ * Checks if the deploy ropes action should be shown.
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * None
  *
  * Return Value:
- * Return description <NONE>
+ * None
  *
  * Example:
- * [params] call aslr_core_fnc_deployRopesActionCheck
+ * call aslr_core_fnc_deployRopesActionCheck
  *
  * Public: No
  */

@@ -1,16 +1,16 @@
 #include "..\script_component.hpp"
 /*
- * Authors: You
- * Description.
+ * Authors: Andx, sethduda
+ * Shorten the cargo ropes.
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * 0: Rope Index <INTEGER>
  *
  * Return Value:
- * Return description <NONE>
+ * None
  *
  * Example:
- * [params] call aslr_core_fnc_shortenRopesIndexAction
+ * [0] call aslr_core_fnc_shortenRopesIndexAction
  *
  * Public: No
  */
@@ -21,5 +21,5 @@ private ["_vehicle"];
 
 _vehicle = ACE_player getVariable [QGVAR(shorten_Index_Vehicle), objNull];
 if(_ropeIndex >= 0 && !isNull _vehicle && [_vehicle] call FUNC(canShortenRopes)) then {
-    [_vehicle,ACE_player,_ropeIndex] call FUNC(shortenRopes);
+    [_vehicle, ACE_player, _ropeIndex] call FUNC(shortenRopes);
 };

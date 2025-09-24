@@ -1,24 +1,24 @@
 #include "..\script_component.hpp"
 /*
- * Authors: You
- * Description.
+ * Authors: Andx, sethduda
+ * Gets the cornerpoints of a vehicle, to attach ropes to.
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * 0: Vehicle <OBJECT>
  *
  * Return Value:
- * Return description <NONE>
+ * List with the four corner points <ARRAY>
  *
  * Example:
- * [params] call aslr_core_fnc_getCornerPoints
+ * [vehicle] call aslr_core_fnc_getCornerPoints
  *
  * Public: No
  */
 
 params ["_vehicle"];
 
-private ["_centerOfMass","_bbr","_p1","_p2","_rearCorner","_rearCorner2","_frontCorner","_frontCorner2"];
-private ["_maxWidth","_widthOffset","_maxLength","_lengthOffset","_widthFactor","_lengthFactor","_maxHeight","_heightOffset"];
+private ["_centerOfMass", "_bbr", "_p1", "_p2", "_rearCorner", "_rearCorner2", "_frontCorner", "_frontCorner2"];
+private ["_maxWidth", "_widthOffset", "_maxLength", "_lengthOffset", "_widthFactor", "_lengthFactor", "_maxHeight", "_heightOffset"];
 
 // Correct width and length factor for air
 _widthFactor = 0.5;
@@ -40,11 +40,11 @@ _widthOffset = ((_maxWidth / 2) - abs ( _centerOfMass select 0 )) * _widthFactor
 _maxLength = abs ((_p2 select 1) - (_p1 select 1));
 _lengthOffset = ((_maxLength / 2) - abs (_centerOfMass select 1 )) * _lengthFactor;
 _maxHeight = abs ((_p2 select 2) - (_p1 select 2));
-_heightOffset = _maxHeight/6;
+_heightOffset = _maxHeight / 6;
 
-_rearCorner = [(_centerOfMass select 0) + _widthOffset, (_centerOfMass select 1) - _lengthOffset, (_centerOfMass select 2)+_heightOffset];
-_rearCorner2 = [(_centerOfMass select 0) - _widthOffset, (_centerOfMass select 1) - _lengthOffset, (_centerOfMass select 2)+_heightOffset];
-_frontCorner = [(_centerOfMass select 0) + _widthOffset, (_centerOfMass select 1) + _lengthOffset, (_centerOfMass select 2)+_heightOffset];
-_frontCorner2 = [(_centerOfMass select 0) - _widthOffset, (_centerOfMass select 1) + _lengthOffset, (_centerOfMass select 2)+_heightOffset];
+_rearCorner = [(_centerOfMass select 0) + _widthOffset, (_centerOfMass select 1) - _lengthOffset, (_centerOfMass select 2) + _heightOffset];
+_rearCorner2 = [(_centerOfMass select 0) - _widthOffset, (_centerOfMass select 1) - _lengthOffset, (_centerOfMass select 2) + _heightOffset];
+_frontCorner = [(_centerOfMass select 0) + _widthOffset, (_centerOfMass select 1) + _lengthOffset, (_centerOfMass select 2) + _heightOffset];
+_frontCorner2 = [(_centerOfMass select 0) - _widthOffset, (_centerOfMass select 1) + _lengthOffset, (_centerOfMass select 2) + _heightOffset];
 
-[_rearCorner,_rearCorner2,_frontCorner,_frontCorner2];
+[_rearCorner, _rearCorner2, _frontCorner, _frontCorner2];

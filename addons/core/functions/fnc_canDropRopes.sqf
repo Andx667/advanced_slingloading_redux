@@ -1,16 +1,16 @@
 #include "..\script_component.hpp"
 /*
- * Authors: You
- * Description.
+ * Authors: Andx, sethduda
+ * Checks if the ropes can be dropped by the player.
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * None
  *
  * Return Value:
- * Return description <NONE>
+ * Ropes can be dropped <BOOLEAN>
  *
  * Example:
- * [params] call aslr_core_fnc_canDropRopes
+ * call aslr_core_fnc_canDropRopes
  *
  * Public: No
  */

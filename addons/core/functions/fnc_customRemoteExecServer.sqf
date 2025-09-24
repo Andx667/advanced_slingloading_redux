@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /*
- * Authors: You
+ * Authors: Andx, sethduda
  * Description.
  *
  * Arguments:
@@ -15,14 +15,10 @@
  * Public: No
  */
 
-params ["_params","_functionName",["_isCall",false]];
+params ["_params", "_functionName", ["_isCall", false]];
 
-if(isNil "ExileClient_system_network_send") then {
-    if(_isCall) then {
-        _params remoteExecCall [_functionName, 2];
-    } else {
-        _params remoteExec [_functionName, 2];
-    };
+if(_isCall) then {
+    _params remoteExecCall [_functionName, 2];
 } else {
-    ["AdvancedSlingLoadingRemoteExecServer",[_params,_functionName,_isCall]] call ExileClient_system_network_send;
+    _params remoteExec [_functionName, 2];
 };

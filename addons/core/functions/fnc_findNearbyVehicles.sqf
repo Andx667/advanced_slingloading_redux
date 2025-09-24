@@ -1,21 +1,21 @@
 #include "..\script_component.hpp"
 /*
- * Authors: You
+ * Authors: Andx, sethduda
  * Description.
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * None
  *
  * Return Value:
- * Return description <NONE>
+ * List of nearby vehicles that can be slingloaded <ARRAY>
  *
  * Example:
- * [params] call aslr_core_fnc_findNearbyVehicles
+ * call aslr_core_fnc_findNearbyVehicles
  *
  * Public: No
  */
 
-private ["_nearVehicles","_nearVehiclesWithRopes","_vehicle","_ends","_end1","_end2","_playerPosAGL"];
+private ["_nearVehicles", "_nearVehiclesWithRopes", "_vehicle", "_ends", "_end1", "_end2", "_playerPosAGL"];
 
 _nearVehicles = [];
 
@@ -28,7 +28,7 @@ _nearVehiclesWithRopes = [];
 {
     _vehicle = _x;
     {
-        _ropes = _vehicle getVariable [QGVAR(custom_ropes),[]];
+        _ropes = _vehicle getVariable [QGVAR(custom_ropes), []];
         if(count _ropes > (_x select 0)) then {
             _ropes = _ropes select (_x select 0);
             {
