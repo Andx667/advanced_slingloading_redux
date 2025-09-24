@@ -17,11 +17,9 @@ categories:
       - 'pr/bug-fix'
   - title: '### IMPROVED:'
     labels:
-      - 'pr/enhancement'
       - 'pr/optimization'
   - title: '### CHANGED:'
     labels:
-      - 'pr/cleanup'
       - 'pr/change'
   - title: '### SETTINGS:'
     labels:
