@@ -1,0 +1,17 @@
+name: Release Drafter
+
+on:
+  push:
+    branches:
+    - master
+    - release-drafter  # for testing edits to this configuration
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Release Drafter
+        if: github.repository == 'Andx667/advanced_slingloading_redux'
+        uses: release-drafter/release-drafter@v6
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
