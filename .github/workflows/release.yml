@@ -15,9 +15,9 @@
 name: Release
 
 env:
-  FOLDER: # '@cvo_aux'
-  WORKSHOPID: # '3037257908'
-  WORKSHOPNAME: # 'my mod name on the workshop'
+  FOLDER:  '@aslr'
+  WORKSHOPID: 3573851584
+  WORKSHOPNAME: 'Advanced Slingloading Redux'
 
 on:
   release:
