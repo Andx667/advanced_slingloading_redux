@@ -16,7 +16,7 @@
     </a>
     <br>
     <img src="https://img.shields.io/github/actions/workflow/status/Andx667/advanced_slingloading_redux/hemtt.yml?style=flat-square&label=HEMTT" alt="HEMTT">
-    <img src="https://img.shields.io/github/actions/workflow/status/Andx667/advanced_slingloading_redux/arma.yml?style=flat-square&label=Validate" alt="Validate">
+    <img src="https://img.shields.io/github/actions/workflow/status/Andx667/advanced_slingloading_redux/validate.yml?style=flat-square&label=Validate" alt="Validate">
 </p>
 
 <p align="center">
