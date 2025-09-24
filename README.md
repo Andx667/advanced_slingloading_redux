@@ -11,7 +11,7 @@
     <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3573851584">
         <img src="https://img.shields.io/steam/downloads/3573851584.svg?style=flat-square&label=Downloads" alt="Advanced Slingloading Redux Downloads">
     </a>
-    <a href="https://github.com/Andx667/advanced_slingloading_redux/blob/master/LICENSE">
+    <a href="https://github.com/Andx667/advanced_slingloading_redux/blob/main/LICENSE.md">
         <img src="https://img.shields.io/badge/License-MIT-red?style=flat-square" alt="Advanced Slingloading Redux License">
     </a>
     <br>
