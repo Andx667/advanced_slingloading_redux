@@ -33,7 +33,7 @@ if(!isNull _vehicle) then {
             if( _objDistance > _ropeLength ) then {
                 [[LLSTRING(too_short), false], QFUNC(customHint), _player] call FUNC(customRemoteExec);
             } else {
-                [_vehicle, _player] call FUNC(dropRopes);
+                [_vehicle, _player, (_vehicleWithIndex select 1)] call FUNC(dropRopes);
 
                 [_cargo, _attachmentPoints select 0, [0,0,-1]] ropeAttachTo (_ropes select 0);
                 [_cargo, _attachmentPoints select 1, [0,0,-1]] ropeAttachTo (_ropes select 1);
