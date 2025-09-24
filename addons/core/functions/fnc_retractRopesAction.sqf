@@ -1,16 +1,16 @@
 #include "..\script_component.hpp"
 /*
  * Authors: Andx, sethduda
- * Description.
+ * ToDo
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * None
  *
  * Return Value:
- * Return description <NONE>
+ * None
  *
  * Example:
- * [params] call aslr_core_fnc_retractRopesAction
+ * call aslr_core_fnc_retractRopesAction
  *
  * Public: No
  */
@@ -24,13 +24,14 @@ if(isNull objectParent ACE_player) then {
 };
 if([_vehicle] call FUNC(canRetractRopes)) then {
     private ["_activeRopes"];
+
     _activeRopes = [_vehicle] call FUNC(getActiveRopesWithoutCargo);
     if(count _activeRopes > 1) then {
         ACE_player setVariable [QGVAR(Retract_Ropes_Index_Vehicle), _vehicle];
-        [LLSTRING(retract_cargo_ropes),QFUNC(retractRopesIndexAction),_activeRopes] call FUNC(showSelectRopesMenu);
+        [LLSTRING(retract_cargo_ropes), QFUNC(retractRopesIndexAction), _activeRopes] call FUNC(showSelectRopesMenu);
     } else {
         if(count _activeRopes == 1) then {
-            [_vehicle,ACE_player,(_activeRopes select 0) select 0] call FUNC(retractRopes);
+            [_vehicle, ACE_player, (_activeRopes select 0) select 0] call FUNC(retractRopes);
         };
     };
 };

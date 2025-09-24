@@ -1,21 +1,19 @@
 #include "..\script_component.hpp"
 /*
  * Authors: Andx, sethduda
- * Description.
+ * Initializes the sling load system.
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * None
  *
  * Return Value:
- * Return description <NONE>
+ * None
  *
  * Example:
- * [params] call aslr_core_fnc_init
+ * call aslr_core_fnc_init
  *
  * Public: No
  */
-
-params [];
 
 // Prevent advanced sling loading from installing twice
 if(!isNil QGVAR(ROPE_INIT)) exitWith {};
@@ -25,12 +23,6 @@ INFO("Advanced Sling Loading Loading...");
 
 GVAR(Sling_Load_Point_Class_Height_Offset) = [
     ["All", [-0.05, -0.05, -0.05]],
-    ["UK3CB_BAF_Merlin_HC3_18", [-0.05, -0.05, -0.05]],
-    ["UK3CB_BAF_Merlin_HC3_18_GPMG", [-0.05, -0.05, -0.05]],
-    ["UK3CB_BAF_Merlin_HC3_24", [-0.05, -0.05, -0.05]],
-    ["UK3CB_BAF_Merlin_HC3_32", [-0.05, -0.05, -0.05]],
-    ["UK3CB_BAF_Merlin_HC3_CSAR", [-0.05, -0.05, -0.05]],
-    ["UK3CB_ADA_B_Mi8", [-0.05, -0.05, -0.05]],
     ["CUP_CH47F_base", [-0.05, -2, -0.05]],
     ["CUP_AW159_Unarmed_Base", [-0.05, -0.06, -0.05]],
     ["RHS_CH_47F", [-0.75, -2.6, -0.75]],
@@ -49,7 +41,7 @@ GVAR(Supported_Vehicles) = [
 ];
 
 GVAR(Sling_Rules) = [
-    ["All","CAN_SLING","All"]
+    ["All", "CAN_SLING", "All"]
 ];
 
 
@@ -58,9 +50,9 @@ if(!isDedicated) then {
     [] spawn {
         while {true} do {
             if(!isNull ACE_player && isPlayer ACE_player) then {
-                if!( ACE_player getVariable [QGVAR(actions_loaded),false] ) then {
+                if!( ACE_player getVariable [QGVAR(actions_loaded), false] ) then {
                     call FUNC(addPlayerActions);
-                    ACE_player setVariable [QGVAR(actions_loaded),true];
+                    ACE_player setVariable [QGVAR(actions_loaded), true];
                 };
             };
             missionNamespace setVariable [QGVAR(nearby_vehicles), (call FUNC(findNearbyVehicles))];

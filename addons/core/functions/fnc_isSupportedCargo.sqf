@@ -1,30 +1,31 @@
 #include "..\script_component.hpp"
 /*
  * Authors: Andx, sethduda
- * Description.
+ * Checks if the cargo is allowed to be sling loaded.
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * 0: Vehicle <OBJECT>
+ * 1: Cargo <OBJECT>
  *
  * Return Value:
- * Return description <NONE>
+ * True if the cargo is allowed to be slingloaded, False otherwise
  *
  * Example:
- * [params] call aslr_core_fnc_isSupportedCargo
+ * [vehicle, cargo] call aslr_core_fnc_isSupportedCargo
  *
  * Public: No
  */
 
-params ["_vehicle","_cargo"];
+params ["_vehicle", "_cargo"];
 
 private ["_canSling"];
 
 _canSling = false;
-if(not isNull _vehicle && not isNull _cargo) then {
+if(not isNull _vehicle && not isNull _cargo) then {//ToDo check not
     {
         if(_vehicle isKindOf (_x select 0)) then {
             if(_cargo isKindOf (_x select 2)) then {
-                if( (toUpper (_x select 1)) == "CAN_SLING" ) then {
+                if( (toUpper (_x select 1)) == "CAN_SLING" ) then { //ToDo simplify
                     _canSling = true;
                 } else {
                     _canSling = false;

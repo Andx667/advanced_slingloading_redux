@@ -1,16 +1,16 @@
 #include "..\script_component.hpp"
 /*
  * Authors: Andx, sethduda
- * Description.
+ * Checks if the retract should be shown.
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * None
  *
  * Return Value:
- * Return description <NONE>
+ * None
  *
  * Example:
- * [params] call aslr_core_fnc_retractRopesActionCheck
+ * call aslr_core_fnc_retractRopesActionCheck
  *
  * Public: No
  */

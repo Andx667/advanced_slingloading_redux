@@ -1,20 +1,20 @@
 #include "..\script_component.hpp"
 /*
  * Authors: Andx, sethduda
- * Description.
+ * Gets count of ropes on the vehicle.
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * 0: Vehicle <OBJECT>
  *
  * Return Value:
- * Return description <NONE>
+ * Count of ropes <INTEGER>
  *
  * Example:
- * [params] call aslr_core_fnc_getRopesCount
+ * [vehicle] call aslr_core_fnc_getRopesCount
  *
  * Public: No
  */
 
 params ["_vehicle"];
 
-count (_vehicle getVariable [QGVAR(custom_ropes),[]]);
+count (_vehicle getVariable [QGVAR(custom_ropes), []]);

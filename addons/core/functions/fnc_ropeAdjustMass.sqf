@@ -1,30 +1,32 @@
 #include "..\script_component.hpp"
 /*
  * Authors: Andx, sethduda
- * Description.
+ * ToDo
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * 0: Cargo <OBJECT>
+ * 1: Vehicle <OBJECT>
+ * 2: Ropes (optional, default: []) <ARRAY>
  *
  * Return Value:
- * Return description <NONE>
+ * None
  *
  * Example:
- * [params] call aslr_core_fnc_ropeAdjustMass
+ * [cargo, helicopter] call aslr_core_fnc_ropeAdjustMass
  *
  * Public: No
  */
 
-params ["_obj","_heli",["_ropes",[]]];
+params ["_obj", "_heli", ["_ropes", []]];
 
-private ["_mass","_lift","_originalMass","_heavyLiftMinLift"];
+private ["_mass", "_lift", "_originalMass", "_heavyLiftMinLift"];
 
 _lift = [_heli] call FUNC(getRopeLiftCapabiliy);
 _originalMass = getMass _obj;
-_heavyLiftMinLift = missionNamespace getVariable [QGVAR(SET_MASS),4000];
-    if( _originalMass >= ((_lift)*0.8) && _lift >= _heavyLiftMinLift ) then {
+_heavyLiftMinLift = missionNamespace getVariable [QGVAR(SET_MASS), 4000];
+    if( _originalMass >= ((_lift) * 0.8) && _lift >= _heavyLiftMinLift ) then {
 
-        private ["_originalMassSet","_ends","_endDistance","_ropeLength"];
+        private ["_originalMassSet", "_ends", "_endDistance", "_ropeLength"];
 
         _originalMassSet = (getMass _obj) == _originalMass;
         while { _obj in (ropeAttachedObjects _heli) && _originalMassSet } do {
@@ -33,7 +35,7 @@ _heavyLiftMinLift = missionNamespace getVariable [QGVAR(SET_MASS),4000];
                 _endDistance = (_ends select 0) distance (_ends select 1);
                 _ropeLength = ropeLength _x;
                 if((_ropeLength - 2) <= _endDistance && ((position _heli) select 2) > 0 ) then {
-                    [[_obj, ((_lift)*0.8)],QFUNC(ropeSetMass),_obj,true] call FUNC(customRemoteExec);
+                    [[_obj, ((_lift) * 0.8)], QFUNC(ropeSetMass), _obj, true] call FUNC(customRemoteExec);
                     _originalMassSet = false;
                 };
             } forEach _ropes;
@@ -42,5 +44,5 @@ _heavyLiftMinLift = missionNamespace getVariable [QGVAR(SET_MASS),4000];
         while { _obj in (ropeAttachedObjects _heli) } do {
             sleep 0.5;
         };
-        [[_obj, _originalMass],QFUNC(ropeSetMass),_obj,true] call FUNC(customRemoteExec);
+        [[_obj, _originalMass], QFUNC(ropeSetMass), _obj, true] call FUNC(customRemoteExec);
     };

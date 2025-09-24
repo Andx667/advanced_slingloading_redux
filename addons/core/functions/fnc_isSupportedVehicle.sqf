@@ -1,13 +1,14 @@
 #include "..\script_component.hpp"
 /*
  * Authors: Andx, sethduda
- * Description.
+ * Checks if the vehicles is allowed to sling load.
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * 0: Vehicle <OBJECT>
+ * 1: Is Supported <BOOLEAN>
  *
  * Return Value:
- * Return description <NONE>
+ * True if the Vehicle is supported, False otherwise <BOOLEAN>
  *
  * Example:
  * [params] call aslr_core_fnc_isSupportedVehicle
@@ -15,10 +16,10 @@
  * Public: No
  */
 
-params ["_vehicle","_isSupported"];
+params ["_vehicle", "_isSupported"];
 
 _isSupported = false;
-if(not isNull _vehicle) then {
+if(not isNull _vehicle) then { //ToDo Check the not
     {
         if(_vehicle isKindOf _x) then {
             _isSupported = true;
