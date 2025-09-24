@@ -1,21 +1,22 @@
 #include "..\script_component.hpp"
 /*
  * Authors: Andx, sethduda
- * Description.
+ * Attaches ropes to cargo.
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * 0: Cargo <OBJECT>
+ * 1: Player <OBJECT>
  *
  * Return Value:
- * Return description <NONE>
+ * None
  *
  * Example:
- * [params] call aslr_core_fnc_attachRopes
+ * [cargo, player] call aslr_core_fnc_attachRopes
  *
  * Public: No
  */
 
-params ["_cargo","_player"];
+params ["_cargo", "_player"];
 
 _vehicleWithIndex = _player getVariable [QGVAR(ropes_vehicle), [objNull, 0]];
 _vehicle = _vehicleWithIndex select 0;

@@ -1,24 +1,25 @@
 #include "..\script_component.hpp"
 /*
  * Authors: Andx, sethduda
- * Description.
+ * Checks if the ropes can be attached to the cargo.
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * 0: Vehicle <OBJECT>
+ * 1: Cargo <OBJECT>
  *
  * Return Value:
- * Return description <NONE>
+ * Ropes can be attached <BOOLEAN>
  *
  * Example:
- * [params] call aslr_core_fnc_canAttachRopes
+ * [vehicle, cargo] call aslr_core_fnc_canAttachRopes
  *
  * Public: No
  */
 
-params ["_vehicle","_cargo"];
+params ["_vehicle", "_cargo"];
 
 if(!isNull _vehicle && !isNull _cargo) then {
-    [_vehicle,_cargo] call FUNC(isSupportedCargo) && isNull objectParent ACE_player && ACE_player distance _cargo < 10 && _vehicle != _cargo;
+    [_vehicle, _cargo] call FUNC(isSupportedCargo) && isNull objectParent ACE_player && ACE_player distance _cargo < 10 && _vehicle != _cargo;
 } else {
     false;
 };

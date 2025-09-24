@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Authors: Andx, sethduda
- *  Constructs an array of all active rope indexes and position labels (e.g. [[rope index,"Front"],[rope index,"Rear"]]) for a specified vehicle
+ * Constructs an array of all active rope indexes and position labels (e.g. [[rope index,"Front"],[rope index,"Rear"]]) for a specified vehicle
  *
  * Arguments:
  * 0: Vehicle <OBJECT>
@@ -17,11 +17,11 @@
 
 params ["_vehicle"];
 
-private ["_activeRopes","_existingRopes","_ropeLabelSets","_ropeIndex","_totalExistingRopes","_ropeLabels"];
+private ["_activeRopes", "_existingRopes", "_ropeLabelSets", "_ropeIndex", "_totalExistingRopes", "_ropeLabels"];
 
 _activeRopes = [];
-_existingRopes = _vehicle getVariable [QGVAR(custom_ropes),[]];
-_ropeLabelSets = [["Center"],["Front","Rear"],["Front","Center","Rear"]];
+_existingRopes = _vehicle getVariable [QGVAR(custom_ropes), []];
+_ropeLabelSets = [["Center"], ["Front", "Rear"], ["Front", "Center", "Rear"]];
 _ropeIndex = 0;
 _totalExistingRopes = count _existingRopes;
 {

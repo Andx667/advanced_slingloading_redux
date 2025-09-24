@@ -1,16 +1,16 @@
 #include "..\script_component.hpp"
 /*
  * Authors: Andx, sethduda
- * Description.
+ * Constructs an array with all ropes that have cargo attached.
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * 0: Vehicle <OBJECT>
  *
  * Return Value:
- * Return description <NONE>
+ * List of ropes with cargo <ARRAY>
  *
  * Example:
- * [params] call aslr_core_fnc_getActiveRopesWithCargo
+ * [vehicle] call aslr_core_fnc_getActiveRopesWithCargo
  *
  * Public: No
  */
@@ -28,4 +28,5 @@ _activeRopes = call FUNC(getActiveRopes);
         _activeRopesWithCargo pushBack _x;
     };
 } forEach _activeRopes;
+
 _activeRopesWithCargo;

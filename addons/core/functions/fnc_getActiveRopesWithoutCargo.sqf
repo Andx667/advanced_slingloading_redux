@@ -1,23 +1,23 @@
 #include "..\script_component.hpp"
 /*
  * Authors: Andx, sethduda
- * Description.
+ * Constructs an array with all ropes that have cargo no attached.
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * 0: Vehicle <OBJECT>
  *
  * Return Value:
- * Return description <NONE>
+ * List of ropes without cargo <ARRAY>
  *
  * Example:
- * [params] call aslr_core_fnc_getActiveRopesWithoutCargo
+ * [vehicle] call aslr_core_fnc_getActiveRopesWithCargo
  *
  * Public: No
  */
 
 params ["_vehicle"];
 
-private ["_activeRopesWithoutCargo","_existingCargo","_activeRopes","_cargo"];
+private ["_activeRopesWithoutCargo", "_existingCargo", "_activeRopes", "_cargo"];
 
 _activeRopesWithoutCargo = [];
 _existingCargo = _vehicle getVariable [QGVAR(Cargo),[]];
@@ -28,4 +28,5 @@ _activeRopes = call FUNC(getActiveRopes);
         _activeRopesWithoutCargo pushBack _x;
     };
 } forEach _activeRopes;
+
 _activeRopesWithoutCargo;

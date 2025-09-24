@@ -1,10 +1,10 @@
 #include "..\script_component.hpp"
 /*
  * Authors: Andx, sethduda
- * Description.
+ * toDo
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * 0: Rope Index <INTEGER>
  *
  * Return Value:
  * Return description <NONE>
@@ -17,9 +17,9 @@
 
 params ["_ropeIndex"];
 
-private ["_vehicle","_canDeployRopes"];
+private ["_vehicle", "_canDeployRopes"];
 
 _vehicle = ACE_player getVariable [QGVAR(Extend_Index_Vehicle), objNull];
 if(_ropeIndex >= 0 && !isNull _vehicle && [_vehicle] call FUNC(canExtendRopes)) then {
-    [_vehicle,ACE_player,_ropeIndex] call FUNC(extendRopes);
+    [_vehicle, ACE_player, _ropeIndex] call FUNC(extendRopes);
 };

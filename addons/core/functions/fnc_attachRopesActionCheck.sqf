@@ -1,22 +1,22 @@
 #include "..\script_component.hpp"
 /*
  * Authors: Andx, sethduda
- * Description.
+ * Checks if the action should be shown.
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * None
  *
  * Return Value:
- * Return description <NONE>
+ * None
  *
  * Example:
- * [params] call aslr_core_fnc_attachRopesActionCheck
+ * call aslr_core_fnc_attachRopesActionCheck
  *
  * Public: No
  */
 
-private ["_vehicleWithIndex","_cargo"];
+private ["_vehicleWithIndex", "_cargo"];
 
-_vehicleWithIndex = ACE_player getVariable [QGVAR(ropes_vehicle), [objNull,0]];
+_vehicleWithIndex = ACE_player getVariable [QGVAR(ropes_vehicle), [objNull, 0]];
 _cargo = cursorTarget;
-[_vehicleWithIndex select 0,_cargo] call FUNC(canAttachRopes);
+[_vehicleWithIndex select 0, _cargo] call FUNC(canAttachRopes);

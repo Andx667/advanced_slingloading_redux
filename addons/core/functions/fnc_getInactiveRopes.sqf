@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Authors: Andx, sethduda
- *  Constructs an array of all inactive rope indexes and position labels (e.g. [[rope index,"Front"],[rope index,"Rear"]]) for a specified vehicle
+ * Constructs an array of all inactive rope indexes and position labels (e.g. [[rope index,"Front"],[rope index,"Rear"]]) for a specified vehicle
  *
  * Arguments:
  * 0: Vehicle <OBJECT>
@@ -27,8 +27,9 @@ _totalExistingRopes = count _existingRopes;
 {
     if(count _x == 0) then {
         _ropeLabels = _ropeLabelSets select (_totalExistingRopes - 1);
-        _inactiveRopes pushBack [_ropeIndex,_ropeLabels select _ropeIndex];
+        _inactiveRopes pushBack [_ropeIndex, _ropeLabels select _ropeIndex];
     };
     _ropeIndex = _ropeIndex + 1;
 } forEach _existingRopes;
+
 _inactiveRopes;

@@ -1,16 +1,19 @@
 #include "..\script_component.hpp"
 /*
  * Authors: Andx, sethduda
- * Description.
+ * Deploy ropes from vehicle.
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * 0: Vehicle <OBJECT>
+ * 1: Player <OBJECT>
+ * 2: Cargo Count (optional, default: 1) <INTEGER>
+ * 3: Rope Length (optional, default: 15) <INTEGER>
  *
  * Return Value:
- * Return description <NONE>
+ * None
  *
  * Example:
- * [params] call aslr_core_fnc_deplayRopes
+ * [vehicle, player] call aslr_core_fnc_deplayRopes
  *
  * Public: No
  */
@@ -28,7 +31,7 @@ if(local _vehicle) then {
             [[LLSTRING(doesnt_support), false], QFUNC(customHint), _player] call FUNC(customRemoteExec);
         };
         if(count _slingLoadPoints < _cargoCount) exitWith {
-            [[LLSTRING(doenst_support_multi), false], QFUNC(customHint),_player] call FUNC(customRemoteExec); //"Vehicle doesn't support " + _cargoCount + " cargo ropes" ToDo
+            [[LLSTRING(doenst_support_multi), false], QFUNC(customHint), _player] call FUNC(customRemoteExec); //"Vehicle doesn't support " + _cargoCount + " cargo ropes" ToDo
         };
 
         _cargoRopes = [];
@@ -39,8 +42,8 @@ if(local _vehicle) then {
             _cargo pushBack objNull;
         };
 
-        _vehicle setVariable [QGVAR(custom_ropes),_cargoRopes,true];
-        _vehicle setVariable [QGVAR(cargo),_cargo,true];
+        _vehicle setVariable [QGVAR(custom_ropes), _cargoRopes, true];
+        _vehicle setVariable [QGVAR(cargo), _cargo, true];
 
         for "_i" from 0 to (_cargoCount - 1) do {
             [_vehicle, _player, _i] call FUNC(deployRopesIndex);

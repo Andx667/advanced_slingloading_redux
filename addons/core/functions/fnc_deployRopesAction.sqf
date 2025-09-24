@@ -1,22 +1,22 @@
 #include "..\script_component.hpp"
 /*
  * Authors: Andx, sethduda
- * Description.
+ * ToDo
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * None
  *
  * Return Value:
- * Return description <NONE>
+ * None
  *
  * Example:
- * [params] call aslr_core_fnc_deployRopesAction
+ * call aslr_core_fnc_deployRopesAction
  *
  * Public: No
  */
 
 
-private ["_vehicle","_canDeployRopes"];
+private ["_vehicle", "_canDeployRopes"];
 
 if(isNull objectParent ACE_player) then {
     _vehicle = cursorTarget;
@@ -30,7 +30,7 @@ if([_vehicle] call FUNC(canDeployRopes)) then {
 
     if!(missionNamespace getVariable [QGVAR(LOCKED_VEHICLES_ENABLED),false]) then {
         if( locked _vehicle > 1 ) then {
-            ["Cannot deploy cargo ropes from locked vehicle",false] call FUNC(customHint);
+            [LLSTRING(cannot_deploy_locked_vehicle), false] call FUNC(customHint);
             _canDeployRopes = false;
         };
     };
@@ -56,7 +56,7 @@ if([_vehicle] call FUNC(canDeployRopes)) then {
                 ACE_player setVariable [QGVAR(Deploy_Count_Vehicle), _vehicle];
 
                 ASL_Deploy_Ropes_Count_Menu = [
-                        ["Deploy Ropes",false]
+                        ["Deploy Ropes", false]
                 ];
 
                 ASL_Deploy_Ropes_Count_Menu pushBack [LLSTRING(single_cargo), [0], "", -5, [["expression", QUOTE([1] call FUNC(deployRopesCountAction))]], "1", "1"];
@@ -74,9 +74,6 @@ if([_vehicle] call FUNC(canDeployRopes)) then {
             } else {
                 [_vehicle,ACE_player] call FUNC(deployRopes);
             };
-
         };
-
     };
-
 };

@@ -15,7 +15,7 @@
  * Public: No
  */
 
-params ["_params","_functionName",["_isCall",false]];
+params ["_params", "_functionName", ["_isCall", false]];
 
 if(_isCall) then {
     _params remoteExecCall [_functionName, 2];

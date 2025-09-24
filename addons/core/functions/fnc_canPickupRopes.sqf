@@ -1,18 +1,18 @@
 #include "..\script_component.hpp"
 /*
  * Authors: Andx, sethduda
- * Description.
+ * Checks if the ropes can be picked up
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * None
  *
  * Return Value:
- * Return description <NONE>
+ * Ropes can be picked up <BOOLEAN>
  *
  * Example:
- * [params] call aslr_core_fnc_canPickupRopes
+ * call aslr_core_fnc_canPickupRopes
  *
  * Public: No
  */
 
- count (ACE_player getVariable [QGVAR(ropes_vehicle), []]) == 0 && count (missionNamespace getVariable [QGVAR(nearby_vehicles),[]]) > 0 && isNull objectParent ACE_player;
+ count (ACE_player getVariable [QGVAR(ropes_vehicle), []]) == 0 && count (missionNamespace getVariable [QGVAR(nearby_vehicles), []]) > 0 && isNull objectParent ACE_player;

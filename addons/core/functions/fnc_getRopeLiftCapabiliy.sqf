@@ -1,16 +1,16 @@
 #include "..\script_component.hpp"
 /*
  * Authors: Andx, sethduda
- * Description.
+ * Gets the Lift capability of a Vehicle.
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * 0: Vehicle <OBJECT>
  *
  * Return Value:
- * Return description <NONE>
+ * Mass that can be liftet <INTEGER>
  *
  * Example:
- * [params] call aslr_core_fnc_getRopeLiftCapabiliy
+ * [vehicle] call aslr_core_fnc_getRopeLiftCapabiliy
  *
  * Public: No
  */
@@ -18,8 +18,10 @@
 params ["_vehicle"];
 
 private ["_slingLoadMaxCargoMass"];
+
 _slingLoadMaxCargoMass = getNumber (configOf _vehicle >> "slingLoadMaxCargoMass");
 if(_slingLoadMaxCargoMass <= 0) then {
     _slingLoadMaxCargoMass = 4000;
 };
+
 _slingLoadMaxCargoMass;
