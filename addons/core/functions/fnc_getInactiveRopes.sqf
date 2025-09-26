@@ -17,19 +17,17 @@
 
 params ["_vehicle"];
 
-private ["_inactiveRopes", "_existingRopes", "_ropeLabelSets", "_ropeIndex", "_totalExistingRopes", "_ropeLabels"];
+private _inactiveRopes = [];
+private _existingRopes = _vehicle getVariable [QGVAR(custom_ropes),[]];
+private _ropeLabelSets = [["Center"], ["Front", "Rear"], ["Front", "Center", "Rear"]];
+private _totalExistingRopes = count _existingRopes;
 
-_inactiveRopes = [];
-_existingRopes = _vehicle getVariable [QGVAR(custom_ropes),[]];
-_ropeLabelSets = [["Center"], ["Front", "Rear"], ["Front", "Center", "Rear"]];
-_ropeIndex = 0;
-_totalExistingRopes = count _existingRopes;
 {
-    if(count _x == 0) then {
-        _ropeLabels = _ropeLabelSets select (_totalExistingRopes - 1);
-        _inactiveRopes pushBack [_ropeIndex, _ropeLabels select _ropeIndex];
+
+    if (count _x == 0) then {
+        private _ropeLabels = _ropeLabelSets select (_totalExistingRopes - 1);
+        _inactiveRopes pushBack [_forEachIndex, _ropeLabels select _forEachIndex];
     };
-    _ropeIndex = _ropeIndex + 1;
 } forEach _existingRopes;
 
-_inactiveRopes;
+_inactiveRopes

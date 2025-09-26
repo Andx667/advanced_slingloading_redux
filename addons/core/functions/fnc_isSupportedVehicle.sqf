@@ -19,9 +19,9 @@
 params ["_vehicle", "_isSupported"];
 
 _isSupported = false;
-if(not isNull _vehicle) then { //ToDo Check the not
+if (not isNull _vehicle) then { //ToDo Check the not
     {
-        if(_vehicle isKindOf _x) then {
+        if (_vehicle isKindOf _x) then {
             _isSupported = true;
         };
     } forEach (missionNamespace getVariable [QGVAR(Supported_Vehicles_OVERRIDE), GVAR(Supported_Vehicles)]);

@@ -15,7 +15,7 @@
  * Public: No
  */
 
-if(isNull objectParent ACE_player) then {
+if (isNull objectParent ACE_player) then {
     [cursorTarget] call FUNC(canDeployRopes);
 } else {
     [vehicle ACE_player] call FUNC(canDeployRopes);

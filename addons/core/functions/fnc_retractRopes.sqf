@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 /*
- * Authors: Andx, sethduda
+ * Authors: Andx, sethduda, Zorn
  * Retracts cargo ropes.
  *
  * Arguments:
@@ -19,35 +19,30 @@
 
 params ["_vehicle", "_player", ["_ropeIndex", 0]];
 
-if(local _vehicle) then {
-    private ["_existingRopesAndCargo", "_existingRopes", "_existingCargo", "_allRopes", "_activeRopes"];
+if !(local _vehicle) exitWith { [QGVAR(EH_execQFUNC), [_this, QFUNC(retractRopes)], _vehicle] call CBA_fnc_targetEvent; };
 
-    _existingRopesAndCargo = [_vehicle,_ropeIndex] call FUNC(getRopesAndCargo);
-    _existingRopes = _existingRopesAndCargo select 0;
-    _existingCargo = _existingRopesAndCargo select 1;
-    if(isNull _existingCargo) then {
-        call FUNC(dropRopes);
-        {
-            [_x, _vehicle] spawn {
-                params ["_rope", "_vehicle"];
-                private ["_count"];
-                _count = 0;
-                ropeUnwind [_rope, 3, 0];
-                while {(!ropeUnwound _rope) && _count < 20} do {
-                    sleep 1;
-                    _count = _count + 1;
-                };
-                ropeDestroy _rope;
-            };
-        } forEach _existingRopes;
-        _allRopes = _vehicle getVariable [QGVAR(custom_ropes), []];
-        _allRopes set [_ropeIndex, []];
-        _vehicle setVariable [QGVAR(custom_ropes), _allRopes, true];
-    };
-    _activeRopes = [_vehicle] call FUNC(getActiveRopes);
-    if(count _activeRopes == 0) then {
-        _vehicle setVariable [QGVAR(custom_ropes), nil, true];
-    };
-} else {
-    [_this, QFUNC(retractRopes), _vehicle, true] call FUNC(customRemoteExec);
+[_vehicle,_ropeIndex] call FUNC(getRopesAndCargo) params ["_existingRopes", "_existingCargo"];
+
+if (isNull _existingCargo) then {
+
+    call FUNC(dropRopes);
+
+    // Pull in Rope
+    {
+        ropeUnwind [_x, 3, 0];
+        [
+            { ropeUnwound _this },
+            { ropeDestroy _this },
+            _x,
+            20,
+            { ropeDestroy _this }
+        ] call CBA_fnc_waitUntilAndExecute;
+    } forEach _existingRopes;
+
+    private _allRopes = _vehicle getVariable [QGVAR(custom_ropes), []];
+    _allRopes set [_ropeIndex, []];
+    _vehicle setVariable [QGVAR(custom_ropes), _allRopes, true];
 };
+
+// Cleanup when no more ropes
+if ([_vehicle] call FUNC(getActiveRopes) isEqualTo []) then { _vehicle setVariable [QGVAR(custom_ropes), nil, true]; };

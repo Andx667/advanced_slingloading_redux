@@ -17,9 +17,6 @@
 
 params ["_ropesIndex"];
 
-private ["_vehicle"];
+private _vehicle = ACE_player getVariable [QGVAR(Retract_Ropes_Index_Vehicle), objNull];
 
-_vehicle = ACE_player getVariable [QGVAR(Retract_Ropes_Index_Vehicle), objNull];
-if(_ropesIndex >= 0 && !isNull _vehicle && [_vehicle] call FUNC(canRetractRopes)) then {
-    [_vehicle, ACE_player, _ropesIndex] call FUNC(retractRopes);
-};
+if ( _ropesIndex >= 0 && { !isNull _vehicle && { [_vehicle] call FUNC(canRetractRopes) } } ) then { [_vehicle, ACE_player, _ropesIndex] call FUNC(retractRopes); };

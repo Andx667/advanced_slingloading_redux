@@ -18,14 +18,13 @@
 
 params ["_vehicle", "_cargo"];
 
-private ["_canSling"];
+private _canSling = false;
 
-_canSling = false;
-if(not isNull _vehicle && not isNull _cargo) then {//ToDo check not
+if ( !isNull _vehicle && { !isNull _cargo }) then {//ToDo check not
     {
-        if(_vehicle isKindOf (_x select 0)) then {
-            if(_cargo isKindOf (_x select 2)) then {
-                if( (toUpper (_x select 1)) == "CAN_SLING" ) then { //ToDo simplify
+        if (_vehicle isKindOf (_x select 0)) then {
+            if (_cargo isKindOf (_x select 2)) then {
+                if ((toUpper (_x select 1)) == "CAN_SLING") then { //ToDo simplify
                     _canSling = true;
                 } else {
                     _canSling = false;

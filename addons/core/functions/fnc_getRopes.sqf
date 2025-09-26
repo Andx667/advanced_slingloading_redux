@@ -18,12 +18,6 @@
 
 params ["_vehicle", "_ropeIndex"];
 
-private ["_allRopes", "_selectedRopes"];
+private _allRopes = _vehicle getVariable [QGVAR(custom_ropes), []];
 
-_selectedRopes = [];
-_allRopes = _vehicle getVariable [QGVAR(custom_ropes), []];
-if(count _allRopes > _ropeIndex) then {
-    _selectedRopes = _allRopes select _ropeIndex;
-};
-
-_selectedRopes;
+[ [], _allRopes select _ropeIndex ] select (count _allRopes > _ropeIndex)

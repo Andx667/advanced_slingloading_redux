@@ -17,9 +17,6 @@
 
 params ["_ropeIndex"];
 
-private ["_vehicle", "_canDeployRopes"];
+private _vehicle = ACE_player getVariable [QGVAR(Extend_Index_Vehicle), objNull];
 
-_vehicle = ACE_player getVariable [QGVAR(Extend_Index_Vehicle), objNull];
-if(_ropeIndex >= 0 && !isNull _vehicle && [_vehicle] call FUNC(canExtendRopes)) then {
-    [_vehicle, ACE_player, _ropeIndex] call FUNC(extendRopes);
-};
+if (_ropeIndex >= 0 && { !isNull _vehicle && { [_vehicle] call FUNC(canExtendRopes) } }) then { [_vehicle, ACE_player, _ropeIndex] call FUNC(extendRopes); };
