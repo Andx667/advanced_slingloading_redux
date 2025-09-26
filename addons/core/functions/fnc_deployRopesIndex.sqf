@@ -20,28 +20,22 @@
 
 params ["_vehicle", "_player", ["_ropesIndex", 0], ["_ropeLength", 15]];
 
-if(local _vehicle) then {
-    private ["_existingRopes", "_existingRopesCount", "_allRopes"];
+if !(local _vehicle) exitWith { [QGVAR(EH_execQFUNC), [_this, QFUNC(deployRopesIndex)], _vehicle] call CBA_fnc_targetEvent; };
 
-    _existingRopes = [_vehicle,_ropesIndex] call FUNC(getRopes);
-    _existingRopesCount = [_vehicle] call FUNC(getRopesCount);
+private _existingRopes = [_vehicle,_ropesIndex] call FUNC(getRopes);
+private _existingRopesCount = [_vehicle] call FUNC(getRopesCount);
 
-    if(count _existingRopes == 0) then {
-        _slingLoadPoints = [_vehicle] call FUNC(getSlingLoadPoints);
-        _cargoRopes = [];
-        _cargoRopes pushBack ropeCreate [_vehicle, (_slingLoadPoints select (_existingRopesCount - 1)) select _ropesIndex, 0];
-        _cargoRopes pushBack ropeCreate [_vehicle, (_slingLoadPoints select (_existingRopesCount - 1)) select _ropesIndex, 0];
-        _cargoRopes pushBack ropeCreate [_vehicle, (_slingLoadPoints select (_existingRopesCount - 1)) select _ropesIndex, 0];
-        _cargoRopes pushBack ropeCreate [_vehicle, (_slingLoadPoints select (_existingRopesCount - 1)) select _ropesIndex, 0];
+if (_existingRopes isEqualTo []) then {
+    private _slingLoadPoints = [_vehicle] call FUNC(getSlingLoadPoints);
+    private _cargoRopes = [];
 
-        {
-            ropeUnwind [_x, 5, _ropeLength];
-        } forEach _cargoRopes;
-
-        _allRopes = _vehicle getVariable [QGVAR(custom_ropes), []];
-        _allRopes set [_ropesIndex, _cargoRopes];
-        _vehicle setVariable [QGVAR(custom_ropes), _allRopes, true];
+    for "_i" from 0 to 3 do {
+        private _rope = ropeCreate [_vehicle, (_slingLoadPoints select (_existingRopesCount - 1)) select _ropesIndex, 0];
+        ropeUnwind [_rope, 5, _ropeLength];
+        _cargoRopes pushBack _rope;
     };
-} else {
-    [_this, QFUNC(deployRopesIndex), _vehicle, true] call FUNC(customRemoteExec);
+
+    _allRopes = _vehicle getVariable [QGVAR(custom_ropes), []];
+    _allRopes set [_ropesIndex, _cargoRopes];
+    _vehicle setVariable [QGVAR(custom_ropes), _allRopes, true];
 };

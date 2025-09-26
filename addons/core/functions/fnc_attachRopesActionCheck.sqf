@@ -15,8 +15,6 @@
  * Public: No
  */
 
-private ["_vehicleWithIndex", "_cargo"];
-
-_vehicleWithIndex = ACE_player getVariable [QGVAR(ropes_vehicle), [objNull, 0]];
-_cargo = cursorTarget;
+private _vehicleWithIndex = ACE_player getVariable [QGVAR(ropes_vehicle), [objNull, 0]];
+private _cargo = cursorTarget;
 [_vehicleWithIndex select 0, _cargo] call FUNC(canAttachRopes);

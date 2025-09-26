@@ -19,18 +19,13 @@
 
 params ["_vehicle", "_player", ["_ropeIndex", 0]];
 
-if(local _vehicle) then {
-    private ["_existingRopesAndCargo", "_existingRopes", "_existingCargo", "_allCargo"];
-    _existingRopesAndCargo = [_vehicle, _ropeIndex] call FUNC(getRopesAndCargo);
-    _existingRopes = _existingRopesAndCargo select 0;
-    _existingCargo = _existingRopesAndCargo select 1;
-    {
-        _existingCargo ropeDetach _x;
-    } forEach _existingRopes;
-    _allCargo = _vehicle getVariable [QGVAR(Cargo), []];
-    _allCargo set [_ropeIndex, objNull];
-    _vehicle setVariable [QGVAR(Cargo), _allCargo, true];
-    call FUNC(retractRopes);
-} else {
-    [_this, QFUNC(releaseCargo), _vehicle, true] call FUNC(customRemoteExec);
-};
+if !(local _vehicle) exitWith { [QGVAR(EH_execQFUNC), [_this, QFUNC(releaseCargo)], _vehicle] call CBA_fnc_targetEvent; };
+
+[_vehicle, _ropeIndex] call FUNC(getRopesAndCargo) params ["_existingRopes", "_existingCargo"];
+
+{ _existingCargo ropeDetach _x; } forEach _existingRopes;
+
+private _allCargo = _vehicle getVariable [QGVAR(Cargo), []];
+_allCargo set [_ropeIndex, objNull];
+_vehicle setVariable [QGVAR(Cargo), _allCargo, true];
+call FUNC(retractRopes);

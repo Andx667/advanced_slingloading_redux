@@ -12,8 +12,6 @@ PREP(canRetractRopes);
 PREP(canShortenRopes);
 PREP(customHideObjectGlobal);
 PREP(customHint);
-PREP(customRemoteExec);
-PREP(customRemoteExecServer);
 PREP(deployRopes);
 PREP(deployRopesAction);
 PREP(deployRopesActionCheck);

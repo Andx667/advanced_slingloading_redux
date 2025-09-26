@@ -15,23 +15,18 @@
  * Public: No
  */
 
-private ["_vehicle"];
 
-if(isNull objectParent ACE_player) then {
-    _vehicle = cursorTarget;
-} else {
-    _vehicle = vehicle ACE_player;
-};
-if([_vehicle] call FUNC(canRetractRopes)) then {
-    private ["_activeRopes"];
+private _vehicle = [vehicle ACE_player, cursorObject] select (isNull objectParent ACE_player);
 
-    _activeRopes = [_vehicle] call FUNC(getActiveRopesWithoutCargo);
-    if(count _activeRopes > 1) then {
+if !([_vehicle] call FUNC(canRetractRopes)) exitWith {};
+
+private _activeRopes = [_vehicle] call FUNC(getActiveRopesWithoutCargo);
+
+switch (count _activeRopes) do {
+    case 0: { };
+    case 1: { [_vehicle, ACE_player, (_activeRopes select 0) select 0] call FUNC(retractRopes); };
+    default {
         ACE_player setVariable [QGVAR(Retract_Ropes_Index_Vehicle), _vehicle];
         [LLSTRING(retract_cargo_ropes), QFUNC(retractRopesIndexAction), _activeRopes] call FUNC(showSelectRopesMenu);
-    } else {
-        if(count _activeRopes == 1) then {
-            [_vehicle, ACE_player, (_activeRopes select 0) select 0] call FUNC(retractRopes);
-        };
     };
 };
