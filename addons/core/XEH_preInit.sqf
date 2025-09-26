@@ -19,11 +19,6 @@ private _category = [QUOTE(MOD_NAME), LLSTRING(displayName)];
 [
     QGVAR(EH_execQFUNC),
     {
-        _this select 0 call (
-            missionNamespace getVariable [
-                _this select 1,
-                { true }
-            ]
-        )
+        _this select 0 call ( missionNamespace getVariable [ _this select 1, { true } ] )
     }
 ] call CBA_fnc_addEventHandler;
