@@ -12,7 +12,7 @@ private _category = [QUOTE(MOD_NAME), LLSTRING(displayName)];
 
 // CBA EVENTS
 
-[QGVAR(EH_execQFUNC), { _this#0 call ( missionNamespace getVariable [_this#1, {} ] ) } ] call CBA_fnc_addEventHandler;
+[QGVAR(EH_execQFUNC), { _this#0 call ( missionNamespace getVariable [_this select 1, { true } ] ) } ] call CBA_fnc_addEventHandler;
 
 [QGVAR(EH_customHint), FUNC(customHint)] call CBA_fnc_addEventHandler;
 [QGVAR(EH_ropeSetMass), FUNC(ropeSetMass)] call CBA_fnc_addEventHandler;
