@@ -16,7 +16,7 @@
  */
 
 
-private _vehilce = [vehicle ACE_Player, cursorTarget] select isNull objectParent ACE_player;
+private _vehicle = [vehicle ACE_Player, cursorTarget] select isNull objectParent ACE_player;
 
 if !([_vehicle] call FUNC(canDeployRopes)) exitWith {};
 
