@@ -18,3 +18,7 @@ workshop = [
     "623475643",  # 3DEN Enhanced
     "463939057",  # ACE
 ]
+
+[vr]
+extends = "default"
+mission = "VR.VR"
