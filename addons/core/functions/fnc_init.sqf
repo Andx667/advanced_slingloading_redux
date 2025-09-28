@@ -16,7 +16,7 @@
  */
 
 // Prevent advanced sling loading from installing twice
-if (isNil QGVAR(ROPE_INIT)) exitWith {};
+if !(isNil QGVAR(ROPE_INIT)) exitWith {};
 
 GVAR(ROPE_INIT) = true;
 INFO("Advanced Sling Loading Loading...");
