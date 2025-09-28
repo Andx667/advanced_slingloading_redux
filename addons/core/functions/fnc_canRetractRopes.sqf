@@ -15,7 +15,7 @@
  * Public: No
  */
 
-params ["_vehicle"];
+params [ ["_vehicle", objNull, [objNull]] ];
 
 if (ACE_player distance _vehicle > 30) exitWith { false };
 
