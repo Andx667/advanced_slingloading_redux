@@ -18,8 +18,24 @@
 
 params ["_vehicle", "_cargo"];
 
-if (!isNull _vehicle && !isNull _cargo) then {
-    [_vehicle, _cargo] call FUNC(isSupportedCargo) && isNull objectParent ACE_player && ACE_player distance _cargo < 10 && _vehicle != _cargo;
-} else {
-    false;
-};
+!isNull _vehicle
+&&
+{
+    !isNull _cargo
+    &&
+    {
+        [_vehicle, _cargo] call FUNC(isSupportedCargo)
+        &&
+        {
+            isNull objectParent ACE_player  // player is not inside a vehicle
+            &&
+            {
+                ACE_player distance _cargo < 10
+                &&
+                {
+                    _vehicle != _cargo
+                }
+            }
+        }
+    }
+}
