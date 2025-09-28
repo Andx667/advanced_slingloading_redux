@@ -16,22 +16,41 @@
  * Public: No
  */
 
-params ["_vehicle", "_cargo"];
+params [
+    [ "_vehicle", objNull, [objNull] ],
+    [ "_cargo",   objNull, [objNull] ]
+];
 
-private _canSling = false;
+if ( isNull _vehicle || { isNull _cargo }) exitWith { false };
 
-if ( !isNull _vehicle && { !isNull _cargo }) then {//ToDo check not
+private _rules = missionNamespace getVariable [QGVAR(Sling_Rules_OVERRIDE), GVAR(Sling_Rules)];
+
+// Check if there is rule against it
+_rules findIf {
+    "CAN_NOT_SLING" isEqualTo toUpper (_x select 1)
+    &&
     {
-        if (_vehicle isKindOf (_x select 0)) then {
-            if (_cargo isKindOf (_x select 2)) then {
-                if ((toUpper (_x select 1)) == "CAN_SLING") then { //ToDo simplify
-                    _canSling = true;
-                } else {
-                    _canSling = false;
-                };
-            };
-        };
-    } forEach (missionNamespace getVariable [QGVAR(Sling_Rules_OVERRIDE), GVAR(Sling_Rules)]);
-};
+        _vehicle isKindOf (_x select 0)
+        &&
+        {
+            _cargo isKindOf (_x select 2)
+        }
+    }
+} isEqualTo -1
 
-_canSling;
+&&
+
+{
+    // Check if there is a rule that allows it
+    _rules findIf {
+        "CAN_SLING" isEqualTo toUpper (_x select 1)
+        &&
+        {
+            _vehicle isKindOf (_x select 0)
+            &&
+            {
+                _cargo isKindOf (_x select 2)
+            }
+        }
+    } isNotEqualTo -1
+}

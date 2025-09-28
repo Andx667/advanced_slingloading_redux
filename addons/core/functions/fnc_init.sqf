@@ -40,9 +40,12 @@ GVAR(Supported_Vehicles) = [
     "VTOL_Base_F"
 ];
 
+
 GVAR(Sling_Rules) = [
     ["All", "CAN_SLING", "All"]
+    // ["Helicopter", "CAN_NOT_SLING", "Tank"]
 ];
+
 
 if (hasInterface) then {
     [
