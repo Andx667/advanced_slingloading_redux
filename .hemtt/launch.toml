@@ -23,3 +23,7 @@ extends = "default"
 workshop = [
     "463939057", # ACE
 ]
+
+[vr]
+extends = "default"
+mission = "VR.VR"
