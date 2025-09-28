@@ -16,15 +16,8 @@
  * Public: No
  */
 
-params ["_vehicle", "_isSupported"];
+params [ ["_vehicle", objNull, [objNull]] ];
 
-_isSupported = false;
-if (not isNull _vehicle) then { //ToDo Check the not
-    {
-        if (_vehicle isKindOf _x) then {
-            _isSupported = true;
-        };
-    } forEach (missionNamespace getVariable [QGVAR(Supported_Vehicles_OVERRIDE), GVAR(Supported_Vehicles)]);
-};
+if (isNull _vehicle) exitWith { false };
 
-_isSupported;
+missionNamespace getVariable [QGVAR(Supported_Vehicles_OVERRIDE), GVAR(Supported_Vehicles)] findIf { _vehicle isKindOf _x } != -1
