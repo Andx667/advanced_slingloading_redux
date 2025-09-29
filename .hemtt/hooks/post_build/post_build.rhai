@@ -1,1 +1,1 @@
-HEMTT.script("update_3_build");
+HEMTT.script("update_build");
