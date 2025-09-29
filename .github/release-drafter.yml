@@ -2,32 +2,29 @@ branches:
   - main
   - release-drafter  # for testing edits to this configuration
 
-name-template: 'Version $RESOLVED_VERSION'
-tag-template: 'v$RESOLVED_VERSION'
-
 sort-by: title # sort alphabetically
 sort-direction: ascending
 
 categories:
-  - title: '### NEW:'
+  - title: 'NEW:'
     labels:
       - 'pr/feature'
-  - title: '### FIXED:'
+  - title: 'FIXED:'
     labels:
       - 'pr/bug-fix'
-  - title: '### IMPROVED:'
+  - title: 'IMPROVED:'
     labels:
       - 'pr/optimization'
-  - title: '### CHANGED:'
+  - title: 'CHANGED:'
     labels:
       - 'pr/change'
-  - title: '### SETTINGS:'
+  - title: 'SETTINGS:'
     labels:
       - 'pr/setting'
-  - title: '### TRANSLATION:'
+  - title: 'TRANSLATION:'
     labels:
       - 'pr/translation'
-  - title: '### DOCUMENTATION:'
+  - title: 'DOCUMENTATION:'
     labels:
       - 'pr/documentation'
 
