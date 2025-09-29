@@ -1,0 +1,21 @@
+on:
+  release:
+    types: [published]
+
+jobs:
+  github-releases-to-discord:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Github Releases To Discord
+        uses: SethCohen/github-releases-to-discord@v1.16.2
+        with:
+          webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          username: "Advanced Slingloading Redux - Release Bot"
+          avatar_url: "https://github.com/Andx667/advanced_slingloading_redux/blob/main/img/logo_aslr_icon_only.png"
+          content: ""
+          footer_title: "Advanced Slingloading Redux"
+          footer_icon_url: "https://github.com/Andx667/advanced_slingloading_redux/blob/main/img/logo_aslr_icon_only.png"
+          footer_timestamp: true
