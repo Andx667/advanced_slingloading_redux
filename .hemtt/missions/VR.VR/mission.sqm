@@ -12,14 +12,14 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=192;
+		nextID=196;
 	};
 	class Camera
 	{
-		pos[]={-13.176359,9.3259907,-4.2098598};
-		dir[]={0.61781621,-0.38706017,0.68447864};
-		up[]={0.25934795,0.92205149,0.28733158};
-		aside[]={0.74233997,7.21775e-08,-0.6700446};
+		pos[]={-0.27184054,13.758088,24.858416};
+		dir[]={0.11530182,-0.51190609,-0.85128182};
+		up[]={0.068708889,0.85903567,-0.50728077};
+		aside[]={-0.99095982,-3.2973912e-07,-0.13422057};
 	};
 };
 binarizationWanted=0;
@@ -28,13 +28,15 @@ addons[]=
 {
 	"A3_Characters_F",
 	"A3_Air_F_Heli_Heli_Transport_03",
-	"ace_realisticnames"
+	"ace_realisticnames",
+	"ace_fastroping",
+	"A3_Soft_F_Exp_LSV_01"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=2;
+		items=4;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -49,11 +51,26 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item2
+		{
+			className="ace_fastroping";
+			name="ACE3 - Fastroping";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item3
+		{
+			className="A3_Soft_F_Exp";
+			name="Arma 3 Apex - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 dlcs[]=
 {
-	"Heli"
+	"Heli",
+	"Expansion"
 };
 randomSeed=4540948;
 class ScenarioData
@@ -83,7 +100,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=2;
+		items=6;
 		class Item0
 		{
 			dataType="Group";
@@ -96,7 +113,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5.7757821,5.0014391,-8.701149};
+						position[]={0,5.0014391,-1.9499998};
+						angles[]={0,0.44831166,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -119,7 +137,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={3.5410903,8.3443718,5.1640501};
-				angles[]={-0,4.6985645,0};
+				angles[]={0,4.6985645,0};
 			};
 			side="Empty";
 			flags=4;
@@ -128,6 +146,66 @@ class Mission
 			};
 			id=191;
 			type="B_Heli_Transport_03_unarmed_F";
+		};
+		class Item2
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6,5.7898083,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=192;
+			type="ACE_fastropingSupplyCrate";
+		};
+		class Item3
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8,7.1761513,12.000917};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=193;
+			type="B_LSV_01_unarmed_F";
+		};
+		class Item4
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4,7.1761513,12.000917};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=194;
+			type="B_LSV_01_unarmed_F";
+		};
+		class Item5
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={0,7.1761513,12.000917};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=195;
+			type="B_LSV_01_unarmed_F";
 		};
 	};
 };
