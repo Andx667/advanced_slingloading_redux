@@ -19,11 +19,16 @@
 
 params ["_vehicle", "_player", ["_ropesIndex", 0]];
 
-if !(local _vehicle) exitWith { [QGVAR(EH_execQFUNC), [_this, QFUNC(pickupRopes)], _vehicle] call CBA_fnc_targetEvent; };
+diag_log format ['[CVO](debug)(fnc_pickupRopes) _vehicle: %1 - _player: %2 - _rpoesIndex: %3', _vehicle , _player ,_rpoesIndex];
+
+if (!local _vehicle) exitWith { [QGVAR(EH_execQFUNC), [_this, QFUNC(pickupRopes)], _vehicle] call CBA_fnc_targetEvent; };
+
 
 private _existingRopesAndCargo = [_vehicle,_ropesIndex] call FUNC(getRopesAndCargo);
+
 private _existingRopes = _existingRopesAndCargo select 0;
 private _existingCargo = _existingRopesAndCargo select 1;
+
 
 if (!isNull _existingCargo) then {
 

@@ -16,13 +16,15 @@
  */
 
 
-private _nearbyVehicles = missionNamespace getVariable [QGVAR(nearby_vehicles), []];
-
 if !( call FUNC(canPickupRopes)) exitWith {};
 
 private _closestRope = call FUNC(getClosestRope);
 
+diag_log format ['[CVO](debug)(fnc_pickupRopesAction) _closestRope: %1', _closestRope];
+
 if !(isNull (_closestRope select 0)) exitWith {};
+
+diag_log format ['[CVO](debug)(fnc_pickupRopesAction) missionNamespace getVariable [QGVAR(LOCKED_VEHICLES_ENABLED), false]: %1', missionNamespace getVariable [QGVAR(LOCKED_VEHICLES_ENABLED), false]];
 
 if !(missionNamespace getVariable [QGVAR(LOCKED_VEHICLES_ENABLED), false]) exitWith {};
 
