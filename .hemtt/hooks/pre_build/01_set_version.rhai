@@ -1,3 +1,4 @@
+// Mod.cpp has no "0.0.0" so this wont do anything
 let modcpp = HEMTT_VFS.join("mod.cpp")
     .open_file()
     .read();
