@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="aslr">
     <Package name="core">
+        <Container name="CBA_Settings_Categories">
+            <Key ID="STR_aslr_core_set_cat_main">
+                <Original>ASLR - Core</Original>
+            </Key>
+        </Container>
+        <Container name="CBA_Settings">
+            <Key ID="STR_aslr_core_set_cat_enable">
+                <Original>Enable</Original>
+            </Key>
+            <Key ID="STR_aslr_core_set_cat_enable_desc">
+                <English>Will Enable the core System.</English>
+            </Key>
+        </Container>
         <Key ID="STR_aslr_core_already_deployed">
             <English>Vehicle already has cargo ropes deployed.</English>
             <German>Fahrzeug hat seine Frachtseile bereits eingesetzt.</German>
