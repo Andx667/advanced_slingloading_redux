@@ -2,7 +2,7 @@ name = "Advanced Slingloading Redux {version}";
 
 author = "Andx";
 
-picture         = "img\logo_aslr.png";                                                                                                      // Picture displayed from the expansions menu. Optimal size is 2048x1024
+picture         = "img\logo_aslr_ca.paa";                                                                                                      // Picture displayed from the expansions menu. Optimal size is 2048x1024
 hideName        = "false";                                                                                                                  // Hide the extension name
 hidePicture     = "false";                                                                                                                  // Hide the extension menu
 
