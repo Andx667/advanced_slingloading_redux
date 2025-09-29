@@ -6,6 +6,9 @@
 #include "\x\cba\addons\main\script_macros_common.hpp"
 #include "\x\cba\addons\xeh\script_xeh.hpp"
 
+#include "script_macros_zrn.hpp"
+
+
 #define QQUOTE(var1) QUOTE(QUOTE(var1))
 
 // QPATHTOF but without a leading slash
