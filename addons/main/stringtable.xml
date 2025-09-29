@@ -17,5 +17,8 @@
             <Chinesesimp>https://github.com/Andx667/advanced_slingloading_redux</Chinesesimp>
             <Turkish>https://github.com/Andx667/advanced_slingloading_redux</Turkish>
         </Key>
+        <Key ID="STR_aslr_main_author">
+            <English>ASLR - Team</English>
+        </Key>
     </Package>
 </Project>
