@@ -12,14 +12,14 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=193;
+		nextID=196;
 	};
 	class Camera
 	{
-		pos[]={-0.011515856,9.3259907,-10.42814};
-		dir[]={0.18232809,-0.47356409,0.86168486};
-		up[]={0.098033309,0.88075799,0.46330732};
-		aside[]={0.97834104,-2.4100882e-07,-0.2070121};
+		pos[]={-0.27184054,13.758088,24.858416};
+		dir[]={0.11530182,-0.51190609,-0.85128182};
+		up[]={0.068708889,0.85903567,-0.50728077};
+		aside[]={-0.99095982,-3.2973912e-07,-0.13422057};
 	};
 };
 binarizationWanted=0;
@@ -29,13 +29,14 @@ addons[]=
 	"A3_Characters_F",
 	"A3_Air_F_Heli_Heli_Transport_03",
 	"ace_realisticnames",
-	"ace_fastroping"
+	"ace_fastroping",
+	"A3_Soft_F_Exp_LSV_01"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=3;
+		items=4;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -57,11 +58,19 @@ class AddonsMetaData
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
+		class Item3
+		{
+			className="A3_Soft_F_Exp";
+			name="Arma 3 Apex - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 dlcs[]=
 {
-	"Heli"
+	"Heli",
+	"Expansion"
 };
 randomSeed=4540948;
 class ScenarioData
@@ -91,7 +100,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=3;
+		items=6;
 		class Item0
 		{
 			dataType="Group";
@@ -105,7 +114,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={0,5.0014391,-1.9499998};
-						angles[]={0,0.44831166,-0};
+						angles[]={0,0.44831166,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -152,6 +161,51 @@ class Mission
 			};
 			id=192;
 			type="ACE_fastropingSupplyCrate";
+		};
+		class Item3
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8,7.1761513,12.000917};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=193;
+			type="B_LSV_01_unarmed_F";
+		};
+		class Item4
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4,7.1761513,12.000917};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=194;
+			type="B_LSV_01_unarmed_F";
+		};
+		class Item5
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={0,7.1761513,12.000917};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=195;
+			type="B_LSV_01_unarmed_F";
 		};
 	};
 };
