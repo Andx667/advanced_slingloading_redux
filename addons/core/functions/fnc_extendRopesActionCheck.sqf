@@ -16,4 +16,4 @@
  */
 
 if (isNull objectParent ACE_player) exitWith {false};
-[vehicle ACE_player] call FUNC(canExtendRopes);
+[vehicle ACE_player] call FUNC(canExtendRopes)
