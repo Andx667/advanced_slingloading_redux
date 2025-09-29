@@ -15,5 +15,5 @@
  * Public: No
  */
 
-if(isNull objectParent ACE_player) exitWith {false};
+if (isNull objectParent ACE_player) exitWith {false};
 [vehicle ACE_player] call FUNC(canShortenRopes);

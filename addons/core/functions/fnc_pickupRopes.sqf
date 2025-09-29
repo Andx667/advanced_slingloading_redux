@@ -19,29 +19,27 @@
 
 params ["_vehicle", "_player", ["_ropesIndex", 0]];
 
-if(local _vehicle) then {
-    private ["_existingRopesAndCargo", "_existingRopes", "_existingCargo", "_helper", "_allCargo"];
+if (!local _vehicle) exitWith { [QGVAR(EH_execQFUNC), [_this, QFUNC(pickupRopes)], _vehicle] call CBA_fnc_targetEvent; };
 
-    _existingRopesAndCargo = [_vehicle,_ropesIndex] call FUNC(getRopesAndCargo);
-    _existingRopes = _existingRopesAndCargo select 0;
-    _existingCargo = _existingRopesAndCargo select 1;
-    if(!isNull _existingCargo) then {
-        {
-            _existingCargo ropeDetach _x;
-        } forEach _existingRopes;
-        _allCargo = _vehicle getVariable [QGVAR(Cargo), []];
-        _allCargo set [_ropesIndex,objNull];
-        _vehicle setVariable [QGVAR(Cargo), _allCargo, true];
-    };
-    _helper = "Land_Can_V2_F" createVehicle position _player;
-    {
-        [_helper, [0, 0, 0], [0,0,-1]] ropeAttachTo _x;
-        _helper attachTo [_player, [-0.1, 0.1, 0.15], "Pelvis"];
-    } forEach _existingRopes;
-    hideObject _helper;
-    [[_helper], QFUNC(customHideObjectGlobal)] call FUNC(customRemoteExecServer);
-    _player setVariable [QGVAR(Ropes_Vehicle), [_vehicle, _ropesIndex], true];
-    _player setVariable [QGVAR(Ropes_Pick_Up_Helper), _helper, true];
-} else {
-    [_this, QFUNC(pickupRopes), _vehicle, true] call FUNC(customRemoteExec);
+[ _vehicle, _ropesIndex ] call FUNC(getRopesAndCargo) params ["_existingRopes", "_existingCargo"];
+
+if (!isNull _existingCargo) then {
+
+    { _existingCargo ropeDetach _x; } forEach _existingRopes;
+
+    private _allCargo = _vehicle getVariable [QGVAR(Cargo), []];
+    _allCargo set [ _ropesIndex, objNull ];
+    _vehicle setVariable [QGVAR(Cargo), _allCargo, true];
 };
+
+private _helper = QGVAR(rope_helper) createVehicle position _player;
+
+{
+    [_helper, [0, 0, 0], [0,0,-1]] ropeAttachTo _x;
+    _helper attachTo [_player, [-0.1, 0.1, 0.15], "Pelvis"];
+} forEach _existingRopes;
+
+[QGVAR(EH_hideObjectGlobal), _helper] call CBA_fnc_serverEvent;
+
+_player setVariable [QGVAR(Ropes_Vehicle), [_vehicle, _ropesIndex], true];
+_player setVariable [QGVAR(Ropes_Pick_Up_Helper), _helper, true];

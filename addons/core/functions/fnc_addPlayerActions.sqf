@@ -15,37 +15,117 @@
  * Public: No
  */
 
-player addAction [LLSTRING(extend_cargo_ropes), {
-    call FUNC(extendRopesAction);
-}, nil, 0, false, true, "", QUOTE(call FUNC(extendRopesActionCheck))];
+player addAction [
+    LLSTRING(extend_cargo_ropes),
+    {
+        [FUNC(extendRopesAction), _this] call CBA_fnc_directCall;
+    },
+    nil,
+    0,
+    false,
+    true,
+    "",
+    QUOTE([ARR_2(FUNC(extendRopesActionCheck),_this)] call CBA_fnc_directCall)
+];
 
-player addAction [LLSTRING(shorten_cargo_ropes), {
-    call FUNC(shortenRopesAction);
-}, nil, 0, false, true, "", QUOTE(call FUNC(shortenRopesActionCheck))];
 
-player addAction [LLSTRING(release_cargo_ropes), {
-    call FUNC(releaseCargoAction);
-}, nil, 0, false, true, "", QUOTE(call FUNC(releaseRopesActionCheck))];
+player addAction [
+    LLSTRING(shorten_cargo_ropes),
+    {
+        [FUNC(shortenRopesAction), _this] call CBA_fnc_directCall;
+    },
+    nil,
+    0,
+    false,
+    true,
+    "",
+    QUOTE([ARR_2(FUNC(shortenRopesActionCheck),_this)] call CBA_fnc_directCall)
+];
 
-player addAction [LLSTRING(retract_cargo_ropes), {
-    call FUNC(retractRopesAction);
-}, nil, 0, false, true, "", QUOTE(call FUNC(retractRopesActionCheck))];
 
-player addAction [LLSTRING(deploy_cargo_ropes), {
-    call FUNC(deployRopesAction);
-}, nil, 0, false, true, "", QUOTE(call FUNC(deployRopesActionCheck))];
+player addAction [
+    LLSTRING(release_cargo_ropes),
+    {
+        [FUNC(releaseCargoAction), _this] call CBA_fnc_directCall;
+    },
+    nil,
+    0,
+    false,
+    true,
+    "",
+    QUOTE([ARR_2(FUNC(releaseRopesActionCheck),_this)] call CBA_fnc_directCall)
+];
 
-player addAction [LLSTRING(attach_to_cargo_ropes), {
-    call FUNC(attachRopesAction);
-}, nil, 0, false, true, "", QUOTE(call FUNC(attachRopesActionCheck))];
 
-player addAction [LLSTRING(drop_cargo_ropes), {
-    call FUNC(dropRopesAction);
-}, nil, 0, false, true, "", QUOTE(call FUNC(dropRopesActionCheck))];
+player addAction [
+    LLSTRING(retract_cargo_ropes),
+    {
+        [FUNC(retractRopesAction), _this] call CBA_fnc_directCall;
+    },
+    nil,
+    0,
+    false,
+    true,
+    "",
+    QUOTE([ARR_2(FUNC(retractRopesActionCheck),_this)] call CBA_fnc_directCall)
+];
 
-player addAction [LLSTRING(pickup_cargo_ropes), {
-    call FUNC(pickupRopesAction);
-}, nil, 0, false, true, "", QUOTE(call FUNC(pickupRopesActionCheck))];
+
+player addAction [
+    LLSTRING(deploy_cargo_ropes),
+    {
+        [FUNC(deployRopesAction), _this] call CBA_fnc_directCall;
+    },
+    nil,
+    0,
+    false,
+    true,
+    "",
+    QUOTE([ARR_2(FUNC(deployRopesActionCheck),_this)] call CBA_fnc_directCall)
+];
+
+
+player addAction [
+    LLSTRING(attach_to_cargo_ropes),
+    {
+        [FUNC(attachRopesAction), _this] call CBA_fnc_directCall;
+    },
+    nil,
+    0,
+    false,
+    true,
+    "",
+    QUOTE([ARR_2(FUNC(attachRopesActionCheck),_this)] call CBA_fnc_directCall)
+];
+
+
+player addAction [
+    LLSTRING(drop_cargo_ropes),
+    {
+        [FUNC(dropRopesAction), _this] call CBA_fnc_directCall;
+    },
+    nil,
+    0,
+    false,
+    true,
+    "",
+    QUOTE([ARR_2(FUNC(dropRopesActionCheck),_this)] call CBA_fnc_directCall)
+];
+
+
+player addAction [
+    LLSTRING(pickup_cargo_ropes),
+    {
+        [FUNC(pickupRopesAction), _this] call CBA_fnc_directCall;
+    },
+    nil,
+    0,
+    false,
+    true,
+    "",
+    QUOTE([ARR_2(FUNC(pickupRopesActionCheck),_this)] call CBA_fnc_directCall)
+];
+
 
 player addEventHandler ["Respawn", {
     player setVariable [QGVAR(actions_loaded),false];

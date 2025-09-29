@@ -15,4 +15,12 @@
  * Public: No
  */
 
- count (ACE_player getVariable [QGVAR(ropes_vehicle), []]) == 0 && count (missionNamespace getVariable [QGVAR(nearby_vehicles), []]) > 0 && isNull objectParent ACE_player;
+missionNamespace getVariable [QGVAR(nearby_vehicles), []] isNotEqualTo []
+&&
+{
+    ACE_player isNil QGVAR(ropes_vehicle)
+    &&
+    {
+        isNull objectParent ACE_player
+    }
+}

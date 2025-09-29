@@ -17,11 +17,6 @@
 
 params ["_vehicle"];
 
-private ["_slingLoadMaxCargoMass"];
+private _slingLoadMaxCargoMass = getNumber (configOf _vehicle >> "slingLoadMaxCargoMass");
 
-_slingLoadMaxCargoMass = getNumber (configOf _vehicle >> "slingLoadMaxCargoMass");
-if(_slingLoadMaxCargoMass <= 0) then {
-    _slingLoadMaxCargoMass = 4000;
-};
-
-_slingLoadMaxCargoMass;
+[4000, _slingLoadMaxCargoMass] select (_slingLoadMaxCargoMass <= 0)
