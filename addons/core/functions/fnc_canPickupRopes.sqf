@@ -15,10 +15,10 @@
  * Public: No
  */
 
- ACE_player getVariable [QGVAR(ropes_vehicle), []] isEqualTo []
- &&
+missionNamespace getVariable [QGVAR(nearby_vehicles), []] isNotEqualTo []
+&&
 {
-    missionNamespace getVariable [QGVAR(nearby_vehicles), []] isNotEqualTo []
+    ACE_player isNil QGVAR(ropes_vehicle)
     &&
     {
         isNull objectParent ACE_player
