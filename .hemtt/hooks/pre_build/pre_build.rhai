@@ -1,2 +1,4 @@
+info("Init");
 HEMTT.script("bump_build");
-HEMTT.script("update_version_modcpp");
+HEMTT.script("set_version_modcpp");
+info("End");
