@@ -17,8 +17,6 @@
 
 params ["_count"];
 
-diag_log format ['[CVO](debug)(fnc_deployRopesCountAction) _count: %1', _count];
-
 private _vehicle = ACE_player getVariable [QGVAR(Deploy_Count_Vehicle), objNull];
 
 if (
