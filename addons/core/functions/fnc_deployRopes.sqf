@@ -13,44 +13,34 @@
  * None
  *
  * Example:
- * [vehicle, player] call aslr_core_fnc_deplayRopes
+ * [vehicle, player] call aslr_core_fnc_deployRopes
  *
  * Public: No
  */
 
 params ["_vehicle", "_player", ["_cargoCount", 1], ["_ropeLength", 15]];
 
-if(local _vehicle) then {
-    private ["_existingRopes", "_cargoRopes", "_slingLoadPoints"];
+if !(local _vehicle) exitWith { [QGVAR(EH_execQFUNC), [_this, QFUNC(deployRopes)], _vehicle] call CBA_fnc_targetEvent; };
 
-    _slingLoadPoints = [_vehicle] call FUNC(getSlingLoadPoints);
-    _existingRopes = _vehicle getVariable [QGVAR(custom_ropes), []];
+private _slingLoadPoints = [_vehicle] call FUNC(getSlingLoadPoints);
+private _existingRopes = _vehicle getVariable [QGVAR(custom_ropes), []];
 
-    if(count _existingRopes == 0) then {
-        if(count _slingLoadPoints == 0) exitWith {
-            [[LLSTRING(doesnt_support), false], QFUNC(customHint), _player] call FUNC(customRemoteExec);
-        };
-        if(count _slingLoadPoints < _cargoCount) exitWith {
-            [[LLSTRING(doenst_support_multi), false], QFUNC(customHint), _player] call FUNC(customRemoteExec); //"Vehicle doesn't support " + _cargoCount + " cargo ropes" ToDo
-        };
+if (_existingRopes isNotEqualTo []      ) exitWith { [QGVAR(EH_customHint), [LLSTRING(already_deployed),     false], _player] call CBA_fnc_targetEvent; };
+if (_slingLoadPoints isEqualTo []       ) exitWith { [QGVAR(EH_customHint), [LLSTRING(doesnt_support),       false], _player] call CBA_fnc_targetEvent; };
+if (count _slingLoadPoints < _cargoCount) exitWith { [QGVAR(EH_customHint), [LLSTRING(doenst_support_multi), false], _player] call CBA_fnc_targetEvent; };
 
-        _cargoRopes = [];
-        _cargo = [];
+private _cargoRopes = [];
+private _cargo = [];
 
-        for "_i" from 0 to (_cargoCount - 1) do {
-            _cargoRopes pushBack [];
-            _cargo pushBack objNull;
-        };
 
-        _vehicle setVariable [QGVAR(custom_ropes), _cargoRopes, true];
-        _vehicle setVariable [QGVAR(cargo), _cargo, true];
+for "_i" from 0 to (_cargoCount - 1) do {
+    _cargoRopes pushBack [];
+    _cargo pushBack objNull;
+};
 
-        for "_i" from 0 to (_cargoCount - 1) do {
-            [_vehicle, _player, _i] call FUNC(deployRopesIndex);
-        };
-    } else {
-        [[LLSTRING(already_deployed), false], QFUNC(customHint), _player] call FUNC(customRemoteExec);
-    };
-} else {
-    [_this, QFUNC(deployRopes), _vehicle, true] call FUNC(customRemoteExec);
+_vehicle setVariable [QGVAR(custom_ropes), _cargoRopes, true];
+_vehicle setVariable [QGVAR(cargo), _cargo, true];
+
+for "_i" from 0 to (_cargoCount - 1) do {
+    [_vehicle, _player, _i] call FUNC(deployRopesIndex);
 };

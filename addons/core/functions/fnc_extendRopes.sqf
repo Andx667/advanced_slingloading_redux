@@ -19,19 +19,12 @@
 
 params ["_vehicle", "_player", ["_ropeIndex", 0]];
 
-if(local _vehicle) then {
+if !(local _vehicle) exitWith { [QGVAR(EH_execQFUNC), [_this, QFUNC(extendRopes)], _vehicle] call CBA_fnc_targetEvent; };
 
-    private ["_existingRopes"];
+private _existingRopes = [_vehicle,_ropeIndex] call FUNC(getRopes);
 
-    _existingRopes = [_vehicle,_ropeIndex] call FUNC(getRopes);
-    if(count _existingRopes > 0) then {
-        _ropeLength = ropeLength (_existingRopes select 0);
-        if(_ropeLength <= 100 ) then {
-            {
-                ropeUnwind [_x, 3, 5, true];
-            } forEach _existingRopes;
-        };
+if (_existingRopes isNotEqualTo []) then {
+    if (ropeLength (_existingRopes select 0) <= 100) then {
+        { ropeUnwind [_x, 3, 5, true]; } forEach _existingRopes;
     };
-} else {
-    [_this, QFUNC(extendRopes), _vehicle, true] call FUNC(customRemoteExec);
 };

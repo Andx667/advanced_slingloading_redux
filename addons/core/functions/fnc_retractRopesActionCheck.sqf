@@ -15,8 +15,6 @@
  * Public: No
  */
 
-if(isNull objectParent ACE_player) then {
-    [cursorTarget] call FUNC(canRetractRopes);
-} else {
-    [vehicle ACE_player] call FUNC(canRetractRopes);
-};
+private _vehicle = [vehicle ACE_player, cursorObject] select (isNull objectParent ACE_player);
+
+_vehicle call FUNC(canRetractRopes)

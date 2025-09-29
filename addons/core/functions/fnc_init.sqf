@@ -16,7 +16,7 @@
  */
 
 // Prevent advanced sling loading from installing twice
-if(!isNil QGVAR(ROPE_INIT)) exitWith {};
+if !(isNil QGVAR(ROPE_INIT)) exitWith {};
 
 GVAR(ROPE_INIT) = true;
 INFO("Advanced Sling Loading Loading...");
@@ -40,33 +40,42 @@ GVAR(Supported_Vehicles) = [
     "VTOL_Base_F"
 ];
 
+
 GVAR(Sling_Rules) = [
     ["All", "CAN_SLING", "All"]
+    // ["Helicopter", "CAN_NOT_SLING", "Tank"]
 ];
 
-
-//ToDo Remove spawn and sleep use PFH
-if(!isDedicated) then {
-    [] spawn {
-        while {true} do {
-            if(!isNull ACE_player && isPlayer ACE_player) then {
-                if!( ACE_player getVariable [QGVAR(actions_loaded), false] ) then {
-                    call FUNC(addPlayerActions);
-                    ACE_player setVariable [QGVAR(actions_loaded), true];
-                };
+if (hasInterface) then {
+    [
+        {
+            private _condition =
+            !(isNull ACE_player)
+            &&
+            {
+                isPlayer ACE_player
+                &&
+                {
+                    ! (ACE_player getVariable [QGVAR(actions_loaded), false])
+                }
             };
-            missionNamespace setVariable [QGVAR(nearby_vehicles), (call FUNC(findNearbyVehicles))];
-            sleep 2;
-        };
-    };
+
+            if _condition then {
+                call FUNC(addPlayerActions);
+                ACE_player setVariable [QGVAR(actions_loaded), true];
+            };
+
+            missionNamespace setVariable [QGVAR(nearby_vehicles), call FUNC(findNearbyVehicles)];
+        },
+        2
+    ] call CBA_fnc_addPerFrameHandler;
 };
 
-if(isServer) then {
+if (isServer) then {
     // Install Advanced Sling Loading on all clients (plus JIP) //
 
     publicVariable "ASL_Advanced_Sling_Loading_Install";
     remoteExecCall ["ASL_Advanced_Sling_Loading_Install", -2, true];
-
 };
 
 // Disable Old Script Version on SA Server

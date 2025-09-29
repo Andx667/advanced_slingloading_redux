@@ -17,16 +17,16 @@
 
 params ["_vehicle"];
 
-private ["_existingRopes","_activeRopes"];
-
-if(ACE_player distance _vehicle > 10) exitWith { false };
-
-if!([_vehicle] call FUNC(isSupportedVehicle)) exitWith { false };
-
-_existingRopes = _vehicle getVariable [QGVAR(custom_ropes), []];
-if((count _existingRopes) == 0) exitWith { false };
-
-_activeRopes = [_vehicle] call FUNC(getActiveRopes);
-if((count _activeRopes) == 0) exitWith { false };
-
-true;
+ACE_player distance _vehicle < 10
+&&
+{
+    [_vehicle] call FUNC(isSupportedVehicle)
+    &&
+    {
+        _vehicle getVariable [QGVAR(custom_ropes), []] isNotEqualTo []
+        &&
+        {
+            [_vehicle] call FUNC(getActiveRopes) isNotEqualTo []
+        }
+    }
+}

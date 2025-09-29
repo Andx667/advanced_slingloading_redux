@@ -15,18 +15,17 @@
  * Public: No
  */
 
-private ["_vehicle"];
+private _vehicle = vehicle ACE_player;
 
-_vehicle = vehicle ACE_player;
-if([_vehicle] call FUNC(canReleaseCargo)) then {
-    private ["_activeRopes"];
-    _activeRopes = [_vehicle] call FUNC(getActiveRopesWithCargo);
-    if(count _activeRopes > 1) then {
+if !([_vehicle] call FUNC(canReleaseCargo)) exitWith {};
+
+private _activeRopes = [_vehicle] call FUNC(getActiveRopesWithCargo);
+
+switch (count _activeRopes) do {
+    case 0: { };
+    case 1: { [_vehicle, ACE_player, (_activeRopes select 0) select 0] call FUNC(releaseCargo); };
+    default {
         ACE_player setVariable [QGVAR(Release_Cargo_Index_Vehicle), _vehicle];
         [LLSTRING(release_cargo_ropes), QFUNC(releaseCargoIndexAction), _activeRopes, "Cargo"] call FUNC(showSelectRopesMenu);
-    } else {
-        if(count _activeRopes == 1) then {
-            [_vehicle, ACE_player, (_activeRopes select 0) select 0] call FUNC(releaseCargo);
-        };
     };
 };
