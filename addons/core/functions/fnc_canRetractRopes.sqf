@@ -17,7 +17,7 @@
 
 params [ ["_vehicle", objNull, [objNull]] ];
 
-ACE_player distance _vehicle > 10
+ACE_player distance _vehicle < 10
 &&
 {
     [_vehicle] call FUNC(isSupportedVehicle)
