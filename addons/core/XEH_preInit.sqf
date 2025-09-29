@@ -12,8 +12,8 @@ private _category = [QUOTE(MOD_NAME), LLSTRING(displayName)];
 
 // CBA EVENTS
 
-[QGVAR(EH_customHint),             FUNC(customHint)            ] call CBA_fnc_addEventHandler;
-[QGVAR(EH_ropeSetMass),            FUNC(ropeSetMass)           ] call CBA_fnc_addEventHandler;
+[QGVAR(EH_customHint),  FUNC(customHint)  ] call CBA_fnc_addEventHandler;
+[QGVAR(EH_ropeSetMass), FUNC(ropeSetMass) ] call CBA_fnc_addEventHandler;
 
 
 [ QGVAR(EH_hideObjectGlobal), { params ["_obj", ["_bool", true]]; _obj hideObjectGlobal _bool;  }                     ] call CBA_fnc_addEventHandler;
