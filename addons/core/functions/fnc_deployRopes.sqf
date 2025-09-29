@@ -42,10 +42,11 @@ for "_i" from 0 to (_cargoCount - 1) do {
     diag_log format ['[CVO](debug)(fnc_deployRopes) _i: %1', _i];
     _cargoRopes pushBack [];
     _cargo pushBack objNull;
-    [_vehicle, _player, _i] call FUNC(deployRopesIndex);
 };
-
-diag_log format ['[CVO](debug)(fnc_deployRopes) _cargoRopes: %1 - _cargo: %2', _cargoRopes , _cargo];
 
 _vehicle setVariable [QGVAR(custom_ropes), _cargoRopes, true];
 _vehicle setVariable [QGVAR(cargo), _cargo, true];
+
+for "_i" from 0 to (_cargoCount - 1) do {
+    [_vehicle, _player, _i] call FUNC(deployRopesIndex);
+};
