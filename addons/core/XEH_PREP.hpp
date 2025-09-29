@@ -10,7 +10,6 @@ PREP(canPickupRopes);
 PREP(canReleaseCargo);
 PREP(canRetractRopes);
 PREP(canShortenRopes);
-PREP(customHideObjectGlobal);
 PREP(customHint);
 PREP(deployRopes);
 PREP(deployRopesAction);
