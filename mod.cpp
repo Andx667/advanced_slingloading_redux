@@ -1,4 +1,4 @@
-name = "Advanced Slingloading Redux 0.0.0";
+name = "Advanced Slingloading Redux {version}";
 
 author = "Andx";
 
