@@ -10,7 +10,7 @@
  * List of ropes without cargo <ARRAY>
  *
  * Example:
- * [vehicle] call aslr_core_fnc_getActiveRopesWithCargo
+ * [vehicle] call aslr_core_fnc_getActiveRopesWithoutCargo
  *
  * Public: No
  */
