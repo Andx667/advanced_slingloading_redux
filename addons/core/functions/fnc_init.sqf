@@ -46,17 +46,26 @@ GVAR(Sling_Rules) = [
     // ["Helicopter", "CAN_NOT_SLING", "Tank"]
 ];
 
-
 if (hasInterface) then {
     [
         {
-            private _condition = !(isNull ACE_player) && { isPlayer ACE_player && { ! (ACE_player getVariable [QGVAR(actions_loaded), false]) } };
+            private _condition =
+            !(isNull ACE_player)
+            &&
+            {
+                isPlayer ACE_player
+                &&
+                {
+                    ! (ACE_player getVariable [QGVAR(actions_loaded), false])
+                }
+            };
 
             if _condition then {
                 call FUNC(addPlayerActions);
                 ACE_player setVariable [QGVAR(actions_loaded), true];
             };
-            missionNamespace setVariable [QGVAR(nearby_vehicles), (call FUNC(findNearbyVehicles))];
+
+            missionNamespace setVariable [QGVAR(nearby_vehicles), call FUNC(findNearbyVehicles)];
         },
         2
     ] call CBA_fnc_addPerFrameHandler;
