@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="aslr">
     <Package name="Main">
+        <Key ID="STR_aslr_main_author">
+            <English>ASLR - Team</English>
+        </Key>
         <Key ID="STR_aslr_main_url">
             <English>https://github.com/Andx667/advanced_slingloading_redux</English>
             <Czech>https://github.com/Andx667/advanced_slingloading_redux</Czech>
@@ -16,9 +19,6 @@
             <Chinese>https://github.com/Andx667/advanced_slingloading_redux</Chinese>
             <Chinesesimp>https://github.com/Andx667/advanced_slingloading_redux</Chinesesimp>
             <Turkish>https://github.com/Andx667/advanced_slingloading_redux</Turkish>
-        </Key>
-        <Key ID="STR_aslr_main_author">
-            <English>ASLR - Team</English>
         </Key>
     </Package>
 </Project>
