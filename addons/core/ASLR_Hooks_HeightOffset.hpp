@@ -21,42 +21,42 @@ class PVAR(Hooks_HeightOffset) {
     };
     class RHS_CH_47F: default {
         front  = -0.75;
-        middle = -2.6;
+        center = -2.6;
         rear   = -0.75;
     };
     class rhsusf_CH53E_USMC: default {
         front  = -0.8;
-        middle = -1;
+        center = -1;
         rear   = -1.1;
     };
     class rhsusf_CH53E_USMC_D: default {
         front  = -0.8;
-        middle = -1;
+        center = -1;
         rear   = -1.1;
     };
     class Cup_B_MV22_USMC: default {
         front  = -0.05;
-        middle = -0.05;
+        center = -0.05;
         rear   = -0.05;
     };
     class CUP_B_MI6A_CDF: default {
         front  = -0.8;
-        middle = -1;
+        center = -1;
         rear   = -1.1;
     };
     class B_Heli_Transport_03_F: default {
         front  = -0.35;
-        middle = -0.15;
+        center = -0.15;
         rear   = -0.05;
     };
     class RHS_UH60M2_d: default {
         front  = -0.05;
-        middle = -0.05;
+        center = -0.05;
         rear   = -0.05;
     };
     class B_T_VTOL_01_Vehicle_F: default {
         front  = -0.9;
-        middle = -0.9;
+        center = -0.9;
         rear   = -0.9;
     };
 };
