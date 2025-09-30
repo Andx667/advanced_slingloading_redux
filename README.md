@@ -32,4 +32,4 @@ For new contributers, see the [Contributing Setup & Guidelines](./.github/CONTRI
 
 ## License
 
-Advanced Slingloading Redux is licensed under the [MIT](./LICENSE.md) License.
+Advanced Slingloading Redux is licensed under the [MIT License](./LICENSE.md).
