@@ -24,6 +24,8 @@ The project is entirely **open-source** and any contributions are welcome.
 - Manual attaching of cargo
 - Allows for up to 3 slingload points per helicopter
 
+Full documentation can be found [here](https://andx667.github.io/advanced_slingloading_redux/).
+
 ## Contributing
 
 For new contributers, see the [Contributing Setup & Guidelines](./.github/CONTRIBUTING.md).
