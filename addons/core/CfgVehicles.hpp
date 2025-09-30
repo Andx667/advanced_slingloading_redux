@@ -5,6 +5,6 @@ class CfgVehicles {
         scope = 1;
         author = ECSTRING(main,author);
         displayName = "ASLR Rope Helper";
-        icon = QPATHTOF(data\logo_aslr_icon_only.paa);
+        icon = QPATHTOF(data\icon_aslr.paa);
     };
 };
