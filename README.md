@@ -2,31 +2,19 @@
     <img src="https://github.com/Andx667/advanced_slingloading_redux/blob/main/img/logo_aslr.png" width="512">
 </p>
 
-[![Steam Subscriptions](https://img.shields.io/steam/subscriptions/3573851584?style=for-the-badge&logo=steam&label=Steam%20Workshop&color=%23690000&link=https%3A%2F%2Fsteamcommunity.com%2Fsharedfiles%2Ffiledetails%2F%3Fid%3573851584)](https://steamcommunity.com/sharedfiles/filedetails/?id=3573851584)
-
-
 # Advanced Slingloading Redux
 
 <p align="center">
-    <a href="https://github.com/Andx667/advanced_slingloading_redux/releases/latest">
-        <img src="https://img.shields.io/badge/Version-0.0.0-blue?style=flat-square" alt="Advanced Slingloading Redux Version">
-    </a>
-    <a href="https://github.com/Andx667/advanced_slingloading_redux/issues">
-        <img src="https://img.shields.io/github/issues-raw/Andx667/advanced_slingloading_redux.svg?style=flat-square&label=Issues" alt="Advanced Slingloading Redux Issues">
-    </a>
-    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3573851584">
-        <img src="https://img.shields.io/steam/downloads/3573851584.svg?style=flat-square&label=Downloads" alt="Advanced Slingloading Redux Downloads">
-    </a>
-    <a href="https://github.com/Andx667/advanced_slingloading_redux/blob/main/LICENSE.md">
-        <img src="https://img.shields.io/badge/License-MIT-red?style=flat-square" alt="Advanced Slingloading Redux License">
-    </a>
-    <br>
-    <img src="https://img.shields.io/github/actions/workflow/status/Andx667/advanced_slingloading_redux/hemtt.yml?style=flat-square&label=HEMTT" alt="HEMTT">
-    <img src="https://img.shields.io/github/actions/workflow/status/Andx667/advanced_slingloading_redux/validate.yml?style=flat-square&label=Validate" alt="Validate">
-</p>
 
-<p align="center">
-    <b>Requires the latest version of <a href="https://github.com/CBATeam/CBA_A3/releases/latest">CBA A3</a></b>
+[![Steam Subscriptions](https://img.shields.io/steam/subscriptions/3573851584?style=for-the-badge&logo=steam&label=Steam%20Workshop&color=%23690000&link=https%3A%2F%2Fsteamcommunity.com%2Fsharedfiles%2Ffiledetails%2F%3Fid%3573851584)](https://steamcommunity.com/sharedfiles/filedetails/?id=3573851584)
+
+[![Issues](https://img.shields.io/github/issues-raw/Andx667/advanced_slingloading_redux.svg?style=flat-square&label=Issues)](https://github.com/Andx667/advanced_slingloading_redux/issues)
+[![License](https://img.shields.io/badge/License-MIT-red?style=flat-square)](https://github.com/Andx667/advanced_slingloading_redux/blob/main/LICENSE.md)
+[![HEMTT](https://img.shields.io/github/actions/workflow/status/Andx667/advanced_slingloading_redux/hemtt.yml?style=flat-square&label=HEMTT)](https://github.com/Andx667/advanced_slingloading_redux/actions/workflows/hemtt.yml)
+[![Validate](https://img.shields.io/github/actions/workflow/status/Andx667/advanced_slingloading_redux/validate.yml?style=flat-square&label=Validate)](https://github.com/Andx667/advanced_slingloading_redux/actions/workflows/validate.yml)
+
+**Requires the latest version of [CBA A3](https://github.com/CBATeam/CBA_A3/releases/latest) and [ACE3](https://github.com/acemod/ACE3/releases/latest)**
+
 </p>
 
 **Advanced Slingloading Redux** (aslr) aims to improve slingloading in Arma 3.
