@@ -8,10 +8,12 @@
         </Container>
         <Container name="CBA_Settings">
             <Key ID="STR_aslr_core_set_cat_enable">
-                <Original>Enable</Original>
+                <English>Enable</English>
+                <German>Aktivieren</German>
             </Key>
             <Key ID="STR_aslr_core_set_cat_enable_desc">
                 <English>Will Enable the core System.</English>
+                <German>Aktiviert das System.</German>
             </Key>
         </Container>
         <Key ID="STR_aslr_core_already_deployed">
@@ -36,6 +38,7 @@
         </Key>
         <Key ID="STR_aslr_core_displayName">
             <English>Core</English>
+            <German>Kern</German>
         </Key>
         <Key ID="STR_aslr_core_doenst_support_multi">
             <English>Vehicle doesn't support %1 cargo ropes.</English>

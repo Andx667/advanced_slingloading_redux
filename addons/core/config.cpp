@@ -3,7 +3,7 @@
 class CfgPatches {
     class ADDON {
         author = AUTHOR;
-        authors[] = {"Andx", "sethduda"};
+        authors[] = {"Andx", "sethduda", "OverlordZorn"};
         url = ECSTRING(main,url);
         name = COMPONENT_NAME;
         requiredVersion = REQUIRED_VERSION;
@@ -20,4 +20,3 @@ class CfgPatches {
 #include "CfgVehicles.hpp"
 
 #include "CfgEventHandlers.hpp"
-#include "CfgNetworkMessage.hpp"
