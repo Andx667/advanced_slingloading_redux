@@ -1,5 +1,7 @@
 <p align="center">
     <img src="https://github.com/Andx667/advanced_slingloading_redux/blob/main/img/logo_aslr.png" width="512">
+    </br>
+    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3573851584"><img src="https://img.shields.io/steam/subscriptions/3573851584?style=for-the-badge&logo=steam&label=Steam%20Workshop&color=%23690000"></a>
 </p>
 
 # Advanced Slingloading Redux
