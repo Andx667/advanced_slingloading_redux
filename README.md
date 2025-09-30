@@ -4,7 +4,7 @@
 
 # Advanced Slingloading Redux
 
-<p style="text-align: center;">
+<p align="center">
 
 [![Steam Subscriptions](https://img.shields.io/steam/subscriptions/3573851584?style=for-the-badge&logo=steam&label=Steam%20Workshop&color=%23690000&link=https%3A%2F%2Fsteamcommunity.com%2Fsharedfiles%2Ffiledetails%2F%3Fid%3573851584)](https://steamcommunity.com/sharedfiles/filedetails/?id=3573851584)
 
@@ -15,7 +15,7 @@
 
 </p>
 
-<p style="text-align: center;">
+<p align="center">
 
 **Requires the latest version of [CBA A3](https://github.com/CBATeam/CBA_A3/releases/latest) and [ACE3](https://github.com/acemod/ACE3/releases/latest)**
 
