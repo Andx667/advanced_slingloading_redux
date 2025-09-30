@@ -4,8 +4,6 @@
 
 # Advanced Slingloading Redux
 
-<p align="center">
-
 [![Steam Subscriptions](https://img.shields.io/steam/subscriptions/3573851584?style=for-the-badge&logo=steam&label=Steam%20Workshop&color=%23690000&link=https%3A%2F%2Fsteamcommunity.com%2Fsharedfiles%2Ffiledetails%2F%3Fid%3573851584)](https://steamcommunity.com/sharedfiles/filedetails/?id=3573851584)
 
 [![License](https://img.shields.io/badge/License-MIT-red?style=flat-square)](https://github.com/Andx667/advanced_slingloading_redux/blob/main/LICENSE.md)
@@ -13,13 +11,7 @@
 [![HEMTT](https://img.shields.io/github/actions/workflow/status/Andx667/advanced_slingloading_redux/hemtt.yml?style=flat-square&label=HEMTT)](https://github.com/Andx667/advanced_slingloading_redux/actions/workflows/hemtt.yml)
 [![Validate](https://img.shields.io/github/actions/workflow/status/Andx667/advanced_slingloading_redux/validate.yml?style=flat-square&label=Validate)](https://github.com/Andx667/advanced_slingloading_redux/actions/workflows/validate.yml)
 
-</p>
-
-<p align="center">
-
 **Requires the latest version of [CBA A3](https://github.com/CBATeam/CBA_A3/releases/latest) and [ACE3](https://github.com/acemod/ACE3/releases/latest)**
-
-</p>
 
 **Advanced Slingloading Redux** (aslr) aims to improve slingloading in Arma 3.
 
@@ -38,4 +30,4 @@ For new contributers, see the [Contributing Setup & Guidelines](./.github/CONTRI
 
 ## License
 
-Advanced Slingloading Redux is licensed under [MIT](./LICENSE.md).
+Advanced Slingloading Redux is licensed under the [MIT](./LICENSE.md) License.
