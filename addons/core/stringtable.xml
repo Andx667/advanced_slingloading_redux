@@ -83,13 +83,14 @@
                 <German>Aktivieren</German>
             </Key>
             <Key ID="STR_aslr_core_set_cat_enable_desc">
-                <English>Will Enable the core System.</English>
-                <German>Aktiviert das System.</German>
+                <English>Will Enable the Advanced Slingloading System.</English>
+                <German>Aktiviert Erweitertes Slingloading.</German>
             </Key>
         </Container>
         <Container name="CBA_Settings_Categories">
             <Key ID="STR_aslr_core_set_cat_main">
-                <Original>ASLR - Core</Original>
+                <English>ASLR - Core</English>
+                <German>ASLR - Kern</German>
             </Key>
         </Container>
     </Package>
