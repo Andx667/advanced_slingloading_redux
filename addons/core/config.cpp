@@ -20,3 +20,5 @@ class CfgPatches {
 #include "CfgVehicles.hpp"
 
 #include "CfgEventHandlers.hpp"
+
+#include "ASLR_Hooks.hpp"
