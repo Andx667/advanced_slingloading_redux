@@ -6,8 +6,6 @@
 
 # Advanced Slingloading Redux
 
-[![Steam Subscriptions](https://img.shields.io/steam/subscriptions/3573851584?style=for-the-badge&logo=steam&label=Steam%20Workshop&color=%23690000&link=https%3A%2F%2Fsteamcommunity.com%2Fsharedfiles%2Ffiledetails%2F%3Fid%3573851584)](https://steamcommunity.com/sharedfiles/filedetails/?id=3573851584)
-
 [![License](https://img.shields.io/badge/License-MIT-red?style=flat-square)](https://github.com/Andx667/advanced_slingloading_redux/blob/main/LICENSE.md)
 [![Issues](https://img.shields.io/github/issues-raw/Andx667/advanced_slingloading_redux.svg?style=flat-square&label=Issues)](https://github.com/Andx667/advanced_slingloading_redux/issues)
 [![HEMTT](https://img.shields.io/github/actions/workflow/status/Andx667/advanced_slingloading_redux/hemtt.yml?style=flat-square&label=HEMTT)](https://github.com/Andx667/advanced_slingloading_redux/actions/workflows/hemtt.yml)
