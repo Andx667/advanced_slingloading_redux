@@ -13,7 +13,7 @@ class huron_or_sth: base {
         y = 47;
         z = 69;
     };
-    class mid {
+    class center {
         displayName = "Center";
         x = 13;
         y = 47;
