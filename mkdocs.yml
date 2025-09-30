@@ -1,0 +1,119 @@
+site_name: Advanced Slingloading Redux - User Documentation
+#site_url: https://docs.tacticalteam.de
+site_author: ASLR Team
+site_description: Documentation for the Advanced Slingloading Redux mod for Arma 3
+
+repo_url: https://github.com/Andx667/advanced_slingloading_redux
+repo_name: Andx667/advanced_slingloading_redux
+
+extra_css:
+- stylesheets/extra.css
+
+theme:
+  name: material
+  font:
+    text: Ubuntu
+    code: Ubuntu Mono
+  palette:
+  # Palette toggle for automatic mode
+  - media: "(prefers-color-scheme)"
+    toggle:
+      icon: material/brightness-auto
+      name: Switch to light mode
+
+  # Palette toggle for light mode
+  - media: "(prefers-color-scheme: light)"
+    scheme: default
+    primary: custom
+    accent: custom
+    toggle:
+      icon: material/brightness-7
+      name: Switch to dark mode
+
+  # Palette toggle for dark mode
+  - media: "(prefers-color-scheme: dark)"
+    scheme: slate
+    primary: custom
+    accent: custom
+    toggle:
+      icon: material/brightness-4
+      name: Switch to system preference
+
+  language: de
+  logo: logo_aslr.png
+  favicon: favicon.ico
+
+  features:
+  - navigation.instant
+  - navigation.instant.prefetch
+  - navigation.instant.progress
+
+  - navigation.tracking
+  - navigation.tabs
+  - navigation.tabs.sticky
+  - toc.follow
+  - toc.integrate
+  - navigation.top
+  - navigation.path
+  - navigation.indexes
+
+  - search.suggest
+  - search.highlight
+  - search.share
+
+  - content.code.copy
+  - content.tooltips
+
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+- privacy
+- search
+- tags
+
+markdown_extensions:
+
+# Python Markdown
+- abbr
+- attr_list
+- admonition
+- def_list
+- footnotes
+
+- toc:
+    permalink: true
+
+# Python Markdown Extensions
+- pymdownx.arithmatex:
+    generic: true
+- pymdownx.betterem:
+    smart_enable: all
+- pymdownx.caret
+- pymdownx.details
+- pymdownx.emoji:
+    emoji_index: !!python/name:material.extensions.emoji.twemoji ""
+    emoji_generator: !!python/name:material.extensions.emoji.to_svg ""
+- pymdownx.highlight:
+    use_pygments: true
+    linenums: true
+    anchor_linenums: true
+    line_spans: __span
+- pymdownx.inlinehilite
+- pymdownx.keys
+- pymdownx.mark
+- pymdownx.smartsymbols
+- pymdownx.snippets:
+    auto_append:
+    - include/abbreviations.md
+- pymdownx.superfences
+- pymdownx.tabbed:
+    alternate_style: true
+- pymdownx.tasklist:
+    custom_checkbox: true
+- pymdownx.tilde
+
+nav:
+- Home: index.md
+- User Guide: user_guide.md
+- Developer Guide: developer_guide.md
