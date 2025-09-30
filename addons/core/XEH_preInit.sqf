@@ -16,5 +16,5 @@ private _category = [QUOTE(MOD_NAME), LLSTRING(displayName)];
 [QGVAR(EH_ropeSetMass), FUNC(ropeSetMass) ] call CBA_fnc_addEventHandler;
 
 
-[ QGVAR(EH_hideObjectGlobal), { params ["_obj", ["_bool", true]]; _obj hideObjectGlobal _bool;  }                     ] call CBA_fnc_addEventHandler;
-[ QGVAR(EH_execQFUNC),        { _this select 0 call ( missionNamespace getVariable [ _this select 1, { true } ] ) }   ] call CBA_fnc_addEventHandler;
+[ QGVAR(EH_hideObjectGlobal), { params ["_obj", ["_bool", true]]; _obj hideObjectGlobal _bool; }                     ] call CBA_fnc_addEventHandler;
+[ QGVAR(EH_execQFUNC),        { _this select 0 call ( missionNamespace getVariable [ _this select 1, { true } ] ) }  ] call CBA_fnc_addEventHandler;
