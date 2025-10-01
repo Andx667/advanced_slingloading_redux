@@ -36,7 +36,7 @@ PREP(getRopeLiftCapabiliy);
 PREP(getRopes);
 PREP(getRopesAndCargo);
 PREP(getRopesCount);
-PREP(getSlingLoadPoints);
+PREP(getHooksDefault);
 PREP(init);
 PREP(isSupportedCargo);
 PREP(isSupportedVehicle);

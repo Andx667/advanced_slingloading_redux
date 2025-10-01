@@ -37,7 +37,7 @@ if (_inactiveRopes isNotEqualTo []) exitWith {
 };
 
 
-private _slingLoadPoints = [_vehicle] call FUNC(getSlingLoadPoints);
+private _slingLoadPoints = [_vehicle] call FUNC(getHooksDefault);
 
 if (count _slingLoadPoints < 2) exitWith { [_vehicle,ACE_player] call FUNC(deployRopes); };
 
