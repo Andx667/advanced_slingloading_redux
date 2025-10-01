@@ -65,5 +65,5 @@ private _relatives = [];
 } forEach _map;
 
 // return closest relative OffsetArray
-_relatives = [_relatives, [], { _x#0 }] call BIS_fnc_sortBy;
+_relatives = [_relatives, [], { _x select 0 }] call BIS_fnc_sortBy;
 _relatives select 0 select 1
