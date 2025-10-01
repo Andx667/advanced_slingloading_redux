@@ -1,4 +1,4 @@
-// This here configures the hooks an airframe does have directly. If an airframe is defined here, it will take these coordinates instead of using the calculated positions.
+// This configures the hooks an airframe does have directly. If an airframe is defined here, it will take these coordinates instead of using the calculated positions.
 
 /*
 Example Hook Class:
