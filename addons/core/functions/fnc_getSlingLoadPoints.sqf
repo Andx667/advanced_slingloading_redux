@@ -30,13 +30,7 @@ private _middleCenterPoint = ((_frontCenterPoint vectorDiff _rearCenterPoint) ve
 private _vehicleUnitVectorUp = vectorNormalized (vectorUp _vehicle);
 
 // get Offset
-// TODO Get Offset from Config
-private _slingLoadPointHeightOffset = 0;
-{
-    if(_vehicle isKindOf (_x select 0)) then {
-        _slingLoadPointHeightOffset = (_x select 1);
-    };
-} forEach GVAR(Sling_Load_Point_Class_Height_Offset);
+private _slingLoadPointHeightOffset = [typeOf _vehicle] call FUNC(getHookHeightOffset);
 
 private _slingLoadPoints = [];
 {
