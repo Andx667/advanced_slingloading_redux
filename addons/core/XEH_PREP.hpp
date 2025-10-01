@@ -58,3 +58,5 @@ PREP(shortenRopesAction);
 PREP(shortenRopesActionCheck);
 PREP(shortenRopesIndexAction);
 PREP(showSelectRopesMenu);
+
+PREP(getHookHeightOffset);
