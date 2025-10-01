@@ -22,3 +22,4 @@ class CfgPatches {
 #include "CfgEventHandlers.hpp"
 
 #include "ASLR_Hooks.hpp"
+#include "ASLR_Hooks_HeightOffset.hpp"
