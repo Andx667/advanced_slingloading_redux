@@ -15,7 +15,7 @@
 * Public: No
 */
 
-params [ [ "_airframe", ObjNull, [ObjNull] ] ];
+params [ [ "_airframe", objNull, [objNull] ] ];
 
 private _data = _airframe getVariable QGVAR(hooksData);
 

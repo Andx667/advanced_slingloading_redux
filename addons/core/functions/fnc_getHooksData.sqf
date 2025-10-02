@@ -95,7 +95,7 @@ if (_vehicleClass in keys _cache) then {
         if (_x get "isExclusive") then { _hasExclusive = true; };
         private _hookID = _x get "hookClassname";
         _hooks set [ _hookID , _x ];
-        _hookIDs pushBack (format [QPREFIX, "hook", _hookID] joinString "_");
+        _hookIDs pushBack ([QPREFIX, "hook", _hookID] joinString "_");
     } forEach _hookEntries;
 
     // This is read only data - meaning it will be applied once publically but never updated.
