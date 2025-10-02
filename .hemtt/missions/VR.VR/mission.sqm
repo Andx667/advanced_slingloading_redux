@@ -12,14 +12,14 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=196;
+		nextID=203;
 	};
 	class Camera
 	{
-		pos[]={-10.052234,13.758088,-10.186317};
-		dir[]={0.59840828,-0.57943028,0.55335498};
-		up[]={0.42542553,0.81501389,0.39339563};
-		aside[]={0.67893648,-3.1897798e-07,-0.73421454};
+		pos[]={-72.660522,13.758088,-1.0055933};
+		dir[]={0.89467275,-0.39839625,0.20211694};
+		up[]={0.38860574,0.9172129,0.087790743};
+		aside[]={0.22035985,-1.2168312e-07,-0.97542381};
 	};
 };
 binarizationWanted=0;
@@ -30,13 +30,20 @@ addons[]=
 	"A3_Air_F_Heli_Heli_Transport_03",
 	"ace_realisticnames",
 	"ace_fastroping",
-	"A3_Soft_F_Exp_LSV_01"
+	"A3_Soft_F_Exp_LSV_01",
+	"A3_Air_F_Heli_Light_01",
+	"A3_Air_F_Beta_Heli_Transport_01",
+	"A3_Air_F_Heli_Heli_Transport_04",
+	"A3_Air_F_Heli_Light_02",
+	"A3_Air_F_EPB_Heli_Light_03",
+	"A3_Air_F_Beta_Heli_Transport_02",
+	"ace_repair"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=4;
+		items=8;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -64,6 +71,34 @@ class AddonsMetaData
 			name="Arma 3 Apex - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
+		};
+		class Item4
+		{
+			className="A3_Air_F";
+			name="Arma 3 Alpha - Aircraft";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item5
+		{
+			className="A3_Air_F_Beta";
+			name="Arma 3 Beta - Aircraft";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item6
+		{
+			className="A3_Air_F_EPB";
+			name="Arma 3 Adapt Episode - Aircraft";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item7
+		{
+			className="ace_repair";
+			name="ACE3 - Repair";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
 		};
 	};
 };
@@ -100,7 +135,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=6;
+		items=13;
 		class Item0
 		{
 			dataType="Group";
@@ -206,6 +241,115 @@ class Mission
 			};
 			id=195;
 			type="B_LSV_01_unarmed_F";
+		};
+		class Item6
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={20,8.3443718,-10.055305};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=196;
+			type="B_Heli_Transport_03_F";
+		};
+		class Item7
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={14.039852,6.7791443,-27.837488};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=197;
+			type="B_Heli_Light_01_F";
+		};
+		class Item8
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={-8.0733728,7.1392598,-44.499405};
+				angles[]={0,4.7110043,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=198;
+			type="B_Heli_Transport_01_F";
+		};
+		class Item9
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={-32.271442,7.8284173,-40.579456};
+				angles[]={0,2.0159068,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=199;
+			type="O_Heli_Transport_04_F";
+		};
+		class Item10
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={-40.871376,7.1696463,-20.940584};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=200;
+			type="O_Heli_Light_02_unarmed_F";
+		};
+		class Item11
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={-48.519733,6.8630314,-2.8156588};
+				angles[]={0,3.272053,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=201;
+			type="I_Heli_light_03_unarmed_F";
+		};
+		class Item12
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={-36.991928,8.610199,14.349281};
+				angles[]={0,4.1742077,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=202;
+			type="I_Heli_Transport_02_F";
 		};
 	};
 };

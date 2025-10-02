@@ -29,12 +29,8 @@ _frontCenterPoint = ((_rearCenterPoint vectorDiff _frontCenterPoint) vectorMulti
 _middleCenterPoint = ((_frontCenterPoint vectorDiff _rearCenterPoint) vectorMultiply 0.5) vectorAdd _rearCenterPoint;
 _vehicleUnitVectorUp = vectorNormalized (vectorUp _vehicle);
 
-_slingLoadPointHeightOffset = 0;
-{
-    if(_vehicle isKindOf (_x select 0)) then {
-        _slingLoadPointHeightOffset = (_x select 1);
-    };
-} forEach GVAR(Sling_Load_Point_Class_Height_Offset);
+// get Offset
+_slingLoadPointHeightOffset = [typeOf _vehicle] call FUNC(getHooksDefaultHeightOffset);
 
 _slingLoadPoints = [];
 {

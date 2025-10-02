@@ -27,7 +27,7 @@ private _existingRopesCount = [_vehicle] call FUNC(getRopesCount);
 
 if (_existingRopes isEqualTo []) then {
 
-    private _slingLoadPoint = [_vehicle] call FUNC(getSlingLoadPoints) select (_existingRopesCount - 1) select _ropesIndex;
+    private _slingLoadPoint = [_vehicle] call FUNC(getHooksDefault) select (_existingRopesCount - 1) select _ropesIndex;
 
     private _cargoRopes = [];
 
