@@ -60,6 +60,8 @@ PREP(showSelectRopesMenu);
 
 PREP(initAirframe);
 
+PREP(isFriendlyOrEmpty);
+
 PREP(getHooksData);
 PREP(getHooksFromConfig);
 PREP(getHooksDefault);
