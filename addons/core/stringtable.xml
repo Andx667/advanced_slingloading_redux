@@ -78,7 +78,7 @@
             <German>Für dreifache Fracht.</German>
         </Key>
         <Container name="CBA_Settings">
-            <Key ID="STR_aslr_core_set_cat_enable">
+            <Key ID="STR_aslr_core_set_enable">
                 <English>Enable</English>
                 <German>Aktivieren</German>
             </Key>
