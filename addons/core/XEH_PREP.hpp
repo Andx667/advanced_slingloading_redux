@@ -61,6 +61,7 @@ PREP(showSelectRopesMenu);
 PREP(initAirframe);
 
 PREP(isFriendlyOrEmpty);
+PREP(isTargetLocked);
 
 PREP(getHooksData);
 PREP(getHooksFromConfig);
