@@ -69,7 +69,7 @@ QSET(test) -> "ADDON_set_test"
     SETLSTRING(ignore_liftCapacity),
     [LSTRING(set_cat_main)],
     false,
-    ["Helicopter", "VTOL", "Helicopter + VTOL", "CUSTOM"], //keep custom?
+    ["Helicopter", "VTOL", "Helicopter + VTOL"],
     {},
     false
 ] call CBA_fnc_addSetting;

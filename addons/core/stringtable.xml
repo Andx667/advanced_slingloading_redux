@@ -94,6 +94,30 @@
                 <English>Any cargo heavier than what the airframe can handle, will be set to that mass.</English>
                 <German>Jede Fracht, die schwerer ist als die Tragkraft des Fluggeräts wird auf die Masse begrenzt.</German>
             </Key>
+            <Key ID="STR_aslr_core_set_allow_locked">
+                <English>Can locked vehicles be lifted?</English>
+                <German>Dürfen abgeschlossene Fahrzeuge angehoben werden?</German>
+            </Key>
+            <Key ID="STR_aslr_core_set_allow_locked_desc">
+                <English>Can locked vehicles be lifted?</English>
+                <German>Dürfen abgeschlossene Fahrzeuge angehoben werden?</German>
+            </Key>
+            <Key ID="STR_aslr_core_set_ignore_can_lift">
+                <English>What Airframe is allowed to lift cargo?</English>
+                <German>Welches Fluggerät darf Fracht heben?</German>
+            </Key>
+            <Key ID="STR_aslr_core_set_ignore_can_lift_desc">
+                <English>Can be Helicopters or VTOL or both.</English>
+                <German>Kann Hubschrauber oder VTOL oder beides sein.</German>
+            </Key>
+            <Key ID="STR_aslr_core_set_ignore_can_be_lifted">
+                <English>What types of cargo can be lifted?</English>
+                <German>Welche Frachttypen können angehängt werden?</German>
+            </Key>
+            <Key ID="STR_aslr_core_set_ignore_can_be_lifted_desc">
+                <English>Car includes most cargo crates.</English>
+                <German>Auto beinhaltet die meisten Frachtkisten.</German>
+            </Key>
         </Container>
         <Container name="CBA_Settings_Categories">
             <Key ID="STR_aslr_core_set_cat_main">
