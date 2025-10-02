@@ -66,3 +66,8 @@ PREP(getHooksData);
 PREP(getHooksFromConfig);
 PREP(getHooksDefault);
 PREP(getHooksDefaultHeightOffset);
+
+PREP(aa_rootAction_conditions);
+
+PREP(aa_deployRopes_condition);
+PREP(aa_deployRopes_statement);
