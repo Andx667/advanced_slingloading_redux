@@ -36,7 +36,6 @@ PREP(getRopeLiftCapabiliy);
 PREP(getRopes);
 PREP(getRopesAndCargo);
 PREP(getRopesCount);
-PREP(getHooksDefault);
 PREP(init);
 PREP(isSupportedCargo);
 PREP(isSupportedVehicle);
@@ -59,4 +58,9 @@ PREP(shortenRopesActionCheck);
 PREP(shortenRopesIndexAction);
 PREP(showSelectRopesMenu);
 
-PREP(getHookHeightOffset);
+PREP(initAirframe);
+
+PREP(getHooksData);
+PREP(getHooksFromConfig);
+PREP(getHooksDefault);
+PREP(getHooksDefaultHeightOffset);
