@@ -22,7 +22,7 @@ params ["_vehicle", "_player", ["_cargoCount", 1], ["_ropeLength", 15]];
 
 if !(local _vehicle) exitWith { [QGVAR(EH_execQFUNC), [_this, QFUNC(deployRopes)], _vehicle] call CBA_fnc_targetEvent; };
 
-private _slingLoadPoints = [_vehicle] call FUNC(getSlingLoadPoints);
+private _slingLoadPoints = [_vehicle] call FUNC(getHooksDefault); // investigate
 private _existingRopes = _vehicle getVariable [QGVAR(custom_ropes), []];
 
 if (_existingRopes isNotEqualTo []      ) exitWith { [QGVAR(EH_customHint), [LLSTRING(already_deployed),     false], _player] call CBA_fnc_targetEvent; };
