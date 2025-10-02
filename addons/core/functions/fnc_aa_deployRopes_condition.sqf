@@ -21,6 +21,8 @@ diag_log format ['[CVO](debug)(fnc_aa_deployRopes_condition) _this: %1', _this];
 params ["_target", "_player", "_params"];
 _params params  [""];
 
+
+
 // Different Conditions for when the player is inside the vehicle vs outside?
 
 /* - required checks:
