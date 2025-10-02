@@ -82,9 +82,17 @@
                 <English>Enable</English>
                 <German>Aktivieren</German>
             </Key>
-            <Key ID="STR_aslr_core_set_cat_enable_desc">
+            <Key ID="STR_aslr_core_set_enable_desc">
                 <English>Will Enable the Advanced Slingloading System.</English>
                 <German>Aktiviert Erweitertes Slingloading.</German>
+            </Key>
+            <Key ID="STR_aslr_core_set_ignore_liftCapacity">
+                <English>Ignore Lift Capacity of Airframe.</English>
+                <German>Ignoriert die Liftkaapität des Fluggeräts.</German>
+            </Key>
+            <Key ID="STR_aslr_core_set_ignore_liftCapacity_desc">
+                <English>Any cargo heavier than what the airframe can handle, will be set to that mass.</English>
+                <German>Jede Fracht, die schwerer ist als die Tragkraft des Fluggeräts wird auf die Masse begrenzt.</German>
             </Key>
         </Container>
         <Container name="CBA_Settings_Categories">
