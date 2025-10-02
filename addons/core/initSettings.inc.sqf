@@ -49,3 +49,39 @@ QSET(test) -> "ADDON_set_test"
     {},
     false
 ] call CBA_fnc_addSetting;
+
+//Allow lifting of locked vehicles?
+[
+    QSET(allow_locked),
+    "CHECKBOX",
+    SETLSTRING(allow_locked),
+    [LSTRING(set_cat_main)],
+    false,
+    1,
+    {},
+    false
+] call CBA_fnc_addSetting;
+
+//
+[
+    QSET(can_lift),
+    "LIST",
+    SETLSTRING(ignore_liftCapacity),
+    [LSTRING(set_cat_main)],
+    false,
+    ["Helicopter", "VTOL", "Helicopter + VTOL"],
+    {},
+    false
+] call CBA_fnc_addSetting;
+
+//can be lifted
+[
+    QSET(can_be_lifted),
+    "LIST",
+    SETLSTRING(can_be_lifted),
+    [LSTRING(set_cat_main)],
+    false,
+    ["Car", "Tank", "Car + Tank", "All"], //What class would cargo crates/boxes go into?, what about other helicopters?
+    {},
+    false
+] call CBA_fnc_addSetting;
