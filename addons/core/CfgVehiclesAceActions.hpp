@@ -9,7 +9,7 @@ showDisabled = 1
 
 
 #define ACTION_DEPLOY\
-    class PVAR(takeFromPack) {\
+    class PVAR(deployRopes) {\
         displayName = "something";\
         condition = "true";\
         statement = "systemChat 'testsub'";\
