@@ -68,7 +68,7 @@ plugins:
 - tags
 
 markdown_extensions:
-
+- tables
 # Python Markdown
 - abbr
 - attr_list

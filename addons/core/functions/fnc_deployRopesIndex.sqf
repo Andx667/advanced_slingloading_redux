@@ -18,16 +18,16 @@
  * Public: No
  */
 
-params ["_vehicle", "_player", ["_ropesIndex", 0], ["_ropeLength", 15]];
+params ["_vehicle", "_player", ["_ropeIndex", 0], ["_ropeLength", 15]];
 
 if !(local _vehicle) exitWith { [QGVAR(EH_execQFUNC), [_this, QFUNC(deployRopesIndex)], _vehicle] call CBA_fnc_targetEvent; };
 
-private _existingRopes = [_vehicle,_ropesIndex] call FUNC(getRopes);
+private _existingRopes = [_vehicle,_ropeIndex] call FUNC(getRopes);
 private _existingRopesCount = [_vehicle] call FUNC(getRopesCount);
 
 if (_existingRopes isEqualTo []) then {
 
-    private _slingLoadPoint = [_vehicle] call FUNC(getHooksDefault) select (_existingRopesCount - 1) select _ropesIndex;
+    private _slingLoadPoint = [_vehicle] call FUNC(getHooksDefault) select (_existingRopesCount - 1) select _ropeIndex;
 
     private _cargoRopes = [];
 
@@ -38,6 +38,6 @@ if (_existingRopes isEqualTo []) then {
     };
 
     private _allRopes = _vehicle getVariable [QGVAR(custom_ropes), []];
-    _allRopes set [_ropesIndex, _cargoRopes];
+    _allRopes set [_ropeIndex, _cargoRopes];
     _vehicle setVariable [QGVAR(custom_ropes), _allRopes, true];
 };
