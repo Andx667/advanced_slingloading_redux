@@ -22,7 +22,6 @@ params ["_obj","_heli",["_ropes",[]]];
 
 private _liftCapability   = getNumber (configOf _heli >> "slingLoadMaxCargoMass");
 private _originalMass     = getMass _obj;
-//private _heavyLiftMinLift = missionNamespace getVariable [QGVAR(SET_MASS),4000];
 
 if (_originalMass >= (_liftCapability * 0.8)) then {
 
