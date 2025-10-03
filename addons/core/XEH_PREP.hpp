@@ -62,6 +62,7 @@ PREP(initAirframe);
 
 PREP(isFriendlyOrEmpty);
 PREP(isTargetLocked);
+PREP(isAllowedSeat);
 
 PREP(getHooksData);
 PREP(getHooksFromConfig);

@@ -15,29 +15,29 @@
  * Public: No
  */
 
-params ["_vehicle"];
+params ["_vehicleObj"];
 
-private ["_slingLoadPointsArray", "_cornerPoints", "_rearCenterPoint", "_vehicleUnitVectorUp"];
+private ["_slingLoadPointsArray", "_cornerPoints", "_rearCenterPoint", "_vehicleObjUnitVectorUp"];
 private ["_slingLoadPoints", "_modelPoint", "_modelPointASL", "_surfaceIntersectStartASL", "_surfaceIntersectEndASL", "_surfaces", "_intersectionASL", "_intersectionObject"];
 
 _slingLoadPointsArray = [];
-_cornerPoints = [_vehicle] call FUNC(getCornerPoints);
+_cornerPoints = [_vehicleObj] call FUNC(getCornerPoints);
 _frontCenterPoint = (((_cornerPoints select 2) vectorDiff (_cornerPoints select 3)) vectorMultiply 0.5) vectorAdd (_cornerPoints select 3);
 _rearCenterPoint = (((_cornerPoints select 0) vectorDiff (_cornerPoints select 1)) vectorMultiply 0.5) vectorAdd (_cornerPoints select 1);
 _rearCenterPoint = ((_frontCenterPoint vectorDiff _rearCenterPoint) vectorMultiply 0.2) vectorAdd _rearCenterPoint;
 _frontCenterPoint = ((_rearCenterPoint vectorDiff _frontCenterPoint) vectorMultiply 0.2) vectorAdd _frontCenterPoint;
 _middleCenterPoint = ((_frontCenterPoint vectorDiff _rearCenterPoint) vectorMultiply 0.5) vectorAdd _rearCenterPoint;
-_vehicleUnitVectorUp = vectorNormalized (vectorUp _vehicle);
+_vehicleObjUnitVectorUp = vectorNormalized (vectorUp _vehicleObj);
 
 // get Offset
-_slingLoadPointHeightOffset = [typeOf _vehicle] call FUNC(getHooksDefaultHeightOffset);
+_slingLoadPointHeightOffset = [typeOf _vehicleObj] call FUNC(getHooksDefaultHeightOffset);
 
 _slingLoadPoints = [];
 {
     _modelPoint = _x;
-    _modelPointASL = AGLToASL (_vehicle modelToWorldVisual _modelPoint);
-    _surfaceIntersectStartASL = _modelPointASL vectorAdd ( _vehicleUnitVectorUp vectorMultiply -5 );
-    _surfaceIntersectEndASL = _modelPointASL vectorAdd ( _vehicleUnitVectorUp vectorMultiply 5 );
+    _modelPointASL = AGLToASL (_vehicleObj modelToWorldVisual _modelPoint);
+    _surfaceIntersectStartASL = _modelPointASL vectorAdd ( _vehicleObjUnitVectorUp vectorMultiply -5 );
+    _surfaceIntersectEndASL = _modelPointASL vectorAdd ( _vehicleObjUnitVectorUp vectorMultiply 5 );
 
     // Determine if the surface intersection line crosses below ground level
     // If if does,  move surfaceIntersectStartASL above ground level (lineIntersectsSurfaces
@@ -61,13 +61,13 @@ _slingLoadPoints = [];
     _intersectionASL = [];
     {
         _intersectionObject = _x select 2;
-        if(_intersectionObject == _vehicle) exitWith {
+        if(_intersectionObject == _vehicleObj) exitWith {
             _intersectionASL = _x select 0;
         };
     } forEach _surfaces;
     if(count _intersectionASL > 0) then {
         _intersectionASL = _intersectionASL vectorAdd (( _surfaceIntersectStartASL vectorFromTo _surfaceIntersectEndASL ) vectorMultiply (_slingLoadPointHeightOffset select (count _slingLoadPoints)));
-        _slingLoadPoints pushBack (_vehicle worldToModelVisual (ASLToAGL _intersectionASL));
+        _slingLoadPoints pushBack (_vehicleObj worldToModelVisual (ASLToAGL _intersectionASL));
     } else {
         _slingLoadPoints pushBack [];
     };

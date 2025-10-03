@@ -11,37 +11,43 @@
 * None
 *
 * Example:
-* ['something', player] call prefix_component_fnc_functionname
+* [typeOf cursorObject] call aslr_core_fnc_getHooksData
 *
 * Public: No
 */
 
-params [ "_vehicleClass" ];
 
+params [ ["_vehicleObj", objNull, [objNull]] ];
 
-// 1. Check If Classname has already been cached    // Could use a cba namespace for public caching but meh, will cause network messages even to clients who dont care and vehicle init will already broadcast active data
+if (isNull _vehicleObj) exitWith {};
+
+private _vehicleClass = typeOf _vehicleObj;
+
+INFO_1("(HookData)(Start)Check for %1",_vehicleClass);
+
+// 1. Check If Classname has already been cached
 
 private _cache = missionNamespace getVariable QGVAR(Cache_HooksData);
 
 if (isNil "_cache") then {
-    private _cache = createHashMap;
+    _cache = createHashMap;
     missionNamespace setVariable [QGVAR(Cache_hooksData), createHashMap];
 };
 
 if (_vehicleClass in keys _cache) then {
-
+    INFO("(HookData)(Done) Found cached data!");
     _cache get _vehicleClass    // return
-
 } else {
-
+    INFO("(HookData)(Getting) No cached data - checking for config entry");
     // 2. Check if Vehicle has configDefined Hooks
     private _hookEntries = [_vehicleClass] call FUNC(getHooksFromConfig);
 
     if (isNil "_hookEntries") then {
-        _hookEntries = [];
+        INFO("(HookData)(Getting) No config entry - calculating default hooks");
 
+        _hookEntries = [];
         // No Predefined Hooks found, therefore get the Default Hooks
-        private _arrayOfOffsets = [_vehicleClass] call FUNC(getHooksFromConfig);
+        private _arrayOfOffsets = [_vehicleObj] call FUNC(getHooksDefault);
 
         // Turn OldSchool Offsets into HookEntries
         private _numOfHooks = count _arrayOfOffsets;
@@ -108,6 +114,8 @@ if (_vehicleClass in keys _cache) then {
 
     // store data in cache
     _cache set [_vehicleClass, _hooksData];
+
+    INFO("(HookData)(Done) Data cached!");
 
     _hooksData  // return
 
