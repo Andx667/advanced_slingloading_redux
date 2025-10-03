@@ -50,7 +50,7 @@ QSET(test) -> "ADDON_set_test"
     false
 ] call CBA_fnc_addSetting;
 
-//Allow lifting of locked vehicles?
+//Allow lifting of locked vehicles? And Allow locked vehicles to deploy ropes?
 [
     QSET(allow_locked),
     "CHECKBOX",

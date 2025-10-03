@@ -143,6 +143,19 @@ class CustomAttributes
 		name="Scenario";
 		class Attribute0
 		{
+			property="ENH_AddObjectsToZeus";
+			expression="        if (_value isEqualType true) then {_value = 2};        if (!is3DEN && isServer && _value > 0) then        {            _value spawn" \n "            {" \n "                params ['_value'];" \n "                waitUntil {sleep 1; allCurators isNotEqualTo []};" \n "                if (_value == 1 || _value == 2) then                {                    allCurators apply {_x addCuratorEditableObjects [allMissionObjects '', true]};                };                if (_value == 2) then                {                    addMissionEventHandler ['EntityCreated',                    {                        params ['_entity'];                        allCurators apply {_x addCuratorEditableObjects [[_entity], true]};                    }];                };            };        }";
+			class Value
+			{
+				class data
+				{
+					singleType="SCALAR";
+					value=2;
+				};
+			};
+		};
+		class Attribute1
+		{
 			property="cba_settings_hash";
 			expression="false";
 			class Value
@@ -230,7 +243,7 @@ class CustomAttributes
 				};
 			};
 		};
-		class Attribute1
+		class Attribute2
 		{
 			property="cba_settings_hasSettingsFile";
 			expression="false";
@@ -243,7 +256,7 @@ class CustomAttributes
 				};
 			};
 		};
-		nAttributes=2;
+		nAttributes=3;
 	};
 };
 class Mission
@@ -491,7 +504,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={2,7.7264757,-4};
-				angles[]={-0,4.7200174,0};
+				angles[]={0,4.7200174,0};
 			};
 			side="Empty";
 			flags=4;
