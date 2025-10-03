@@ -2,7 +2,7 @@
 
 call FUNC(init);
 
-_id0 = [QGVAR(ropeShortendEvent), {systemChat str _this}] call CBA_fnc_addEventHandler;
+_id0 = [QGVAR(ropeShortenedEvent), {systemChat str _this}] call CBA_fnc_addEventHandler;
 _id1 = [QGVAR(ropeRetractedEvent), {systemChat str _this}] call CBA_fnc_addEventHandler;
 _id2 = [QGVAR(cargoReleasedEvent), {systemChat str _this}] call CBA_fnc_addEventHandler;
 _id3 = [QGVAR(ropePickedupEvent), {systemChat str _this}] call CBA_fnc_addEventHandler;
