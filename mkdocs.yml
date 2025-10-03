@@ -6,9 +6,6 @@ site_description: Documentation for the Advanced Slingloading Redux mod for Arma
 repo_url: https://github.com/Andx667/advanced_slingloading_redux
 repo_name: Andx667/advanced_slingloading_redux
 
-extra_css:
-- stylesheets/extra.css
-
 theme:
   name: material
   font:
