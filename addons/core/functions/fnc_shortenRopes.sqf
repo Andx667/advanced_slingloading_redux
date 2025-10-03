@@ -33,4 +33,4 @@ switch (true) do {
     default { call FUNC(releaseCargo) };
 };
 
-[QGVAR(ropeShortendEvent), ["_vehicle", "_player", "_ropeIndex"]] call CBA_fnc_globalEvent;
+[QGVAR(ropeShortendEvent), [_vehicle, _player, _ropeIndex]] call CBA_fnc_globalEvent;

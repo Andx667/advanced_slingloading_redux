@@ -47,4 +47,4 @@ if (count _ropes == 4) then {
     if (missionNamespace getVariable [QGVAR(HEAVY_LIFTING_ENABLED), false]) then { [_cargo, _vehicle, _ropes] call FUNC(ropeAdjustMass); };
 };
 
-[QGVAR(ropeAttachedEvent), ["_cargo", "_player"]] call CBA_fnc_globalEvent;
+[QGVAR(ropeAttachedEvent), [_cargo, _player]] call CBA_fnc_globalEvent;

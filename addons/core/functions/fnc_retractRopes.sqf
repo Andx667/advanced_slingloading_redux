@@ -47,4 +47,4 @@ if (isNull _existingCargo) then {
 // Cleanup when no more ropes
 if ([_vehicle] call FUNC(getActiveRopes) isEqualTo []) then { _vehicle setVariable [QGVAR(custom_ropes), nil, true]; };
 
-[QGVAR(ropeRetractedEvent), ["_vehicle", "_player", "_ropeIndex"]] call CBA_fnc_globalEvent;
+[QGVAR(ropeRetractedEvent), [_vehicle, _player, _ropeIndex]] call CBA_fnc_globalEvent;
