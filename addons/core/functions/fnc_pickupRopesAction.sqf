@@ -23,8 +23,7 @@ call FUNC(getClosestRope) params ["_vehicle", "_ropeIndex"];
 
 if (isNull _vehicle) exitWith {};
 
-
-private _canNotUseLockedVehicle = (! ( missionNamespace getVariable [QGVAR(LOCKED_VEHICLES_ENABLED), false] ) && { locked _vehicle > 1 } );
+private _canNotUseLockedVehicle = (! ( SET(allow_locked) ) && { locked _vehicle > 1 } );
 
 if _canNotUseLockedVehicle exitWith { [LLSTRING(cannot_pickup_locked_vehicle), false] call FUNC(customHint); };
 
