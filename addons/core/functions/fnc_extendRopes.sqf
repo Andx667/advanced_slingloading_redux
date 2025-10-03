@@ -29,4 +29,4 @@ if (_existingRopes isNotEqualTo []) then {
     };
 };
 
-[QGVAR(ropeExtentedEvent), [_vehicle, _player, _ropeIndex]] call CBA_fnc_globalEvent;
+[QGVAR(ropeExtendedEvent), [_vehicle, _player, _ropeIndex]] call CBA_fnc_globalEvent;
