@@ -13,10 +13,6 @@
             <English>Cannot deploy cargo ropes from locked vehicle</English>
             <German>Aus einem abgeschlossenem Fahrzeug können keine Frachtseile abgeworfenw werden.</German>
         </Key>
-        <Key ID="STR_aslr_core_cannot_pickup_locked_vehicle">
-            <English>Cannot pick up cargo ropes from locked vehicle</English>
-            <German>Von einem abgeschlossenem Fahrzeug können die Seile nicht entfernt werden.</German>
-        </Key>
         <Key ID="STR_aslr_core_deploy_cargo_ropes">
             <English>Deploy Cargo Ropes</English>
             <German>Frachtseile auswerfen</German>
@@ -101,22 +97,6 @@
             <Key ID="STR_aslr_core_set_allow_locked_desc">
                 <English>If disabled, a locked vehicle can not deploy ropes and can not be attached to ropes.</English>
                 <German>Wenn deaktiviert, können abgeschlossene Fahrzeuge keine Seile auswerfen und nicht an Seilen befestigt werden.</German>
-            </Key>
-            <Key ID="STR_aslr_core_set_ignore_can_lift">
-                <English>What Airframe is allowed to lift cargo?</English>
-                <German>Welches Fluggerät darf Fracht heben?</German>
-            </Key>
-            <Key ID="STR_aslr_core_set_ignore_can_lift_desc">
-                <English>Can be Helicopters or VTOL or both.</English>
-                <German>Kann Hubschrauber oder VTOL oder beides sein.</German>
-            </Key>
-            <Key ID="STR_aslr_core_set_ignore_can_be_lifted">
-                <English>What types of cargo can be lifted?</English>
-                <German>Welche Frachttypen können angehängt werden?</German>
-            </Key>
-            <Key ID="STR_aslr_core_set_ignore_can_be_lifted_desc">
-                <English>Car includes most cargo crates.</English>
-                <German>Auto beinhaltet die meisten Frachtkisten.</German>
             </Key>
         </Container>
         <Container name="CBA_Settings_Categories">
