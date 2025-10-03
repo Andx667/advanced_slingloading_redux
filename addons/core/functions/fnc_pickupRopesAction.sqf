@@ -20,11 +20,6 @@ if !( call FUNC(canPickupRopes)) exitWith {};
 
 call FUNC(getClosestRope) params ["_vehicle", "_ropeIndex"];
 
-
 if (isNull _vehicle) exitWith {};
-
-private _canNotUseLockedVehicle = (! ( SET(allow_locked) ) && { locked _vehicle > 1 } );
-
-if _canNotUseLockedVehicle exitWith { [LLSTRING(cannot_pickup_locked_vehicle), false] call FUNC(customHint); };
 
 [_vehicle, ACE_player, _ropeIndex] call FUNC(pickupRopes);

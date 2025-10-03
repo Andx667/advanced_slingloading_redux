@@ -95,12 +95,12 @@
                 <German>Jede Fracht, die schwerer ist als die Tragkraft des Fluggeräts wird auf die Masse begrenzt.</German>
             </Key>
             <Key ID="STR_aslr_core_set_allow_locked">
-                <English>Can locked vehicles be lifted?</English>
-                <German>Dürfen abgeschlossene Fahrzeuge angehoben werden?</German>
+                <English>Allow locked vehicles to lift and be lifted?</English>
+                <German>Dürfen verschlossene Fahrzeuge Last heben bzw. Last sein?</German>
             </Key>
             <Key ID="STR_aslr_core_set_allow_locked_desc">
-                <English>Can locked vehicles be lifted?</English>
-                <German>Dürfen abgeschlossene Fahrzeuge angehoben werden?</German>
+                <English>If disabled, a locked vehicle can not deploy ropes and can not be attached to ropes.</English>
+                <German>Wenn deaktiviert, können abgeschlossene Fahrzeuge keine Seile auswerfen und nicht an Seilen befestigt werden.</German>
             </Key>
             <Key ID="STR_aslr_core_set_ignore_can_lift">
                 <English>What Airframe is allowed to lift cargo?</English>
@@ -121,8 +121,8 @@
         </Container>
         <Container name="CBA_Settings_Categories">
             <Key ID="STR_aslr_core_set_cat_main">
-                <English>ASLR - Core</English>
-                <German>ASLR - Kern</German>
+                <English>ASLR Core</English>
+                <German>ASLR Kern</German>
             </Key>
         </Container>
     </Package>
