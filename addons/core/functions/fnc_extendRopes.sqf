@@ -28,3 +28,5 @@ if (_existingRopes isNotEqualTo []) then {
         { ropeUnwind [_x, 3, 5, true]; } forEach _existingRopes;
     };
 };
+
+[QGVAR(ropeExtentedEvent), ["_vehile", "_player", "_ropeIndex"]] call CBA_fnc_globalEvent;
