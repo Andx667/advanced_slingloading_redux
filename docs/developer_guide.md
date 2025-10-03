@@ -7,7 +7,7 @@ This page describes how to develop for Advanced Slingloading Redux.
 | Eventname                      | Arguments                                  |
 | ------------------------------ | ------------------------------------------ |
 | `aslr_core_cargoReleasedEvent` | `_vehicle, _player, _ropeIndex, _allCargo` |
-| `aslr_core_ropeShortendEvent`  | `_vehicle, _player, _ropeIndex`            |
+| `aslr_core_ropeShortenedEvent`  | `_vehicle, _player, _ropeIndex`            |
 | `aslr_core_ropeRetractedEvent` | `_vehicle, _player, _ropeIndex`            |
 | `aslr_core_ropePickedupEvent`  | `_vehicle, _player, _ropeIndex`            |
 | `aslr_core_ropeExtentedEvent`  | `_vehicle, _player, _ropeIndex`            |
