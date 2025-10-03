@@ -63,7 +63,7 @@ QSET(test) -> "ADDON_set_test"
 ] call CBA_fnc_addSetting;
 
 //
-[
+/* [
     QSET(can_lift),
     "LIST",
     SETLSTRING(ignore_liftCapacity),
@@ -72,10 +72,10 @@ QSET(test) -> "ADDON_set_test"
     ["Helicopter", "VTOL", "Helicopter + VTOL"],
     {},
     false
-] call CBA_fnc_addSetting;
+] call CBA_fnc_addSetting; */
 
 //can be lifted
-[
+/* [
     QSET(can_be_lifted),
     "LIST",
     SETLSTRING(can_be_lifted),
@@ -84,4 +84,4 @@ QSET(test) -> "ADDON_set_test"
     ["Car", "Tank", "Car + Tank", "All"], //What class would cargo crates/boxes go into?, what about other helicopters?
     {},
     false
-] call CBA_fnc_addSetting;
+] call CBA_fnc_addSetting; */

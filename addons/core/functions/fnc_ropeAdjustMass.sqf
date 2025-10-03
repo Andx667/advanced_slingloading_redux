@@ -20,11 +20,11 @@
 
 params ["_obj","_heli",["_ropes",[]]];
 
-private _lift             = [_heli] call FUNC(getRopeLiftCapabiliy);
+private _liftCapability   = getNumber (configOf _heli >> "slingLoadMaxCargoMass");
 private _originalMass     = getMass _obj;
-private _heavyLiftMinLift = missionNamespace getVariable [QGVAR(SET_MASS),4000];
+//private _heavyLiftMinLift = missionNamespace getVariable [QGVAR(SET_MASS),4000];
 
-if (_originalMass >= (_lift * 0.8) && { _lift >= _heavyLiftMinLift }) then {
+if (_originalMass >= (_liftCapability * 0.8)) then {
 
     // ─────────────────────────────
     // 1) PFH to wait until rope is taut
@@ -32,7 +32,7 @@ if (_originalMass >= (_lift * 0.8) && { _lift >= _heavyLiftMinLift }) then {
     private _tautPFH = [
         {
             params ["_args", "_handle"];
-            _args params ["_obj","_heli","_ropes","_lift","_originalMass"];
+            _args params ["_obj","_heli","_ropes","_liftCapability","_originalMass"];
 
             // Check if any rope is taut
             private _taut = _ropes findIf {
@@ -43,7 +43,7 @@ if (_originalMass >= (_lift * 0.8) && { _lift >= _heavyLiftMinLift }) then {
 
             if (_taut) then {
                 // Reduce mass once
-                [QGVAR(EH_ropeSetMass), [_obj, ((_lift) * 0.8)], _obj] call CBA_fnc_targetEvent;
+                [QGVAR(EH_ropeSetMass), [_obj, ((_liftCapability) * 0.8)], _obj] call CBA_fnc_targetEvent;
 
                 // ─────────────────────────────
                 // 2) PFH to restore mass on detach
@@ -58,7 +58,7 @@ if (_originalMass >= (_lift * 0.8) && { _lift >= _heavyLiftMinLift }) then {
                             _handle call CBA_fnc_removePerFrameHandler;
                         };
                     },
-                    0.5, // check interval for detach (can adjust)
+                    0.5, // check interval for detach (can adjust) //maybe make a detached Event to check instead of a PFH?
                     [_obj,_heli,_originalMass]
                 ] call CBA_fnc_addPerFrameHandler;
 
@@ -71,6 +71,6 @@ if (_originalMass >= (_lift * 0.8) && { _lift >= _heavyLiftMinLift }) then {
             };
         },
         0.1, // check interval for taut rope
-        [_obj,_heli,_ropes,_lift,_originalMass]
+        [_obj,_heli,_ropes,_liftCapability,_originalMass]
     ] call CBA_fnc_addPerFrameHandler;
 };
