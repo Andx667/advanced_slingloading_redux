@@ -20,7 +20,7 @@ private _vehicle = [vehicle ACE_Player, cursorTarget] select isNull objectParent
 
 if !([_vehicle] call FUNC(canDeployRopes)) exitWith {};
 
-if ( missionNamespace getVariable [QGVAR(LOCKED_VEHICLES_ENABLED),false] && { locked _vehicle > 1 } ) exitWith { [LLSTRING(cannot_deploy_locked_vehicle), false] call FUNC(customHint); };
+if (!SET(allow_locked) && { locked _vehicle > 1 } ) exitWith { [LLSTRING(cannot_deploy_locked_vehicle), false] call FUNC(customHint); };
 
 private _inactiveRopes = [_vehicle] call FUNC(getActiveRopes);
 
