@@ -22,4 +22,8 @@ call FUNC(getClosestRope) params ["_vehicle", "_ropeIndex"];
 
 if (isNull _vehicle) exitWith {};
 
+private _canNotUseLockedVehicle = !( QGVAR(LOCKED_VEHICLES_ENABLED) && { locked _vehicle > 1 } );
+
+if _canNotUseLockedVehicle exitWith { [LLSTRING(cannot_pickup_locked_vehicle), false] call FUNC(customHint); };
+
 [_vehicle, ACE_player, _ropeIndex] call FUNC(pickupRopes);
