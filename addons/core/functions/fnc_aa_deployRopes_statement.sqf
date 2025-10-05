@@ -16,5 +16,11 @@
 * Public: No
 */
 
-params ["_target", "_player", "_params"];
+
+params ["_airframe", "_player", "_params"];
 _params params  [""];
+
+
+
+// create rope helper
+private _ropeHelper = objNull;
