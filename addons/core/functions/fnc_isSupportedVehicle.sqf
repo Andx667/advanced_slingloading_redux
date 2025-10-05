@@ -16,6 +16,8 @@
  * Public: No
  */
 
+// ToDo: Consider reworking this?
+
 params [ ["_vehicle", objNull, [objNull]] ];
 
 if (isNull _vehicle) exitWith { false };
