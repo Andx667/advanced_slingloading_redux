@@ -45,4 +45,4 @@ for "_i" from 0 to (_cargoCount - 1) do {
     [_vehicle, _player, _i] call FUNC(deployRopesIndex);
 };
 
-[QGVAR(API_ropeDeployedEvent), [_vehicle, _player, _cargoCount]] call CBA_fnc_localEvent;
+[QGVAR(API_ropeDeployed), [_vehicle, _player, _cargoCount]] call CBA_fnc_localEvent;

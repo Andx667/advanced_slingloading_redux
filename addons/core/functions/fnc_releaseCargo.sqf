@@ -30,4 +30,4 @@ _allCargo set [_ropeIndex, objNull];
 _vehicle setVariable [QGVAR(Cargo), _allCargo, true];
 call FUNC(retractRopes);
 
-[QGVAR(API_cargoReleasedEvent), [_vehicle, _player, _ropeIndex, _allCargo]] call CBA_fnc_localEvent;
+[QGVAR(API_cargoReleased), [_vehicle, _player, _ropeIndex, _allCargo]] call CBA_fnc_localEvent;

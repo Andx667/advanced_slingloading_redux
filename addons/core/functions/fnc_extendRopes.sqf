@@ -29,4 +29,4 @@ if (_existingRopes isNotEqualTo []) then {
     };
 };
 
-[QGVAR(API_ropeExtendedEvent), [_vehicle, _player, _ropeIndex]] call CBA_fnc_localEvent;
+[QGVAR(API_ropeExtended), [_vehicle, _player, _ropeIndex]] call CBA_fnc_localEvent;

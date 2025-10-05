@@ -44,4 +44,4 @@ private _helper = QGVAR(rope_helper) createVehicle position _player;
 _player setVariable [QGVAR(Ropes_Vehicle), [_vehicle, _ropeIndex], true];
 _player setVariable [QGVAR(Ropes_Pick_Up_Helper), _helper, true];
 
-[QGVAR(API_ropePickedupEvent), [_vehicle, _player, _ropeIndex]] call CBA_fnc_localEvent;
+[QGVAR(API_ropePickedup), [_vehicle, _player, _ropeIndex]] call CBA_fnc_localEvent;

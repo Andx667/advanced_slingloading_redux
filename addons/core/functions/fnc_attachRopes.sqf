@@ -47,4 +47,4 @@ if (count _ropes == 4) then {
     if (SET(ignore_liftCapacity)) then { [_cargo, _vehicle, _ropes] call FUNC(ropeAdjustMass); };
 };
 
-[QGVAR(API_ropeAttachedEvent), [_vehicle, _cargo, _player]] call CBA_fnc_localEvent;
+[QGVAR(API_ropeAttached), [_vehicle, _cargo, _player]] call CBA_fnc_localEvent;
