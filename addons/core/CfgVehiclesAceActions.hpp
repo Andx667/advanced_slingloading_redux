@@ -3,17 +3,14 @@
 #define ROOT_PROPERTIES\
 displayName = "Slingloading Controls";\
 icon = QPATHTOF(data\icon_aslr_ca.paa);\
-statement = "true";\
-condition = "true";\
-showDisabled = 1
-
+statement = "";\
+condition = Q(_this call FUNC(aa_rootAction_conditions))
 
 #define ACTION_DEPLOY\
     class PVAR(deployRopes) {\
         displayName = "something";\
         condition = "true";\
         statement = "systemChat 'testsub'";\
-        showDisabled = 1;\
         icon = QPATHTOF(data\icon_aslr_ca.paa);\
     }
 
