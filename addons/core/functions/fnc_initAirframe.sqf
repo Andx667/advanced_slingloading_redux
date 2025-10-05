@@ -17,6 +17,7 @@
 
 params [ [ "_airframe", objNull, [objNull] ] ];
 
+
 private _data = _airframe getVariable QGVAR(hooksData);
 
 if (isNil "_data") then {
@@ -28,3 +29,12 @@ if (isNil "_data") then {
     // This sets the default state of the hook to false, meaning "not currently in use".
     { _airframe setVariable [_x, false, true]; } forEach (_hookData get "hookIDs");
 };
+
+// Sets up Clean-Up Event Handlers
+private _code = {
+	params ["_airframe"];
+    ropeAttachedObjects _airFrame select { _x isKindOf QGVAR(ropeHelper) } apply { deleteVehicle _x };
+};
+
+if (isMultiplayer) then { _airframe addMPEventHandler ["MPKilled", _code]; } else { _airframe addEventHandler ["Killed", _code]; };
+_airframe addEventHandler ["Deleted", _code];
