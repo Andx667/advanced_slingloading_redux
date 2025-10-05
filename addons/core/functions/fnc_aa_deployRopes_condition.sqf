@@ -27,9 +27,6 @@ _params params  [""];
 
 /* - required checks:
 
-// Is supported Vehicle
-[_vehicle] call FUNC(isSupportedVehicle)
-
 // Is the player currently holding ropes? - could be ignored, depending how carry ropes is being handled
 ACE_player getVariable [QGVAR(ropes_vehicle), []] isEqualTo []
 
