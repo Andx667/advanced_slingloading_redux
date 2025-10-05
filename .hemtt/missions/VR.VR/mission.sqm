@@ -12,14 +12,14 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=203;
+		nextID=204;
 	};
 	class Camera
 	{
-		pos[]={-10.052234,13.758088,-10.186317};
-		dir[]={0.59839833,-0.57942051,0.55334562};
-		up[]={0.42541358,0.81502873,0.39338467};
-		aside[]={0.67892772,-1.4901161e-08,-0.73420519};
+		pos[]={-26.316994,19.008095,-1.0012292};
+		dir[]={0.81334209,-0.56621212,-0.13394225};
+		up[]={0.55870283,0.82424778,-0.092008136};
+		aside[]={-0.16250195,-1.8099399e-07,-0.98674172};
 	};
 };
 binarizationWanted=0;
@@ -37,13 +37,16 @@ addons[]=
 	"A3_Air_F_Heli_Light_02",
 	"A3_Air_F_EPB_Heli_Light_03",
 	"A3_Air_F_Beta_Heli_Transport_02",
-	"ace_repair"
+	"ace_repair",
+	"A3_Armor_F_EPC_MBT_01",
+	"ace_vehicle_damage",
+	"ace_viewports"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=8;
+		items=11;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -100,6 +103,27 @@ class AddonsMetaData
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
+		class Item8
+		{
+			className="A3_Armor_F_EPC";
+			name="Arma 3 Win Episode - Armored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item9
+		{
+			className="ace_vehicle_damage";
+			name="ACE3 - Vehicle Damage";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item10
+		{
+			className="ace_viewports";
+			name="ACE3 - Viewports";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
 	};
 };
 dlcs[]=
@@ -111,6 +135,129 @@ randomSeed=4540948;
 class ScenarioData
 {
 	author="Overlord Zorn";
+};
+class CustomAttributes
+{
+	class Category0
+	{
+		name="Scenario";
+		class Attribute0
+		{
+			property="ENH_AddObjectsToZeus";
+			expression="        if (_value isEqualType true) then {_value = 2};        if (!is3DEN && isServer && _value > 0) then        {            _value spawn" \n "            {" \n "                params ['_value'];" \n "                waitUntil {sleep 1; allCurators isNotEqualTo []};" \n "                if (_value == 1 || _value == 2) then                {                    allCurators apply {_x addCuratorEditableObjects [allMissionObjects '', true]};                };                if (_value == 2) then                {                    addMissionEventHandler ['EntityCreated',                    {                        params ['_entity'];                        allCurators apply {_x addCuratorEditableObjects [[_entity], true]};                    }];                };            };        }";
+			class Value
+			{
+				class data
+				{
+					singleType="SCALAR";
+					value=2;
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="cba_settings_hash";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					singleType="ARRAY";
+					class value
+					{
+						items=4;
+						class Item0
+						{
+							class data
+							{
+								singleType="STRING";
+								value="#CBA_HASH#";
+							};
+						};
+						class Item1
+						{
+							class data
+							{
+								singleType="ARRAY";
+								class value
+								{
+									items=1;
+									class Item0
+									{
+										class data
+										{
+											singleType="STRING";
+											value="aslr_core_set_ignore_liftcapacity";
+										};
+									};
+								};
+							};
+						};
+						class Item2
+						{
+							class data
+							{
+								singleType="ARRAY";
+								class value
+								{
+									items=1;
+									class Item0
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="BOOL";
+														value=1;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="SCALAR";
+														value=1;
+													};
+												};
+											};
+										};
+									};
+								};
+							};
+						};
+						class Item3
+						{
+							class data
+							{
+								nil=1;
+								singleType="ANY";
+							};
+						};
+					};
+				};
+			};
+		};
+		class Attribute2
+		{
+			property="cba_settings_hasSettingsFile";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					singleType="BOOL";
+					value=1;
+				};
+			};
+		};
+		nAttributes=3;
+	};
 };
 class Mission
 {
@@ -135,7 +282,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=13;
+		items=14;
 		class Item0
 		{
 			dataType="Group";
@@ -148,7 +295,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={0,5.0014391,-1.9499998};
+						position[]={0,5.0014391,0.049999952};
 						angles[]={0,0.44831166,0};
 					};
 					side="Civilian";
@@ -350,6 +497,22 @@ class Mission
 			};
 			id=202;
 			type="I_Heli_Transport_02_F";
+		};
+		class Item13
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2,7.7264757,-4};
+				angles[]={0,4.7200174,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=203;
+			type="B_MBT_01_TUSK_F";
 		};
 	};
 };

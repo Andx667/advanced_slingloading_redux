@@ -6,9 +6,6 @@ site_description: Documentation for the Advanced Slingloading Redux mod for Arma
 repo_url: https://github.com/Andx667/advanced_slingloading_redux
 repo_name: Andx667/advanced_slingloading_redux
 
-extra_css:
-- stylesheets/extra.css
-
 theme:
   name: material
   font:
@@ -24,8 +21,7 @@ theme:
   # Palette toggle for light mode
   - media: "(prefers-color-scheme: light)"
     scheme: default
-    primary: custom
-    accent: custom
+    primary: red
     toggle:
       icon: material/brightness-7
       name: Switch to dark mode
@@ -33,8 +29,7 @@ theme:
   # Palette toggle for dark mode
   - media: "(prefers-color-scheme: dark)"
     scheme: slate
-    primary: custom
-    accent: custom
+    primary: red
     toggle:
       icon: material/brightness-4
       name: Switch to system preference
@@ -73,7 +68,7 @@ plugins:
 - tags
 
 markdown_extensions:
-
+- tables
 # Python Markdown
 - abbr
 - attr_list

@@ -18,7 +18,7 @@
  * Public: No
  */
 
-params ["_vehicle", "_player", ["_cargoCount", 1], ["_ropeLength", 15]];
+params ["_vehicle", "_player", ["_cargoCount", 1]];
 
 if !(local _vehicle) exitWith { [QGVAR(EH_execQFUNC), [_this, QFUNC(deployRopes)], _vehicle] call CBA_fnc_targetEvent; };
 
@@ -44,3 +44,5 @@ _vehicle setVariable [QGVAR(cargo), _cargo, true];
 for "_i" from 0 to (_cargoCount - 1) do {
     [_vehicle, _player, _i] call FUNC(deployRopesIndex);
 };
+
+[QGVAR(API_ropeDeployed), [_vehicle, _player, _cargoCount]] call CBA_fnc_localEvent;

@@ -32,3 +32,5 @@ switch (true) do {
     case ( _ropeLength >= 2 ):  { { ropeUnwind [ _x, 3,-1, true ]; } forEach _existingRopes; };
     default { call FUNC(releaseCargo) };
 };
+
+[QGVAR(API_ropeShortened), [_vehicle, _player, _ropeIndex]] call CBA_fnc_localEvent;

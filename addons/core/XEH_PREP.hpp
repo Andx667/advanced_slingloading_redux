@@ -32,7 +32,7 @@ PREP(getCargo);
 PREP(getClosestRope);
 PREP(getCornerPoints);
 PREP(getInactiveRopes);
-PREP(getRopeLiftCapabiliy);
+
 PREP(getRopes);
 PREP(getRopesAndCargo);
 PREP(getRopesCount);
