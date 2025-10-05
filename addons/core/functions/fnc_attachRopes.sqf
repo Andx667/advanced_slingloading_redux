@@ -44,7 +44,7 @@ if (count _ropes == 4) then {
     _allCargo set [(_vehicleWithIndex select 1),_cargo];
     _vehicle setVariable [QGVAR(cargo), _allCargo, true];
 
-    if (missionNamespace getVariable [QGVAR(HEAVY_LIFTING_ENABLED), false]) then { [_cargo, _vehicle, _ropes] call FUNC(ropeAdjustMass); };
+    if (SET(ignore_liftCapacity)) then { [_cargo, _vehicle, _ropes] call FUNC(ropeAdjustMass); };
 };
 
 [QGVAR(ropeAttachedEvent), [_cargo, _player]] call CBA_fnc_globalEvent;
