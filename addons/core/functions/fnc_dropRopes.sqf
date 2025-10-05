@@ -32,4 +32,4 @@ if !(isNull _helper) then {
 _player setVariable [QGVAR(Ropes_Vehicle), nil, true];
 _player setVariable [QGVAR(Ropes_Pick_Up_Helper), nil, true];
 
-[QGVAR(ropeDroppedEvent), [_vehicle, _player, _ropeIndex]] call CBA_fnc_globalEvent;
+[QGVAR(API_ropeDroppedEvent), [_vehicle, _player, _ropeIndex]] call CBA_fnc_localEvent;
