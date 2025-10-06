@@ -36,7 +36,7 @@ params ["_vehicle", "_cargo"];
                     _vehicle != _cargo
                     &&
                     {
-                        isNull ropeAttachedTo cursorObject;
+                        isNull ropeAttachedTo cursorObject; //maybe _cargo?
                     }
                 }
             }
