@@ -73,6 +73,10 @@
             <English>The cargo ropes are too short. Move vehicle closer.</English>
             <German>Die Frachtseile sind zu kurz. Bewege das Fahrzeug näher heran.</German>
         </Key>
+        <Key ID="STR_aslr_core_already_attached">
+            <English>The cargo is already attached to an airframe.</English>
+            <German>Die Fracht ist bereits an einem Luftfahrzeug befestigt.</German>
+        </Key>
         <Key ID="STR_aslr_core_triple_cargo">
             <English>For triple cargo.</English>
             <German>Für dreifache Fracht.</German>
