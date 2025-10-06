@@ -1,16 +1,17 @@
 #include "..\script_component.hpp"
 /*
  * Authors: Andx
- * Checks if a .
+ * Checks if a vehicle friendly to the caller or empty.
  *
  * Arguments:
- * 0: Argument (optional, default: value) <OBJECT>
+ * 0: Vehicle <OBJECT>
+ * 1: Caller <OBJECT>
  *
  * Return Value:
- * Return description <NONE>
+ * is Friendly Or Empty <BOOLEAN>
  *
  * Example:
- * [params] call PREFIX_core_fnc_isFriendlyOrEmpty
+ * [helicopter, player] call aslr_core_fnc_isFriendlyOrEmpty
  *
  * Public: No
  */
