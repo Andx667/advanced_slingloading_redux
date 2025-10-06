@@ -34,6 +34,10 @@ params ["_vehicle", "_cargo"];
                 &&
                 {
                     _vehicle != _cargo
+                    &&
+                    {
+                        isNull ropeAttachedTo cursorObject;
+                    }
                 }
             }
         }

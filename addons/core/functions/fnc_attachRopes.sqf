@@ -27,12 +27,6 @@ if !(local _vehicle) exitWith { [QGVAR(EH_execQFUNC), [_this, QFUNC(attachRopes)
 
 private _ropes = [_vehicle, (_vehicleWithIndex select 1)] call FUNC(getRopes);
 
-private _allCargo = _vehicle getVariable [QGVAR(cargo), []];
-
-if (_cargo in _allCargo) exitWith {
-    [QGVAR(EH_customHint), [LLSTRING(already_attached), false], _player] call CBA_fnc_targetEvent;
-};
-
 if (count _ropes == 4) then {
 
     private _ropeLength = (ropeLength (_ropes select 0));
@@ -45,6 +39,8 @@ if (count _ropes == 4) then {
     [_vehicle, _player, (_vehicleWithIndex select 1)] call FUNC(dropRopes);
 
     for "_i" from 0 to 3 do { [_cargo, _attachmentPoints select _i, [0,0,-1]] ropeAttachTo (_ropes select _i); };
+
+    private _allCargo = _vehicle getVariable [QGVAR(cargo), []];
 
     _allCargo set [(_vehicleWithIndex select 1),_cargo];
     _vehicle setVariable [QGVAR(cargo), _allCargo, true];
