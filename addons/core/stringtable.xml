@@ -11,7 +11,11 @@
         </Key>
         <Key ID="STR_aslr_core_cannot_deploy_locked_vehicle">
             <English>Cannot deploy cargo ropes from locked vehicle</English>
-            <German>Aus einem abgeschlossenem Fahrzeug können keine Frachtseile abgeworfenw werden.</German>
+            <German>Aus einem abgeschlossenem Fahrzeug können keine Frachtseile abgeworfen werden.</German>
+        </Key>
+        <Key ID="STR_aslr_core_cannot_pickup_locked_vehicle">
+            <English>Cannot pickup cargo ropes from locked vehicle</English>
+            <German>Aus einem abgeschlossenem Fahrzeug können keine Frachtseile aufgenommen werden.</German>
         </Key>
         <Key ID="STR_aslr_core_deploy_cargo_ropes">
             <English>Deploy Cargo Ropes</English>
