@@ -15,14 +15,11 @@
  * Public: No
  */
 
-params ["_vehicle"];
+params ["_vehicle", ["_ropeIndex", 0, [0]]];
 
-private _allCargo = _vehicle getVariable [QGVAR(cargo), []];
-private _canShorten = true;
+private _cargo = [_vehicle, _ropeIndex] call FUNC(getCargo);
 
-{
-    if (_x distance _vehicle < 10) then { _canShorten = false; };
-} forEach _allCargo;
+if (_cargo distance _vehicle < 10) exitWith { false; };
 
 if (ACE_player distance _vehicle > 10) exitWith { false };
 
@@ -34,4 +31,4 @@ if ((count _existingRopes) == 0) exitWith { false };
 private _activeRopes = [_vehicle] call FUNC(getActiveRopes);
 if ((count _activeRopes) == 0) exitWith { false };
 
-_canShorten
+true
