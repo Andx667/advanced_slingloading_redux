@@ -20,7 +20,7 @@ params ["_vehicle"];
 private _allCargo = _vehicle getVariable [QGVAR(cargo), []];
 
 {
-    if _x distance _vehicle < 10 exitWith { false; };
+    if (_x distance _vehicle < 10) exitWith { false; };
 } forEach _allCargo;
 
 if (ACE_player distance _vehicle > 10) exitWith { false };
