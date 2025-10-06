@@ -15,7 +15,11 @@
  * Public: No
  */
 
-params ["_vehicle"];
+params ["_vehicle", ["_ropeIndex", 0, [0]]];
+
+private _cargo = [_vehicle, _ropeIndex] call FUNC(getCargo);
+
+if (_cargo distance _vehicle < 10) exitWith { false; };
 
 if (ACE_player distance _vehicle > 10) exitWith { false };
 
@@ -27,4 +31,4 @@ if ((count _existingRopes) == 0) exitWith { false };
 private _activeRopes = [_vehicle] call FUNC(getActiveRopes);
 if ((count _activeRopes) == 0) exitWith { false };
 
-true;
+true
