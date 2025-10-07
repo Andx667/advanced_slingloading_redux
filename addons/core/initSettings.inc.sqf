@@ -62,6 +62,18 @@ QSET(test) -> "ADDON_set_test"
     false
 ] call CBA_fnc_addSetting;
 
+//Allow lifting of locked vehicles? And Allow locked vehicles to deploy ropes?
+[
+    QSET(allowedSeats),
+    "LIST",
+    SETLSTRING(allowedSeats),
+    [LSTRING(set_cat_main)],
+    [[0,1,2,3,4], [LSTRING(set_allowedSeats_all), LSTRING(set_allowedSeats_crew), LSTRING(set_allowedSeats_copilot), LSTRING(set_allowedSeats_pilot), LSTRING(set_allowedSeats_copilotpilot)], 4], //0=all, 1=crew, 2=copilot, 3=pilot, 4=pilot+copilot
+    1,
+    {},
+    false
+] call CBA_fnc_addSetting;
+
 //
 /* [
     QSET(can_lift),
