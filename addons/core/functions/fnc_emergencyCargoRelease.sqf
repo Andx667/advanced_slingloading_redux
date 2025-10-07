@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Authors: Andx
- * Releases current cargo even mid air.
+ * Releases all current cargo.
  *
  * Arguments:
  * 0: Player <OBJECT>

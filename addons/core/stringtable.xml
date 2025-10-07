@@ -113,5 +113,15 @@
                 <German>ASLR Kern</German>
             </Key>
         </Container>
+        <Container name="CBA_Keys">
+            <Key ID="STR_aslr_core_keys_emergencyCargoRelease_name">
+                <English>Emergency Cargo Release</English>
+                <German>Notfall Frachtfreigabe</German>
+            </Key>
+            <Key ID="STR_aslr_core_keys_emergencyCargoRelease_tooltip">
+                <English>Releases all current cargo.</English>
+                <German>Gibt alle aktuellen Fracht frei.</German>
+            </Key>
+        </Container>
     </Package>
 </Project>

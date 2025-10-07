@@ -11,7 +11,7 @@
 
 [
     _category, QGVAR(key_emergencyCargoRelease),
-    [LSTRING(emergencyCargoRelease_name), LSTRING(emergencyCargoRelease_tooltip)], {
+    [LSTRING(keys_emergencyCargoRelease_name), LSTRING(keys_emergencyCargoRelease_tooltip)], {
         //key down
         [ACE_player] call FUNC(emergencyCargoRelease);
     }, {
