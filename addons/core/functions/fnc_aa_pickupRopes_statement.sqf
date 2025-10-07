@@ -11,27 +11,34 @@
 * None
 *
 * Example:
-* ['something', player] call prefix_component_fnc_functionname
+* [cursorObject, player] call aslr_core_fnc_aa_pickupRopes_statement;
 *
 * Public: No
 */
+
+#define PFH_DELAY 0
+#define MAX_DIST 10 // ToDo? Could be Setting?
 
 params ["_ropeHelper", "_player", "_params"];
 _params params  [""];
 
 //  Set Player Flag
 _player setVariable [QGVAR(isCarryingRope), true, true];
+_ropeHelper setVariable [QGVAR(isBeingCarried), true, true];
 
 //  Set Status Effects
 [_player, "forceWalk", QADDON, true] call ace_common_fnc_statusEffect_set;
 [_player, "blockThrow", QADDON, true] call ace_common_fnc_statusEffect_set;
 
 // put Weapon Away
-_player action ["SwitchWeapon", _unit, _unit, 299];
+_player action ["SwitchWeapon", _player, _player, 299];
 
 
-private _airframe = _ropeHelper getVariable [QGVAR(airframe), objNull];
+// ToDo Pickup Ropes -> Attach Rope Helper or something to player
+_ropeHelper attachTo [_player, [-0.1, 1, 0.15], "Pelvis"];
+// ToDo
 
+private _airframe = ropeAttachedTo _ropeHelper;
 
 private _parameters = [ _player, _ropeHelper, _airframe ];
 private _condition = {
@@ -40,7 +47,7 @@ private _condition = {
     currentWeapon _player isEqualTo ""
     &&
     {
-        _player isNil QGVAR(dropRope)
+        _player isNil QGVAR(player_input)
         &&
         {
             !(isNull _ropeHelper)
@@ -57,60 +64,50 @@ private _codeToRun = {
     params ["_player", "_ropeHelper", "_airframe"];
 
     // RightClick: Handle Drop Rope
-    if (inputAction "closeContext") exitWith { _player setVariable [QGVAR(dropRope), true]; };
+    if ( ["closeContext", "optics", "opticsTemp"] findIf { inputAction _x == 1} != -1) exitWith { _player setVariable [QGVAR(player_input), "DROP"]; };
 
-    if (inputAction "defaultAction") then {};
 
     private _target = cursorObject;
-
+    if ( _target in [_ropeHelper, _airframe] ) then { _target = objNull };
     private _isNull = isNull _target;
+    private _isInRange = if ( _isNull ) then { false } else { (_target distance _player) < MAX_DIST };
+    private _validTarget = ( !_isNull && {  _isInRange && { [_airframe, _target] call FUNC(isSupportedCargo) } } );
 
-    private _distance = if _isNull then { -1 } else { _target distance _player };
+    if (_validTarget && { inputAction "defaultAction" isEqualTo 1 }) exitWith { _player setVariable [QGVAR(player_input), "ATTACH"]; };
 
-    private _validTarget = (
-        ! _isNull
-        &&
-        {
-            _distance < 10   // ToDo? Could be Setting?
-            &&
-            {
-                [_airframe, _target] call FUNC(isSupportedCargo)
-            }
-        }
-    );
 
     private _leftClickDisplay = switch (true) do {
-        case _validTarget: { "attach" };            // Valid Target LLSTRING(AttachRopes)       //ToDo Stringtable
-        case _validTarget: { "attach" };            // LLSTRING(AttachRopes)       //ToDo Stringtable
-        default { "Not Valid Cargo" };              // LLSTRING(notValidCargo),    //ToDo Stringtable
+        case (_isInRange && {  _validTarget }): { "Attach" };            // ToDo Stringtable LLSTRING(AttachRopes)
+        case (_isInRange && { !_validTarget }): { "Not Valid Cargo" };   // ToDo Stringtable LLSTRING(notValidCargo)
+        default { "" };                                                  // ToDo Stringtable LLSTRING(NoCargoDetected) or leave empty?
     };
 
     // Handle Mouse Hints
-    [
-        // LeftClick
-        [
-            "not valid target",
-
-        ] select _validTarget,
-        // RightClick
-        "drop ropes"                    // LLSTING(DropRopes)              //ToDo Stringtable
-    ] call ace_interaction_fnc_showMouseHint;
+    // [LeftClick, Rightclick] //ToDo Stringtable LLSTING(DropRopes)
+    [ _leftClickDisplay, "drop ropes" ] call ace_interaction_fnc_showMouseHint;
 };
 
 private _exitCode = {
     params ["_player", "_ropeHelper", "_airframe"];
 
+    _ropeHelper setVariable [QGVAR(isBeingCarried), nil, true];
+    detach _ropeHelper;
 
-    // ToDo: Drop Ropes
-    if (_player getVariable [QGVAR(dropRope), false]) then {
-
-        detach _ropeHelper;
+    // ToDo
+    private _playerInput = _player getVariable QGVAR(player_input);
+    if !(isNil "_playerInput") then {
+        switch (_playerInput) do {
+            case "DROP": { systemChat "drop ropes" }; // ToDo
+            case "ATTACH": { systemChat "attach ropes" }; // ToDo
+        };
+        _player setVariable [QGVAR(player_input), nil];
     };
 
 
     // Player Flags
     _player setVariable [QGVAR(isCarryingRope), nil, true];
     _player setVariable [QGVAR(dropRope), nil];
+
 
     // Mouse Hints
     [] call ace_interaction_fnc_hideMouseHint;
@@ -130,6 +127,4 @@ private _exitCode = {
         _handle call CBA_fnc_removePerFrameHandler;
         _parameters call _exitCode;
     };
-}, 0, [_codeToRun, _parameters, _exitCode, _condition]] call CBA_fnc_addPerFrameHandler;
-
-// { _ropeHelper ropeDetach _x; } forEach ([_vehicle, _ropesIndex] call FUNC(getRopes));
+}, PFH_DELAY, [_codeToRun, _parameters, _exitCode, _condition]] call CBA_fnc_addPerFrameHandler;
