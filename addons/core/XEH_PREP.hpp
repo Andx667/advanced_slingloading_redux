@@ -65,5 +65,5 @@ PREP(getHooksFromConfig);
 PREP(getHooksDefault);
 PREP(getHooksDefaultHeightOffset);
 
-PREP(getCoPilot);
+PREP(getCoPilots);
 PREP(isAllowedSeat);

@@ -16,31 +16,34 @@
  * Public: No
  */
 
-params ["_vehicle", "_caller"];
+params [ "_caller"];
 TRACE_1("fnc_isAllowedSeat",_this);
 
 private _isAllowedSeat = false;
 
+private _vehicle = vehicle _caller;
 private _pilot = currentPilot _vehicle;
-private _copilot = [_vehicle] call FUNC(getCopilot);
-private _crew = fullCrew [_vehicle, "gunner"];
+private _copilot = [_vehicle] call FUNC(getCopilots) select 0;
+private _crew = fullCrew [_vehicle, "turret"];
 private _crewArray = [];
+
 {
     _crewArray pushBack (_x select 0);
 } forEach _crew;
 
 switch (SET(allowedSeats)) do {
-    case 4: { //Pilot or Co-Pilot
-        if ((_caller isEqualTo _pilot) || (_caller isEqualTo _copilot)) then { _isAllowedSeat = true; };
+
+    case 4: { //Pilot
+        if (_caller == _pilot) then { _isAllowedSeat = true; };
     };
-    case 3: { //Pilot
-        if (_caller isEqualTo _pilot) then { _isAllowedSeat = true; };
+    case 3: { //Co_Pilot
+        if (_caller == _copilot) then { _isAllowedSeat = true; };
     };
-    case 2: { //Co_Pilot
-        if (_caller isEqualTo _copilot) then { _isAllowedSeat = true; };
+    case 2: { //Pilot or Co-Pilot
+        if ((_caller == _pilot) || (_caller == _copilot)) then { _isAllowedSeat = true; };
     };
     case 1: { //Crew
-        if (_caller in _crewArray ) then { _isAllowedSeat = true; };
+        if ((_caller in _crewArray) || (_caller == _pilot) || (_caller == _copilot)) then { _isAllowedSeat = true; };
     };
     case 0: {//all
         _isAllowedSeat = true;
