@@ -21,8 +21,10 @@ TRACE_1("fnc_emergencyCargoRelease",_this);
 private _vehicle = vehicle _caller;
 private _ropesWithCargo = [_vehicle] call FUNC(getActiveRopesWithCargo);
 
+INFO_1("%1", _ropesWithCargo);
+
 {
-    [_vehicle, _caller, _x] call FUNC(releaseCargo);
+    [_vehicle, _caller, _x select 0] call FUNC(releaseCargo);
 } forEach _ropesWithCargo;
 
 [QGVAR(API_emergencyCargoRelease), [_vehicle, _caller, _ropesWithCargo]] call CBA_fnc_localEvent;
