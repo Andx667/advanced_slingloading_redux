@@ -25,4 +25,4 @@ private _ropesWithCargo = [_vehicle] call FUNC(getActiveRopesWithCargo);
     [_vehicle, _caller, _x] call FUNC(releaseCargo);
 } forEach _ropesWithCargo;
 
-[QGVAR(API_emergencyRelease), [_vehicle, _caller]] call CBA_fnc_localEvent;
+[QGVAR(API_emergencyCargoRelease), [_vehicle, _caller, _ropesWithCargo]] call CBA_fnc_localEvent;
