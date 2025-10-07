@@ -23,7 +23,7 @@ private _isAllowedSeat = false;
 
 private _vehicle = vehicle _caller;
 private _pilot = currentPilot _vehicle;
-private _copilot = [_vehicle] call FUNC(getCopilots) select 0;
+private _copilots = [_vehicle] call FUNC(getCopilots);
 private _crew = fullCrew [_vehicle, "turret"];
 private _crewArray = [];
 
@@ -37,19 +37,16 @@ switch (SET(allowedSeats)) do {
         if (_caller == _pilot) then { _isAllowedSeat = true; };
     };
     case 3: { //Co_Pilot
-        if (_caller == _copilot) then { _isAllowedSeat = true; };
+        if (_caller in _copilots) then { _isAllowedSeat = true; };
     };
     case 2: { //Pilot or Co-Pilot
-        if ((_caller == _pilot) || (_caller == _copilot)) then { _isAllowedSeat = true; };
+        if ((_caller == _pilot) || (_caller in _copilots)) then { _isAllowedSeat = true; };
     };
     case 1: { //Crew
-        if ((_caller in _crewArray) || (_caller == _pilot) || (_caller == _copilot)) then { _isAllowedSeat = true; };
+        if ((_caller in _crewArray) || (_caller == _pilot) || (_caller in _copilots)) then { _isAllowedSeat = true; };
     };
-    case 0: {//all
+    case 0: { //all
         _isAllowedSeat = true;
-    };
-    default {
-        _isAllowedSeat = false;
     };
 };
 

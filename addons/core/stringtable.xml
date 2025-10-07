@@ -115,24 +115,24 @@
                 <German></German>
             </Key>
             <Key ID="STR_aslr_core_set_allowedSeats_all">
-                <English>All Passengers</English>
-                <German>Alle Passagiere</German>
+                <English>All</English>
+                <German>Alle</German>
             </Key>
             <Key ID="STR_aslr_core_set_allowedSeats_pilot">
-                <English>Only Pilots</English>
-                <German>Nur Piloten</German>
+                <English>Only Pilot</English>
+                <German>Nur Pilot</German>
             </Key>
             <Key ID="STR_aslr_core_set_allowedSeats_copilot">
-                <English>Only Co-Pilots</English>
-                <German>Nur Co-Piloten</German>
+                <English>Only Co-Pilot</English>
+                <German>Nur Co-Pilot</German>
             </Key>
             <Key ID="STR_aslr_core_set_allowedSeats_crew">
                 <English>Only Crew</English>
                 <German>Nur Besatzung</German>
             </Key>
             <Key ID="STR_aslr_core_set_allowedSeats_copilotpilot">
-                <English>Only Pilots and Co-Pilots</English>
-                <German>Nur Piloten und Co-Piloten</German>
+                <English>Only Pilot and Co-Pilot</English>
+                <German>Nur Pilot und Co-Pilot</German>
             </Key>
         </Container>
         <Container name="CBA_Settings_Categories">
