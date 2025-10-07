@@ -29,11 +29,6 @@ private _crewArray = [];
     _crewArray pushBack (_x select 0);
 } forEach _crew;
 
-// [
-//      [R Alpha 1-1:1, "driver", -1, [], false, R Alpha 1-1:1, "$STR_POSITION_DRIVER"],
-//      [R Alpha 1-1:2, "turret", -1, [0], false, R Alpha 1-1:2, "$STR_A3_COPILOT"]
-// ]
-
 switch (SET(allowedSeats)) do {
     case "4": { //Pilot or Co-Pilot
         if ((_caller isEqualTo _pilot) || (_caller isEqualTo _copilot)) then { _isAllowedSeat = true; };
