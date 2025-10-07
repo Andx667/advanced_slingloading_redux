@@ -30,19 +30,19 @@ private _crewArray = [];
 } forEach _crew;
 
 switch (SET(allowedSeats)) do {
-    case "4": { //Pilot or Co-Pilot
+    case 4: { //Pilot or Co-Pilot
         if ((_caller isEqualTo _pilot) || (_caller isEqualTo _copilot)) then { _isAllowedSeat = true; };
     };
-    case "3": { //Pilot
+    case 3: { //Pilot
         if (_caller isEqualTo _pilot) then { _isAllowedSeat = true; };
     };
-    case "2": { //Co_Pilot
+    case 2: { //Co_Pilot
         if (_caller isEqualTo _copilot) then { _isAllowedSeat = true; };
     };
-    case "1": { //Crew
+    case 1: { //Crew
         if (_caller in _crewArray ) then { _isAllowedSeat = true; };
     };
-    case "0": {//all
+    case 0: {//all
         _isAllowedSeat = true;
     };
     default {
