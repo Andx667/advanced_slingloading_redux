@@ -3,3 +3,7 @@ Original Author: sethduda
 Redux Authors:
 Andx
 OverlordZorn
+
+Authors Slingload Rigging (Rope Models):
+Ampersand
+Lost
