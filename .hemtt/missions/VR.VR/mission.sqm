@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={13.277229,16.327501,-4.5838871};
-		dir[]={0.85121328,-0.51523191,-0.099871993};
-		up[]={0.51172286,0.85705,-0.060039897};
-		aside[]={-0.11652979,8.934876e-09,-0.99318886};
+		pos[]={6.6708713,10.123901,-5.5824933};
+		dir[]={0.9070617,-0.41793615,-0.050680045};
+		up[]={0.41728529,0.90847635,-0.023314884};
+		aside[]={-0.055785757,-1.8626451e-09,-0.99844271};
 	};
 };
 binarizationWanted=0;
@@ -41,7 +41,7 @@ addons[]=
 	"A3_Armor_F_EPC_MBT_01",
 	"ace_vehicle_damage",
 	"ace_viewports",
-	"A3_Structures_F_Items_Food",
+	"aslr_core",
 	"A3_Structures_F_Ind_Cargo",
 	"ace_cargo"
 };
@@ -129,10 +129,10 @@ class AddonsMetaData
 		};
 		class Item11
 		{
-			className="A3_Structures_F";
-			name="Arma 3 - Buildings and Structures";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
+			className="aslr_core";
+			name="Advanced Slingloading Redux - Core";
+			author="Andx";
+			url="https://github.com/Andx667/advanced_slingloading_redux";
 		};
 		class Item12
 		{
@@ -343,7 +343,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={-32,8.3443718,23.944695};
-				angles[]={-0,4.6985645,0};
+				angles[]={0,4.6985645,0};
 			};
 			side="Empty";
 			flags=4;
@@ -524,7 +524,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={-60,7.7264757,32};
-				angles[]={-0,4.7200174,0};
+				angles[]={0,4.7200174,0};
 			};
 			side="Empty";
 			flags=4;
@@ -540,7 +540,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={-60,8.3443718,23.944695};
-				angles[]={-0,4.6985645,0};
+				angles[]={0,4.6985645,0};
 			};
 			side="Empty";
 			flags=4;
@@ -556,7 +556,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={2.9802322e-07,8.3443718,7.9446945};
-				angles[]={-0,4.712389,0};
+				angles[]={0,4.712389,0};
 			};
 			side="Empty";
 			flags=4;
@@ -576,10 +576,11 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
+				init="ropeCreate [heli, [0,0,-2], this, [0,0,0], 2];";
 				name="hook";
 			};
 			id=206;
-			type="Land_Can_V1_F";
+			type="aslr_ropeHelper";
 			atlOffset=1;
 		};
 		class Item17
