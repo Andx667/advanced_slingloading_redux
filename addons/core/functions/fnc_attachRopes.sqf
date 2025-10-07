@@ -40,7 +40,8 @@ if (count _ropes == 4) then {
 
     for "_i" from 0 to 3 do { [_cargo, _attachmentPoints select _i, [0,0,-1]] ropeAttachTo (_ropes select _i); };
 
-    private _allCargo = _vehicle getVariable [QGVAR(cargo),[]];
+    private _allCargo = _vehicle getVariable [QGVAR(cargo), []];
+
     _allCargo set [(_vehicleWithIndex select 1),_cargo];
     _vehicle setVariable [QGVAR(cargo), _allCargo, true];
 
