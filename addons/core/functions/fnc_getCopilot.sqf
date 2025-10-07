@@ -7,7 +7,7 @@
  * 0: Vehicle <OBJECT>
  *
  * Return Value:
- * Return description <NONE>
+ * Array of copilot units, or objNull if no copilot exists.
  *
  * Example:
  * [helicopter] call aslr_core_fnc_getCopilot
