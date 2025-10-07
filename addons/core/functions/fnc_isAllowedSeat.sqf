@@ -11,7 +11,7 @@
  * Caller is in allowed seat <BOOLEAN>
  *
  * Example:
- * [helicopter] call aslr_core_fnc_isAllowedSeat
+ * [helicopter, player] call aslr_core_fnc_isAllowedSeat
  *
  * Public: No
  */
@@ -23,7 +23,7 @@ private _isAllowedSeat = false;
 
 private _pilot = currentPilot _vehicle;
 private _copilot = [_vehicle] call FUNC(getCopilot);
-private _crew = fullCrew [_vehicle, "gunner", true]; //is array of arrays -> select
+private _crew = fullCrew [_vehicle, "gunner"];
 private _crewArray = [];
 {
     _crewArray pushBack (_x select 0);
