@@ -106,6 +106,34 @@
                 <English>If disabled, a locked vehicle can not deploy ropes and can not be attached to ropes.</English>
                 <German>Wenn deaktiviert, können abgeschlossene Fahrzeuge keine Seile auswerfen und nicht an Seilen befestigt werden.</German>
             </Key>
+            <Key ID="STR_aslr_core_set_allowedSeats">
+                <English>Who can use slingloading actions?</English>
+                <German>Wer darf die Außenlast bedienen?</German>
+            </Key>
+            <Key ID="STR_aslr_core_set_allowedSeats_desc">
+                <English></English>
+                <German></German>
+            </Key>
+            <Key ID="STR_aslr_core_set_allowedSeats_all">
+                <English>All Passengers</English>
+                <German>Alle Passagiere</German>
+            </Key>
+            <Key ID="STR_aslr_core_set_allowedSeats_pilot">
+                <English>Only Pilots</English>
+                <German>Nur Piloten</German>
+            </Key>
+            <Key ID="STR_aslr_core_set_allowedSeats_copilot">
+                <English>Only Co-Pilots</English>
+                <German>Nur Co-Piloten</German>
+            </Key>
+            <Key ID="STR_aslr_core_set_allowedSeats_crew">
+                <English>Only Crew</English>
+                <German>Nur Besatzung</German>
+            </Key>
+            <Key ID="STR_aslr_core_set_allowedSeats_copilotpilot">
+                <English>Only Pilots and Co-Pilots</English>
+                <German>Nur Piloten und Co-Piloten</German>
+            </Key>
         </Container>
         <Container name="CBA_Settings_Categories">
             <Key ID="STR_aslr_core_set_cat_main">
