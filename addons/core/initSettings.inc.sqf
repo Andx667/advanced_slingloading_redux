@@ -62,6 +62,18 @@ QSET(test) -> "ADDON_set_test"
     false
 ] call CBA_fnc_addSetting;
 
+//Consider only same side as friendly or all friendly side?
+[
+    QSET(onlySameSide),
+    "CHECKBOX",
+    SETLSTRING(onlySameSide),
+    [LSTRING(set_cat_main)],
+    false,
+    1,
+    {},
+    false
+] call CBA_fnc_addSetting;
+
 //
 /* [
     QSET(can_lift),
