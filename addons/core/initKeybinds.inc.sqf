@@ -8,3 +8,14 @@
     }, {}, [DIK_KEYNAME, _shift, _ctrl, _alt] // Default keybind
 ] call CBA_fnc_addKeybind;
 */
+
+[
+    _category, QGVAR(key_emergencyCargoRelease),
+    [LSTRING(emergencyCargoRelease_name), LSTRING(emergencyCargoRelease_tooltip)], {
+        //key down
+        [ACE_player] call FUNC(emergencyCargoRelease);
+    }, {
+        //key up
+    },
+    [DIK_USERCUSTOM1, false, false, false] // Default keybind
+] call CBA_fnc_addKeybind;
