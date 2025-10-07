@@ -7,7 +7,7 @@
  * 0: Player <OBJECT>
  *
  * Return Value:
- * None>
+ * None
  *
  * Example:
  * [player] call aslr_core_fnc_emergencyCargoRelease
