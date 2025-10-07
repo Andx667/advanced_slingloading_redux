@@ -66,4 +66,4 @@ PREP(getHooksDefault);
 PREP(getHooksDefaultHeightOffset);
 
 PREP(getCoPilot);
-PREP(isAllowedSeats);
+PREP(isAllowedSeat);
