@@ -17,7 +17,7 @@
  */
 
 params ["_vehicle", "_caller"];
-TRACE_1("fnc_isAllowedSeats",_this);
+TRACE_1("fnc_isAllowedSeat",_this);
 
 private _isAllowedSeat = false;
 

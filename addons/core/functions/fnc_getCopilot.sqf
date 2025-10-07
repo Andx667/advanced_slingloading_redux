@@ -10,16 +10,16 @@
  * Return description <NONE>
  *
  * Example:
- * [helicopter] call aslr_core_fnc_getCopilots
+ * [helicopter] call aslr_core_fnc_getCopilot
  *
  * Public: No
  */
 
 params ["_vehicle"];
-TRACE_1("fnc_getCopilots",_this);
+TRACE_1("fnc_getCopilot",_this);
 
 //From https://community.bistudio.com/wiki/currentPilot
 private _copilotTurrets = allTurrets _vehicle select { getNumber ([_vehicle, _x] call BIS_fnc_turretConfig >> "isCopilot") > 0 };
-private _copilots = _copilotTurrets apply { _vehicle turretUnit _x };
+private _copilot = _copilotTurrets apply { _vehicle turretUnit _x };
 
-_copilots
+_copilot
