@@ -17,5 +17,5 @@
     }, {
         //key up
     },
-    [DIK_USERCUSTOM1, false, false, false] // Default keybind
+    [DIK_USERCUSTOM10, false, false, false] // Default keybind
 ] call CBA_fnc_addKeybind;
