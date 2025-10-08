@@ -68,7 +68,11 @@ QSET(test) -> "ADDON_set_test"
     "LIST",
     SETLSTRING(supportedVehicles),
     [LSTRING(set_cat_main)],
-    [[0,1,2], [LSTRING(supportedVehicles_all), LSTRING(supportedVehicles_heli), LSTRING(supportedVehicles_vtol)], 0], //0 = Helicopter + VTOL, 1 = Helicopter only, 2 = VTOL only
+    [
+        [0,1,2], //0 = Helicopter + VTOL, 1 = Helicopter only, 2 = VTOL only
+        [LSTRING(set_supportedVehicles_all), LSTRING(set_supportedVehicles_heli), LSTRING(set_supportedVehicles_vtol)],
+        0
+    ],
     1,
     {},
     false

@@ -106,6 +106,26 @@
                 <English>If disabled, a locked vehicle can not deploy ropes and can not be attached to ropes.</English>
                 <German>Wenn deaktiviert, können abgeschlossene Fahrzeuge keine Seile auswerfen und nicht an Seilen befestigt werden.</German>
             </Key>
+            <Key ID="STR_aslr_core_set_supportedvehicles">
+                <English>Supported Vehicles?</English>
+                <German>Unterstützte Fahrzeuge?</German>
+            </Key>
+            <Key ID="STR_aslr_core_set_supportedvehicles_all">
+                <English>Helicopter + VTOL</English>
+                <German>Hubschrauber + VTOL</German>
+            </Key>
+           <Key ID="STR_aslr_core_set_supportedvehicles_heli">
+                <English>Helicopter</English>
+                <German>Hubschrauber</German>
+            </Key>
+           <Key ID="STR_aslr_core_set_supportedvehicles_vtol">
+                <English>VTOL</English>
+                <German>VTOL</German>
+            </Key>
+            <Key ID="STR_aslr_core_set_supportedvehicles_desc">
+                <English>Only the selected types of vehicles are allowed to slingload.</English>
+                <German>Nur die ausgewählten Fahrzeugtypen dürfen Last heben.</German>
+            </Key>
         </Container>
         <Container name="CBA_Settings_Categories">
             <Key ID="STR_aslr_core_set_cat_main">
