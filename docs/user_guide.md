@@ -61,7 +61,7 @@ aslr_core_set_allow_locked = false;
 
 ### Allowed Seats
 
-Controls which seats in a vehicle are allowed to control the slingloadsystem.
+Controls which seats in a vehicle are allowed to control the slingload system.
 
 Valid settings are:
 
