@@ -2,7 +2,7 @@
 #
 # Pre-Requisites
 # - Mod needs to be already on the Workshop
-# - Steam Account that owns Arma and needs to be a contributer to the workshop item.
+# - Steam Account that owns Arma and needs to be a contributor to the workshop item.
 # -- It is recommended to use a dedicated Steam Account with 2FA disabled.
 #
 # How to use
@@ -34,7 +34,7 @@ jobs:
           run: echo VERSION=${GITHUB_REF:11} >> $GITHUB_ENV
 
         - name: Checkout the source code
-          uses: actions/checkout@v2
+          uses: actions/checkout@v4
 
         - name: Update script_version.hpp from release tag
           shell: pwsh
