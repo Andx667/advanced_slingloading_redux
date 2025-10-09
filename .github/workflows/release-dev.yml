@@ -34,7 +34,7 @@ jobs:
           run: echo VERSION=${GITHUB_REF:11} >> $GITHUB_ENV
 
         - name: Checkout the source code
-          uses: actions/checkout@v2
+          uses: actions/checkout@v4
 
         - name: Update script_version.hpp from release tag
           shell: pwsh
