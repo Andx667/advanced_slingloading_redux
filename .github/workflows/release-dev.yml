@@ -16,8 +16,8 @@ name: Release Dev
 
 env:
   FOLDER: '@aslr-dev'
-  WORKSHOPID: '3518473416' # ToDo Change ID
-  WORKSHOPNAME: 'Advanced Slingloading Redux [DEV]'
+  WORKSHOPID: '3583653444'
+  WORKSHOPNAME: 'Advanced Slingloading Redux - [DEV]'
 
 on:
   release:
