@@ -66,6 +66,15 @@ if (hasInterface) then {
             };
 
             missionNamespace setVariable [QGVAR(nearby_vehicles), call FUNC(findNearbyVehicles)];
+            
+            // Disable vanilla slingload if setting is enabled
+            if (SET(disable_vanilla_slingload)) then {
+                {
+                    if ([_x] call FUNC(isSupportedVehicle)) then {
+                        _x enableRopeAttach false;
+                    };
+                } forEach (missionNamespace getVariable [QGVAR(nearby_vehicles), []]);
+            };
         },
         2
     ] call CBA_fnc_addPerFrameHandler;

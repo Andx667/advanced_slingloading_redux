@@ -106,6 +106,14 @@
                 <English>If disabled, a locked vehicle can not deploy ropes and can not be attached to ropes.</English>
                 <German>Wenn deaktiviert, können abgeschlossene Fahrzeuge keine Seile auswerfen und nicht an Seilen befestigt werden.</German>
             </Key>
+            <Key ID="STR_aslr_core_set_disable_vanilla_slingload">
+                <English>Disable Vanilla Slingload</English>
+                <German>Vanilla Slingload deaktivieren</German>
+            </Key>
+            <Key ID="STR_aslr_core_set_disable_vanilla_slingload_desc">
+                <English>Disables the vanilla Arma 3 sling loading system to force use of ASLR.</English>
+                <German>Deaktiviert das Vanilla Arma 3 Slingload-System, um die Verwendung von ASLR zu erzwingen.</German>
+            </Key>
         </Container>
         <Container name="CBA_Settings_Categories">
             <Key ID="STR_aslr_core_set_cat_main">

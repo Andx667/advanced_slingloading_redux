@@ -62,6 +62,18 @@ QSET(test) -> "ADDON_set_test"
     false
 ] call CBA_fnc_addSetting;
 
+//Disable vanilla slingload system to force use of ASLR
+[
+    QSET(disable_vanilla_slingload),
+    "CHECKBOX",
+    SETLSTRING(disable_vanilla_slingload),
+    [LSTRING(set_cat_main)],
+    false,
+    1,
+    {},
+    false
+] call CBA_fnc_addSetting;
+
 //
 /* [
     QSET(can_lift),
