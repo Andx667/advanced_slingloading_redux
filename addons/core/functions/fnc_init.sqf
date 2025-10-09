@@ -69,11 +69,19 @@ if (hasInterface) then {
             
             // Disable vanilla slingload if setting is enabled
             if (SET(disable_vanilla_slingload)) then {
+                private _vehiclesToProcess = (missionNamespace getVariable [QGVAR(nearby_vehicles), []]);
+                
+                // Also include player's current vehicle if in one
+                private _playerVehicle = vehicle ACE_player;
+                if (_playerVehicle != ACE_player && {!(_playerVehicle in _vehiclesToProcess)}) then {
+                    _vehiclesToProcess pushBack _playerVehicle;
+                };
+                
                 {
                     if ([_x] call FUNC(isSupportedVehicle)) then {
                         _x enableRopeAttach false;
                     };
-                } forEach (missionNamespace getVariable [QGVAR(nearby_vehicles), []]);
+                } forEach _vehiclesToProcess;
             };
         },
         2
