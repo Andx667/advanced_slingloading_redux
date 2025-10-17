@@ -18,6 +18,8 @@
 params [ "_caller"];
 TRACE_1("fnc_isAllowedSeat",_this);
 
+if (isNull objectParent player) exitWith { true; };
+
 private _vehicle = vehicle _caller;
 private _pilot = currentPilot _vehicle;
 private _copilots = [_vehicle] call FUNC(getCopilots);
