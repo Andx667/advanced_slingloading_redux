@@ -18,7 +18,7 @@
 
 
 params ["_airframe", "_player", "_params"];
-_params params  [""];
+_params params ["_hookName"];
 
 
 

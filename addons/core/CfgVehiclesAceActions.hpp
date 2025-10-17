@@ -9,11 +9,11 @@ condition = Q(_this call FUNC(aa_rootAction_conditions))
 #define ACTION_DEPLOY\
     class PVAR(deployRopes) {\
         displayName = "something";\
-        condition = "true";\
+        condition = Q(_this call FUNC(aa_rootAction_conditions));\
         statement = "systemChat 'testsub'";\
+        insertChildren  = Q(_this call FUNC(aa_deployRopes_children));\
         icon = QPATHTOF(data\icon_aslr_ca.paa);\
     }
-
 
 
 

@@ -22,28 +22,23 @@ params ["_target", "_player", "_params"];
 _params params  [""];
 
 
+// Are there unused hooks remaining AND while non exclusive hook is being used?
 
-// Different Conditions for when the player is inside the vehicle vs outside?
 
 /* - required checks:
 
-// Is the player currently holding ropes? - could be ignored, depending how carry ropes is being handled
-ACE_player getVariable [QGVAR(ropes_vehicle), []] isEqualTo []
-
-// Only deploy more ropes if not all ropes have been already deploy
 private _existingRopes = count (_vehicle getVariable [QGVAR(custom_ropes), []]);
 _existingRopes isEqualTo 0
-||
-{
-    _existingRopes isNotEqualTo count ([_vehicle] call FUNC(getActiveRopes))
-}
+|| { _existingRopes isNotEqualTo count ([_vehicle] call FUNC(getActiveRopes)) }
 
 
 */
 
+
+
+
 // Previous Code
 /*
-
 
 if (isNull objectParent ACE_player) then {
     [cursorTarget] call FUNC(canDeployRopes);

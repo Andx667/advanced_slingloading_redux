@@ -98,8 +98,8 @@ if (_vehicleClass in keys _cache) then {
     private _hooks = createHashMap;
     private _hookIDs = [];
     {
-        if (_x get "isExclusive") then { _hasExclusive = true; };
         private _hookID = _x get "hookClassname";
+        if (_x get "isExclusive") then { _hasExclusive = _hookID; };
         _hooks set [ _hookID , _x ];
         _hookIDs pushBack ([QPREFIX, "hook", _hookID] joinString "_");
     } forEach _hookEntries;

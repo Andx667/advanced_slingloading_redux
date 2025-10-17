@@ -33,6 +33,10 @@ _ropeHelper setVariable [QGVAR(isBeingCarried), true, true];
 // put Weapon Away
 _player action ["SwitchWeapon", _player, _player, 299];
 
+// Mouse Input Handlers
+[ 0xF0, [false, false, false], { ACE_player setVariable [QGVAR(LMB), true];            }, "keydown", QGVAR(LMB_keyhandlerID), false, 0 ] call CBA_fnc_addKeyHandler;
+[ 0xF1, [false, false, false], { ACE_player setVariable [QGVAR(player_input), "DROP"]; }, "keydown", QGVAR(RMB_keyhandlerID), false, 0 ] call CBA_fnc_addKeyHandler;
+
 
 // ToDo Pickup Ropes -> Attach Rope Helper or something to player
 _ropeHelper attachTo [_player, [-0.1, 1, 0.15], "Pelvis"];
@@ -45,36 +49,22 @@ private _condition = {
     params ["_player", "_ropeHelper", "_airframe"];
 
     currentWeapon _player isEqualTo ""
-    &&
-    {
-        _player isNil QGVAR(player_input)
-        &&
-        {
-            !(isNull _ropeHelper)
-            &&
-            {
-                lifeState _player in ["HEALTHY", "INJURED"]
-            }
-        }
-    }
+    && { _player isNil QGVAR(player_input) }
+    && { !(isNull _ropeHelper) }
+    && { lifeState _player in ["HEALTHY", "INJURED"] }
 };
 
 private _codeToRun = {
 
     params ["_player", "_ropeHelper", "_airframe"];
 
-    // RightClick: Handle Drop Rope
-    if ( ["closeContext", "optics", "opticsTemp"] findIf { inputAction _x == 1} != -1) exitWith { _player setVariable [QGVAR(player_input), "DROP"]; };
-
-
     private _target = cursorObject;
-    if ( _target in [_ropeHelper, _airframe] ) then { _target = objNull };
+    if ( _target in [_ropeHelper, _airframe] || { typeOf _targetObject in ["RopeSegment"] } ) then { _target = objNull };
     private _isNull = isNull _target;
     private _isInRange = if ( _isNull ) then { false } else { (_target distance _player) < MAX_DIST };
     private _validTarget = ( !_isNull && {  _isInRange && { [_airframe, _target] call FUNC(isSupportedCargo) } } );
 
-    if (_validTarget && { inputAction "defaultAction" isEqualTo 1 }) exitWith { _player setVariable [QGVAR(player_input), "ATTACH"]; };
-
+    _player setVariable [QGVAR(isValidTarget), _validTarget];
 
     private _leftClickDisplay = switch (true) do {
         case (_isInRange && {  _validTarget }): { "Attach" };            // ToDo Stringtable LLSTRING(AttachRopes)
@@ -82,9 +72,16 @@ private _codeToRun = {
         default { "" };                                                  // ToDo Stringtable LLSTRING(NoCargoDetected) or leave empty?
     };
 
+    if !(_player isNil QGVAR(LMB)) then {
+        if (_validTarget) then { _player setVariable [QGVAR(player_input), "ATTACH"]; };
+        _player setVariable [QGVAR(LMB), nil];
+    };
+
     // Handle Mouse Hints
-    // [LeftClick, Rightclick] //ToDo Stringtable LLSTING(DropRopes)
-    [ _leftClickDisplay, "drop ropes" ] call ace_interaction_fnc_showMouseHint;
+    [
+        _leftClickDisplay,  //  LeftClick
+        "Drop Ropes"        // RightClick   //ToDo Stringtable LLSTING(DropRopes)
+    ] call ace_interaction_fnc_showMouseHint;
 };
 
 private _exitCode = {
@@ -100,14 +97,18 @@ private _exitCode = {
             case "DROP": { systemChat "drop ropes" }; // ToDo
             case "ATTACH": { systemChat "attach ropes" }; // ToDo
         };
-        _player setVariable [QGVAR(player_input), nil];
     };
 
 
     // Player Flags
+    _player setVariable [QGVAR(player_input), nil];
     _player setVariable [QGVAR(isCarryingRope), nil, true];
     _player setVariable [QGVAR(dropRope), nil];
 
+
+    // Mouse Input Handlers
+    [QGVAR(LMB_keyhandlerID)] call CBA_fnc_removeKeyHandler;
+    [QGVAR(RMB_keyhandlerID)] call CBA_fnc_removeKeyHandler;
 
     // Mouse Hints
     [] call ace_interaction_fnc_hideMouseHint;
