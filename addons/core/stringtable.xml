@@ -107,7 +107,7 @@
                 <German>Wenn deaktiviert, können abgeschlossene Fahrzeuge keine Seile auswerfen und nicht an Seilen befestigt werden.</German>
             </Key>
             <Key ID="STR_aslr_core_set_supportedvehicles">
-                <English>Supported Vehicles?</English>
+                <English>Supported Vehicle Types</English>
                 <German>Unterstützte Fahrzeuge?</German>
             </Key>
             <Key ID="STR_aslr_core_set_supportedvehicles_all">
