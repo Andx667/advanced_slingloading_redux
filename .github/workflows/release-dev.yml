@@ -12,16 +12,16 @@
 # 3. Add STEAM_USERNAME as github repo secret
 # 4. Add STEAM_PASSWORD as github repo secret
 
-name: Release
+name: Release Dev
 
 env:
-  FOLDER:  '@aslr'
-  WORKSHOPID: '3573851584'
-  WORKSHOPNAME: 'Advanced Slingloading Redux'
+  FOLDER: '@aslr-dev'
+  WORKSHOPID: '3583653444'
+  WORKSHOPNAME: 'Advanced Slingloading Redux - [DEV]'
 
 on:
   release:
-    types: released
+    types: [prereleased,released]
 
 permissions:
   contents: write
@@ -34,15 +34,15 @@ jobs:
           run: echo VERSION=${GITHUB_REF:11} >> $GITHUB_ENV
 
         - name: Checkout the source code
-          uses: actions/checkout@v2
+          uses: actions/checkout@v4
 
-        - name: Update script_version.hpp from Github release tag
+        - name: Update script_version.hpp from release tag
           shell: pwsh
           run: |
             & "${{ github.workspace }}/tools/update-version.ps1" `
               -Version "${{ github.event.release.tag_name }}"
 
-        - name: Create meta.cpp for Steam Workshop
+        - name: Create meta.cpp for dev release
           shell: pwsh
           run: |
             & "${{ github.workspace }}/tools/create-meta-cpp.ps1" `
@@ -53,7 +53,7 @@ jobs:
         - name: Setup HEMTT
           uses: arma-actions/hemtt@v1
 
-        - name: Run HEMTT build
+        - name: Run HEMTT release
           run: hemtt release --no-archive
 
         - name: Move release to releases folder
