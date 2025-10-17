@@ -4,14 +4,13 @@
  * Checks if user is in an allowed seat to operate slingloading.
  *
  * Arguments:
- * 0: Vehicle <OBJECT>
- * 1: Caller <OBJECT>
+ * 0: Caller <OBJECT>
  *
  * Return Value:
  * Caller is in allowed seat <BOOLEAN>
  *
  * Example:
- * [helicopter, player] call aslr_core_fnc_isAllowedSeat
+ * [player] call aslr_core_fnc_isAllowedSeat
  *
  * Public: No
  */
