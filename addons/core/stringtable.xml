@@ -108,7 +108,7 @@
             </Key>
             <Key ID="STR_aslr_core_set_supportedvehicles">
                 <English>Supported Vehicle Types</English>
-                <German>Unterstützte Fahrzeuge?</German>
+                <German>Unterstützte Fahrzeugtypen</German>
             </Key>
             <Key ID="STR_aslr_core_set_supportedvehicles_all">
                 <English>Helicopter + VTOL</English>
