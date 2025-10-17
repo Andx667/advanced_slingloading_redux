@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Authors: You
- * Checks if user is in an allowed seat to operate slingloading.
+ * Checks if user is in an allowed seat to operate slingloading. If he is outside its always true.
  *
  * Arguments:
  * 0: Caller <OBJECT>
@@ -10,7 +10,7 @@
  * Caller is in allowed seat <BOOLEAN>
  *
  * Example:
- * [player] call aslr_core_fnc_isAllowedSeat
+ * [helicopter, player] call aslr_core_fnc_isAllowedSeat
  *
  * Public: No
  */
@@ -18,7 +18,7 @@
 params [ "_caller"];
 TRACE_1("fnc_isAllowedSeat",_this);
 
-if (isNull objectParent player) exitWith { true; };
+if (isNull objectParent _caller) exitWith { true; };
 
 private _vehicle = vehicle _caller;
 private _pilot = currentPilot _vehicle;
@@ -42,5 +42,3 @@ switch (SET(allowedSeats)) do {
     //all
     case 0: { true };
 };
-
-_isAllowedSeat
