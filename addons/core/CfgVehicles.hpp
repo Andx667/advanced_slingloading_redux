@@ -11,6 +11,7 @@ class CfgVehicles {
         author = ECSTRING(main,author);
         displayName = "ASLR Rope Helper";
         icon = QPATHTOF(data\icon_aslr_ca.paa);
+        model = QPATHTOF(data\ropeEndLoop\ropeEndLoop.p3d);
 
         class ACE_Actions {
             class PVAR(pickUp) {
