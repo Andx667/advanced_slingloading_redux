@@ -78,8 +78,8 @@ QSET(test) -> "ADDON_set_test"
             LSTRING(set_allowedSeats_copilot),
             LSTRING(set_allowedSeats_pilot)
         ],
-        0
-    ], 
+        1
+    ],
     1,
     {},
     false
