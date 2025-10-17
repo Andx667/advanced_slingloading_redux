@@ -19,8 +19,6 @@
 params [ "_caller"];
 TRACE_1("fnc_isAllowedSeat",_this);
 
-private _isAllowedSeat = false;
-
 private _vehicle = vehicle _caller;
 private _pilot = currentPilot _vehicle;
 private _copilots = [_vehicle] call FUNC(getCopilots);
@@ -32,22 +30,16 @@ private _crewArray = [];
 } forEach _crew;
 
 switch (SET(allowedSeats)) do {
-
-    case 4: { //Pilot
-        if (_caller == _pilot) then { _isAllowedSeat = true; };
-    };
-    case 3: { //Co_Pilot
-        if (_caller in _copilots) then { _isAllowedSeat = true; };
-    };
-    case 2: { //Pilot or Co-Pilot
-        if ((_caller == _pilot) || (_caller in _copilots)) then { _isAllowedSeat = true; };
-    };
-    case 1: { //Crew
-        if ((_caller in _crewArray) || (_caller == _pilot) || (_caller in _copilots)) then { _isAllowedSeat = true; };
-    };
-    case 0: { //all
-        _isAllowedSeat = true;
-    };
+    //Pilot
+    case 4: { _caller isEqualTo _pilot };
+    //Co_Pilot
+    case 3: { _caller in _copilots };
+    //Pilot or Co-Pilot
+    case 2: { _caller isEqualTo _pilot || { _caller in _copilots } };
+    //Crew
+    case 1: { _caller in _crewArray || { _caller isEqualTo _pilot }  || { _caller in _copilots } };
+    //all
+    case 0: { true };
 };
 
 _isAllowedSeat
