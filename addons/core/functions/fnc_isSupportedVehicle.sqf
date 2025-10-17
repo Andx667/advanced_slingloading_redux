@@ -20,12 +20,13 @@ params [ ["_vehicle", objNull, [objNull]] ];
 
 if (isNull _vehicle) exitWith { false };
 
-private _isSupported = false;
-
 switch (SET(supportedVehicles)) do {
-    case 0: { if (_vehicle isKindOf "Helicopter" || _vehicle isKindOf "VTOL_Base_F") then { _isSupported = true;} }; // VTOL + Heli vehicles are supported
-    case 1: { if (_vehicle isKindOf "Helicopter") then { _isSupported = true;} }; // Only Heli vehicles are supported
-    case 2: { if (_vehicle isKindOf "VTOL_Base_F") then { _isSupported = true;} }; // Only VTOL vehicles are supported
-};
+    // VTOL + Heli vehicles are supported
+    case 0: { _vehicle isKindOf "Helicopter" ||  { _vehicle isKindOf "VTOL_Base_F" } }; 
+     // Only Heli vehicles are supported
+    case 1: { _vehicle isKindOf "Helicopter" };
+    // Only VTOL vehicles are supported
+    case 2: { _vehicle isKindOf "VTOL_Base_F" }; 
+    default { false };
+} // Return
 
-_isSupported
