@@ -107,7 +107,7 @@
                 <German>Wenn deaktiviert, können abgeschlossene Fahrzeuge keine Seile auswerfen und nicht an Seilen befestigt werden.</German>
             </Key>
             <Key ID="STR_aslr_core_set_allowedSeats">
-                <English>Who can use slingloading actions?</English>
+                <English>Controls Slingloading from Airframe</English>
                 <German>Wer darf die Außenlast bedienen?</German>
             </Key>
             <Key ID="STR_aslr_core_set_allowedSeats_desc">
