@@ -66,7 +66,7 @@ if (_vehicleClass in keys _cache) then {
 
         // handle Center Hook
         [
-            "center",
+            QEGVAR(hook,center),
             "Center",                           // ToDo: Use LSTRING
             _numOfHooks isEqualTo 2,            // isExclusive
             _arrayOfOffsets select 0 select 0
@@ -76,7 +76,7 @@ if (_vehicleClass in keys _cache) then {
 
         // Handle Front
         [
-            "front",
+            QEGVAR(hook,front),
             "Front",                            // ToDo: Use LSTRING
             false,
             _arrayOfOffsets select 1 select 0
@@ -84,7 +84,7 @@ if (_vehicleClass in keys _cache) then {
 
         // Handle Rear
         [
-            "rear",
+            QEGVAR(hook,rear),
             "Rear",                            // ToDo: Use LSTRING
             false,
             _arrayOfOffsets select 1 select 1
