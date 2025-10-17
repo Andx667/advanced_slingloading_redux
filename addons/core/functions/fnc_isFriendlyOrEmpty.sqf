@@ -23,7 +23,7 @@ private _isFriendlyOrEmpty = false;
 
 
 if (SET(onlySameSide)) then {
-    if ((crew _vehicle isEqualTo []) || ((side _vehicle) isEqualTo (side _caller))) then {
+    if ( crew _vehicle isEqualTo [] || { side _vehicle isEqualTo side _caller } ) then {
         _isFriendlyOrEmpty = true;
     };
 } else {
