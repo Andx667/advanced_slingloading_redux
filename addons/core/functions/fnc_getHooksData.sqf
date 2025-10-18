@@ -92,6 +92,11 @@ if (_vehicleClass in keys _cache) then {
 
     };
 
+    // Get Hook Index - From Front to Rear
+    _hookEntries = [_hookEntries, [], { _x get "hookOffset" select 1 }, "DESCEND"] call BIS_fnc_sortBy;
+    { _x set ["hookIndex", _forEachIndex] } forEach _hookEntries;
+
+
     // Create Helicopter Hook Data
     private _numOfHooks = count _hookEntries;
     private _hasExclusive = false;
@@ -101,7 +106,7 @@ if (_vehicleClass in keys _cache) then {
         private _hookID = _x get "hookClassname";
         if (_x get "isExclusive") then { _hasExclusive = _hookID; };
         _hooks set [ _hookID , _x ];
-        _hookIDs pushBack ([QPREFIX, "hook", _hookID] joinString "_");
+        _hookIDs pushBack _hookID;          // ([QPREFIX, "hook", _hookID] joinString "_");
     } forEach _hookEntries;
 
     // This is read only data - meaning it will be applied once publically but never updated.

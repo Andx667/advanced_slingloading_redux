@@ -35,7 +35,7 @@ if (isNil "_map") then {
 
         {
             private _hookClassname = configName _x;
-            private _prefix = format ["%1_hook",QPREFIX];
+            private _prefix = [QPREFIX, "hook"] joinString "_";
             if !( _prefix in _hookClassname ) then { _hookClassname = [_prefix, _hookClassname] joinString "_"; };
 
             // Create Hashmap per Hook
