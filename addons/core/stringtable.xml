@@ -125,6 +125,33 @@
             <Key ID="STR_aslr_core_set_supportedvehicles_desc">
                 <English>Only the selected types of vehicles are allowed to slingload.</English>
                 <German>Nur die ausgewählten Fahrzeugtypen dürfen Last heben.</German>
+            <Key ID="STR_aslr_core_set_allowedSeats">
+                <English>Controls Slingloading from Airframe</English>
+                <German>Wer darf die Außenlast bedienen?</German>
+            </Key>
+            <Key ID="STR_aslr_core_set_allowedSeats_desc">
+                <English></English>
+                <German></German>
+            </Key>
+            <Key ID="STR_aslr_core_set_allowedSeats_all">
+                <English>All</English>
+                <German>Alle</German>
+            </Key>
+            <Key ID="STR_aslr_core_set_allowedSeats_pilot">
+                <English>Only Pilot</English>
+                <German>Nur Pilot</German>
+            </Key>
+            <Key ID="STR_aslr_core_set_allowedSeats_copilot">
+                <English>Only Co-Pilot</English>
+                <German>Nur Co-Pilot</German>
+            </Key>
+            <Key ID="STR_aslr_core_set_allowedSeats_crew">
+                <English>Only Crew</English>
+                <German>Nur Besatzung</German>
+            </Key>
+            <Key ID="STR_aslr_core_set_allowedSeats_copilotpilot">
+                <English>Only Pilot and Co-Pilot</English>
+                <German>Nur Pilot und Co-Pilot</German>
             </Key>
         </Container>
         <Container name="CBA_Settings_Categories">
