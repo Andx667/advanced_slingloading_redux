@@ -1,32 +1,26 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:144.0) Gecko/20100101 Firefox/144.0" version="28.2.7">
   <diagram name="Page-1" id="dMxvzxXiLsHBvZrjk_1k">
-    <mxGraphModel dx="5360" dy="1627" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="4852" dy="1340" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="QCXTudB9rJTe6QyoqShM-47" value="&lt;div&gt;...&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;opacity=20;" vertex="1" parent="1">
+          <mxGeometry x="-1380" y="790" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="QCXTudB9rJTe6QyoqShM-48" value="&lt;div&gt;...&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;opacity=20;" vertex="1" parent="1">
+          <mxGeometry x="-1300" y="790" width="200" height="100" as="geometry" />
+        </mxCell>
         <mxCell id="QCXTudB9rJTe6QyoqShM-24" value="..." style="ellipse;whiteSpace=wrap;html=1;opacity=20;" vertex="1" parent="1">
           <mxGeometry x="-1479.25" y="1185" width="200" height="80" as="geometry" />
         </mxCell>
         <mxCell id="QCXTudB9rJTe6QyoqShM-23" value="..." style="ellipse;whiteSpace=wrap;html=1;opacity=40;" vertex="1" parent="1">
           <mxGeometry x="-1479.25" y="1165" width="200" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="yT0dor_68AKdngcypEvZ-34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;opacity=30;" parent="1" source="yT0dor_68AKdngcypEvZ-29" target="yT0dor_68AKdngcypEvZ-33" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
         <mxCell id="yT0dor_68AKdngcypEvZ-29" value="HookID: prefix_hook_classname&lt;br&gt;&lt;br&gt;Hashmap&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;opacity=30;" parent="1" vertex="1">
           <mxGeometry x="-624" y="540" width="200" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="yT0dor_68AKdngcypEvZ-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;opacity=30;" parent="1" source="yT0dor_68AKdngcypEvZ-31" target="yT0dor_68AKdngcypEvZ-35" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
         <mxCell id="yT0dor_68AKdngcypEvZ-31" value="HookID: prefix_hook_classname&lt;br&gt;&lt;br&gt;Hashmap&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;opacity=30;" parent="1" vertex="1">
           <mxGeometry x="-399" y="540" width="200" height="90" as="geometry" />
-        </mxCell>
-        <mxCell id="yT0dor_68AKdngcypEvZ-33" value="..." style="rounded=1;whiteSpace=wrap;html=1;opacity=30;" parent="1" vertex="1">
-          <mxGeometry x="-569" y="700" width="90" height="90" as="geometry" />
-        </mxCell>
-        <mxCell id="yT0dor_68AKdngcypEvZ-35" value="..." style="rounded=1;whiteSpace=wrap;html=1;opacity=30;" parent="1" vertex="1">
-          <mxGeometry x="-344" y="700" width="90" height="90" as="geometry" />
         </mxCell>
         <mxCell id="yT0dor_68AKdngcypEvZ-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="4xqQoK-wmyRuvjZb2HE3-1" target="yT0dor_68AKdngcypEvZ-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -101,10 +95,10 @@
           <mxGeometry x="-514" y="520" width="200" height="90" as="geometry" />
         </mxCell>
         <mxCell id="yT0dor_68AKdngcypEvZ-20" value="&quot;ropes&quot;&lt;br&gt;&lt;div&gt;Array&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Array of Ropes&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
-          <mxGeometry x="-514" y="680" width="90" height="90" as="geometry" />
+          <mxGeometry x="-459" y="680" width="90" height="90" as="geometry" />
         </mxCell>
         <mxCell id="yT0dor_68AKdngcypEvZ-22" value="&lt;div&gt;&quot;currLength&quot;&lt;/div&gt;&lt;div&gt;&lt;br&gt;Number&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="-409" y="680" width="90" height="90" as="geometry" />
+          <mxGeometry x="-355" y="680" width="90" height="90" as="geometry" />
         </mxCell>
         <mxCell id="yT0dor_68AKdngcypEvZ-37" value="If hook is deployed, hookMap&amp;nbsp;will be publicly defined.&lt;br&gt;&lt;br&gt;If a hook is not deployed, it is not defined / nil" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
           <mxGeometry x="-719" y="420" width="610" height="60" as="geometry" />
@@ -115,11 +109,8 @@
         <mxCell id="yT0dor_68AKdngcypEvZ-38" value="HookID: prefix_hook_classname&lt;br&gt;&lt;br&gt;Hashmap&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-514" y="520" width="200" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="yT0dor_68AKdngcypEvZ-39" value="&quot;ropes&quot;&lt;br&gt;&lt;div&gt;Array&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Array of Ropes&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
-          <mxGeometry x="-514" y="680" width="90" height="90" as="geometry" />
-        </mxCell>
         <mxCell id="yT0dor_68AKdngcypEvZ-40" value="&lt;div&gt;&quot;currLength&quot;&lt;/div&gt;&lt;div&gt;&lt;br&gt;Number&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="-409" y="680" width="90" height="90" as="geometry" />
+          <mxGeometry x="-355" y="680" width="90" height="90" as="geometry" />
         </mxCell>
         <mxCell id="QCXTudB9rJTe6QyoqShM-2" value="_vehicle SetVariable&amp;nbsp;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
           <mxGeometry x="-554" width="280" height="60" as="geometry" />
@@ -139,7 +130,13 @@
         <mxCell id="QCXTudB9rJTe6QyoqShM-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QCXTudB9rJTe6QyoqShM-5" target="QCXTudB9rJTe6QyoqShM-39">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="QCXTudB9rJTe6QyoqShM-5" value="Main Action&lt;br&gt;&lt;div&gt;&quot;Sling Loading&quot;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="QCXTudB9rJTe6QyoqShM-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;opacity=20;" edge="1" parent="1" source="QCXTudB9rJTe6QyoqShM-5" target="QCXTudB9rJTe6QyoqShM-48">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QCXTudB9rJTe6QyoqShM-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;opacity=20;" edge="1" parent="1" source="QCXTudB9rJTe6QyoqShM-5" target="QCXTudB9rJTe6QyoqShM-47">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QCXTudB9rJTe6QyoqShM-5" value="Main Action&lt;br&gt;&lt;div&gt;&quot;Sling Loading&quot;&lt;/div&gt;(no statement)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="-1340" y="345" width="200" height="80" as="geometry" />
         </mxCell>
         <mxCell id="QCXTudB9rJTe6QyoqShM-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QCXTudB9rJTe6QyoqShM-8" target="QCXTudB9rJTe6QyoqShM-10">
@@ -148,8 +145,8 @@
         <mxCell id="QCXTudB9rJTe6QyoqShM-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QCXTudB9rJTe6QyoqShM-8" target="QCXTudB9rJTe6QyoqShM-12">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="QCXTudB9rJTe6QyoqShM-8" value="Action per Hook" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="-1340" y="800" width="200" height="80" as="geometry" />
+        <mxCell id="QCXTudB9rJTe6QyoqShM-8" value="Action per Hook&lt;br&gt;&quot;Hooks Displayname&quot;&lt;br&gt;Suffix:&quot; (E)&quot;&lt;br&gt;when Exclusive&lt;br&gt;(no statement)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-1340" y="780" width="200" height="100" as="geometry" />
         </mxCell>
         <mxCell id="QCXTudB9rJTe6QyoqShM-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QCXTudB9rJTe6QyoqShM-10" target="QCXTudB9rJTe6QyoqShM-30">
           <mxGeometry relative="1" as="geometry" />
@@ -172,13 +169,13 @@
         <mxCell id="QCXTudB9rJTe6QyoqShM-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QCXTudB9rJTe6QyoqShM-14" target="QCXTudB9rJTe6QyoqShM-22">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="QCXTudB9rJTe6QyoqShM-14" value="&lt;div&gt;Rope Length: X&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="QCXTudB9rJTe6QyoqShM-14" value="&lt;div&gt;Rope Length: X&lt;/div&gt;&lt;br&gt;(no statement)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="-1479.75" y="1025" width="200" height="80" as="geometry" />
         </mxCell>
         <mxCell id="QCXTudB9rJTe6QyoqShM-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QCXTudB9rJTe6QyoqShM-15" target="QCXTudB9rJTe6QyoqShM-16">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="QCXTudB9rJTe6QyoqShM-15" value="Cargo: X" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="QCXTudB9rJTe6QyoqShM-15" value="Cargo: X&lt;br&gt;(no statement)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="-1199.75" y="1025" width="200" height="80" as="geometry" />
         </mxCell>
         <mxCell id="QCXTudB9rJTe6QyoqShM-16" value="&lt;div&gt;Detatch&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
@@ -208,17 +205,20 @@
         <mxCell id="QCXTudB9rJTe6QyoqShM-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QCXTudB9rJTe6QyoqShM-39" target="QCXTudB9rJTe6QyoqShM-41">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="QCXTudB9rJTe6QyoqShM-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="QCXTudB9rJTe6QyoqShM-39" target="QCXTudB9rJTe6QyoqShM-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="QCXTudB9rJTe6QyoqShM-39" value="&lt;div&gt;Shortcuts&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
           <mxGeometry x="-1820" y="480" width="276" height="60" as="geometry" />
         </mxCell>
         <mxCell id="QCXTudB9rJTe6QyoqShM-41" value="&lt;div&gt;Deploy All&lt;/div&gt;&lt;div&gt;Only visible if nothing is deployed&lt;br&gt;and more then 1 hook&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="-1787" y="600" width="210" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="QCXTudB9rJTe6QyoqShM-43" value="Retract All&lt;br&gt;Any deployed hook has to" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="QCXTudB9rJTe6QyoqShM-43" value="Retract All&lt;br&gt;Only when all deployed hooks are without cargo" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="-2060" y="600" width="210" height="130" as="geometry" />
         </mxCell>
         <mxCell id="QCXTudB9rJTe6QyoqShM-44" value="&quot;damaged&quot;&lt;br&gt;Boolean&lt;br&gt;(later)" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
-          <mxGeometry x="-624" y="680" width="90" height="90" as="geometry" />
+          <mxGeometry x="-570" y="680" width="90" height="90" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
