@@ -76,3 +76,7 @@ PREP(aa_deployRopes_statement);
 
 PREP(aa_pickupRopes_condition);
 PREP(aa_pickupRopes_statement);
+
+
+PREP(getCoPilots);
+PREP(isAllowedSeat);
