@@ -17,7 +17,7 @@
 */
 
 #define PFH_DELAY 0
-#define MAX_DIST 10 // ToDo? Could be Setting?
+#define MAX_DIST 5 // ToDo? Could be Setting?
 
 params ["_ropeHelper", "_player", "_params"];
 _params params  [""];
