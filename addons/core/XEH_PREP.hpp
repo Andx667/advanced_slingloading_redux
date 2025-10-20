@@ -24,7 +24,7 @@ PREP(getCoPilots);
 PREP(isAllowedSeat);
 
 
-PREP(deployRopes);
+PREP(deployHookRopes);
 
 
 // Old FNCs in Use

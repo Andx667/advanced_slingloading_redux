@@ -20,13 +20,16 @@ _params params  [""];
 
 
 // Check if system is enabled
-missionNamespace getVariable [QSET(enabled), true]  // ToDo: Create CBA Setting
+missionNamespace getVariable [QSET(enable), true]
+
+// Check for blacklisted vehicle
+&& { _target getVariable [QEGVAR(API,blacklisted), false] isNotEqualTo true }
 
 // Check if vehicle is supported
 && { [_target] call FUNC(isSupportedVehicle) }
 
 // Check if _player is inside vehicle and if so, which seats are allowed to control the sling load settings
-&& { [_player] call FUNC(isAllowedSeat) }
+&& { [_target, _player] call FUNC(isAllowedSeat) }
 
 // ToDo: check if vehicle locked based on cba setting
 && { !([_target, _player] call FUNC(isTargetLocked)) }

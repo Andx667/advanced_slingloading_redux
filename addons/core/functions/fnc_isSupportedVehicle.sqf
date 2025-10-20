@@ -22,6 +22,17 @@ params [ ["_vehicle", objNull, [objNull]] ];
 
 if (isNull _vehicle) exitWith { false };
 
+switch (true) do {
+    case (_vehicle isKindOf "Helicopter"): { true };
+    case (_vehicle isKindOf "VTOL"):       { true };
+    default { false };
+}
+
+
+/*
+Old Code
+
+
 private _isSupportedVehicle = _vehicle getVariable QGVAR(isSupportedVehicle);
 
 if (isNil "_isSupportedVehicle") then {
@@ -31,3 +42,5 @@ if (isNil "_isSupportedVehicle") then {
 };
 
 _isSupportedVehicle
+
+*/

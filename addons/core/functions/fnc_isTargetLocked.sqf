@@ -19,6 +19,7 @@
 params ["_target", "_player"];
 
 // ToDo rework this part
+// Needs to check if the vehicle is not locked fully or if, based on allowedSeatSetting, if there is a seat not locked which would be
 
 /*
     if (missionNamespace getVariable [QGVAR(LOCKED_VEHICLES_ENABLED), false]) then {
