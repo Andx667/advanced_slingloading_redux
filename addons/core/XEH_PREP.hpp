@@ -29,6 +29,10 @@ PREP(deployRopes);
 
 // Old FNCs in Use
 PREP(isSupportedVehicle);
+PREP(isSupportedCargo);
+PREP(customHint);
+PREP(getCornerPoints);
+PREP(ropeSetMass);
 
 
 
@@ -47,7 +51,6 @@ PREP(canPickupRopes);
 PREP(canReleaseCargo);
 PREP(canRetractRopes);
 PREP(canShortenRopes);
-PREP(customHint);
 PREP(deployRopes);
 PREP(deployRopesAction);
 PREP(deployRopesActionCheck);
@@ -67,7 +70,6 @@ PREP(getActiveRopesWithCargo);
 PREP(getActiveRopesWithoutCargo);
 PREP(getCargo);
 PREP(getClosestRope);
-PREP(getCornerPoints);
 PREP(getInactiveRopes);
 
 PREP(getRopes);
@@ -87,7 +89,7 @@ PREP(retractRopesAction);
 PREP(retractRopesActionCheck);
 PREP(retractRopesIndexAction);
 PREP(ropeAdjustMass);
-PREP(ropeSetMass);
+
 PREP(shortenRopes);
 PREP(shortenRopesAction);
 PREP(shortenRopesActionCheck);
