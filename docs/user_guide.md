@@ -74,3 +74,9 @@ Valid settings are:
 ```sqf
 aslr_core_set_allowedSeats = 0;
 ```
+
+## Keybindings
+
+### Emergency Release of Cargo
+
+ToDo
