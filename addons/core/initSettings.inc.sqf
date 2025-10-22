@@ -77,6 +77,12 @@ QSET(test) -> "ADDON_set_test"
             LSTRING(set_supportedVehicles_vtol)
         ],
         0
+    ],
+    1,
+    {},
+    false
+] call CBA_fnc_addSetting;
+
 //Allow lifting of locked vehicles? And Allow locked vehicles to deploy ropes?
 [
     QSET(allowedSeats),
@@ -95,7 +101,6 @@ QSET(test) -> "ADDON_set_test"
         ],
         1
     ],
-    1,
     {},
     false
 ] call CBA_fnc_addSetting;
