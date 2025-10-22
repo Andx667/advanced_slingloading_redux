@@ -90,6 +90,14 @@
                 <English>Will Enable the Advanced Slingloading System.</English>
                 <German>Aktiviert Erweitertes Slingloading.</German>
             </Key>
+            <Key ID="STR_aslr_core_set_onlySameSide">
+                <English>Only Same Side</English>
+                <German>Nur gleiche Seite</German>
+            </Key>
+            <Key ID="STR_aslr_core_set_onlySameSide_desc">
+                <English>If activated only vehicles of the same side as the player (or empty) can be slingloaded.</English>
+                <German>Wenn aktiviert können nur zivile Fahrzeuge und Fahrzeuge der gleichen Seite des Spielers befestigt werden.</German>
+            </Key>
             <Key ID="STR_aslr_core_set_ignore_liftCapacity">
                 <English>Ignore Lift Capacity of Airframe.</English>
                 <German>Ignoriert die Liftkapazität des Fluggeräts.</German>
@@ -105,6 +113,26 @@
             <Key ID="STR_aslr_core_set_allow_locked_desc">
                 <English>If disabled, a locked vehicle can not deploy ropes and can not be attached to ropes.</English>
                 <German>Wenn deaktiviert, können abgeschlossene Fahrzeuge keine Seile auswerfen und nicht an Seilen befestigt werden.</German>
+            </Key>
+            <Key ID="STR_aslr_core_set_supportedvehicles">
+                <English>Supported Vehicle Types</English>
+                <German>Unterstützte Fahrzeugtypen</German>
+            </Key>
+            <Key ID="STR_aslr_core_set_supportedvehicles_all">
+                <English>Helicopter + VTOL</English>
+                <German>Hubschrauber + VTOL</German>
+            </Key>
+            <Key ID="STR_aslr_core_set_supportedvehicles_heli">
+                <English>Helicopter</English>
+                <German>Hubschrauber</German>
+            </Key>
+            <Key ID="STR_aslr_core_set_supportedvehicles_vtol">
+                <English>VTOL</English>
+                <German>VTOL</German>
+            </Key>
+            <Key ID="STR_aslr_core_set_supportedvehicles_desc">
+                <English>Only the selected types of vehicles are allowed to slingload.</English>
+                <German>Nur die ausgewählten Fahrzeugtypen dürfen Last heben.</German>
             </Key>
             <Key ID="STR_aslr_core_set_allowedSeats">
                 <English>Controls Slingloading from Airframe</English>

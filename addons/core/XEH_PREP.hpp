@@ -68,3 +68,5 @@ PREP(getHooksDefaultHeightOffset);
 PREP(emergencyCargoRelease);
 PREP(getCoPilots);
 PREP(isAllowedSeat);
+
+PREP(isFriendlyOrEmpty);
