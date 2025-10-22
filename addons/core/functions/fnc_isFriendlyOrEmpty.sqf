@@ -19,18 +19,9 @@
 params ["_vehicle", "_caller"];
 TRACE_1("fnc_isFriendlyOrEmpty",_this);
 
-private _isFriendlyOrEmpty = false;
-
-
 if (SET(onlySameSide)) then {
-    if ( crew _vehicle isEqualTo [] || { side _vehicle isEqualTo side _caller } ) then {
-        _isFriendlyOrEmpty = true;
-    };
+    crew _vehicle isEqualTo [] || { side _vehicle isEqualTo side _caller };
 } else {
     private _isFriendly = [side _vehicle, side _caller] call BIS_fnc_sideIsFriendly;
-    if ((crew _vehicle isEqualTo []) || _isFriendly ) then {
-        _isFriendlyOrEmpty = true;
-    };
+    (crew _vehicle isEqualTo []) || _isFriendly;
 };
-
-_isFriendlyOrEmpty
