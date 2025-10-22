@@ -62,13 +62,24 @@ QSET(test) -> "ADDON_set_test"
     false
 ] call CBA_fnc_addSetting;
 
-//Consider only same side as friendly or all friendly side?
+//Allow lifting of locked vehicles? And Allow locked vehicles to deploy ropes?
 [
-    QSET(onlySameSide),
-    "CHECKBOX",
-    SETLSTRING(onlySameSide),
+    QSET(allowedSeats),
+    "LIST",
+    SETLSTRING(allowedSeats),
     [LSTRING(set_cat_main)],
-    false,
+    [
+        //0=all, 1=crew, 2=pilot+copilot, 3=copilot, 4=pilot
+        [0,1,2,3,4],
+        [
+            LSTRING(set_allowedSeats_all),
+            LSTRING(set_allowedSeats_crew),
+            LSTRING(set_allowedSeats_copilotpilot),
+            LSTRING(set_allowedSeats_copilot),
+            LSTRING(set_allowedSeats_pilot)
+        ],
+        1
+    ],
     1,
     {},
     false
