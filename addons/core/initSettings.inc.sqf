@@ -62,6 +62,50 @@ QSET(test) -> "ADDON_set_test"
     false
 ] call CBA_fnc_addSetting;
 
+//Allow slingloading only of certain vehicle types
+[
+    QSET(supportedVehicles),
+    "LIST",
+    SETLSTRING(supportedVehicles),
+    [LSTRING(set_cat_main)],
+    [
+        //0 = Helicopter + VTOL, 1 = Helicopter only, 2 = VTOL only
+        [0,1,2],
+        [
+            LSTRING(set_supportedVehicles_all),
+            LSTRING(set_supportedVehicles_heli),
+            LSTRING(set_supportedVehicles_vtol)
+        ],
+        0
+    ],
+    1,
+    {},
+    false
+] call CBA_fnc_addSetting;
+
+//Allow lifting of locked vehicles? And Allow locked vehicles to deploy ropes?
+[
+    QSET(allowedSeats),
+    "LIST",
+    SETLSTRING(allowedSeats),
+    [LSTRING(set_cat_main)],
+    [
+        //0=all, 1=crew, 2=pilot+copilot, 3=copilot, 4=pilot
+        [0,1,2,3,4],
+        [
+            LSTRING(set_allowedSeats_all),
+            LSTRING(set_allowedSeats_crew),
+            LSTRING(set_allowedSeats_copilotpilot),
+            LSTRING(set_allowedSeats_copilot),
+            LSTRING(set_allowedSeats_pilot)
+        ],
+        1
+    ],
+    {},
+    false
+] call CBA_fnc_addSetting;
+
+
 //
 /* [
     QSET(can_lift),
