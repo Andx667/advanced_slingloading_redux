@@ -15,7 +15,7 @@ jobs:
           webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
           username: "Advanced Slingloading Redux - Release Bot"
           avatar_url: "https://github.com/Andx667/advanced_slingloading_redux/blob/main/img/logo_aslr_icon_only.png"
-          content: ""
+          content: "||@ASR Ping||"
           footer_title: "Advanced Slingloading Redux"
           footer_icon_url: "https://github.com/Andx667/advanced_slingloading_redux/blob/main/img/logo_aslr_icon_only.png"
           footer_timestamp: true
