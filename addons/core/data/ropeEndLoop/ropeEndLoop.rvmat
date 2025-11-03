@@ -21,7 +21,7 @@ PixelShaderID = "Super";
 VertexShaderID = "Super";
 class Stage1
 {
-    texture = "z\aslr\addons\core\data\ropeEndLoop\ropeEndLoop_NOHQ.paa";
+    texture = "z\asr\addons\core\data\ropeEndLoop\ropeEndLoop_NOHQ.paa";
     uvSource = "tex";
     class uvTransform
     {
@@ -57,7 +57,7 @@ class Stage3
 };
 class Stage4
 {
-    texture = "z\aslr\addons\core\data\ropeEndLoop\ropeEndLoop_AS.paa";
+    texture = "z\asr\addons\core\data\ropeEndLoop\ropeEndLoop_AS.paa";
     uvSource = "tex";
     class uvTransform
     {
@@ -69,7 +69,7 @@ class Stage4
 };
 class Stage5
 {
-    texture = "z\aslr\addons\core\data\ropeEndLoop\ropeEndLoop_SMDI.paa";
+    texture = "z\asr\addons\core\data\ropeEndLoop\ropeEndLoop_SMDI.paa";
     uvSource = "tex";
     class uvTransform
     {

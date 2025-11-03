@@ -11,37 +11,43 @@
 * None
 *
 * Example:
-* ['something', player] call prefix_component_fnc_functionname
+* [typeOf cursorObject] call asr_core_fnc_getHooksData
 *
 * Public: No
 */
 
-params [ "_vehicleClass" ];
 
+params [ ["_vehicleObj", objNull, [objNull]] ];
 
-// 1. Check If Classname has already been cached    // Could use a cba namespace for public caching but meh, will cause network messages even to clients who dont care and vehicle init will already broadcast active data
+if (isNull _vehicleObj) exitWith {};
+
+private _vehicleClass = typeOf _vehicleObj;
+
+INFO_1("(HookData)(Start)Check for %1",_vehicleClass);
+
+// 1. Check If Classname has already been cached
 
 private _cache = missionNamespace getVariable QGVAR(Cache_HooksData);
 
 if (isNil "_cache") then {
-    private _cache = createHashMap;
+    _cache = createHashMap;
     missionNamespace setVariable [QGVAR(Cache_hooksData), createHashMap];
 };
 
 if (_vehicleClass in keys _cache) then {
-
+    INFO("(HookData)(Done) Found cached data!");
     _cache get _vehicleClass    // return
-
 } else {
-
+    INFO("(HookData)(Getting) No cached data - checking for config entry");
     // 2. Check if Vehicle has configDefined Hooks
     private _hookEntries = [_vehicleClass] call FUNC(getHooksFromConfig);
 
     if (isNil "_hookEntries") then {
-        _hookEntries = [];
+        INFO("(HookData)(Getting) No config entry - calculating default hooks");
 
+        _hookEntries = [];
         // No Predefined Hooks found, therefore get the Default Hooks
-        private _arrayOfOffsets = [_vehicleClass] call FUNC(getHooksFromConfig);
+        private _arrayOfOffsets = [_vehicleObj] call FUNC(getHooksDefault);
 
         // Turn OldSchool Offsets into HookEntries
         private _numOfHooks = count _arrayOfOffsets;
@@ -60,7 +66,7 @@ if (_vehicleClass in keys _cache) then {
 
         // handle Center Hook
         [
-            "center",
+            QEGVAR(hook,center),
             "Center",                           // ToDo: Use LSTRING
             _numOfHooks isEqualTo 2,            // isExclusive
             _arrayOfOffsets select 0 select 0
@@ -70,7 +76,7 @@ if (_vehicleClass in keys _cache) then {
 
         // Handle Front
         [
-            "front",
+            QEGVAR(hook,front),
             "Front",                            // ToDo: Use LSTRING
             false,
             _arrayOfOffsets select 1 select 0
@@ -78,7 +84,7 @@ if (_vehicleClass in keys _cache) then {
 
         // Handle Rear
         [
-            "rear",
+            QEGVAR(hook,rear),
             "Rear",                            // ToDo: Use LSTRING
             false,
             _arrayOfOffsets select 1 select 1
@@ -86,16 +92,21 @@ if (_vehicleClass in keys _cache) then {
 
     };
 
+    // Get Hook Index - From Front to Rear
+    _hookEntries = [_hookEntries, [], { _x get "hookOffset" select 1 }, "DESCEND"] call BIS_fnc_sortBy;
+    { _x set ["hookIndex", _forEachIndex] } forEach _hookEntries;
+
+
     // Create Helicopter Hook Data
     private _numOfHooks = count _hookEntries;
     private _hasExclusive = false;
     private _hooks = createHashMap;
     private _hookIDs = [];
     {
-        if (_x get "isExclusive") then { _hasExclusive = true; };
         private _hookID = _x get "hookClassname";
+        if (_x get "isExclusive") then { _hasExclusive = _hookID; };
         _hooks set [ _hookID , _x ];
-        _hookIDs pushBack ([QPREFIX, "hook", _hookID] joinString "_");
+        _hookIDs pushBack _hookID;          // ([QPREFIX, "hook", _hookID] joinString "_");
     } forEach _hookEntries;
 
     // This is read only data - meaning it will be applied once publically but never updated.
@@ -108,6 +119,8 @@ if (_vehicleClass in keys _cache) then {
 
     // store data in cache
     _cache set [_vehicleClass, _hooksData];
+
+    INFO("(HookData)(Done) Data cached!");
 
     _hooksData  // return
 

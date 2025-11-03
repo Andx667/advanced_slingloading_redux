@@ -1,4 +1,4 @@
-#include "\z\aslr\addons\main\data\hpp\defineDIKCodes.hpp"
+#include "\z\asr\addons\main\data\hpp\defineDIKCodes.hpp"
 
 [
     _category, QGVAR(key_doTheThing),

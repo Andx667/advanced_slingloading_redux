@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [player] call aslr_core_fnc_emergencyCargoRelease
+ * [player] call asr_core_fnc_emergencyCargoRelease
  *
  * Public: No
  */

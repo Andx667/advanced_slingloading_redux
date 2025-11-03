@@ -8,7 +8,7 @@ class CfgPatches {
         name = COMPONENT_NAME;
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "aslr_main",
+            "asr_main",
             "cba_main"
         };
         units[] = {};
@@ -21,5 +21,5 @@ class CfgPatches {
 
 #include "CfgEventHandlers.hpp"
 
-#include "ASLR_Hooks.hpp"
-#include "ASLR_Hooks_HeightOffset.hpp"
+#include "asr_Hooks.hpp"
+#include "asr_Hooks_HeightOffset.hpp"

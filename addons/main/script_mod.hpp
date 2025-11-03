@@ -1,5 +1,5 @@
 #define MAINPREFIX z
-#define PREFIX aslr
+#define PREFIX asr
 #define MOD_NAME Advanced Slingloading Redux
 #define AUTHOR "Andx"
 

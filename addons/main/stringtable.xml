@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project name="aslr">
+<Project name="asr">
     <Package name="Main">
-        <Key ID="STR_aslr_main_author">
-            <English>ASLR - Team</English>
+        <Key ID="STR_asr_main_author">
+            <English>asr - Team</English>
         </Key>
-        <Key ID="STR_aslr_main_url">
+        <Key ID="STR_asr_main_url">
             <English>https://github.com/Andx667/advanced_slingloading_redux</English>
             <Czech>https://github.com/Andx667/advanced_slingloading_redux</Czech>
             <French>https://github.com/Andx667/advanced_slingloading_redux</French>

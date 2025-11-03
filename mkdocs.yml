@@ -1,6 +1,6 @@
 site_name: Advanced Slingloading Redux - User Documentation
 #site_url: https://docs.tacticalteam.de
-site_author: ASLR Team
+site_author: asr Team
 site_description: Documentation for the Advanced Slingloading Redux mod for Arma 3
 
 repo_url: https://github.com/Andx667/advanced_slingloading_redux
@@ -35,7 +35,7 @@ theme:
       name: Switch to system preference
 
   language: de
-  logo: logo_aslr.png
+  logo: logo_asr.png
   favicon: favicon.ico
 
   features:

@@ -11,7 +11,7 @@
  * is Friendly Or Empty <BOOLEAN>
  *
  * Example:
- * [helicopter, player] call aslr_core_fnc_isFriendlyOrEmpty
+ * [helicopter, player] call asr_core_fnc_isFriendlyOrEmpty
  *
  * Public: No
  */

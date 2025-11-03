@@ -10,7 +10,7 @@
  * Array of copilot units, or objNull if no copilot exists.
  *
  * Example:
- * [helicopter] call aslr_core_fnc_getCopilot
+ * [helicopter] call asr_core_fnc_getCopilot
  *
  * Public: No
  */

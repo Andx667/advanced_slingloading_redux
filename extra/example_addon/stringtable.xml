@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project name="aslr">
+<Project name="asr">
     <Package name="Addon Name">
-        <Key ID="STR_aslr_addonName_displayName">
+        <Key ID="STR_asr_addonName_displayName">
             <English>Addon Name</English>
         </Key>
     </Package>
