@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * call aslr_core_fnc_deployRopesActionCheck
+ * call asr_core_fnc_deployRopesActionCheck
  *
  * Public: No
  */

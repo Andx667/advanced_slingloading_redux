@@ -10,7 +10,7 @@
  * List of nearby vehicles that can be slingloaded <ARRAY>
  *
  * Example:
- * call aslr_core_fnc_findNearbyVehicles
+ * call asr_core_fnc_findNearbyVehicles
  *
  * Public: No
  */

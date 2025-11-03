@@ -10,7 +10,7 @@
  * List of all Slingload Points <ARRAY>
  *
  * Example:
- * [vehicle] call aslr_core_fnc_getSlingLoadPoints
+ * [vehicle] call asr_core_fnc_getSlingLoadPoints
  *
  * Public: No
  */

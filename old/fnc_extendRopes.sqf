@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [vehicle, player] call aslr_core_fnc_extendRopes
+ * [vehicle, player] call asr_core_fnc_extendRopes
  *
  * Public: No
  */

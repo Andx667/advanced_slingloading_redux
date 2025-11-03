@@ -10,7 +10,7 @@
  * Ropes can be deployed <BOOLEAN>
  *
  * Example:
- * [params] call aslr_core_fnc_canDeployRopes
+ * [params] call asr_core_fnc_canDeployRopes
  *
  * Public: No
  */

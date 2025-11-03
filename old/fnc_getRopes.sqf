@@ -11,7 +11,7 @@
  * Rope at the given index
  *
  * Example:
- * [params] call aslr_core_fnc_getRopes
+ * [params] call asr_core_fnc_getRopes
  *
  * Public: No
  */

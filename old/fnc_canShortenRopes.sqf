@@ -10,7 +10,7 @@
  * Ropes can be shortend <BOOLEAN>
  *
  * Example:
- * [vehicle] call aslr_core_fnc_canShortenRopes
+ * [vehicle] call asr_core_fnc_canShortenRopes
  *
  * Public: No
  */

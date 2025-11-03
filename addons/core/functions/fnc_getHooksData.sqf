@@ -11,7 +11,7 @@
 * None
 *
 * Example:
-* [typeOf cursorObject] call aslr_core_fnc_getHooksData
+* [typeOf cursorObject] call asr_core_fnc_getHooksData
 *
 * Public: No
 */

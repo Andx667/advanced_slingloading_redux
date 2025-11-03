@@ -10,7 +10,7 @@
  * Array of the closest rope and the closest cargo <ARRAY>
  *
  * Example:
- * call aslr_core_fnc_getClosestRope
+ * call asr_core_fnc_getClosestRope
  *
  * Public: No
  */

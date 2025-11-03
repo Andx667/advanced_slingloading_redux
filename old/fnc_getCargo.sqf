@@ -11,7 +11,7 @@
  * Return description <NONE>
  *
  * Example:
- * [vehicle, 1] call aslr_core_fnc_getCargo
+ * [vehicle, 1] call asr_core_fnc_getCargo
  *
  * Public: No
  */

@@ -11,7 +11,7 @@
  * True if the cargo is allowed to be slingloaded, False otherwise
  *
  * Example:
- * [vehicle, cargo] call aslr_core_fnc_isSupportedCargo
+ * [vehicle, cargo] call asr_core_fnc_isSupportedCargo
  *
  * Public: No
  */

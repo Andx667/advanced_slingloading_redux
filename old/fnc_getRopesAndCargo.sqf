@@ -11,7 +11,7 @@
 * List of the selected rope and the cargo. <ARRAY>
 *
 * Example:
-* [vehicle, 0] call aslr_core_fnc_getRopesAndCargo
+* [vehicle, 0] call asr_core_fnc_getRopesAndCargo
 *
 * Public: No
 */

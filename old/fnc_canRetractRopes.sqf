@@ -10,7 +10,7 @@
  * Ropes can be retraced <BOOLEAN>
  *
  * Example:
- * [vehicle] call aslr_core_fnc_canRetractRopes
+ * [vehicle] call asr_core_fnc_canRetractRopes
  *
  * Public: No
  */

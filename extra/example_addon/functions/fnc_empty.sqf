@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [] call aslr_addonName_fnc_empty;
+ * [] call asr_addonName_fnc_empty;
  *
  * Public: No
  */

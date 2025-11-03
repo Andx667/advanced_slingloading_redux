@@ -2,7 +2,7 @@
 // TODO  also add to Planes/VTOL later via macro - see example: ACE addons attach cfgVehicles
 #define ROOT_PROPERTIES\
 displayName = "Slingloading Controls";\
-icon = QPATHTOF(data\icon_aslr_ca.paa);\
+icon = QPATHTOF(data\icon_asr_ca.paa);\
 statement = "";\
 condition = Q(_this call FUNC(aa_rootAction_conditions))
 
@@ -12,7 +12,7 @@ condition = Q(_this call FUNC(aa_rootAction_conditions))
         condition = Q(_this call FUNC(aa_rootAction_conditions));\
         statement = "systemChat 'testsub'";\
         insertChildren  = Q(_this call FUNC(aa_deployRopes_children));\
-        icon = QPATHTOF(data\icon_aslr_ca.paa);\
+        icon = QPATHTOF(data\icon_asr_ca.paa);\
     }
 
 

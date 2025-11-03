@@ -11,7 +11,7 @@
  * Ropes can be attached <BOOLEAN>
  *
  * Example:
- * [vehicle, cargo] call aslr_core_fnc_canAttachRopes
+ * [vehicle, cargo] call asr_core_fnc_canAttachRopes
  *
  * Public: No
  */

@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * call aslr_core_fnc_shortenRopesAction
+ * call asr_core_fnc_shortenRopesAction
  *
  * Public: No
  */

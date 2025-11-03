@@ -12,7 +12,7 @@
  * None
  *
  * Example:
- * [vehicle, player] call aslr_core_fnc_releaseCargo
+ * [vehicle, player] call asr_core_fnc_releaseCargo
  *
  * Public: No
  */

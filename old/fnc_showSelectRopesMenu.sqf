@@ -13,7 +13,7 @@
  * None
  *
  * Example:
- * [params] call aslr_core_fnc_showSelectRopesMenu
+ * [params] call asr_core_fnc_showSelectRopesMenu
  *
  * Public: No
  */

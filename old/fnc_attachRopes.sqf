@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [cargo, player] call aslr_core_fnc_attachRopes
+ * [cargo, player] call asr_core_fnc_attachRopes
  *
  * Public: No
  */

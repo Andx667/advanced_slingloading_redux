@@ -10,7 +10,7 @@
  * Ropes can be extended <BOOLEAN>
  *
  * Example:
- * [vehicle] call aslr_core_fnc_canExtendRopes
+ * [vehicle] call asr_core_fnc_canExtendRopes
  *
  * Public: No
  */

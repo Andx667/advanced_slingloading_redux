@@ -13,7 +13,7 @@
  * None
  *
  * Example:
- * [vehicle, player] call aslr_core_fnc_deployRopesIndex
+ * [vehicle, player] call asr_core_fnc_deployRopesIndex
  *
  * Public: No
  */

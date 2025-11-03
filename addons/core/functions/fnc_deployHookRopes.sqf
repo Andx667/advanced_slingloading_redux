@@ -10,7 +10,7 @@
 * None
 *
 * Example:
-* [cursorObject, "aslr_hook_center"] call aslr_core_fnc_deployHookRopes;
+* [cursorObject, "asr_hook_center"] call asr_core_fnc_deployHookRopes;
 *
 * Public: No
 */

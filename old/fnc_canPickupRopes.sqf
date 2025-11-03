@@ -10,7 +10,7 @@
  * Ropes can be picked up <BOOLEAN>
  *
  * Example:
- * call aslr_core_fnc_canPickupRopes
+ * call asr_core_fnc_canPickupRopes
  *
  * Public: No
  */

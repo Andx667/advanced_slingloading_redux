@@ -10,7 +10,7 @@
  * Caller is in allowed seat <BOOLEAN>
  *
  * Example:
- * [helicopter, player] call aslr_core_fnc_isAllowedSeat
+ * [helicopter, player] call asr_core_fnc_isAllowedSeat
  *
  * Public: No
  */

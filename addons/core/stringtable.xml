@@ -1,216 +1,216 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project name="aslr">
+<Project name="asr">
     <Package name="core">
-        <Key ID="STR_aslr_core_already_attached">
+        <Key ID="STR_asr_core_already_attached">
             <English>The cargo is already attached to an airframe.</English>
             <German>Die Fracht ist bereits an einem Luftfahrzeug befestigt.</German>
         </Key>
-        <Key ID="STR_aslr_core_already_deployed">
+        <Key ID="STR_asr_core_already_deployed">
             <English>Vehicle already has cargo ropes deployed.</English>
             <German>Fahrzeug hat seine Frachtseile bereits eingesetzt.</German>
         </Key>
-        <Key ID="STR_aslr_core_attach_to_cargo_ropes">
+        <Key ID="STR_asr_core_attach_to_cargo_ropes">
             <English>Attach To Cargo Ropes</English>
             <German>Fracht befestigen</German>
         </Key>
-        <Key ID="STR_aslr_core_cannot_deploy_locked_vehicle">
+        <Key ID="STR_asr_core_cannot_deploy_locked_vehicle">
             <English>Cannot deploy cargo ropes from locked vehicle</English>
             <German>Aus einem abgeschlossenem Fahrzeug können keine Frachtseile abgeworfen werden.</German>
         </Key>
-        <Key ID="STR_aslr_core_cannot_pickup_locked_vehicle">
+        <Key ID="STR_asr_core_cannot_pickup_locked_vehicle">
             <English>Cannot pickup cargo ropes from locked vehicle</English>
             <German>Aus einem abgeschlossenem Fahrzeug können keine Frachtseile aufgenommen werden.</German>
         </Key>
-        <Key ID="STR_aslr_core_deploy_cargo_ropes">
+        <Key ID="STR_asr_core_deploy_cargo_ropes">
             <English>Deploy Cargo Ropes</English>
             <German>Frachtseile auswerfen</German>
         </Key>
-        <Key ID="STR_aslr_core_displayName">
+        <Key ID="STR_asr_core_displayName">
             <English>Core</English>
             <German>Kern</German>
         </Key>
-        <Key ID="STR_aslr_core_doenst_support_multi">
+        <Key ID="STR_asr_core_doenst_support_multi">
             <English>Vehicle doesn't support %1 cargo ropes.</English>
             <German>Das Fahrzeug unterstützt nicht soviele Frachtseile.</German>
         </Key>
-        <Key ID="STR_aslr_core_doesnt_support">
+        <Key ID="STR_asr_core_doesnt_support">
             <English>Vehicle doesn't support cargo ropes.</English>
             <German>Das Fahrzeug unterstützt keine Frachtseile.</German>
         </Key>
-        <Key ID="STR_aslr_core_double_cargo">
+        <Key ID="STR_asr_core_double_cargo">
             <English>For double cargo.</English>
             <German>Für doppelte Fracht.</German>
         </Key>
-        <Key ID="STR_aslr_core_drop_cargo_ropes">
+        <Key ID="STR_asr_core_drop_cargo_ropes">
             <English>Drop Cargo Ropes</English>
             <German>Frachtseile fallen lassen</German>
         </Key>
-        <Key ID="STR_aslr_core_extend_cargo_ropes">
+        <Key ID="STR_asr_core_extend_cargo_ropes">
             <English>Extend Cargo Ropes</English>
             <German>Frachtseile verlängern</German>
         </Key>
-        <Key ID="STR_aslr_core_locked_vehicle">
+        <Key ID="STR_asr_core_locked_vehicle">
             <English>Cannot attach cargo ropes to locked vehicle.</English>
             <German>Frachtseile können nicht an einem abgeschlossenem Fahrzeug angebracht werden.</German>
         </Key>
-        <Key ID="STR_aslr_core_pickup_cargo_ropes">
+        <Key ID="STR_asr_core_pickup_cargo_ropes">
             <English>Pickup Cargo Ropes</English>
             <German>Frachtseile aufnehmen</German>
         </Key>
-        <Key ID="STR_aslr_core_release_cargo_ropes">
+        <Key ID="STR_asr_core_release_cargo_ropes">
             <English>Release Cargo</English>
             <German>Fracht lösen</German>
         </Key>
-        <Key ID="STR_aslr_core_retract_cargo_ropes">
+        <Key ID="STR_asr_core_retract_cargo_ropes">
             <English>Retract Cargo Ropes</English>
             <German>Frachtseile einziehen</German>
         </Key>
-        <Key ID="STR_aslr_core_shorten_cargo_ropes">
+        <Key ID="STR_asr_core_shorten_cargo_ropes">
             <English>Shorten Cargo Ropes</English>
             <German>Frachtseile verkürzen</German>
         </Key>
-        <Key ID="STR_aslr_core_single_cargo">
+        <Key ID="STR_asr_core_single_cargo">
             <English>For single cargo.</English>
             <German>Für einzelne Fracht.</German>
         </Key>
-        <Key ID="STR_aslr_core_too_short">
+        <Key ID="STR_asr_core_too_short">
             <English>The cargo ropes are too short. Move vehicle closer.</English>
             <German>Die Frachtseile sind zu kurz. Bewege das Fahrzeug näher heran.</German>
         </Key>
-        <Key ID="STR_aslr_core_triple_cargo">
+        <Key ID="STR_asr_core_triple_cargo">
             <English>For triple cargo.</English>
             <German>Für dreifache Fracht.</German>
         </Key>
         <Container name="CBA_Settings">
-            <Key ID="STR_aslr_core_set_allow_locked">
+            <Key ID="STR_asr_core_set_allow_locked">
                 <English>Allow locked vehicles to lift and be lifted?</English>
                 <German>Dürfen verschlossene Fahrzeuge Last heben bzw. Last sein?</German>
             </Key>
-            <Key ID="STR_aslr_core_set_allow_locked_desc">
+            <Key ID="STR_asr_core_set_allow_locked_desc">
                 <English>If disabled, a locked vehicle can not deploy ropes and can not be attached to ropes.</English>
                 <German>Wenn deaktiviert, können abgeschlossene Fahrzeuge keine Seile auswerfen und nicht an Seilen befestigt werden.</German>
             </Key>
-            <Key ID="STR_aslr_core_set_allowedSeats">
+            <Key ID="STR_asr_core_set_allowedSeats">
                 <English>Controls Slingloading from Airframe</English>
                 <German>Wer darf die Außenlast bedienen?</German>
             </Key>
-            <Key ID="STR_aslr_core_set_allowedSeats_all">
+            <Key ID="STR_asr_core_set_allowedSeats_all">
                 <English>All</English>
                 <German>Alle</German>
             </Key>
-            <Key ID="STR_aslr_core_set_allowedSeats_copilot">
+            <Key ID="STR_asr_core_set_allowedSeats_copilot">
                 <English>Only Co-Pilot</English>
                 <German>Nur Co-Pilot</German>
             </Key>
-            <Key ID="STR_aslr_core_set_allowedSeats_copilotpilot">
+            <Key ID="STR_asr_core_set_allowedSeats_copilotpilot">
                 <English>Only Pilot and Co-Pilot</English>
                 <German>Nur Pilot und Co-Pilot</German>
             </Key>
-            <Key ID="STR_aslr_core_set_allowedSeats_crew">
+            <Key ID="STR_asr_core_set_allowedSeats_crew">
                 <English>Only Crew</English>
                 <German>Nur Besatzung</German>
             </Key>
-            <Key ID="STR_aslr_core_set_allowedSeats_desc">
+            <Key ID="STR_asr_core_set_allowedSeats_desc">
                 <English></English>
                 <German></German>
             </Key>
-            <Key ID="STR_aslr_core_set_allowedSeats_pilot">
+            <Key ID="STR_asr_core_set_allowedSeats_pilot">
                 <English>Only Pilot</English>
                 <German>Nur Pilot</German>
             </Key>
-            <Key ID="STR_aslr_core_set_enable">
+            <Key ID="STR_asr_core_set_enable">
                 <English>Enable</English>
                 <German>Aktivieren</German>
             </Key>
-            <Key ID="STR_aslr_core_set_enable_desc">
+            <Key ID="STR_asr_core_set_enable_desc">
                 <English>Will Enable the Advanced Slingloading System.</English>
                 <German>Aktiviert Erweitertes Slingloading.</German>
             </Key>
-            <Key ID="STR_aslr_core_set_onlySameSide">
+            <Key ID="STR_asr_core_set_onlySameSide">
                 <English>Only Same Side</English>
                 <German>Nur gleiche Seite</German>
             </Key>
-            <Key ID="STR_aslr_core_set_onlySameSide_desc">
+            <Key ID="STR_asr_core_set_onlySameSide_desc">
                 <English>If activated only vehicles of the same side as the player (or empty) can be slingloaded.</English>
                 <German>Wenn aktiviert können nur zivile Fahrzeuge und Fahrzeuge der gleichen Seite des Spielers befestigt werden.</German>
             </Key>
-            <Key ID="STR_aslr_core_set_ignore_liftCapacity">
+            <Key ID="STR_asr_core_set_ignore_liftCapacity">
                 <English>Ignore Lift Capacity of Airframe.</English>
                 <German>Ignoriert die Liftkapazität des Fluggeräts.</German>
             </Key>
-            <Key ID="STR_aslr_core_set_ignore_liftCapacity_desc">
+            <Key ID="STR_asr_core_set_ignore_liftCapacity_desc">
                 <English>Any cargo heavier than what the airframe can handle, will be set to that mass.</English>
                 <German>Jede Fracht, die schwerer ist als die Tragkraft des Fluggeräts wird auf die Masse begrenzt.</German>
             </Key>
-            <Key ID="STR_aslr_core_set_allow_locked">
+            <Key ID="STR_asr_core_set_allow_locked">
                 <English>Allow locked vehicles to lift and be lifted?</English>
                 <German>Dürfen verschlossene Fahrzeuge Last heben bzw. Last sein?</German>
             </Key>
-            <Key ID="STR_aslr_core_set_allow_locked_desc">
+            <Key ID="STR_asr_core_set_allow_locked_desc">
                 <English>If disabled, a locked vehicle can not deploy ropes and can not be attached to ropes.</English>
                 <German>Wenn deaktiviert, können abgeschlossene Fahrzeuge keine Seile auswerfen und nicht an Seilen befestigt werden.</German>
             </Key>
-            <Key ID="STR_aslr_core_set_supportedvehicles">
+            <Key ID="STR_asr_core_set_supportedvehicles">
                 <English>Supported Vehicle Types</English>
                 <German>Unterstützte Fahrzeugtypen</German>
             </Key>
-            <Key ID="STR_aslr_core_set_supportedvehicles_all">
+            <Key ID="STR_asr_core_set_supportedvehicles_all">
                 <English>Helicopter + VTOL</English>
                 <German>Hubschrauber + VTOL</German>
             </Key>
-            <Key ID="STR_aslr_core_set_supportedvehicles_heli">
+            <Key ID="STR_asr_core_set_supportedvehicles_heli">
                 <English>Helicopter</English>
                 <German>Hubschrauber</German>
             </Key>
-            <Key ID="STR_aslr_core_set_supportedvehicles_vtol">
+            <Key ID="STR_asr_core_set_supportedvehicles_vtol">
                 <English>VTOL</English>
                 <German>VTOL</German>
             </Key>
-            <Key ID="STR_aslr_core_set_supportedvehicles_desc">
+            <Key ID="STR_asr_core_set_supportedvehicles_desc">
                 <English>Only the selected types of vehicles are allowed to slingload.</English>
                 <German>Nur die ausgewählten Fahrzeugtypen dürfen Last heben.</German>
             </Key>
-            <Key ID="STR_aslr_core_set_allowedSeats">
+            <Key ID="STR_asr_core_set_allowedSeats">
                 <English>Controls Slingloading from Airframe</English>
                 <German>Wer darf die Außenlast bedienen?</German>
             </Key>
-            <Key ID="STR_aslr_core_set_allowedSeats_desc">
+            <Key ID="STR_asr_core_set_allowedSeats_desc">
                 <English></English>
                 <German></German>
             </Key>
-            <Key ID="STR_aslr_core_set_allowedSeats_all">
+            <Key ID="STR_asr_core_set_allowedSeats_all">
                 <English>All</English>
                 <German>Alle</German>
             </Key>
-            <Key ID="STR_aslr_core_set_allowedSeats_pilot">
+            <Key ID="STR_asr_core_set_allowedSeats_pilot">
                 <English>Only Pilot</English>
                 <German>Nur Pilot</German>
             </Key>
-            <Key ID="STR_aslr_core_set_allowedSeats_copilot">
+            <Key ID="STR_asr_core_set_allowedSeats_copilot">
                 <English>Only Co-Pilot</English>
                 <German>Nur Co-Pilot</German>
             </Key>
-            <Key ID="STR_aslr_core_set_allowedSeats_crew">
+            <Key ID="STR_asr_core_set_allowedSeats_crew">
                 <English>Only Crew</English>
                 <German>Nur Besatzung</German>
             </Key>
-            <Key ID="STR_aslr_core_set_allowedSeats_copilotpilot">
+            <Key ID="STR_asr_core_set_allowedSeats_copilotpilot">
                 <English>Only Pilot and Co-Pilot</English>
                 <German>Nur Pilot und Co-Pilot</German>
             </Key>
         </Container>
         <Container name="CBA_Settings_Categories">
-            <Key ID="STR_aslr_core_set_cat_main">
-                <English>ASLR Core</English>
-                <German>ASLR Kern</German>
+            <Key ID="STR_asr_core_set_cat_main">
+                <English>asr Core</English>
+                <German>asr Kern</German>
             </Key>
         </Container>
         <Container name="CBA_Keys">
-            <Key ID="STR_aslr_core_keys_emergencyCargoRelease_name">
+            <Key ID="STR_asr_core_keys_emergencyCargoRelease_name">
                 <English>Emergency Cargo Release</English>
                 <German>Notfall Frachtfreigabe</German>
             </Key>
-            <Key ID="STR_aslr_core_keys_emergencyCargoRelease_tooltip">
+            <Key ID="STR_asr_core_keys_emergencyCargoRelease_tooltip">
                 <English>Releases all current cargo.</English>
                 <German>Gibt alle aktuellen Fracht frei.</German>
             </Key>

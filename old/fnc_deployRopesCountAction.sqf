@@ -10,7 +10,7 @@
  * Return description <NONE>
  *
  * Example:
- * [params] call aslr_core_fnc_deployRopesCountAction
+ * [params] call asr_core_fnc_deployRopesCountAction
  *
  * Public: No
  */

@@ -13,7 +13,7 @@
  * None
  *
  * Example:
- * [obj, heli, ropes] call aslr_core_fnc_ropeAdjustMass
+ * [obj, heli, ropes] call asr_core_fnc_ropeAdjustMass
  *
  * Public: No
  */

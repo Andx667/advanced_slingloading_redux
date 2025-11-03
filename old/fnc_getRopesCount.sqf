@@ -10,7 +10,7 @@
  * Count of ropes <INTEGER>
  *
  * Example:
- * [vehicle] call aslr_core_fnc_getRopesCount
+ * [vehicle] call asr_core_fnc_getRopesCount
  *
  * Public: No
  */

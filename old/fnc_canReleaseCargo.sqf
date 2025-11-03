@@ -10,7 +10,7 @@
  * Cargo can be released <BOOLEAN>
  *
  * Example:
- * [vehicle] call aslr_core_fnc_canReleaseCargo
+ * [vehicle] call asr_core_fnc_canReleaseCargo
  *
  * Public: No
  */

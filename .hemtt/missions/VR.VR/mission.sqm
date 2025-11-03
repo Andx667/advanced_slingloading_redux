@@ -41,7 +41,7 @@ addons[]=
 	"A3_Armor_F_EPC_MBT_01",
 	"ace_vehicle_damage",
 	"ace_viewports",
-	"aslr_core",
+	"asr_core",
 	"A3_Structures_F_Ind_Cargo",
 	"ace_cargo"
 };
@@ -129,7 +129,7 @@ class AddonsMetaData
 		};
 		class Item11
 		{
-			className="aslr_core";
+			className="asr_core";
 			name="Advanced Slingloading Redux - Core";
 			author="Andx";
 			url="https://github.com/Andx667/advanced_slingloading_redux";
@@ -211,7 +211,7 @@ class CustomAttributes
 										class data
 										{
 											singleType="STRING";
-											value="aslr_core_set_ignore_liftcapacity";
+											value="asr_core_set_ignore_liftcapacity";
 										};
 									};
 								};
@@ -580,7 +580,7 @@ class Mission
 				name="hook";
 			};
 			id=206;
-			type="aslr_ropeHelper";
+			type="asr_ropeHelper";
 			atlOffset=1.0187058;
 		};
 		class Item17

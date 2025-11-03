@@ -10,7 +10,7 @@
  * Array of Rope index and labels <ARRAY>
  *
  * Example:
- * [vehicle] call aslr_core_fnc_getActiveRopes
+ * [vehicle] call asr_core_fnc_getActiveRopes
  *
  * Public: No
  */

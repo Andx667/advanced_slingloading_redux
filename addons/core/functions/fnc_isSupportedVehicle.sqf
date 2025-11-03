@@ -11,7 +11,7 @@
  * True if the Vehicle is supported, False otherwise <BOOLEAN>
  *
  * Example:
- * [params] call aslr_core_fnc_isSupportedVehicle
+ * [params] call asr_core_fnc_isSupportedVehicle
  *
  * Public: No
  */

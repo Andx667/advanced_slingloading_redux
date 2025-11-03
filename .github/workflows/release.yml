@@ -15,7 +15,7 @@
 name: Release
 
 env:
-  FOLDER:  '@aslr'
+  FOLDER:  '@asr'
   WORKSHOPID: '3573851584'
   WORKSHOPNAME: 'Advanced Slingloading Redux'
 

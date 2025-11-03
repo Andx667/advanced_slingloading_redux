@@ -1,4 +1,4 @@
-#include "\z\aslr\addons\main\data\hpp\defineDIKCodes.hpp"
+#include "\z\asr\addons\main\data\hpp\defineDIKCodes.hpp"
 #include "..\script_component.hpp"
 
 /*
@@ -11,7 +11,7 @@
 * None
 *
 * Example:
-* [cursorObject, player] call aslr_core_fnc_aa_pickupRopes_statement;
+* [cursorObject, player] call asr_core_fnc_aa_pickupRopes_statement;
 *
 * Public: No
 */

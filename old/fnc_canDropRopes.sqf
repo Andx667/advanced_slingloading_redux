@@ -10,7 +10,7 @@
  * Ropes can be dropped <BOOLEAN>
  *
  * Example:
- * call aslr_core_fnc_canDropRopes
+ * call asr_core_fnc_canDropRopes
  *
  * Public: No
  */

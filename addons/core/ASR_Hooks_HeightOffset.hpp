@@ -1,5 +1,5 @@
 // These Height Offsets are only going to be used, when the "All" approximation of hook points is being used.
-// If an airframe is defined in configFile >> "ASLR_Hooks" , these offsets will not be taken into account.
+// If an airframe is defined in configFile >> "asr_Hooks" , these offsets will not be taken into account.
 
 class PVAR(Hooks_HeightOffset) {
     class All {
