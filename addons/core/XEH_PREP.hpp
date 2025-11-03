@@ -97,3 +97,15 @@ PREP(shortenRopesIndexAction);
 PREP(showSelectRopesMenu);
 
 */
+PREP(initAirframe);
+
+PREP(getHooksData);
+PREP(getHooksFromConfig);
+PREP(getHooksDefault);
+PREP(getHooksDefaultHeightOffset);
+
+PREP(emergencyCargoRelease);
+PREP(getCoPilots);
+PREP(isAllowedSeat);
+
+PREP(isFriendlyOrEmpty);

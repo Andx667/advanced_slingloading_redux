@@ -22,25 +22,12 @@ params [ ["_vehicle", objNull, [objNull]] ];
 
 if (isNull _vehicle) exitWith { false };
 
-switch (true) do {
-    case (_vehicle isKindOf "Helicopter"): { true };
-    case (_vehicle isKindOf "VTOL"):       { true };
+switch (SET(supportedVehicles)) do {
+    // VTOL + Heli vehicles are supported
+    case 0: { _vehicle isKindOf "Helicopter" ||  { _vehicle isKindOf "VTOL_Base_F" } };
+     // Only Heli vehicles are supported
+    case 1: { _vehicle isKindOf "Helicopter" };
+    // Only VTOL vehicles are supported
+    case 2: { _vehicle isKindOf "VTOL_Base_F" };
     default { false };
-}
-
-
-/*
-Old Code
-
-
-private _isSupportedVehicle = _vehicle getVariable QGVAR(isSupportedVehicle);
-
-if (isNil "_isSupportedVehicle") then {
-    // Evaluate
-    _isSupportedVehicle = missionNamespace getVariable [QGVAR(Supported_Vehicles_OVERRIDE), GVAR(Supported_Vehicles)] findIf { _vehicle isKindOf _x } != -1;
-    _vehicle setVariable [QGVAR(isSupportedVehicle), _isSupportedVehicle, true];
-};
-
-_isSupportedVehicle
-
-*/
+} // Return
