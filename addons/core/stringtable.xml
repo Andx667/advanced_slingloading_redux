@@ -81,6 +81,16 @@
             <English>For triple cargo.</English>
             <German>Für dreifache Fracht.</German>
         </Key>
+        <Container name="CBA_Keys">
+            <Key ID="STR_asr_core_keys_emergencyCargoRelease_name">
+                <English>Emergency Cargo Release</English>
+                <German>Notfall Frachtfreigabe</German>
+            </Key>
+            <Key ID="STR_asr_core_keys_emergencyCargoRelease_tooltip">
+                <English>Releases all current cargo.</English>
+                <German>Gibt alle aktuellen Fracht frei.</German>
+            </Key>
+        </Container>
         <Container name="CBA_Settings">
             <Key ID="STR_asr_core_set_allow_locked">
                 <English>Allow locked vehicles to lift and be lifted?</English>
@@ -126,14 +136,6 @@
                 <English>Will Enable the Advanced Slingloading System.</English>
                 <German>Aktiviert Erweitertes Slingloading.</German>
             </Key>
-            <Key ID="STR_asr_core_set_onlySameSide">
-                <English>Only Same Side</English>
-                <German>Nur gleiche Seite</German>
-            </Key>
-            <Key ID="STR_asr_core_set_onlySameSide_desc">
-                <English>If activated only vehicles of the same side as the player (or empty) can be slingloaded.</English>
-                <German>Wenn aktiviert können nur zivile Fahrzeuge und Fahrzeuge der gleichen Seite des Spielers befestigt werden.</German>
-            </Key>
             <Key ID="STR_asr_core_set_ignore_liftCapacity">
                 <English>Ignore Lift Capacity of Airframe.</English>
                 <German>Ignoriert die Liftkapazität des Fluggeräts.</German>
@@ -142,13 +144,13 @@
                 <English>Any cargo heavier than what the airframe can handle, will be set to that mass.</English>
                 <German>Jede Fracht, die schwerer ist als die Tragkraft des Fluggeräts wird auf die Masse begrenzt.</German>
             </Key>
-            <Key ID="STR_asr_core_set_allow_locked">str_asr_core_set_allowedseats_desc
-                <English>Allow locked vehicles to lift and be lifted?</English>
-                <German>Dürfen verschlossene Fahrzeuge Last heben bzw. Last sein?</German>
+            <Key ID="STR_asr_core_set_onlySameSide">
+                <English>Only Same Side</English>
+                <German>Nur gleiche Seite</German>
             </Key>
-            <Key ID="STR_asr_core_set_allow_locked_desc">
-                <English>If disabled, a locked vehicle can not deploy ropes and can not be attached to ropes.</English>
-                <German>Wenn deaktiviert, können abgeschlossene Fahrzeuge keine Seile auswerfen und nicht an Seilen befestigt werden.</German>
+            <Key ID="STR_asr_core_set_onlySameSide_desc">
+                <English>If activated only vehicles of the same side as the player (or empty) can be slingloaded.</English>
+                <German>Wenn aktiviert können nur zivile Fahrzeuge und Fahrzeuge der gleichen Seite des Spielers befestigt werden.</German>
             </Key>
             <Key ID="STR_asr_core_set_supportedvehicles">
                 <English>Supported Vehicle Types</English>
@@ -158,6 +160,10 @@
                 <English>Helicopter + VTOL</English>
                 <German>Hubschrauber + VTOL</German>
             </Key>
+            <Key ID="STR_asr_core_set_supportedvehicles_desc">
+                <English>Only the selected types of vehicles are allowed to slingload.</English>
+                <German>Nur die ausgewählten Fahrzeugtypen dürfen Last heben.</German>
+            </Key>
             <Key ID="STR_asr_core_set_supportedvehicles_heli">
                 <English>Helicopter</English>
                 <German>Hubschrauber</German>
@@ -166,25 +172,11 @@
                 <English>VTOL</English>
                 <German>VTOL</German>
             </Key>
-            <Key ID="STR_asr_core_set_supportedvehicles_desc">
-                <English>Only the selected types of vehicles are allowed to slingload.</English>
-                <German>Nur die ausgewählten Fahrzeugtypen dürfen Last heben.</German>
-            </Key>
         </Container>
         <Container name="CBA_Settings_Categories">
             <Key ID="STR_asr_core_set_cat_main">
                 <English>asr Core</English>
                 <German>asr Kern</German>
-            </Key>
-        </Container>
-        <Container name="CBA_Keys">
-            <Key ID="STR_asr_core_keys_emergencyCargoRelease_name">
-                <English>Emergency Cargo Release</English>
-                <German>Notfall Frachtfreigabe</German>
-            </Key>
-            <Key ID="STR_asr_core_keys_emergencyCargoRelease_tooltip">
-                <English>Releases all current cargo.</English>
-                <German>Gibt alle aktuellen Fracht frei.</German>
             </Key>
         </Container>
     </Package>
