@@ -19,9 +19,9 @@ params ["_caller"];
 TRACE_1("fnc_emergencyCargoRelease",_this);
 
 private _vehicle = vehicle _caller;
-private _ropesWithCargo = [_vehicle] call FUNC(getActiveRopesWithCargo);
+private _ropesWithCargo = [_vehicle] call FUNC(getActiveRopesWithCargo); // TODO
 
-INFO_1("%1", _ropesWithCargo);
+INFO_1("%1",_ropesWithCargo);
 
 {
     [_vehicle, _caller, _x select 0] call FUNC(releaseCargo);
