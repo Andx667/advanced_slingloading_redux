@@ -35,7 +35,6 @@ QSET(test) -> "ADDON_set_test"
     {},
     false
 ] call CBA_fnc_addSetting;
-
 //Ignores the lift capacity of the airframe and lets it lift anything
 //needs the adjust mass function to dynamicly adapt cargo mass to airframe capacity
 //was "heavy lifting" in the old version + setmass to staticly adjust the mass of cargo
@@ -83,13 +82,14 @@ QSET(test) -> "ADDON_set_test"
     false
 ] call CBA_fnc_addSetting;
 
+
 //Allow lifting of locked vehicles? And Allow locked vehicles to deploy ropes?
 [
-    QSET(allowedSeats),
-    "LIST",
-    SETLSTRING(allowedSeats),
-    [LSTRING(set_cat_main)],
-    [
+    QSET(allowedSeats),                             //    _setting     - Unique setting name. Matches resulting variable name <STRING>
+    "LIST",                                         //    _settingType - Type of setting. Can be "CHECKBOX", "EDITBOX", "LIST", "SLIDER" or "COLOR" <STRING>
+    SETLSTRING(allowedSeats),                       //    _title       - Display name or display name + tooltip (optional, default: same as setting name) <STRING, ARRAY>
+    [LSTRING(set_cat_main)],                        //    _category    - Category for the settings menu + optional sub-category <STRING, ARRAY>
+    [                                               //    _valueInfo   - Extra properties of the setting depending of _settingType. See examples below <ANY>
         //0=all, 1=crew, 2=pilot+copilot, 3=copilot, 4=pilot
         [0,1,2,3,4],
         [
@@ -101,13 +101,15 @@ QSET(test) -> "ADDON_set_test"
         ],
         1
     ],
+    1,                                              //    _isGlobal    - 1: all clients share the same setting, 2: setting can't be overwritten (optional, default: 0) <NUMBER>
     {},
     false
 ] call CBA_fnc_addSetting;
 
 
+/*
 //
-/* [
+ [
     QSET(can_lift),
     "LIST",
     SETLSTRING(ignore_liftCapacity),
