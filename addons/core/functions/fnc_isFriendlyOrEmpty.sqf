@@ -16,12 +16,12 @@
  * Public: No
  */
 
-params ["_vehicle", "_caller"];
+params ["_vehicle", "_player"];
 TRACE_1("fnc_isFriendlyOrEmpty",_this);
 
 if (SET(onlySameSide)) then {
     crew _vehicle isEqualTo [] || { side _vehicle isEqualTo side _caller };
 } else {
-    private _isFriendly = [side _vehicle, side _caller] call BIS_fnc_sideIsFriendly;
+    private _isFriendly = [side _vehicle, side _player] call BIS_fnc_sideIsFriendly;
     (crew _vehicle isEqualTo []) || _isFriendly;
 };

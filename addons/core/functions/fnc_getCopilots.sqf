@@ -15,10 +15,10 @@
  * Public: No
  */
 
-params ["_caller"];
+params ["_player"];
 TRACE_1("fnc_getCopilot",_this);
 
-private _vehicle = vehicle _caller;
+private _vehicle = vehicle _player;
 
 //From https://community.bistudio.com/wiki/currentPilot
 private _copilotTurrets = allTurrets _vehicle select { getNumber ([_vehicle, _x] call BIS_fnc_turretConfig >> "isCopilot") > 0 };
