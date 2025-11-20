@@ -1,5 +1,5 @@
 mainprefix = "z"
-prefix = "aslr"
+prefix = "asr"
 
 name = "Advanced Slingloading Redux"
 

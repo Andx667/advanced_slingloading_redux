@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://github.com/Andx667/advanced_slingloading_redux/blob/main/img/logo_aslr.png" width="512">
+    <img src="https://github.com/Andx667/advanced_slingloading_redux/blob/main/img/logo_asr.png" width="512">
     </br>
     <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3573851584"><img src="https://img.shields.io/steam/subscriptions/3573851584?style=for-the-badge&logo=steam&label=Steam%20Workshop&color=%23690000"></a>
 </p>
@@ -13,7 +13,7 @@
 
 **Requires the latest version of [CBA A3](https://github.com/CBATeam/CBA_A3/releases/latest) and [ACE3](https://github.com/acemod/ACE3/releases/latest)**
 
-**Advanced Slingloading Redux** (aslr) aims to improve slingloading in Arma 3.
+**Advanced Slingloading Redux** (asr) aims to improve slingloading in Arma 3.
 
 This project is based on previous [work](https://github.com/sethduda/AdvancedSlingLoading) by sethduda.
 

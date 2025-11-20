@@ -10,21 +10,21 @@
  * None
  *
  * Example:
- * [player] call aslr_core_fnc_emergencyCargoRelease
+ * [player] call asr_core_fnc_emergencyCargoRelease
  *
  * Public: No
  */
 
-params ["_caller"];
+params ["_player"];
 TRACE_1("fnc_emergencyCargoRelease",_this);
 
-private _vehicle = vehicle _caller;
-private _ropesWithCargo = [_vehicle] call FUNC(getActiveRopesWithCargo);
+private _vehicle = vehicle _player;
+private _ropesWithCargo = [_vehicle] call FUNC(getActiveRopesWithCargo); // TODO
 
-INFO_1("%1", _ropesWithCargo);
+INFO_1("%1",_ropesWithCargo);
 
 {
-    [_vehicle, _caller, _x select 0] call FUNC(releaseCargo);
+    [_vehicle, _player, _x select 0] call FUNC(releaseCargo);
 } forEach _ropesWithCargo;
 
-[QGVAR(API_emergencyCargoRelease), [_vehicle, _caller, _ropesWithCargo]] call CBA_fnc_localEvent;
+[QGVAR(API_emergencyCargoRelease), [_vehicle, _player, _ropesWithCargo]] call CBA_fnc_localEvent;
