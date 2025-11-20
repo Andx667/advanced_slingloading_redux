@@ -42,14 +42,6 @@ jobs:
             & "${{ github.workspace }}/tools/update-version.ps1" `
               -Version "${{ github.event.release.tag_name }}"
 
-        - name: Create meta.cpp for Steam Workshop
-          shell: pwsh
-          run: |
-            & "${{ github.workspace }}/tools/create-meta-cpp.ps1" `
-              -FilePath "${{ github.workspace }}/meta.cpp" `
-              -PublishedId "${{ env.WORKSHOPID }}" `
-              -ModName "${{ env.WORKSHOPNAME }}"
-
         - name: Setup HEMTT
           uses: arma-actions/hemtt@v1
 
