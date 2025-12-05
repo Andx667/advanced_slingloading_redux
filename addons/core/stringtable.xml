@@ -74,8 +74,8 @@
             <German>Für einzelne Fracht.</German>
         </Key>
         <Key ID="STR_asr_core_too_short">
-            <English>The cargo ropes are too short. Move vehicle closer.</English>
-            <German>Die Frachtseile sind zu kurz. Bewege das Fahrzeug näher heran.</German>
+            <English>The cargo ropes are too short.</English>
+            <German>Die Frachtseile sind zu kurz.</German>
         </Key>
         <Key ID="STR_asr_core_triple_cargo">
             <English>For triple cargo.</English>

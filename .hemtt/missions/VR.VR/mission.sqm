@@ -5,21 +5,21 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=549;
+	toggles=545;
 	mods[]=
 	{
 		"3denEnhanced"
 	};
 	class ItemIDProvider
 	{
-		nextID=215;
+		nextID=219;
 	};
 	class Camera
 	{
-		pos[]={-23.958923,9.2857695,-7.7093568};
-		dir[]={0.9461956,-0.31551901,-0.071845621};
-		up[]={0.3146134,0.9489193,-0.023888925};
-		aside[]={-0.075713105,0,-0.9971298};
+		pos[]={15.381064,12.499873,-2.9197724};
+		dir[]={0.73852408,-0.519297,-0.43001485};
+		up[]={0.44876683,0.85459381,-0.26130009};
+		aside[]={-0.50318038,0,-0.86418134};
 	};
 };
 binarizationWanted=0;
@@ -41,9 +41,9 @@ addons[]=
 	"A3_Armor_F_EPC_MBT_01",
 	"ace_vehicle_damage",
 	"ace_viewports",
-	"asr_core",
 	"A3_Structures_F_Ind_Cargo",
-	"ace_cargo"
+	"ace_cargo",
+	"A3_Structures_F_EPC_Dominants_GhostHotel"
 };
 class AddonsMetaData
 {
@@ -129,24 +129,24 @@ class AddonsMetaData
 		};
 		class Item11
 		{
-			className="asr_core";
-			name="Advanced Slingloading Redux - Core";
-			author="Andx";
-			url="https://github.com/Andx667/advanced_slingloading_redux";
-		};
-		class Item12
-		{
 			className="A3_Structures_F_Ind";
 			name="Arma 3 - Industrial Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item13
+		class Item12
 		{
 			className="ace_cargo";
 			name="ACE3 - Cargo";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
+		};
+		class Item13
+		{
+			className="A3_Structures_F_EPC";
+			name="Arma 3 Win Episode - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
 		};
 	};
 };
@@ -306,7 +306,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=20;
+		items=23;
 		class Item0
 		{
 			dataType="Group";
@@ -319,8 +319,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={0,5.0014391,0.050000012};
-						angles[]={0,0.44831166,0};
+						position[]={15.991931,5.0014391,-3.959542};
+						angles[]={0,2.0191078,-0};
 					};
 					side="Civilian";
 					flags=7;
@@ -358,7 +358,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4,5.7898083,4};
+				position[]={21.241905,5.7898083,-4.6402936};
 			};
 			side="Empty";
 			flags=4;
@@ -571,23 +571,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={24,6.0400257,-6};
-			};
-			side="Empty";
-			class Attributes
-			{
-				init="ropeCreate [heli, [0,0,-2], this, [0,0,0], 2];";
-				name="hook";
-			};
-			id=206;
-			type="asr_ropeHelper";
-			atlOffset=1.0187058;
-		};
-		class Item17
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={24,6.3243098,-2};
 			};
 			side="Empty";
@@ -598,7 +581,7 @@ class Mission
 			id=209;
 			type="Land_Cargo20_orange_F";
 		};
-		class Item18
+		class Item17
 		{
 			dataType="Object";
 			class PositionInfo
@@ -613,12 +596,12 @@ class Mission
 			id=210;
 			type="Land_Cargo20_orange_F";
 		};
-		class Item19
+		class Item18
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={24,11.344372,-6.0553055};
+				position[]={24,13.573386,-6.0553055};
 			};
 			side="Empty";
 			class Attributes
@@ -627,7 +610,68 @@ class Mission
 			};
 			id=214;
 			type="B_Heli_Transport_03_F";
-			atlOffset=3;
+			atlOffset=5.2290144;
+		};
+		class Item19
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={24,8.9593096,-2};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=215;
+			type="Land_Cargo20_orange_F";
+		};
+		class Item20
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={24,8.9593096,-10};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=216;
+			type="Land_Cargo20_orange_F";
+		};
+		class Item21
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={18.838434,6.502326,-7.9815531};
+				angles[]={0,4.7123895,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=217;
+			type="Land_GH_Stairs_F";
+		};
+		class Item22
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={23.929253,5.7898083,-7.7609415};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=218;
+			type="ACE_fastropingSupplyCrate";
 		};
 	};
 };

@@ -10,12 +10,19 @@
 * None
 *
 * Example:
-* [cursorObject, "asr_hook_center"] call asr_core_fnc_deployHookRopes;
+* [heli, "asr_hook_center"] call asr_core_fnc_deployHookRopes;
 *
 * Public: No
 */
 
-params [ "_airframe", "_hookClassname", ["_length", 20, [0]] ];
+params [ "_airframe", "_hookClassname", ["_length", 5, [0]] ];
+
+
+// Check if Hook defined
+if (_airframe isNil _hookClassname) exitWith { systemChat "Hook not found!" };
+// Check if already deployed
+if (_airframe getVariable _hookClassname isNotEqualTo false) exitWith { systemChat "Ropes already deployed!" };
+
 
 private _hookData = _airframe getVariable QGVAR(hooksData) get "hooks" get _hookClassname;
 private _hookOffset = _hookData get "hookOffset";
@@ -31,8 +38,10 @@ private _helperPos = _airframe modelToWorld _hookOffset;
 _helperPos set [ 2, _helperPos # 2 - 1 max 0 ];
 
 // createVehicle [type, position, markers, placement, special]
-private _obj = createVehicle [QPVAR(ropeHelper), _helperPos, [], 0, "CAN_COLLIDE"];
-_obj setVariable [QGVAR(hook), _hookClassname, true];
+private _ropeHelper = createVehicle [QPVAR(ropeHelper), _helperPos, [], 0, "CAN_COLLIDE"];
+
+_ropeHelper setVariable [QGVAR(hook), _hookClassname, true];
+_ropeHelper setVariable [QGVAR(hookOffset), _hookOffset, true];
 
 ///////////////////////
 // Create Ropes
@@ -40,13 +49,13 @@ _obj setVariable [QGVAR(hook), _hookClassname, true];
 
 private _ropes = [];
 for "_i" from 0 to 3 do {
-    // [fromObject, fromPoint, length, ropeStart, ropeEnd, ropeType, nSegments]
+    // ropeCreate [fromObject, fromPoint, length, ropeStart, ropeEnd, ropeType, nSegments]
     private _rope = ropeCreate [_airframe, _hookOffset, 0];
     ropeUnwind [_rope, 5, _length];
     _ropes pushBack _rope;
 
     [
-        _obj,
+        _ropeHelper,
         [0,0,0],
         [
             [  0,  1, -1 ],

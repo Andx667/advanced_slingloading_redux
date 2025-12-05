@@ -19,8 +19,7 @@
 #define PFH_DELAY 0
 #define MAX_DIST 5 // ToDo? Could be Setting?
 
-params ["_ropeHelper", "_player", "_params"];
-_params params  [""];
+params ["_ropeHelper", "_player"];
 
 //  Set Player Flag
 _player setVariable [QGVAR(isCarryingRope), true, true];
@@ -58,8 +57,20 @@ private _codeToRun = {
 
     params ["_player", "_ropeHelper", "_airframe"];
 
+    // Check if player is to far away and drop the hook
+    private _hookClass = _ropeHelper getVariable QGVAR(hook);
+    private _ropeLength = _airframe getVariable _hookClass get "length";
+
+    //Distance Hook to Helper
+    private _distance = _ropeHelper distance ( _airframe modelToWorld (_ropeHelper getVariable QGVAR(hookOffset)) );
+
+    diag_log format ['[CVO](debug)(fnc_aa_pickupRopes_statement) _distance: %1 - _ropeLength: %2', _distance , _ropeLength];
+
+    if ( _ropeLength * 1.1 < _distance ) exitWith { _player setVariable [QGVAR(player_input), "DROP"] };
+
+
     private _target = cursorObject;
-    if ( _target in [_ropeHelper, _airframe] || { typeOf _targetObject in ["RopeSegment"] } ) then { _target = objNull };
+    if ( _target in [_ropeHelper, _airframe] || { typeOf _target in ["RopeSegment"] } ) then { _target = objNull };
     private _isNull = isNull _target;
     private _isInRange = if ( _isNull ) then { false } else { (_target distance _player) < MAX_DIST };
     private _validTarget = ( !_isNull && {  _isInRange && { [_airframe, _target] call FUNC(isSupportedCargo) } } );
@@ -72,6 +83,7 @@ private _codeToRun = {
         default { "" };                                                  // ToDo Stringtable LLSTRING(NoCargoDetected) or leave empty?
     };
 
+    // Validate Left Click
     if !(_player isNil QGVAR(LMB)) then {
         if (_validTarget) then { _player setVariable [QGVAR(player_input), "ATTACH"]; };
         _player setVariable [QGVAR(LMB), nil];
@@ -95,7 +107,7 @@ private _exitCode = {
     if !(isNil "_playerInput") then {
         switch (_playerInput) do {
             case "DROP": { systemChat "drop ropes" }; // ToDo
-            case "ATTACH": { systemChat "attach ropes" }; // ToDo
+            case "ATTACH": { [_player, _ropeHelper, cursorObject] call FUNC(attachRopes); };
         };
     };
 

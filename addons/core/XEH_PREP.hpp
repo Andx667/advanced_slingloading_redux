@@ -109,3 +109,8 @@ PREP(getCoPilots);
 PREP(isAllowedSeat);
 
 PREP(isFriendlyOrEmpty);
+
+PREP(attachRopes);
+PREP(isSupportedCargo);
+
+PREP(ropeAdjustMass);

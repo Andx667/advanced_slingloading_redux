@@ -18,19 +18,24 @@
 
 diag_log format ['[CVO](debug)(fnc_aa_deployRopes_condition) _this: %1', _this];
 
-params ["_target", "_player", "_params"];
-_params params  [""];
+params ["_airframe", "_player", "_params"];
+_params params  ["_hookClassname"];
+
+// Check if Hook defined
+if (_airframe isNil _hookClassname) exitWith { systemChat "Hook not found!" };
+// Check if already deployed
+if (_airframe getVariable _hookClassname isNotEqualTo false) exitWith { systemChat "Ropes already deployed!" };
 
 
-private _allHookIDs = + (_target getVariable QGVAR(hooksData) get "hookIDs");
-private _hasExclusive = _target getVariable QGVAR(hooksData) get "hasExclusiveHook";
+private _allHookIDs = + (_airframe getVariable QGVAR(hooksData) get "hookIDs");
+private _hasExclusive = _airframe getVariable QGVAR(hooksData) get "hasExclusiveHook";
 
 [ [false, ""], [true, _hasExclusive] ] select (_hasExclusive isEqualType "") params ["_hasExlusive", "_exclusiveHook"];
 
 // check if exclusive Hook is deployed
-_hasExclusive && { _target isNil _exclusiveHook }
+_hasExclusive && { _airframe isNil _exclusiveHook }
 ||
 {
     // Check if there is another hook that is not yet deployed
-    _allHookIDs findIf { _target isNil _x } isNotEqualTo -1
+    _allHookIDs findIf { _airframe isNil _x } isNotEqualTo -1
 }
