@@ -27,34 +27,27 @@ private _airframe = vehicle _player;
 // passive, damaged
 private _hooks = [_airframe, false, false] call asr_core_fnc_getHooks;
 
-// During Emergency Release, hooks or cables are destroyed/released with explosives, resulting in damage.
 
 ///////////////////////
 // Get Damage Hooks
 ///////////////////////
+// During Emergency Release, hooks or cables are destroyed/released with explosives, resulting in damage.
 
-if (missionNamespace getVariable [QSET(damageOnEmergencyRelease), false]) then {
+_airframe setVariable [QGVAR(EmergencyReleaseUsed), true, true];
 
-    { _x set ["damaged", true]; } forEach _hooks;
+if (missionNamespace getVariable [QSET(damageOnEmergencyRelease), false]) then { { _x set ["damaged", true]; } forEach _hooks; };
 
-};
-
-
-
-private _ropesWithCargo = [_airframe] call FUNC(getActiveRopesWithCargo); // TODO
-
-INFO_1("%1",_ropesWithCargo);
+///////////////////////
+// Detatch the Ropes
+///////////////////////
 
 
-{
-    [_airframe, _player, _x select 0] call FUNC(releaseCargo);
-} forEach _ropesWithCargo;
 
-
+// TODO: Handle the actual cargo release and stuff
 
 
 ///////////////////////
 // API
 ///////////////////////
 
-[QGVAR(API_emergencyCargoRelease), [_airframe, _player, _ropesWithCargo]] call CBA_fnc_localEvent;
+[ QGVAR(API_emergencyCargoRelease), [_airframe, _player] ] call CBA_fnc_localEvent;
