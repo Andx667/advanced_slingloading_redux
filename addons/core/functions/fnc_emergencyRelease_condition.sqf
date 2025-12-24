@@ -15,7 +15,7 @@
  * Public: No
  */
 
-params ["_player"];
+params ["_player", ["_skipCounter", false, [true]] ];
 
 private _airframe = vehicle _player;
 
@@ -27,12 +27,14 @@ if !( [_airframe] call FUNC(isSupportedVehicle)             ) exitWith { false }
 if !( [_airframe, _player] call FUNC(isSupportedVehicle)    ) exitWith { false };
 if !( _airframe isNil QGVAR(EmergencyReleaseUsed)           ) exitWith { false };
 
+
+if (_skipCounter) exitWith { true };
+
 ///////////////////////
 // Handle Counter
 ///////////////////////
 
 private _counter = ( missionNamespace getVariable [QGVAR(EmergencyReleaseCounter), 0] ) + 1;
-
 
 if (_counter isEqualTo 3) then {
 
