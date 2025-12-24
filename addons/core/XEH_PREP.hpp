@@ -1,5 +1,3 @@
-
-
 PREP(initAirframe);
 
 PREP(isFriendlyOrEmpty);
@@ -20,19 +18,24 @@ PREP(aa_pickupRopes_condition);
 PREP(aa_pickupRopes_statement);
 
 
-PREP(getCoPilots);
-PREP(isAllowedSeat);
-
-
 PREP(deployHookRopes);
 
 
-// Old FNCs in Use
+PREP(cargo_attachRopes);
+PREP(cargo_detachRopes);
+PREP(cargo_getCornerPoints);
+PREP(cargo_emergencyRelease);
+
+PREP(ropeSetMass);
+PREP(ropeAdjustMass);
+
 PREP(isSupportedVehicle);
 PREP(isSupportedCargo);
+PREP(isSupportedCargo);
+
+PREP(getCoPilots);
+
 PREP(customHint);
-PREP(getCornerPoints);
-PREP(ropeSetMass);
 
 
 
@@ -97,20 +100,3 @@ PREP(shortenRopesIndexAction);
 PREP(showSelectRopesMenu);
 
 */
-PREP(initAirframe);
-
-PREP(getHooksData);
-PREP(getHooksFromConfig);
-PREP(getHooksDefault);
-PREP(getHooksDefaultHeightOffset);
-
-PREP(emergencyCargoRelease);
-PREP(getCoPilots);
-PREP(isAllowedSeat);
-
-PREP(isFriendlyOrEmpty);
-
-PREP(attachRopes);
-PREP(isSupportedCargo);
-
-PREP(ropeAdjustMass);
