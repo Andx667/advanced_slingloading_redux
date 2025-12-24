@@ -107,7 +107,7 @@ private _exitCode = {
     if !(isNil "_playerInput") then {
         switch (_playerInput) do {
             case "DROP": { systemChat "drop ropes" }; // ToDo
-            case "ATTACH": { [_player, _ropeHelper, cursorObject] call FUNC(attachRopes); };
+            case "ATTACH": { [_player, _ropeHelper, cursorObject] call FUNC(cargo_attachRopes); };
         };
     };
 

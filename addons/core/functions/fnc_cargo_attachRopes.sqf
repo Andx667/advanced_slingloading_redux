@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 /*
  * Authors: Andx, sethduda
- * Attaches ropes to cargo.
+ * Attach ropes to cargo.
  *
  * Arguments:
  * 0: Cargo <OBJECT>
@@ -11,10 +11,10 @@
  * None
  *
  * Example:
- * [cargo, player] call asr_core_fnc_attachRopes
+ * [cargo, player] call asr_core_fnc_cargo_attachRopes
  *
  * Public: No
- */
+*/
 
 //_player, _ropeHelper, cursorObject
 params ["_player", "_ropeHelper", "_target"];
@@ -27,7 +27,7 @@ private _hookClass = _ropeHelper getVariable QGVAR(hook);
 private _ropes = _airframe getVariable _hookClass get "ropes";
 private _ropeLength = _airframe getVariable _hookClass get "length";
 
-private _attachmentPoints = [_target] call FUNC(getCornerPoints);
+private _attachmentPoints = [_target] call FUNC(cargo_getCornerPoints);
 private _outOfRange = _attachmentPoints findIf {
     _ropeLength * 1.1 < ( ( _target modelToWorld _x ) distance ( _airframe modelToWorld (_ropeHelper getVariable QGVAR(hookOffset)) ) )
 } isNotEqualTo -1;
@@ -50,7 +50,10 @@ private _hook = _airFrame getVariable _hookClass;
 _hook set ["cargo", _target];
 _airframe setVariable [_hookClass, _hook, true];
 
+if (SET(ignore_liftCapacity)) then { [QGVAR(EH_ropeAdjustMass), [_target, _airFrame, _ropes]] call CBA_fnc_serverEvent; };
 
-if (SET(ignore_liftCapacity)) then { [_target, _airFrame, _ropes] call FUNC(ropeAdjustMass); };
+// Handle Ace Actions to Detatch the Cargo
+[QGVAR(EH_detachRopesAction_server), [_target]] call CBA_fnc_serverEvent;
 
+// API
 [QGVAR(API_ropeAttached), [_airFrame, _target, _player]] call CBA_fnc_localEvent;

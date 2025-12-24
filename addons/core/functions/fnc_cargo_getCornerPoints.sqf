@@ -10,7 +10,7 @@
  * List with the four corner points <ARRAY>
  *
  * Example:
- * [vehicle] call asr_core_fnc_getCornerPoints
+ * [vehicle] call asr_core_fnc_cargo_getCornerPoints
  *
  * Public: No
  */
