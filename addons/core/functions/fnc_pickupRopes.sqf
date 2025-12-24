@@ -64,8 +64,6 @@ private _codeToRun = {
     //Distance Hook to Helper
     private _distance = _ropeHelper distance ( _airframe modelToWorld (_ropeHelper getVariable QGVAR(hookOffset)) );
 
-    diag_log format ['[CVO](debug)(fnc_aa_pickupRopes_statement) _distance: %1 - _ropeLength: %2', _distance , _ropeLength];
-
     if ( _ropeLength * 1.1 < _distance ) exitWith { _player setVariable [QGVAR(player_input), "DROP"] };
 
 
