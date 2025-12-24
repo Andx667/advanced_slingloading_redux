@@ -25,7 +25,8 @@ private _airframe = ropeAttachedTo _ropeHelper;
 private _hookClass = _ropeHelper getVariable QGVAR(hook);
 
 private _ropes = _airframe getVariable _hookClass get "ropes";
-private _ropeLength = _airframe getVariable _hookClass get "length";
+private _ropeLength = selectMin (_ropes apply { ropeLength _x });
+// private _ropeLength = _airframe getVariable _hookClass get "currLength";
 
 private _attachmentPoints = [_target] call FUNC(cargo_getCornerPoints);
 private _outOfRange = _attachmentPoints findIf {

@@ -22,6 +22,11 @@ PREP(aa_pickupRopes_condition);
 PREP(aa_pickupRopes_statement);
 PREP(pickupRopes);
 
+PREP(setRopeLength);
+
+
+PREP(cargo_getCornerPoints);
+PREP(cargo_getSlingloadPoints);
 PREP(cargo_handleMass);
 PREP(cargo_setMass);
 
@@ -33,8 +38,6 @@ PREP(cargo_detachRopes);
 PREP(aa_detachRopes_condition);
 PREP(aa_detachRopes_statement);
 
-PREP(cargo_getCornerPoints);
-PREP(cargo_getSlingloadPoints);
 
 PREP(emergencyRelease_condition);
 PREP(emergencyRelease_statement);
@@ -100,7 +103,7 @@ PREP(retractRopes);
 PREP(retractRopesAction);
 PREP(retractRopesActionCheck);
 PREP(retractRopesIndexAction);
-PREP(ropeAdjustMass);
+
 
 PREP(shortenRopes);
 PREP(shortenRopesAction);

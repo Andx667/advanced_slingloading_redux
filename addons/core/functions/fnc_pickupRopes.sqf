@@ -59,7 +59,8 @@ private _codeToRun = {
 
     // Check if player is to far away and drop the hook
     private _hookClass = _ropeHelper getVariable QGVAR(hook);
-    private _ropeLength = _airframe getVariable _hookClass get "length";
+    private _ropeLength = selectMin (_airframe getVariable _hookClass get "ropes" apply { ropeLength _x });
+    // private _ropeLength = _airframe getVariable _hookClass get "currLength";
 
     //Distance Hook to Helper
     private _distance = _ropeHelper distance ( _airframe modelToWorld (_ropeHelper getVariable QGVAR(hookOffset)) );
