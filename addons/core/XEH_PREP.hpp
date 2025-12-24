@@ -4,6 +4,9 @@ PREP(isFriendlyOrEmpty);
 PREP(isTargetLocked);
 PREP(isAllowedSeat);
 
+PREP(setHooks);
+PREP(getHooks);
+
 PREP(getHooksData);
 PREP(getHooksFromConfig);
 PREP(getHooksDefault);
@@ -13,22 +16,25 @@ PREP(aa_rootAction_conditions);
 
 PREP(aa_deployRopes_condition);
 PREP(aa_deployRopes_statement);
+PREP(deployHookRopes);
 
 PREP(aa_pickupRopes_condition);
 PREP(aa_pickupRopes_statement);
-
-
-PREP(deployHookRopes);
+PREP(pickupRopes);
 
 
 PREP(cargo_attachRopes);
+PREP(cargo_attachRopes_addActions_server);
+PREP(cargo_attachRopes_addActions_client);
 PREP(cargo_detachRopes);
+
 PREP(cargo_getCornerPoints);
 
-PREP(ropeSetMass);
 PREP(emergencyRelease_condition);
 PREP(emergencyRelease_statement);
+
 PREP(ropeAdjustMass);
+PREP(ropeSetMass);
 
 PREP(isSupportedVehicle);
 PREP(isSupportedCargo);
@@ -37,8 +43,6 @@ PREP(isSupportedCargo);
 PREP(getCoPilots);
 
 PREP(customHint);
-
-
 
 /*
 // Old FNCs Not In Use Subfolder
