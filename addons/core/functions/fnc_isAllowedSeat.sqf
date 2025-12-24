@@ -15,14 +15,14 @@
  * Public: No
  */
 
-params [ "_target", "_player"];
+params [ "_airframe", "_player"];
 TRACE_1("fnc_isAllowedSeat",_this);
 
 if (isNull objectParent _player) exitWith { true; };
 
-private _pilot = currentPilot _target;
-private _copilots = [_target] call FUNC(getCopilots);
-private _crew = fullCrew [_target, "turret"];
+private _pilot = currentPilot _airframe;
+private _copilots = [_airframe] call FUNC(getCopilots);
+private _crew = fullCrew [_airframe, "turret"];
 private _crewArray = [];
 
 {
