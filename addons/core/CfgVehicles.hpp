@@ -9,7 +9,7 @@ class CfgVehicles {
     class PVAR(ropeHelper): BASECLASS {
         scope = 1;
         author = ECSTRING(main,author);
-        displayName = "asr Rope Helper";
+        displayName = "ASR SlingRope Helper";
         icon = QPATHTOF(data\icon_asr_ca.paa);
         model = QPATHTOF(data\ropeEndLoop\ropeEndLoop.p3d);
 
