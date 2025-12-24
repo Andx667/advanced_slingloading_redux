@@ -16,8 +16,8 @@
 
         // Check if player is allowed Seat
 
-        if ([ACE_player] call FUNC(cargo_emergencyRelease_condition)) then {
-            [ACE_player] call FUNC(cargo_emergencyRelease_statement);
+        if ([ACE_player] call FUNC(emergencyRelease_condition)) then {
+            [ACE_player] call FUNC(emergencyRelease_statement);
         };
 
     }, {
