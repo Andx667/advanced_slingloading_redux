@@ -26,9 +26,13 @@ PREP(pickupRopes);
 PREP(cargo_attachRopes);
 PREP(cargo_attachRopes_addActions_server);
 PREP(cargo_attachRopes_addActions_client);
+
 PREP(cargo_detachRopes);
+PREP(aa_detachRopes_condition);
+PREP(aa_detachRopes_statement);
 
 PREP(cargo_getCornerPoints);
+PREP(cargo_getSlingloadPoints);
 
 PREP(emergencyRelease_condition);
 PREP(emergencyRelease_statement);

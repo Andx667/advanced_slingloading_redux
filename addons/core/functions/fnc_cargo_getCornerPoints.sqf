@@ -17,7 +17,6 @@
 
 params ["_vehicle"];
 
-
 // Correct width and length factor for air
 
 switch (true) do {

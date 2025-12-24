@@ -31,12 +31,12 @@
  * None
  *
  * Example:
- * [cargo, player] call asr_core_fnc_attachRopes
+ * [cursorObject, player] call asr_core_fnc_detachRopes
  *
  * Public: No
 */
 
-params ["_target", "_player", "_params"];
+params ["_cargo", "_player", "_params"];
 _params params  [""];
 
 
@@ -44,16 +44,21 @@ _params params  [""];
 // Get Variables
 ///////////////////////
 
-private _airframe = ropeAttachedTo _target;
+private _airframe = ropeAttachedTo _cargo;
 
-private _hookIDs = _airframe getVariable QGVAR(hooksData) get "hookIDs";
+private _hooks = [_airframe, true] call FUNC(getHooks);
 
 // Get _hookClassname
-private _findIfIndex = _hookIDs findIf { _airframe getVariable _x get "cargo" isEqualTo _target };
-if (_findIfIndex isEqualTo -1) exitWith {};
-private _hookClassname = _hookIDs select _findIfIndex;
+private _hookClassname = "";
+private _hookMap = "";
+{
+    if (_y get "cargo" isEqualTo _cargo) exitWith {
+        _hookClassname = _x;
+        _hookMap = _y;
+    };
+} forEach _hooks;
 
-private _hookMap = _airframe getVariable _hookClassname;
+if (_hookClassname isEqualTo "") exitWith {};
 
 private _ropes = _hookMap get "ropes";
 
@@ -61,7 +66,7 @@ private _ropes = _hookMap get "ropes";
 // Detach Ropes from Cargo
 ///////////////////////
 
-{_target ropeDetach _x} forEach _ropes;
+{_cargo ropeDetach _x} forEach _ropes;
 
 _hookMap set ["cargo", objNull];
 
@@ -69,9 +74,9 @@ _hookMap set ["cargo", objNull];
 // Create Helper Object
 ///////////////////////
 
-_target call BIS_fnc_boundingBoxDimensions params ["", "", "_modelHeight"];
+_cargo call BIS_fnc_boundingBoxDimensions params ["", "", "_modelHeight"];
 
-private _helperPos = _target modelToWorld [0,0, _modelHeight];
+private _helperPos = _cargo modelToWorld [0,0, _modelHeight];
 // Create hook 1 meter below hook or at surface if hook would be underground.
 _helperPos set [ 2, _helperPos # 2 - 1 max 0 ];
 
@@ -124,4 +129,4 @@ _ropeHelper setVariable [
 // API
 ///////////////////////
 
-[QGVAR(API_ropeDetached), [_airframe, _hookClassname, _target]] call CBA_fnc_localEvent;
+[QGVAR(API_ropeDetached), [_airframe, _hookClassname, _cargo]] call CBA_fnc_localEvent;
