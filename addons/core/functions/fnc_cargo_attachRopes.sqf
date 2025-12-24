@@ -50,7 +50,7 @@ private _hook = _airFrame getVariable _hookClass;
 _hook set ["cargo", _target];
 _airframe setVariable [_hookClass, _hook, true];
 
-if (SET(ignore_liftCapacity)) then { [QGVAR(EH_ropeAdjustMass), [_target, _airFrame, _ropes]] call CBA_fnc_serverEvent; };
+if (SET(ignore_liftCapacity)) then { [QGVAR(EH_cargo_handleMass), [_target, _airFrame, _ropes]] call CBA_fnc_serverEvent; };
 
 // Handle Ace Actions to Detatch the Cargo
 [QGVAR(EH_detachRopesAction_server), [_target]] call CBA_fnc_serverEvent;

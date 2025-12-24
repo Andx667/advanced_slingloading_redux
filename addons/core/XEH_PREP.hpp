@@ -22,6 +22,8 @@ PREP(aa_pickupRopes_condition);
 PREP(aa_pickupRopes_statement);
 PREP(pickupRopes);
 
+PREP(cargo_handleMass);
+PREP(cargo_setMass);
 
 PREP(cargo_attachRopes);
 PREP(cargo_attachRopes_addActions_server);
@@ -37,8 +39,6 @@ PREP(cargo_getSlingloadPoints);
 PREP(emergencyRelease_condition);
 PREP(emergencyRelease_statement);
 
-PREP(ropeAdjustMass);
-PREP(ropeSetMass);
 
 PREP(isSupportedVehicle);
 PREP(isSupportedCargo);

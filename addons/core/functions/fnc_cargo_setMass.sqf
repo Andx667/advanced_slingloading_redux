@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [cargo, 20] call asr_core_fnc_ropeSetMass
+ * [cargo, 20] call asr_core_fnc_cargo_setMass
  *
  * Public: No
  */

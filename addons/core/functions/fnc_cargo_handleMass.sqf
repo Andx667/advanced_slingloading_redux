@@ -47,7 +47,7 @@ if (_originalMass < (_liftCapability * 0.8)) exitWith {};
 
         if (_taut) then {
             // Reduce mass once
-            [QGVAR(EH_ropeSetMass), [_cargo, ((_liftCapability) * 0.8)], _cargo] call CBA_fnc_targetEvent;
+            [QGVAR(EH_cargo_setMass), [_cargo, ((_liftCapability) * 0.8)], _cargo] call CBA_fnc_targetEvent;
 
             // ─────────────────────────────
             // 2) WUAE to restore mass on detach
@@ -56,7 +56,7 @@ if (_originalMass < (_liftCapability * 0.8)) exitWith {};
                 { isNull ropeAttachedTo (_this#0) }, // cond
                 {
                     params ["_cargo","_airframe","_originalMass"];
-                    [QGVAR(EH_ropeSetMass), [_cargo, _originalMass], _cargo] call CBA_fnc_targetEvent;
+                    [QGVAR(EH_cargo_setMass), [_cargo, _originalMass], _cargo] call CBA_fnc_targetEvent;
                     _handle call CBA_fnc_removePerFrameHandler;
                 },
                 [_cargo,_airframe,_originalMass]
