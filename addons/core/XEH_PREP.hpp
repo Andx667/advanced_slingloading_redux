@@ -24,9 +24,10 @@ PREP(deployHookRopes);
 PREP(cargo_attachRopes);
 PREP(cargo_detachRopes);
 PREP(cargo_getCornerPoints);
-PREP(cargo_emergencyRelease);
 
 PREP(ropeSetMass);
+PREP(emergencyRelease_condition);
+PREP(emergencyRelease_statement);
 PREP(ropeAdjustMass);
 
 PREP(isSupportedVehicle);

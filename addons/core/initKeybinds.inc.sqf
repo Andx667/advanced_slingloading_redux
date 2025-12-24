@@ -13,7 +13,13 @@
     _category, QGVAR(key_emergencyCargoRelease),
     [LSTRING(keys_emergencyCargoRelease_name), LSTRING(keys_emergencyCargoRelease_tooltip)], {
         //key down
-        [ACE_player] call FUNC(emergencyCargoRelease);
+
+        // Check if player is allowed Seat
+
+        if ([ACE_player] call FUNC(cargo_emergencyRelease_condition)) then {
+            [ACE_player] call FUNC(cargo_emergencyRelease_statement);
+        };
+
     }, {
         //key up
     },
