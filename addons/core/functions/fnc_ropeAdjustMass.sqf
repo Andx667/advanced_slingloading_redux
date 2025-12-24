@@ -27,7 +27,7 @@ params [ "_cargo", "_airframe", ["_ropes",[]] ];
 private _liftCapability   = getNumber (configOf _airframe >> "slingLoadMaxCargoMass");
 private _originalMass     = getMass _cargo;
 
-if !(_originalMass >= (_liftCapability * 0.8)) exitWith {};
+if (_originalMass < (_liftCapability * 0.8)) exitWith {};
 
 // ─────────────────────────────
 // 1) PFH to wait until rope is taut
