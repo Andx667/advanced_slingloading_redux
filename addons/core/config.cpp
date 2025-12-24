@@ -21,5 +21,5 @@ class CfgPatches {
 
 #include "CfgEventHandlers.hpp"
 
-#include "asr_Hooks.hpp"
-#include "asr_Hooks_HeightOffset.hpp"
+#include "ASR_Hooks.hpp"
+#include "ASR_Hooks_HeightOffset.hpp"
