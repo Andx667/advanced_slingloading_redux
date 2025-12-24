@@ -31,14 +31,12 @@ if !( _airframe isNil QGVAR(EmergencyReleaseUsed)           ) exitWith { false }
 // Handle Counter
 ///////////////////////
 
-private _counter = missionNamespace getVariable [QGVAR(EmergencyReleaseCounter), 0] + 1;
+private _counter = ( missionNamespace getVariable [QGVAR(EmergencyReleaseCounter), 0] ) + 1;
 
 
 if (_counter isEqualTo 3) then {
 
     // Allow Emergency Release
-
-    _airframe setVariable [QGVAR(EmergencyReleaseUsed), true, true];
     missionNamespace setVariable [QGVAR(EmergencyReleaseCounter), nil];
 
     true // Return
@@ -49,8 +47,8 @@ if (_counter isEqualTo 3) then {
     missionNamespace setVariable [QGVAR(EmergencyReleaseCounter), _counter];
     [
         {
-            private _counter = missionNamespace getVariable [QGVAR(EmergencyReleaseCounter), 0] - 1;
-            if (_counter isEqualTo 0) then { _counter = nil; }
+            private _counter = ( missionNamespace getVariable [QGVAR(EmergencyReleaseCounter), 0] ) - 1;
+            if (_counter isEqualTo 0) then { _counter = nil; };
             missionNamespace setVariable [QGVAR(EmergencyReleaseCounter), _counter];
         },
         nil,
