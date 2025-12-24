@@ -12,14 +12,14 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=221;
+		nextID=222;
 	};
 	class Camera
 	{
-		pos[]={14.972115,8.0068789,-2.8779545};
-		dir[]={0.75440252,-0.65641177,-0.00077556301};
-		up[]={0.65641147,0.75440276,-0.00067482336};
-		aside[]={-0.0010280488,0,-0.99999952};
+		pos[]={1.9165624,13.194244,-5.2649722};
+		dir[]={0.99773151,-0.066001453,0.013733165};
+		up[]={0.065997563,0.99781877,0.00090844615};
+		aside[]={0.013763249,1.1439624e-08,-0.99991208};
 	};
 };
 binarizationWanted=0;
@@ -366,12 +366,13 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={21.241905,5.7898083,-4.6402936};
+				position[]={21.242001,5.7898083,-4.6399999};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				name="cargo_2";
 			};
 			id=192;
 			type="ACE_fastropingSupplyCrate";
@@ -609,7 +610,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={24,13.573386,-6.0553055};
+				position[]={24,13.801309,-5.1655235};
 			};
 			side="Empty";
 			class Attributes
@@ -618,7 +619,7 @@ class Mission
 			};
 			id=214;
 			type="B_Heli_Transport_03_F";
-			atlOffset=5.2290144;
+			atlOffset=5.4569368;
 		};
 		class Item19
 		{
@@ -671,12 +672,13 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={23.929253,5.7898083,-7.7609415};
+				position[]={23.929001,5.7898083,-7.7610002};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				name="cargo_1";
 			};
 			id=218;
 			type="ACE_fastropingSupplyCrate";
