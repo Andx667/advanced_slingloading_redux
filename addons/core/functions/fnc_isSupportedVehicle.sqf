@@ -18,16 +18,16 @@
 
 // ToDo: Consider reworking this?
 
-params [ ["_vehicle", objNull, [objNull]] ];
+params [ ["_airframe", objNull, [objNull]] ];
 
-if (isNull _vehicle) exitWith { false };
+if (isNull _airframe) exitWith { false };
 
 switch (SET(supportedVehicles)) do {
     // VTOL + Heli vehicles are supported
-    case 0: { _vehicle isKindOf "Helicopter" ||  { _vehicle isKindOf "VTOL_Base_F" } };
+    case 0: { _airframe isKindOf "Helicopter" ||  { _airframe isKindOf "VTOL_Base_F" } };
      // Only Heli vehicles are supported
-    case 1: { _vehicle isKindOf "Helicopter" };
+    case 1: { _airframe isKindOf "Helicopter" };
     // Only VTOL vehicles are supported
-    case 2: { _vehicle isKindOf "VTOL_Base_F" };
+    case 2: { _airframe isKindOf "VTOL_Base_F" };
     default { false };
 } // Return
