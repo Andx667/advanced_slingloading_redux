@@ -34,13 +34,13 @@ if (isNil "_map") then {
         private _hookConfigs = "true" configClasses _x;
 
         {
-            private _hookClassname = configName _x;
+            private _hookID = configName _x;
             private _prefix = [QPREFIX, "hook"] joinString "_";
-            if !( _prefix in _hookClassname ) then { _hookClassname = [_prefix, _hookClassname] joinString "_"; };
+            if !( _prefix in _hookID ) then { _hookID = [_prefix, _hookID] joinString "_"; };
 
             // Create Hashmap per Hook
             _hookEntries pushBack createHashMapFromArray [
-                [ "hookClassname", _hookClassname                              ],
+                [ "hookID",        _hookID                                     ],
                 [ "displayName",   getText (_x >> "displayName")               ],
                 [ "isExclusive",   getNumber (_x >> "isExclusive") isEqualTo 1 ],
                 [

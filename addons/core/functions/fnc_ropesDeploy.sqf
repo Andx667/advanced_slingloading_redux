@@ -15,16 +15,16 @@
 * Public: No
 */
 
-params [ "_airframe", "_hookClassname", ["_length", 5, [0]] ];
+params [ "_airframe", "_hookID", ["_length", 5, [0]] ];
 
 
 // Check if Hook defined
-if (_airframe isNil _hookClassname) exitWith { systemChat "Hook not found!" };
+if (_airframe isNil _hookID) exitWith { systemChat "Hook not found!" };
 // Check if already deployed
-if (_airframe getVariable _hookClassname isNotEqualTo false) exitWith { systemChat "Ropes already deployed!" };
+if (_airframe getVariable _hookID isNotEqualTo false) exitWith { systemChat "Ropes already deployed!" };
 
 
-private _hookData = _airframe getVariable QGVAR(hooksData) get "hooks" get _hookClassname;
+private _hookData = _airframe getVariable QGVAR(hooksData) get "hooks" get _hookID;
 private _hookOffset = _hookData get "hookOffset";
 
 
@@ -49,7 +49,7 @@ private _helperPos = _airframe modelToWorld _hookOffset;
 // Create hook 1 meter below hook or at surface if hook would be underground.
 _helperPos set [ 2, _helperPos # 2 - 1 max 0 ];
 
-private _ropeHelper = [ _helperPos, _ropes, _hookClassname, _hookOffset ] call FUNC(createRopeHelper);
+private _ropeHelper = [ _helperPos, _ropes, _hookID, _hookOffset ] call FUNC(createRopeHelper);
 
 
 ///////////////////////
@@ -57,7 +57,7 @@ private _ropeHelper = [ _helperPos, _ropes, _hookClassname, _hookOffset ] call F
 ///////////////////////
 
 _airframe setVariable [
-    _hookClassname,
+    _hookID,
     createHashMapFromArray [
         ["damaged", false],
         ["ropes", _ropes],
@@ -71,4 +71,4 @@ _airframe setVariable [
 // API
 ///////////////////////
 
-[QGVAR(API_ropeDeployed), [_airframe, _hookClassname, _length]] call CBA_fnc_localEvent;
+[QGVAR(API_ropeDeployed), [_airframe, _hookID, _length]] call CBA_fnc_localEvent;

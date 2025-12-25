@@ -19,12 +19,12 @@
 diag_log format ['[CVO](debug)(fnc_aa_deployRopes_condition) _this: %1', _this];
 
 params ["_airframe", "_player", "_params"];
-_params params  ["_hookClassname"];
+_params params  ["_hookID"];
 
 // Check if Hook defined
-if (_airframe isNil _hookClassname) exitWith { systemChat "Hook not found!" };
+if (_airframe isNil _hookID) exitWith { systemChat "Hook not found!" };
 // Check if already deployed
-if (_airframe getVariable _hookClassname isNotEqualTo false) exitWith { systemChat "Ropes already deployed!" };
+if (_airframe getVariable _hookID isNotEqualTo false) exitWith { systemChat "Ropes already deployed!" };
 
 
 private _allHookIDs = + (_airframe getVariable QGVAR(hooksData) get "hookIDs");

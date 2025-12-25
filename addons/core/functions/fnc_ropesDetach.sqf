@@ -48,17 +48,17 @@ private _airframe = ropeAttachedTo _cargo;
 
 private _hooks = [_airframe, true] call FUNC(getHooks);
 
-// Get _hookClassname
-private _hookClassname = "";
+// Get _hookID
+private _hookID = "";
 private _hookMap = "";
 {
     if (_y get "cargo" isEqualTo _cargo) exitWith {
-        _hookClassname = _x;
+        _hookID = _x;
         _hookMap = _y;
     };
 } forEach _hooks;
 
-if (_hookClassname isEqualTo "") exitWith {};
+if (_hookID isEqualTo "") exitWith {};
 
 private _ropes = _hookMap get "ropes";
 
@@ -83,8 +83,8 @@ _hookPos set [ 2, _hookPos # 2 - 1 max 0 ];
 private _ropeHelper = [
     _hookPos,
     _ropes,
-    _hookClassname,
-    _airframe getVariable QGVAR(hooksData) get "hooks" get _hookClassname get "hookOffset"
+    _hookID,
+    _airframe getVariable QGVAR(hooksData) get "hooks" get _hookID get "hookOffset"
 ] call FUNC(createRopeHelper);
 
 
@@ -92,7 +92,7 @@ private _ropeHelper = [
 // Store Data
 ///////////////////////
 
-_airframe setVariable [ _hookClassname, _hookMap, true ];
+_airframe setVariable [ _hookID, _hookMap, true ];
 
 ///////////////////////
 // Put Hook in Players Hand
@@ -105,4 +105,4 @@ _airframe setVariable [ _hookClassname, _hookMap, true ];
 // API
 ///////////////////////
 
-[QGVAR(API_ropeDetached), [_airframe, _hookClassname, _cargo]] call CBA_fnc_localEvent;
+[QGVAR(API_ropeDetached), [_airframe, _hookID, _cargo]] call CBA_fnc_localEvent;

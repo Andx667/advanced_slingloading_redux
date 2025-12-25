@@ -55,9 +55,9 @@ if (_vehicleClass in keys _cache) then {
         if (_numOfHooks isEqualTo 0) exitWith {};
 
         private _addHookEntry = {
-            params [ "_className", "_displayName", "_hasExclusive", "_offsetArray" ];
+            params [ "_hookID", "_displayName", "_hasExclusive", "_offsetArray" ];
             _hookEntries pushBack createHashMapFromArray [
-                [ "hookClassname", _className    ],
+                [ "hookID",        _hookID       ],
                 [ "displayName",   _displayName  ],
                 [ "isExclusive",   _hasExclusive ],
                 [ "hookOffset",    _offsetArray  ]
@@ -103,7 +103,7 @@ if (_vehicleClass in keys _cache) then {
     private _hooks = createHashMap;
     private _hookIDs = [];
     {
-        private _hookID = _x get "hookClassname";
+        private _hookID = _x get "hookID";
         if (_x get "isExclusive") then { _hasExclusive = _hookID; };
         _hooks set [ _hookID , _x ];
         _hookIDs pushBack _hookID;          // ([QPREFIX, "hook", _hookID] joinString "_");

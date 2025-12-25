@@ -15,7 +15,7 @@
 * Public: No
 */
 
-params [ "_pos", "_ropes", "_hookClassname", "_hookOffset" ];
+params [ "_pos", "_ropes", "_hookID", "_hookOffset" ];
 
 ///////////////////////
 // Create Rope Helper
@@ -44,7 +44,7 @@ private _ropeHelper = createVehicle [QPVAR(ropeHelper), _pos, [], 0, "CAN_COLLID
 // Store Data
 ///////////////////////
 
-_ropeHelper setVariable [QGVAR(hook), _hookClassname, true];
+_ropeHelper setVariable [QGVAR(hook), _hookID, true];
 _ropeHelper setVariable [QGVAR(hookOffset), _hookOffset, true];
 
 
