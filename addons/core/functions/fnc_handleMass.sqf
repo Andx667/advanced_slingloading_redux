@@ -29,6 +29,8 @@ private _originalMass     = getMass _cargo;
 
 if (_originalMass < (_liftCapability * 0.8)) exitWith {};
 
+_cargo setVariable [QGVAR(originalMass), _originalMass, true];
+
 // ─────────────────────────────
 // 1) PFH to wait until rope is taut
 // ─────────────────────────────
@@ -47,22 +49,11 @@ if (_originalMass < (_liftCapability * 0.8)) exitWith {};
 
         if (_taut) then {
             // Reduce mass once
-            [QGVAR(EH_cargo_setMass), [_cargo, ((_liftCapability) * 0.8)], _cargo] call CBA_fnc_targetEvent;
+            [QGVAR(EH_setMass), [_cargo, ((_liftCapability) * 0.8)], _cargo] call CBA_fnc_targetEvent;
 
-            // ─────────────────────────────
-            // 2) WUAE to restore mass on detach
-            // ─────────────────────────────
-            [
-                { isNull ropeAttachedTo (_this#0) }, // cond
-                {
-                    params ["_cargo","_airframe","_originalMass"];
-                    [QGVAR(EH_cargo_setMass), [_cargo, _originalMass], _cargo] call CBA_fnc_targetEvent;
-                    _handle call CBA_fnc_removePerFrameHandler;
-                },
-                [_cargo,_airframe,_originalMass]
-            ] call CBA_fnc_waitUntilAndExecute;
+            _handle call CBA_fnc_removePerFrameHandler;
         };
     },
     0.1, // check interval for taut rope
-    [_cargo,_airframe,_ropes,_liftCapability,_originalMass]
+    [_cargo,_airframe,_ropes,_liftCapability]
 ] call CBA_fnc_addPerFrameHandler;
