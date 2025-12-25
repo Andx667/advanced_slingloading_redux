@@ -15,11 +15,11 @@ private _category = [QUOTE(MOD_NAME), LLSTRING(displayName)];
 
 [QGVAR(EH_customHint),          FUNC(customHint)     ] call CBA_fnc_addEventHandler;
 
-[QGVAR(EH_cargo_setMass),         FUNC(cargo_setMass)    ] call CBA_fnc_addEventHandler;
-[QGVAR(EH_cargo_handleMass),      FUNC(cargo_handleMass) ] call CBA_fnc_addEventHandler;
+[QGVAR(EH_cargo_setMass),         FUNC(setMass)    ] call CBA_fnc_addEventHandler;
+[QGVAR(EH_cargo_handleMass),      FUNC(handleMass) ] call CBA_fnc_addEventHandler;
 
-[QGVAR(EH_detachRopesAction_client),   FUNC(cargo_attachRopes_addActions_client) ] call CBA_fnc_addEventHandler;
-[QGVAR(EH_detachRopesAction_server),   FUNC(cargo_attachRopes_addActions_server) ] call CBA_fnc_addEventHandler;
+[QGVAR(EH_detachRopesAction_client),   FUNC(ropesAttach_addActions_client) ] call CBA_fnc_addEventHandler;
+[QGVAR(EH_detachRopesAction_server),   FUNC(ropesAttach_addActions_server) ] call CBA_fnc_addEventHandler;
 
 
 [ QGVAR(EH_hideObjectGlobal), { params ["_obj", ["_bool", true]]; _obj hideObjectGlobal _bool; }                     ] call CBA_fnc_addEventHandler;

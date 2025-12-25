@@ -16,8 +16,8 @@ class CfgVehicles {
         class ACE_Actions {
             class PVAR(pickUp) {
                 displayName = "Pickup Ropes"; // ToDo Stringtable
-                condition = Q(_this call FUNC(aa_pickupRopes_condition));
-                statement = Q(_this call FUNC(aa_pickupRopes_statement));
+                condition = Q(_this call FUNC(ropesPickup_condition));
+                statement = Q(_this call FUNC(ropesPickup_statement));
                 icon = QPATHTOF(data\icon_asr_ca.paa); // ToDo Icon
 
                 distance = 5;

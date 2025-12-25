@@ -20,7 +20,7 @@
 
 params ["_vehicle", "_player", ["_cargoCount", 1]];
 
-if !(local _vehicle) exitWith { [QGVAR(EH_execQFUNC), [_this, QFUNC(deployRopes)], _vehicle] call CBA_fnc_targetEvent; };
+if !(local _vehicle) exitWith { [QGVAR(EH_execQFUNC), [_this, QFUNC(ropesDeploy)], _vehicle] call CBA_fnc_targetEvent; };
 
 private _slingLoadPoints = [_vehicle] call FUNC(getHooksDefault); // investigate
 private _existingRopes = _vehicle getVariable [QGVAR(custom_ropes), []];
@@ -42,7 +42,7 @@ _vehicle setVariable [QGVAR(custom_ropes), _cargoRopes, true];
 _vehicle setVariable [QGVAR(cargo), _cargo, true];
 
 for "_i" from 0 to (_cargoCount - 1) do {
-    [_vehicle, _player, _i] call FUNC(deployRopesIndex);
+    [_vehicle, _player, _i] call FUNC(ropesDeployIndex);
 };
 
 [QGVAR(API_ropeDeployed), [_vehicle, _player, _cargoCount]] call CBA_fnc_localEvent;

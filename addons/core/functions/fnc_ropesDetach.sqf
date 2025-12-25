@@ -71,37 +71,21 @@ private _ropes = _hookMap get "ropes";
 _hookMap set ["cargo", objNull];
 
 ///////////////////////
-// Create Helper Object
+// Create RopeHook
 ///////////////////////
 
 _cargo call BIS_fnc_boundingBoxDimensions params ["", "", "_modelHeight"];
 
-private _helperPos = _cargo modelToWorld [0,0, _modelHeight];
+private _hookPos = _cargo modelToWorld [0,0, _modelHeight];
 // Create hook 1 meter below hook or at surface if hook would be underground.
-_helperPos set [ 2, _helperPos # 2 - 1 max 0 ];
+_hookPos set [ 2, _hookPos # 2 - 1 max 0 ];
 
-// createVehicle [type, position, markers, placement, special]
-private _ropeHelper = createVehicle [QPVAR(ropeHelper), _helperPos, [], 0, "CAN_COLLIDE"];
-
-
-///////////////////////
-// Attach Ropes To New Hook
-///////////////////////
-
-{
-    private _rope = _x;
-    [
-        _ropeHelper,
-        [0,0,0],
-        [
-            [  0,  1, -1 ],
-            [  1,  0, -1 ],
-            [  0, -1, -1 ],
-            [ -1,  0, -1 ]
-        ] select _forEachIndex
-    ] ropeAttachTo _rope;
-
-} forEach _ropes;
+private _ropeHelper = [
+    _hookPos,
+    _ropes,
+    _hookClassname,
+    _airframe getVariable QGVAR(hooksData) get "hooks" get _hookClassname get "hookOffset"
+] call FUNC(createRopeHelper);
 
 
 ///////////////////////
@@ -110,19 +94,11 @@ private _ropeHelper = createVehicle [QPVAR(ropeHelper), _helperPos, [], 0, "CAN_
 
 _airframe setVariable [ _hookClassname, _hookMap, true ];
 
-_ropeHelper setVariable [ QGVAR(hook), _hookClassname, true ];
-
-_ropeHelper setVariable [
-    QGVAR(hookOffset),
-    _airframe getVariable QGVAR(hooksData) get "hooks" get _hookClassname get "hookOffset",
-    true
-];
-
 ///////////////////////
 // Put Hook in Players Hand
 ///////////////////////
 
-[_ropeHelper, _player] call FUNC(pickupRopes);
+[_ropeHelper, _player] call FUNC(ropesPickup);
 
 
 ///////////////////////

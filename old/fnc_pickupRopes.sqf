@@ -19,7 +19,7 @@
 
 params ["_vehicle", "_player", ["_ropeIndex", 0]];
 
-if (!local _vehicle) exitWith { [QGVAR(EH_execQFUNC), [_this, QFUNC(pickupRopes)], _vehicle] call CBA_fnc_targetEvent; };
+if (!local _vehicle) exitWith { [QGVAR(EH_execQFUNC), [_this, QFUNC(ropesPickup)], _vehicle] call CBA_fnc_targetEvent; };
 
 [ _vehicle, _ropeIndex ] call FUNC(getRopesAndCargo) params ["_existingRopes", "_existingCargo"];
 

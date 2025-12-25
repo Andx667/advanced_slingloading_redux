@@ -27,4 +27,4 @@ if (!SET(allow_locked) && { locked _vehicle > 1 } ) exitWith {
     [LLSTRING(cannot_pickup_locked_vehicle), false] call FUNC(customHint);
 };
 
-[_vehicle, ACE_player, _ropeIndex] call FUNC(pickupRopes);
+[_vehicle, ACE_player, _ropeIndex] call FUNC(ropesPickup);

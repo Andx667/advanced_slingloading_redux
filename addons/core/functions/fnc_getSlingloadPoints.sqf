@@ -24,6 +24,6 @@ params [ "_cargo" ];
 
 private _slingLoadPoints = getArray ( configOf _cargo >> "slingLoadCargoMemoryPoints" );
 
-if (_slingLoadPoints isEqualTo []) exitWith { [ _cargo ] call FUNC(cargo_getCornerPoints) };
+if (_slingLoadPoints isEqualTo []) exitWith { [ _cargo ] call FUNC(getCornerPoints) };
 
 _slingLoadPoints apply { _cargo selectionPosition _x }

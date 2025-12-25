@@ -21,7 +21,7 @@
 
 params ["_ropeHelper", "_player"];
 
-//  Set Player Flag
+//  Set Flags
 _player setVariable [QGVAR(isCarryingRope), true, true];
 _ropeHelper setVariable [QGVAR(isBeingCarried), true, true];
 
@@ -77,7 +77,7 @@ private _codeToRun = {
     _player setVariable [QGVAR(isValidTarget), _validTarget];
 
     private _leftClickDisplay = switch (true) do {
-        case (_isInRange && {  _validTarget }): { "Attach" };            // ToDo Stringtable LLSTRING(AttachRopes)
+        case (_isInRange && {  _validTarget }): { "Attach" };            // ToDo Stringtable LLSTRING(ropesAttach)
         case (_isInRange && { !_validTarget }): { "Not Valid Cargo" };   // ToDo Stringtable LLSTRING(notValidCargo)
         default { "" };                                                  // ToDo Stringtable LLSTRING(NoCargoDetected) or leave empty?
     };
@@ -106,7 +106,7 @@ private _exitCode = {
     if !(isNil "_playerInput") then {
         switch (_playerInput) do {
             case "DROP": { systemChat "drop ropes" }; // ToDo
-            case "ATTACH": { [_player, _ropeHelper, cursorObject] call FUNC(cargo_attachRopes); };
+            case "ATTACH": { [_player, _ropeHelper, cursorObject] call FUNC(ropesAttach); };
         };
     };
 

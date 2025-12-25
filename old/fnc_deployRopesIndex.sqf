@@ -20,7 +20,7 @@
 
 params ["_vehicle", "_player", ["_ropeIndex", 0], ["_ropeLength", 15]];
 
-if !(local _vehicle) exitWith { [QGVAR(EH_execQFUNC), [_this, QFUNC(deployRopesIndex)], _vehicle] call CBA_fnc_targetEvent; };
+if !(local _vehicle) exitWith { [QGVAR(EH_execQFUNC), [_this, QFUNC(ropesDeployIndex)], _vehicle] call CBA_fnc_targetEvent; };
 
 private _existingRopes = [_vehicle,_ropeIndex] call FUNC(getRopes);
 private _existingRopesCount = [_vehicle] call FUNC(getRopesCount);

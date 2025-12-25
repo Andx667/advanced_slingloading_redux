@@ -19,8 +19,3 @@
 
 params ["_airframe", "_player", "_params"];
 _params params ["_hookName"];
-
-
-
-// create rope helper
-private _ropeHelper = objNull;

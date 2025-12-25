@@ -16,22 +16,22 @@
 * Public: No
 */
 
-params ["_cargo", "_player", ""];
-// _params params  [""];
+params ["_cargo", "_player", "_params"];
+_params params  ["_offset"];
 
 
 // ACE Progress Bar
 
 [
     10                            // * 0: Total Time (in game "time" seconds) <NUMBER>      // ToDo: Could be Setting
-    ,[_cargo, _player]            // * 1: Arguments, passed to condition, fail and finish <ARRAY>
+    ,[_cargo, _player, _offset]   // * 1: Arguments, passed to condition, fail and finish <ARRAY>
 
     // * 2: On Finish: Code called or STRING raised as event. <CODE, STRING>
     ,{
         params ["_args", "", "", ""];
         _args params ["_cargo", "_player"];
 
-        _args call FUNC(cargo_detachRopes);
+        _args call FUNC(ropesDetach);
 
 
     }
@@ -44,9 +44,10 @@ params ["_cargo", "_player", ""];
     // * 5: Code to check each frame <CODE> (default: {true})
     ,{
         params ["_args", "", "", ""];
-        _args params ["_cargo", "_player"];
+        _args params ["_cargo", "_player", "_offset"];
 
-        (_cargo distance _player) <= sizeOf typeOf _cargo
+        (_cargo modelToWorld _offset distance _player) <= 3
+        // (_cargo modelToWorld _offset distance _player) <= sizeOf typeOf _cargo
 
     }
     ,[]                     // * 6: Exceptions for checking ace_common_fnc_canInteractWith <ARRAY> (default: [])

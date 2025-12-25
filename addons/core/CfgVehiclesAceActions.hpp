@@ -4,14 +4,14 @@
 displayName = "Slingloading Controls";\
 icon = QPATHTOF(data\icon_asr_ca.paa);\
 statement = "";\
-condition = Q(_this call FUNC(aa_rootAction_conditions))
+condition = Q(_this call FUNC(rootAction_conditions))
 
 #define ACTION_DEPLOY\
-    class PVAR(deployRopes) {\
+    class PVAR(ropesDeploy) {\
         displayName = "something";\
-        condition = Q(_this call FUNC(aa_rootAction_conditions));\
+        condition = Q(_this call FUNC(rootAction_conditions));\
         statement = "systemChat 'testsub'";\
-        insertChildren  = Q(_this call FUNC(aa_deployRopes_children));\
+        insertChildren  = Q(_this call FUNC(rootAction_children));\
         icon = QPATHTOF(data\icon_asr_ca.paa);\
     }
 

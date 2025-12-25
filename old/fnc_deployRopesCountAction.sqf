@@ -29,4 +29,4 @@ if (
             [_vehicle] call FUNC(canDeployRopes)
         }
     }
-) then { [_vehicle, ACE_player, _count] call FUNC(deployRopes) };
+) then { [_vehicle, ACE_player, _count] call FUNC(ropesDeploy) };

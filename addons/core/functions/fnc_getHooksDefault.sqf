@@ -21,7 +21,7 @@ private ["_slingLoadPointsArray", "_cornerPoints", "_rearCenterPoint", "_vehicle
 private ["_slingLoadPoints", "_modelPoint", "_modelPointASL", "_surfaceIntersectStartASL", "_surfaceIntersectEndASL", "_surfaces", "_intersectionASL", "_intersectionObject"];
 
 _slingLoadPointsArray = [];
-_cornerPoints = [_vehicleObj] call FUNC(cargo_getCornerPoints);
+_cornerPoints = [_vehicleObj] call FUNC(getCornerPoints);
 _frontCenterPoint = (((_cornerPoints select 2) vectorDiff (_cornerPoints select 3)) vectorMultiply 0.5) vectorAdd (_cornerPoints select 3);
 _rearCenterPoint = (((_cornerPoints select 0) vectorDiff (_cornerPoints select 1)) vectorMultiply 0.5) vectorAdd (_cornerPoints select 1);
 _rearCenterPoint = ((_frontCenterPoint vectorDiff _rearCenterPoint) vectorMultiply 0.2) vectorAdd _rearCenterPoint;

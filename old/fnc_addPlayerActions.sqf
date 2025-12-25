@@ -74,28 +74,28 @@ player addAction [
 player addAction [
     LLSTRING(deploy_cargo_ropes),
     {
-        [FUNC(deployRopesAction), _this] call CBA_fnc_directCall;
+        [FUNC(ropesDeployAction), _this] call CBA_fnc_directCall;
     },
     nil,
     0,
     false,
     true,
     "",
-    QUOTE([ARR_2(FUNC(deployRopesActionCheck),_this)] call CBA_fnc_directCall)
+    QUOTE([ARR_2(FUNC(ropesDeployActionCheck),_this)] call CBA_fnc_directCall)
 ];
 
 
 player addAction [
     LLSTRING(attach_to_cargo_ropes),
     {
-        [FUNC(attachRopesAction), _this] call CBA_fnc_directCall;
+        [FUNC(ropesAttachAction), _this] call CBA_fnc_directCall;
     },
     nil,
     0,
     false,
     true,
     "",
-    QUOTE([ARR_2(FUNC(attachRopesActionCheck),_this)] call CBA_fnc_directCall)
+    QUOTE([ARR_2(FUNC(ropesAttachActionCheck),_this)] call CBA_fnc_directCall)
 ];
 
 
@@ -116,14 +116,14 @@ player addAction [
 player addAction [
     LLSTRING(pickup_cargo_ropes),
     {
-        [FUNC(pickupRopesAction), _this] call CBA_fnc_directCall;
+        [FUNC(ropesPickupAction), _this] call CBA_fnc_directCall;
     },
     nil,
     0,
     false,
     true,
     "",
-    QUOTE([ARR_2(FUNC(pickupRopesActionCheck),_this)] call CBA_fnc_directCall)
+    QUOTE([ARR_2(FUNC(ropesPickupActionCheck),_this)] call CBA_fnc_directCall)
 ];
 
 

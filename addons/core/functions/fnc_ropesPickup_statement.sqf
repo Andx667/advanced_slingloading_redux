@@ -19,4 +19,4 @@
 params ["_ropeHelper", "_player", "_params"];
 _params params  [""];
 
-[_ropeHelper, _player] call FUNC(pickupRopes);
+[_ropeHelper, _player] call FUNC(ropesPickup);

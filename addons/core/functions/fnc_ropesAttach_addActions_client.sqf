@@ -35,18 +35,19 @@ switch (_mode) do {
     //  ToDo: Handle Creation of ACE Actions
     case true:  {
 
-        private _offsets = [_cargo] call asr_core_fnc_cargo_getSlingloadPoints;
+        private _offsets = [_cargo] call FUNC(getSlingloadPoints);
 
         {
+            private _offset = _x;
             private _aceAction = [
                 [ QADDON, "detachRopes", _forEachIndex ] joinString "_" // * 0: Action name <STRING>
                 ,"Detach Cargo Ropes"                                   //  * 1: Name of the action shown in the menu <STRING>
                 ,""                                                     //  * 2: Icon <STRING> "\A3\ui_f\data\igui\cfg\simpleTasks\types\backpack_ca.paa"
-                ,FUNC(aa_detachRopes_statement)
-                ,FUNC(aa_detachRopes_condition)
+                ,FUNC(ropesDetach_statement)
+                ,FUNC(ropesDetach_condition)
                 ,{}                                     //  * 5: Insert children code <CODE> (Optional)
-                ,nil                                    //  * 6: Action parameters <ANY> (Optional)
-                ,_x                                     //  * 7: Position (Position array, Position code or Selection Name) <ARRAY>, <CODE> or <STRING> (Optional)
+                ,[_offset]                              //  * 6: Action parameters <ANY> (Optional)
+                ,_offset                                //  * 7: Position (Position array, Position code or Selection Name) <ARRAY>, <CODE> or <STRING> (Optional)
                 ,2                                      //  * 8: Distance <NUMBER> (Optional)
                 ,[false,false,false,false,true]         //  * 9: Other parameters [showDisabled,enableInside,canCollapse,runOnHover,doNotCheckLOS] <ARRAY> (Optional)
                 //,{}                                   //  * 10: Modifier function <CODE> (Optional)

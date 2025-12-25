@@ -12,31 +12,33 @@ PREP(getHooksFromConfig);
 PREP(getHooksDefault);
 PREP(getHooksDefaultHeightOffset);
 
-PREP(aa_rootAction_conditions);
+PREP(rootAction_conditions);
+PREP(rootAction_children);
 
-PREP(aa_deployRopes_condition);
-PREP(aa_deployRopes_statement);
-PREP(deployHookRopes);
+PREP(ropesDeploy_condition);
+PREP(ropesDeploy_statement);
+PREP(ropesDeploy);
 
-PREP(aa_pickupRopes_condition);
-PREP(aa_pickupRopes_statement);
-PREP(pickupRopes);
+PREP(ropesPickup_condition);
+PREP(ropesPickup_statement);
+PREP(ropesPickup);
 
 PREP(setRopeLength);
 
+PREP(createRopeHelper);
 
-PREP(cargo_getCornerPoints);
-PREP(cargo_getSlingloadPoints);
-PREP(cargo_handleMass);
-PREP(cargo_setMass);
+PREP(getCornerPoints);
+PREP(getSlingloadPoints);
+PREP(handleMass);
+PREP(setMass);
 
-PREP(cargo_attachRopes);
-PREP(cargo_attachRopes_addActions_server);
-PREP(cargo_attachRopes_addActions_client);
+PREP(ropesAttach);
+PREP(ropesAttach_addActions_server);
+PREP(ropesAttach_addActions_client);
 
-PREP(cargo_detachRopes);
-PREP(aa_detachRopes_condition);
-PREP(aa_detachRopes_statement);
+PREP(ropesDetach);
+PREP(ropesDetach_condition);
+PREP(ropesDetach_statement);
 
 
 PREP(emergencyRelease_condition);
@@ -55,9 +57,9 @@ PREP(customHint);
 // Old FNCs Not In Use Subfolder
 
 PREP(addPlayerActions);
-PREP(attachRopes);
-PREP(attachRopesAction);
-PREP(attachRopesActionCheck);
+PREP(ropesAttach);
+PREP(ropesAttachAction);
+PREP(ropesAttachActionCheck);
 PREP(canAttachRopes);
 PREP(canDeployRopes);
 PREP(canDropRopes);
@@ -66,12 +68,12 @@ PREP(canPickupRopes);
 PREP(canReleaseCargo);
 PREP(canRetractRopes);
 PREP(canShortenRopes);
-PREP(deployRopes);
-PREP(deployRopesAction);
-PREP(deployRopesActionCheck);
-PREP(deployRopesCountAction);
-PREP(deployRopesIndex);
-PREP(deployRopesIndexAction);
+PREP(ropesDeploy);
+PREP(ropesDeployAction);
+PREP(ropesDeployActionCheck);
+PREP(ropesDeployCountAction);
+PREP(ropesDeployIndex);
+PREP(ropesDeployIndexAction);
 PREP(dropRopes);
 PREP(dropRopesAction);
 PREP(dropRopesActionCheck);
@@ -92,9 +94,9 @@ PREP(getRopesAndCargo);
 PREP(getRopesCount);
 PREP(init);
 PREP(isSupportedCargo);
-PREP(pickupRopes);
-PREP(pickupRopesAction);
-PREP(pickupRopesActionCheck);
+PREP(ropesPickup);
+PREP(ropesPickupAction);
+PREP(ropesPickupActionCheck);
 PREP(releaseCargo);
 PREP(releaseCargoAction);
 PREP(releaseCargoIndexAction);

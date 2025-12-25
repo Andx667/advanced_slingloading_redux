@@ -29,9 +29,9 @@ if (_inactiveRopes isNotEqualTo []) exitWith {
 
     if (count _inactiveRopes > 1) then {
         ACE_player setVariable [QGVAR(Deploy_Ropes_Index_Vehicle), _vehicle];
-        [LLSTRING(deploy_cargo_ropes), QFUNC(deployRopesIndexAction), _inactiveRopes] call FUNC(showSelectRopesMenu);
+        [LLSTRING(deploy_cargo_ropes), QFUNC(ropesDeployIndexAction), _inactiveRopes] call FUNC(showSelectRopesMenu);
     } else {
-        [_vehicle, ACE_player, (_inactiveRopes select 0) select 0] call FUNC(deployRopesIndex);
+        [_vehicle, ACE_player, (_inactiveRopes select 0) select 0] call FUNC(ropesDeployIndex);
     };
 
 };
@@ -39,22 +39,22 @@ if (_inactiveRopes isNotEqualTo []) exitWith {
 
 private _slingLoadPoints = [_vehicle] call FUNC(getHooksDefault);
 
-if (count _slingLoadPoints < 2) exitWith { [_vehicle,ACE_player] call FUNC(deployRopes); };
+if (count _slingLoadPoints < 2) exitWith { [_vehicle,ACE_player] call FUNC(ropesDeploy); };
 
 ACE_player setVariable [QGVAR(Deploy_Count_Vehicle), _vehicle];
 
 ASL_Deploy_Ropes_Count_Menu = [
     ["Deploy Ropes", false],
-    [LLSTRING(single_cargo), [0], "", -5, [["expression", QUOTE([1] call FUNC(deployRopesCountAction))]], "1", "1"]
+    [LLSTRING(single_cargo), [0], "", -5, [["expression", QUOTE([1] call FUNC(ropesDeployCountAction))]], "1", "1"]
 ];
 
 
 if ((count _slingLoadPoints) > 1) then {
-    ASL_Deploy_Ropes_Count_Menu pushBack [LLSTRING(double_cargo), [0], "", -5, [["expression", QUOTE([2] call FUNC(deployRopesCountAction))]], "1", "1"];
+    ASL_Deploy_Ropes_Count_Menu pushBack [LLSTRING(double_cargo), [0], "", -5, [["expression", QUOTE([2] call FUNC(ropesDeployCountAction))]], "1", "1"];
 };
 
 if ((count _slingLoadPoints) > 2) then {
-    ASL_Deploy_Ropes_Count_Menu pushBack [LLSTRING(triple_cargo), [0], "", -5, [["expression", QUOTE([3] call FUNC(deployRopesCountAction))]], "1", "1"];
+    ASL_Deploy_Ropes_Count_Menu pushBack [LLSTRING(triple_cargo), [0], "", -5, [["expression", QUOTE([3] call FUNC(ropesDeployCountAction))]], "1", "1"];
 };
 
 showCommandingMenu "";
