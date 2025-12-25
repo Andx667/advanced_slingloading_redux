@@ -59,9 +59,10 @@ private _ropeHelper = [ _helperPos, _ropes, _hookID, _hookOffset ] call FUNC(cre
 _airframe setVariable [
     _hookID,
     createHashMapFromArray [
-        ["damaged", false],
-        ["ropes", _ropes],
-        ["length", _length]
+        [ "damaged",    false   ],
+        [ "ropes",      _ropes  ],
+        [ "length",     _length ],
+        [ "cargo",      objNull ]
     ],
     true
 ];
