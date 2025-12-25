@@ -1,3 +1,5 @@
+#include "..\script_component.hpp"
+
 /*
 * Author: Zorn
 * Function to monitor attached cargo serverside. will raise event once cargo is disconnected.
