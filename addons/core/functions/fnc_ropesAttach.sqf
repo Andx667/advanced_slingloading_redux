@@ -22,11 +22,11 @@ params ["_player", "_ropeHelper", "_target"];
 systemChat "attachRopes FNC";
 
 private _airframe = ropeAttachedTo _ropeHelper;
-private _hookClass = _ropeHelper getVariable QGVAR(hook);
+private _hookID = _ropeHelper getVariable QGVAR(hook);
 
-private _ropes = _airframe getVariable _hookClass get "ropes";
+private _ropes = _airframe getVariable _hookID get "ropes";
 private _ropeLength = selectMin (_ropes apply { ropeLength _x });
-// private _ropeLength = _airframe getVariable _hookClass get "currLength";
+// private _ropeLength = _airframe getVariable _hookID get "currLength";
 
 private _attachmentPoints = [_target] call FUNC(getCornerPoints);
 private _outOfRange = _attachmentPoints findIf {
@@ -46,12 +46,13 @@ if (_outOfRange) exitWith { [QGVAR(EH_customHint), [LLSTRING(too_short), false],
 
 deleteVehicle _ropeHelper;
 
-// Store Cargo in hook
-private _hook = _airFrame getVariable _hookClass;
-_hook set ["cargo", _target];
-_airframe setVariable [_hookClass, _hook, true];
+// Store Cargo in Dynamic Hook Data
+private _hookMap = _airFrame getVariable _hookID;
+_hookMap set ["cargo", _target];
+_airframe setVariable [_hookID, _hookMap, true];
 
-if (SET(ignore_liftCapacity)) then { [QGVAR(EH_cargo_handleMass), [_target, _airFrame, _ropes]] call CBA_fnc_serverEvent; };
+
+if (SET(ignore_liftCapacity)) then { [QGVAR(EH_handleMass), [_target, _airFrame, _ropes]] call CBA_fnc_serverEvent; };
 
 // Handle Ace Actions to Detatch the Cargo
 [QGVAR(EH_detachRopesAction_server), [_target]] call CBA_fnc_serverEvent;
