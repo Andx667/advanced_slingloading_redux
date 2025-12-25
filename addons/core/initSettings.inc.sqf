@@ -101,6 +101,7 @@ QSET(test) -> "ADDON_set_test"
         ],
         1
     ],
+    1,
     {},
     false
 ] call CBA_fnc_addSetting;
