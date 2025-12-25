@@ -23,8 +23,8 @@ private _airframe = vehicle _player;
 // Prerequisits
 ///////////////////////
 
-if !( [_airframe] call FUNC(isSupportedVehicle)             ) exitWith { false };
-if !( [_airframe, _player] call FUNC(isSupportedVehicle)    ) exitWith { false };
+if !( [_airframe] call FUNC(isSupportedAirframe)             ) exitWith { false };
+if !( [_airframe, _player] call FUNC(isSupportedAirframe)    ) exitWith { false };
 if !( _airframe isNil QGVAR(EmergencyReleaseUsed)           ) exitWith { false };
 
 

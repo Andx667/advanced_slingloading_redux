@@ -12,8 +12,8 @@ PREP(getHooksFromConfig);
 PREP(getHooksDefault);
 PREP(getHooksDefaultHeightOffset);
 
-PREP(rootAction_conditions);
-PREP(rootAction_children);
+PREP(actionRoot_conditions);
+PREP(actionRoot_children);
 
 PREP(ropesDeploy_condition);
 PREP(ropesDeploy_statement);
@@ -45,7 +45,7 @@ PREP(emergencyRelease_condition);
 PREP(emergencyRelease_statement);
 
 
-PREP(isSupportedVehicle);
+PREP(isSupportedAirframe);
 PREP(isSupportedCargo);
 PREP(isSupportedCargo);
 

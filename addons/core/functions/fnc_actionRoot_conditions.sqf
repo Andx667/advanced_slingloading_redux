@@ -26,15 +26,15 @@ missionNamespace getVariable [QSET(enable), true]
 && { _target getVariable [QEGVAR(API,blacklisted), false] isNotEqualTo true }
 
 // Check if vehicle is supported
-&& { [_target] call FUNC(isSupportedVehicle) }
+&& { [_target] call FUNC(isSupportedAirframe) }
 
 // Check if _player is inside vehicle and if so, which seats are allowed to control the sling load settings
 && { [_target, _player] call FUNC(isAllowedSeat) }
 
-// ToDo: check if vehicle locked based on cba setting
+// Check if vehicle locked based on cba setting
 && { !([_target, _player] call FUNC(isTargetLocked)) }
 
-// ToDo: Check if vehicle is supported
+// Check if vehicle is supported
 && { [_target, _player] call FUNC(isFriendlyOrEmpty) }
 
 // Check if the Player is currently Carrying Ropes
