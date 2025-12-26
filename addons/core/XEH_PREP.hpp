@@ -11,8 +11,12 @@ PREP(getHooksDefaultHeightOffset);
 PREP(actionRoot_conditions);
 PREP(actionRoot_children);
 
+PREP(actionHook_getAction);
 PREP(actionHook_displayName);
-PREP(actionHook_status);
+PREP(actionHook_icon);
+PREP(actionHook_statement);
+PREP(actionHook_condition);
+PREP(actionHook_children);
 
 PREP(ropesDeploy_condition);
 PREP(ropesDeploy_statement);
@@ -37,6 +41,8 @@ PREP(createRopeHelper);
 PREP(getCoPilots);
 PREP(getCornerPoints);
 PREP(getSlingloadPoints);
+
+PREP(getHookStatus);
 
 PREP(handleMass);
 PREP(setMass);
