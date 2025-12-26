@@ -29,7 +29,7 @@ _length = 100 min _length max 0.1;
 // Set Rope Length
 ///////////////////////
 private _ropes = _hookMap get "ropes";
-{ ropeUnwind [_x, 0.1, _length, false]; } forEach _ropes;
+{ ropeUnwind [_x, ROPE_UNWINDSPEED, _length, false]; } forEach _ropes;
 
 ///////////////////////
 // Save Data

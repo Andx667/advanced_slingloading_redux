@@ -1,0 +1,2 @@
+#define ROPE_LENGTHS [5, 10, 25, 50, 75, 100]
+#define ROPE_UNWINDSPEED 0.25

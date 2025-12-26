@@ -7,3 +7,5 @@
 // #define ENABLE_PERFORMANCE_COUNTERS
 
 #include "\z\asr\addons\main\script_macros.hpp"
+
+#include "script_defines.hpp"

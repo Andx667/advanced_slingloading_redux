@@ -36,7 +36,7 @@ private _ropes = [];
 for "_i" from 0 to 3 do {
     // ropeCreate [fromObject, fromPoint, length, ropeStart, ropeEnd, ropeType, nSegments]
     private _rope = ropeCreate [_airframe, _hookOffset, 0];
-    ropeUnwind [_rope, 1, _length];
+    ropeUnwind [_rope, ROPE_UNWINDSPEED, _length];
     _ropes pushBack _rope;
 };
 
