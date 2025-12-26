@@ -20,14 +20,14 @@ params [ "_airframe", "_hasExclusiveHook", "_hookID", "_hookDataStatic", "_hookD
 
 switch (true) do {
 
-    // DEPLOYED: Deployed and not damaged
+    // DEPLOYED: Deployed, not damaged
     case (
         _hookDataDynamic isNotEqualTo false
         && { _hookDataDynamic get "damaged" isEqualTo false }
         && { _hookDataDynamic get "cargo" isEqualTo objNull }
     ): { "DEPLOYED" };
 
-    // DEPLOYEDWITHCARGO and not damaged
+    // DEPLOYEDWITHCARGO: Deployed, not damaged, with cargo
     case (
         _hookDataDynamic isNotEqualTo false
         && { _hookDataDynamic get "damaged" isEqualTo false }
@@ -76,5 +76,5 @@ switch (true) do {
     case ( _hookDataDynamic get "damaged" ): { "DAMAGED" };
 
 
-    default { ERROR_1("Undefined Mode - %1", _this); "404" };
+    default { ERROR_1("Undefined Mode - %1",_this); "404" };
 } // return
