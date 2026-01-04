@@ -1,4 +1,4 @@
-#include "\z\aslr\addons\main\data\hpp\defineDIKCodes.hpp"
+#include "\z\asr\addons\main\data\hpp\defineDIKCodes.hpp"
 
 /*
 [
@@ -13,7 +13,13 @@
     _category, QGVAR(key_emergencyCargoRelease),
     [LSTRING(keys_emergencyCargoRelease_name), LSTRING(keys_emergencyCargoRelease_tooltip)], {
         //key down
-        [ACE_player] call FUNC(emergencyCargoRelease);
+
+        // Check if player is allowed Seat
+
+        if ([ACE_player] call FUNC(emergencyRelease_condition)) then {
+            [ACE_player] call FUNC(emergencyRelease_statement);
+        };
+
     }, {
         //key up
     },

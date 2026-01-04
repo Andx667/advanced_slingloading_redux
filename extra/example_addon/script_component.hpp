@@ -1,9 +1,9 @@
 #define COMPONENT addonName
 #define COMPONENT_BEAUTIFIED Addon Name
-#include "\z\aslr\addons\main\script_mod.hpp"
+#include "\z\asr\addons\main\script_mod.hpp"
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE
 // #define ENABLE_PERFORMANCE_COUNTERS
 
-#include "\z\aslr\addons\main\script_macros.hpp"
+#include "\z\asr\addons\main\script_macros.hpp"

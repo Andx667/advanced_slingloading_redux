@@ -11,19 +11,25 @@
  * True if the cargo is allowed to be slingloaded, False otherwise
  *
  * Example:
- * [vehicle, cargo] call aslr_core_fnc_isSupportedCargo
+ * [vehicle, cargo] call asr_core_fnc_isSupportedCargo
  *
  * Public: No
  */
+
 
 params [
     [ "_vehicle", objNull, [objNull] ],
     [ "_cargo",   objNull, [objNull] ]
 ];
 
+true
+
+/*
+// ToDo
+
 if ( isNull _vehicle || { isNull _cargo }) exitWith { false };
 
-private _rules = missionNamespace getVariable [QGVAR(Sling_Rules_OVERRIDE), GVAR(Sling_Rules)];
+private _rules = missionNamespace getVariable [QGVAR(Sling_Rules_OVERRIDE), GVAR(Sling_Rules)]; // These rules dont exist enamyore
 
 // Check if there is rule against it
 _rules findIf {
@@ -54,3 +60,5 @@ _rules findIf {
         }
     } isNotEqualTo -1
 }
+
+*/

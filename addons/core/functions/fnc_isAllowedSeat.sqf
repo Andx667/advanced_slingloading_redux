@@ -10,20 +10,19 @@
  * Caller is in allowed seat <BOOLEAN>
  *
  * Example:
- * [helicopter, player] call aslr_core_fnc_isAllowedSeat
+ * [helicopter, player] call asr_core_fnc_isAllowedSeat
  *
  * Public: No
  */
 
-params [ "_caller"];
+params [ "_airframe", "_player"];
 TRACE_1("fnc_isAllowedSeat",_this);
 
-if (isNull objectParent _caller) exitWith { true; };
+if (isNull objectParent _player) exitWith { true; };
 
-private _vehicle = vehicle _caller;
-private _pilot = currentPilot _vehicle;
-private _copilots = [_vehicle] call FUNC(getCopilots);
-private _crew = fullCrew [_vehicle, "turret"];
+private _pilot = currentPilot _airframe;
+private _copilots = [_airframe] call FUNC(getCopilots);
+private _crew = fullCrew [_airframe, "turret"];
 private _crewArray = [];
 
 {
@@ -32,13 +31,15 @@ private _crewArray = [];
 
 switch (SET(allowedSeats)) do {
     //Pilot
-    case 4: { _caller isEqualTo _pilot };
-    //Co_Pilot
-    case 3: { _caller in _copilots };
+    case 4: { _player isEqualTo _pilot };
+    //Co-Pilot
+    case 3: { _player in _copilots };
     //Pilot or Co-Pilot
-    case 2: { _caller isEqualTo _pilot || { _caller in _copilots } };
+    case 2: { _player isEqualTo _pilot || { _player in _copilots } };
     //Crew
-    case 1: { _caller in _crewArray || { _caller isEqualTo _pilot }  || { _caller in _copilots } };
+    case 1: { _player in _crewArray || { _player isEqualTo _pilot }  || { _player in _copilots } };
     //all
     case 0: { true };
-};
+
+    default { false };
+} // return

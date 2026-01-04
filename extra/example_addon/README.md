@@ -1,4 +1,4 @@
-aslr_addonName
+asr_addonName
 ===================
 
 Description for this addon

@@ -10,7 +10,7 @@
  * Return description <NONE>
  *
  * Example:
- * [params] call aslr_core_fnc_hint
+ * [params] call asr_core_fnc_hint
  *
  * Public: No
  */

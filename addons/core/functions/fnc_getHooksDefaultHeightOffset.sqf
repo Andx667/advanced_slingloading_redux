@@ -17,12 +17,12 @@
 
 params ["_vehicleClass"];
 
-private _map = missionNamespace getVariable QGVAR(Cache_HeightOffset);
+private _cacheOffset = missionNamespace getVariable QGVAR(Cache_HeightOffset);
 
 // Cache
-if (isNil "_map") then {
-    _map = createHashMap;
-    missionNamespace setVariable [QGVAR(Cache_HeightOffset), _map];
+if (isNil "_cacheOffset") then {
+    _cacheOffset = createHashMap;
+    missionNamespace setVariable [QGVAR(Cache_HeightOffset), _cacheOffset];
 
     private _configs = "true" configClasses (configFile >> QPVAR(Hooks_HeightOffset));
     {
@@ -38,12 +38,15 @@ if (isNil "_map") then {
                 ]
             ]
         ];
-        _map set [_class, _entry];
+        _cacheOffset set [_class, _entry];
     } forEach _configs;
 };
 
 // Check if _vehicleClass represented directly, if so return OffsetArray
-if (_vehicleClass in keys _map) exitWith { _map get _vehicleClass get "offsetArray" };
+if (_vehicleClass in keys _cacheOffset) exitWith {
+    INFO_1("(HookData)(Getting) Using explicit HeightOffset: %1",_vehicleClass);
+    _cacheOffset get _vehicleClass get "offsetArray"
+};
 
 // Check if _vehicleClass inherits from any of the entries (while inheritance isnt blocked)
 // If multiple Entries, it will use the "closest relative"
@@ -60,10 +63,11 @@ private _relatives = [];
      if ( _index isNotEqualTo -1 && { _entry get "blockInheritance" isEqualTo 0 } ) then {
         // Add entry to relatives
         // The smaller the index, the closer related
-        _relatives pushBack [_index, _entry get "offsetArray"];
+        _relatives pushBack [_index, _entry get "offsetArray", _key];
     };
-} forEach _map;
+} forEach _cacheOffset;
 
 // return OffsetArray from closest relative
 _relatives = [_relatives, [], { _x select 0 }] call BIS_fnc_sortBy;
+INFO_1("(HookData)(Getting) Using HeightOffset from relative %1",_relatives select 0 select 2);
 _relatives select 0 select 1
